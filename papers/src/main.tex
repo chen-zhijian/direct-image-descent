@@ -1,0 +1,1220 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ddbar}{\partial\bar\partial}
+\newcommand{\db}{\bar\partial}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\dV}{\,dV}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\C}{\mathbb C}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\Nak}{\mathrm{Nak}}
+\newcommand{\dNak}{\mathrm{dual\,Nak}}
+\title[Two results on harmonic direct images]{Dual Nakano positivity of top direct images and optimal estimates under controlled variation}
+\author{Zhijian Chen}
+\address{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, Beijing 100190, China}
+\email{chenzhijian@amss.ac.cn}
+\author{Zhuo Liu}
+\address{Beijing Institute of Mathematical Sciences and Applications; Department of Mathematics and Yau Mathematical Sciences Center, Tsinghua University, Beijing, China}
+\email{liuzhuo@amss.ac.cn}
+\author{Chenghao Qing}
+\address{Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China}
+\email{qingchenghao@amss.ac.cn}
+\date{October 24, 2026}
+\subjclass[2020]{Primary 32L10; Secondary 32G05, 32L20, 32W05}
+\keywords{Dual Nakano semipositivity, higher direct image, harmonic metric, Serre duality, optimal $L^2$ estimate, Kodaira--Spencer tensor}
+\begin{document}
+\begin{abstract}
+We present two consequences of established curvature and estimate methods for prescribed harmonic metrics on direct images. First, an infinitesimally trivial proper holomorphic submersion between K\"ahler manifolds sends a smooth dual Nakano semipositive bundle to a dual Nakano semipositive top direct image, provided the top cohomology dimension is locally constant. We prove this through isometric Serre duality and the negative-adjoint curvature mechanism. Second, for a product fibration with an external-product line metric, optimal estimates in two extremal total-space bidegree ranges descend to optimal estimates for the harmonic direct image. The proof constructs a closed harmonic lift, handles the kernel of the pulled-back auxiliary curvature, and descends a weak solution by a bounded chain projection. We then remove metric splitting entirely in top base and fiber antiholomorphic degrees. In the other range, a quantitative bound on harmonic variation gives a sufficient extension to nonsplit metrics. The bound uses the total curvature margin and fiber Bochner energy; mixed curvature and Green operators control the variation. A nonsplit example has genuinely varying harmonic representatives. For smooth proper K\"ahler fibrations, we give an explicit sufficient bound involving Kodaira--Spencer insertion, harmonic variation, horizontal brackets, and metric comparison. A pointwise Kodaira--Spencer annihilation condition yields an exact top-degree lifting proof. An elliptic family shows why the unconditional product conclusion does not persist in general. These extensions are attributed consequences of established curvature and estimate methods.
+\end{abstract}
+\maketitle
+\tableofcontents
+
+\section{Introduction and the two main theorems}\label{sec:introduction}
+
+Positivity of direct images depends on the cohomological degree, the coefficient bundle, and the metric under consideration. A numerical positivity theorem for a coherent sheaf, a curvature inequality for a particular smooth harmonic metric, and an optimal $L^2$ estimate are distinct statements. This article concentrates on two situations in which the relation between harmonic metrics and optimal estimates can be proved explicitly.
+
+The starting points are the following observations. In top antiholomorphic fiber degree, the $L^2$ density is independent of the fiber metric, and Serre duality is an isometry. For external-product data, the fiber harmonic space is fixed, so harmonic lifting and projection are compatible with the Dolbeault differential. In a varying family, this compatibility is generally lost and must be replaced by an estimate for the variation of harmonic representatives. These points organize the two main theorems and the supporting discussion below.
+
+\subsection{Top direct images}
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion of relative dimension $n$. Write $X_y=\pi^{-1}(y)$. We call $\pi$ \emph{infinitesimally trivial} when every Kodaira--Spencer map
+\[
+ \rho_y:T_y^{1,0}Y\longrightarrow H^1(X_y,T_{X_y}^{1,0})
+\]
+vanishes. A smooth Hermitian holomorphic bundle is \emph{dual Nakano semipositive} if its Hermitian dual is Nakano seminegative.
+
+If $h^n(X_y,E_y)$ is locally constant, then $R^n\pi_*E$ is locally free and satisfies base change. Its harmonic metric is
+\begin{equation}\label{eq:hodge}
+ H_y(u,v)=\int_{X_y}\ip{u_h}{v_h}_{h,\omega_y}\,dV_{\omega_y},
+\end{equation}
+where $u_h,v_h$ are the fiberwise harmonic representatives and $\omega_y$ is the restriction of a K\"ahler form on $X$.
+
+\begin{theorem}[Dual Nakano positivity of the top direct image]\label{thm:top}
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion of relative dimension $n$ between K\"ahler manifolds. Suppose that $\pi$ is infinitesimally trivial and $(E,h)$ is a smooth dual Nakano semipositive Hermitian holomorphic vector bundle on $X$. If $h^n(X_y,E_y)$ is locally constant, then the metric $H$ on $R^n\pi_*E$ is smooth and dual Nakano semipositive.
+\end{theorem}
+
+This theorem allows holomorphic variation of $E_y$: infinitesimal triviality concerns the family of manifolds, not constancy of the coefficient bundle. The curvature conclusion is the metric Serre-dual form of the semidefinite negative-adjoint mechanism in Liu--Yang \cite[Theorem 4.1 and formula (4.2)]{LY14}. Section~\ref{sec:top-proof} supplies a direct proof, including smoothness of the metric and passage through the locus where local product charts are not initially available.
+
+\subsection{Descent of optimal estimates on a product}
+For a $d$-dimensional K\"ahler manifold, we use the smooth optimal $(r,s)$ estimate condition in the extremal ranges $r=d$, $s\geq1$, or $s=d$, $r\geq1$. It means solvability with the inverse auxiliary-curvature bound for every positive auxiliary line metric and every compactly supported smooth closed datum; the precise definition is given in Section~\ref{sec:analytic}. All K\"ahler metrics occurring in this condition are specified and fixed.
+
+\begin{theorem}[Product descent of optimal estimates]\label{thm:product-descent}
+Let $(Y,\omega_Y)$ be a complete K\"ahler manifold of dimension $m\geq1$ admitting a positive holomorphic Hermitian line bundle. Let $Z$ be a smooth projective manifold of dimension $n$, equipped with a fixed K\"ahler form $\omega_Z$. Set
+\[
+ X=Y\times Z,\qquad \pi=\operatorname{pr}_Y,\qquad
+ \omega_X=\operatorname{pr}_Y^*\omega_Y+
+                 \operatorname{pr}_Z^*\omega_Z.
+\]
+Suppose that the holomorphic line bundle and its metric split as
+\[
+ (L,h)=\operatorname{pr}_Y^*(G,h_G)\otimes
+               \operatorname{pr}_Z^*(M,h_M),
+\]
+with both metrics smooth. Fix integers in either range
+\begin{equation}\label{eq:ranges}
+\begin{array}{ll}
+\mathrm{(i)}&a=m,\quad p=n,\quad 1\leq b\leq m,\quad 0\leq q\leq n;\\[2pt]
+\mathrm{(ii)}&b=m,\quad q=n,\quad 1\leq a\leq m,\quad 0\leq p\leq n.
+\end{array}
+\end{equation}
+Equip
+\[
+ \cF=R^q\pi_*(\Omega^p_{X/Y}\otimes L)
+\]
+with the harmonic metric $H$ induced by $\omega_Z$ and $h|_{X_y}$.
+If $(L,h)$ satisfies the optimal $(a+p,b+q)$ estimate condition with respect to $\omega_X$, then $(\cF,H)$ satisfies the optimal $(a,b)$ estimate condition with respect to $\omega_Y$.
+
+Explicitly, for every positive auxiliary line bundle $(A,h_A)$ on $Y$ and every $\db$-closed
+$f\in A_c^{a,b}(Y,\cF\otimes A)$, there exists
+$u\in L^2_{a,b-1}(Y,\cF\otimes A)$ such that
+\begin{equation}\label{eq:main-product-estimate}
+ \db u=f,\qquad
+ \int_Y|u|_{H\otimes h_A,\omega_Y}^2\,dV_Y
+ \leq\int_Y\ip{B_Y^{-1}f}{f}_{H\otimes h_A,\omega_Y}\,dV_Y,
+\end{equation}
+where $B_Y=[i\Theta_{A,h_A}\otimes\Id_{\cF},\Lambda_{\omega_Y}]$ on $(a,b)$-forms. The ranges \eqref{eq:ranges} ensure $B_Y>0$.
+\end{theorem}
+
+In particular, range (i) gives the asserted adjoint implication
+\begin{equation}\label{eq:adjoint-specialization}
+ \begin{gathered}
+ (L,h)\text{ optimal }(m+n,b+q)\\
+ \Longrightarrow\quad
+ \bigl(R^q\pi_*(K_{X/Y}\otimes L),H\bigr)
+       \text{ optimal }(m,b).
+ \end{gathered}
+\end{equation}
+Neither $h_G$ nor $h_M$ is assumed semipositive. The splitting in this theorem is imposed on the metric as well as on the holomorphic line bundle. It is a sufficient hypothesis, not a necessary one: Theorem~\ref{thm:variable-metric} below removes metric splitting completely in range (ii), and gives a quantitative replacement in range (i). The holomorphic external-product structure and the fixed product K\"ahler metric are retained there. Theorem~\ref{thm:fibration-descent} replaces them by explicit geometric and harmonic bounds, and Theorem~\ref{thm:ks-descent} gives a top-degree annihilation criterion.
+
+The proof in Section~\ref{sec:product-proof} follows the lifting, solving, and descending procedure. One cannot apply the defining estimate on $X$ directly with $\pi^*A$, whose curvature vanishes in the fiber directions. We first use Watanabe's smooth curvature characterization \cite{Wat21} to obtain nonnegativity of the total-space curvature commutator. The complete K\"ahler estimate then applies with the semipositive pullback weight. This distinction preserves the stated hypothesis, which tests only positive auxiliary bundles.
+
+\subsection{Scope and organization}
+The first theorem is a top-cohomology duality result with possibly varying coefficient bundles. The second treats more degrees with fixed fiber harmonic data. In the smooth external-product setting, Theorem~\ref{thm:product-descent} is a corollary of Watanabe's extremal-degree curvature characterizations and compact-fiber Bochner--Kodaira--Nakano theory. Its lifting--solving--descending proof makes the norm and differential compatibilities explicit; we do not claim novelty of the implication itself. Section~\ref{sec:variable-metric} weakens metric splitting: a top-degree cohomology projection proves one extension directly, and a Gauss identity with quantitative variation control proves another. These are consequences of established Hodge and curvature methods; no optimality or priority claim is made for the sufficient conditions. Section~\ref{sec:examples} explains the limitations of naive lifting. Section~\ref{sec:variation} proves a conditional extension to varying fibrations, with an explicit curvature budget and a separate exact lifting criterion in top degree. Section~\ref{sec:literature} compares earlier results, including the distinction between the Mourougane--Takayama metric and the ordinary harmonic metric used here.
+
+\section{Harmonic metrics and the analytic input}\label{sec:analytic}
+
+\subsection{Conventions}
+Hermitian products are linear in the first argument. The Chern curvature convention is
+\[
+ \Theta_{E,h}=(D'+\db)^2,\qquad
+ i\Theta_{E,h}=i\sum R_{j\bar k}\,dz^j\wedge d\bar z^k.
+\]
+Thus $h=e^{-\varphi}$ has curvature $i\ddbar\varphi$. Nakano semipositivity means
+$\sum_{j,k}\ip{R_{j\bar k}v_j}{v_k}\geq0$ for every tuple $(v_j)$.
+Write $dV_\omega=\omega^d/d!$ and let $\Lambda_\omega$ be the adjoint of exterior multiplication by $\omega$.
+
+For a holomorphic submersion, the relative cotangent bundle is the quotient in
+\[
+ 0\longrightarrow\pi^*\Omega_Y^1\longrightarrow\Omega_X^1
+   \longrightarrow\Omega_{X/Y}^1\longrightarrow0,
+ \qquad \Omega^p_{X/Y}=\bigwedge^p\Omega^1_{X/Y}.
+\]
+On a compact fiber, smooth Hodge theory identifies
+$H^q(X_y,\Omega^p_{X_y}\otimes L_y)$ with
+$\cH^{p,q}(X_y,L_y)=\Ker\Box''_{p,q,y}$. Its metric is equivalently the quotient norm
+\begin{equation}\label{eq:minimum}
+ \|v\|_{H_y}^2
+ =\min_{\db\alpha=0,\,[\alpha]=v}
+       \int_{X_y}|\alpha|_{\omega_y,h_y}^2\,dV_{\omega_y}.
+\end{equation}
+When the cohomology dimension is constant, base change and smooth elliptic parameter theory make these spaces a smooth Hermitian bundle with the holomorphic structure of the direct image. All metrics in this article are smooth and positive definite; multiplier ideals do not enter the statements.
+
+\subsection{Optimal estimates and curvature}
+\begin{definition}\label{def:optimal}
+Let $(S,\omega)$ be a K\"ahler $d$-fold admitting a positive Hermitian holomorphic line bundle, and let $(E,h)$ be smooth. In one of the ranges
+$r=d$, $1\leq s\leq d$, or $s=d$, $1\leq r\leq d$, the bundle satisfies the \emph{optimal $(r,s)$ estimate condition relative to $\omega$} if, for every positive Hermitian holomorphic line bundle $(A,h_A)$ and every $\db$-closed $g\in A_c^{r,s}(S,E\otimes A)$, there is a distributional solution $\db v=g$ with
+\begin{equation}\label{eq:optimal-definition}
+ \|v\|_{h\otimes h_A,\omega}^2
+ \leq\int_S\ip{B_A^{-1}g}{g}_{h\otimes h_A,\omega}\,dV_\omega,
+ \quad B_A=[i\Theta_A\otimes\Id_E,\Lambda_\omega]_{r,s}.
+\end{equation}
+Here $v\in L^2_{r,s-1}$. The auxiliary curvature operator is positive definite in these degree ranges, so the right side is finite for the stipulated data.
+\end{definition}
+
+If the eigenvalues of $i\Theta_A$ are $\lambda_1,\ldots,\lambda_d>0$ in a unitary coframe, the eigenvalue of $B_A$ on $dz^I\wedge d\bar z^J$ is
+\begin{equation}\label{eq:scalar-eigenvalues}
+ \sum_{i\in I}\lambda_i+\sum_{j\in J}\lambda_j
+       -\sum_{k=1}^d\lambda_k.
+\end{equation}
+For $r=d$ this is $\sum_{j\in J}\lambda_j$; for $s=d$ it is $\sum_{i\in I}\lambda_i$.
+
+\begin{proposition}[Smooth curvature characterization]\label{prop:characterization}
+On a complete K\"ahler $d$-fold admitting a positive Hermitian holomorphic line bundle, a smooth $(E,h)$ satisfies Definition~\ref{def:optimal} if and only if
+\begin{equation}\label{eq:characterization}
+ [i\Theta_{E,h},\Lambda_\omega]_{r,s}\geq0
+\end{equation}
+in the specified extremal degree.
+\end{proposition}
+The implication from estimates to curvature is the smooth characterization in \cite[Theorems 1.5--1.6]{Wat21}, with the fixed-metric definitions in \cite[Definitions 1.3--1.4]{Wat21}. Its auxiliary-bundle and compact-support quantifiers agree with Definition~\ref{def:optimal}; the extension of local positive weights used in that characterization is provided by \cite[Proposition 3.1]{Wat21}. We use only the indicated extremal degrees. The converse on a complete manifold follows from the next lemma applied to $E\otimes A$. We state explicitly the version needed when the auxiliary curvature has a kernel.
+
+For a nonnegative Hermitian operator $T$, define
+\begin{equation}\label{eq:extended-inverse}
+ q_T(w)=\sup_v\{2\operatorname{Re}\ip{w}{v}-\ip{Tv}{v}\}.
+\end{equation}
+It equals $\ip{T^\dagger w}{w}$ on $(\Ker T)^\perp$ and is $+\infty$ otherwise. Here $T^\dagger$ is the Moore--Penrose inverse. Directly from the supremum,
+\begin{equation}\label{eq:inverse-order}
+ T\geq B\geq0\quad\Longrightarrow\quad q_T\leq q_B.
+\end{equation}
+No simultaneous diagonalization is needed for this order inequality.
+
+\begin{lemma}[Complete K\"ahler estimate]\label{lem:complete-estimate}
+Let $(S,\omega)$ be complete K\"ahler of dimension $d$ and $(E,h)$ smooth. In a degree $(r,s)$ with $0\leq r\leq d$ and $1\leq s\leq d$, assume
+$C=[i\Theta_{E,h},\Lambda_\omega]_{r,s}\geq0$.
+If $g\in L^2_{r,s}(S,E)$ is distributionally $\db$-closed and
+$I(g)=\int_Sq_C(g)\,dV_\omega<\infty$, then there exists
+$v\in L^2_{r,s-1}(S,E)$ with
+\[
+ \db v=g,\qquad \|v\|^2\leq I(g).
+\]
+\end{lemma}
+\begin{proof}
+For compactly supported smooth $w$, the Bochner--Kodaira--Nakano identity gives
+\[
+ \|\db w\|^2+\|\db^*w\|^2
+ =\|D'w\|^2+\|(D')^*w\|^2+\int_S\ip{Cw}{w}\,dV_\omega
+ \geq\int_S\ip{Cw}{w}\,dV_\omega.
+\]
+Use the maximal distributional realizations of $\db$ in $L^2$ and their Hilbert adjoints. Completeness supplies cutoffs with vanishing differential bounds; together with local smoothing, these give compactly supported smooth approximation in the joint graph norm of $\db$ and $\db^*$. The inequality therefore extends to the joint domains. For an unbounded $C$, choose an almost everywhere convergent subsequence of the approximants and apply Fatou's lemma to the nonnegative curvature pairing. The extended inverse and Cauchy--Schwarz give
+\[
+ |(g,w)|^2\leq I(g)\int_S\ip{Cw}{w}\,dV_\omega
+ \leq I(g)\|\db^*w\|^2
+\]
+for $w\in\Ker\db\cap\operatorname{Dom}\db^*$.
+Set $T=\db$ from degree $(r,s-1)$ and $S_1=\db$ from degree $(r,s)$, taking $S_1=0$ if $s=d$. The preceding inequality makes the conjugate-linear functional $T^*w\mapsto(g,w)$ well defined and bounded on $T^*(\Ker S_1\cap\operatorname{Dom}T^*)$. Hahn--Banach and Riesz give $v$ with norm at most $I(g)^{1/2}$ representing this functional.
+
+To obtain the equation against all adjoint tests, let $w\in\operatorname{Dom}T^*$ and decompose $w=w_0+w_\perp$ relative to the closed subspace $\Ker S_1$. Since $\im T\subset\Ker S_1$, every $w_\perp\in(\Ker S_1)^\perp$ belongs to $\operatorname{Dom}T^*$ and satisfies $T^*w_\perp=0$. Hence $w_0\in\Ker S_1\cap\operatorname{Dom}T^*$ and $T^*w=T^*w_0$. Also $(g,w)=(g,w_0)$. Thus
+\[
+ (v,T^*w)=(v,T^*w_0)=(g,w_0)=(g,w).
+\]
+Closedness of $T$ now gives $v\in\operatorname{Dom}T$ and $Tv=g$. No closed-range assumption is required. See also \cite[Chapters 4--5]{Dem12}.
+\end{proof}
+
+In Proposition~\ref{prop:characterization}, apply this lemma to the sum of the nonnegative operator in \eqref{eq:characterization} and $B_A$, and then use \eqref{eq:inverse-order}. The word \emph{optimal} refers to the conventional constant-one bound with the inverse auxiliary operator. It does not assert that every individual coefficient metric has best numerical constant exactly one.
+
+\section{Proof of the top-direct-image theorem}\label{sec:top-proof}
+In this section we write $f=\pi$ to simplify the notation in the direct-image formulas.
+\subsection{Independence of the fiber metric}
+
+\begin{lemma}\label{lem:independence}
+Let $P$ be a compact complex manifold of dimension $n$, and let $(E,h)$ be a smooth Hermitian holomorphic bundle. The density $|a|_{h,\omega}^2dV_\omega$ of an $E$-valued $(0,n)$-form is independent of the Hermitian metric $\omega$ on $P$. Consequently, the quotient $L^2$ metric on $H^{0,n}(P,E)$ and its minimum-norm representative are independent of $\omega$.
+\end{lemma}
+\begin{proof}
+In local coordinates write $a=a_0\,d\bar z_1\wedge\cdots\wedge d\bar z_n$ and let $(g_{j\bar k})$ represent $\omega$. The squared norm of the top antiholomorphic factor is $(\det g)^{-1}$, while the volume density contains $\det g$. These factors cancel. The pointwise norm alone need not be independent of $\omega$; the assertion concerns the norm multiplied by the volume form.
+
+Every $(0,n)$-form is $\db$-closed. Its class is represented by an affine space $a+\db\cA^{0,n-1}(P,E)$, independent of $\omega$. The Hilbert norm on the ambient top-degree space is independent of $\omega$, so its minimum on this affine space and its unique minimizer are independent as well. Hodge theory identifies that minimizer with the harmonic representative. Equivalently, it is the element orthogonal to the closed image of $\db$ in top degree.
+\end{proof}
+
+The same determinant cancellation holds for $(n,0)$-forms. With $c_n=i^{n^2}$, the canonical norm of a holomorphic $E^*$-valued top form is
+\begin{equation}\label{eq:canonical}
+ \norm{s}_{G}^2=c_n\int_P\{s,s\}_{h^*}
+ =\int_P|s|_{h^*,\omega}^2\dV_\omega.
+\end{equation}
+
+\subsection{The isometric duality statement}
+
+\begin{proposition}\label{prop:serre}
+The Serre pairing
+\begin{equation}\label{eq:pairing}
+ H^0(P,K_P\otimes E^*)\times H^{0,n}(P,E)\longrightarrow\C,
+ \qquad (s,[a])\longmapsto\int_P s\wedge a
+\end{equation}
+identifies the metric in Lemma~\ref{lem:independence} with the dual of \eqref{eq:canonical}. In a proper holomorphic family with locally constant $h^n(X_y,E_y)$, it induces an isometric holomorphic isomorphism
+\begin{equation}\label{eq:relative-serre}
+ (R^nf_*E,H)\simeq
+ \bigl(f_*(K_{X/Y}\otimes E^*),G\bigr)^*.
+\end{equation}
+Both metrics are smooth.
+\end{proposition}
+\begin{proof}
+The exterior product includes evaluation $E^*\otimes E\to\C$. In unitary coordinates and bundle frames it gives a pointwise anti-linear isometry
+\[
+ J:\Lambda^{0,n}T^*P\otimes E\longrightarrow
+   \Lambda^{n,0}T^*P\otimes E^*
+\]
+characterized by $s\wedge a=\ip{s}{Ja}_{h^*,\omega}dV_\omega$. The harmless unit complex factor resulting from the order of the exterior factors is included in $J$.
+
+The pairing \eqref{eq:pairing} is complex bilinear, whereas $J$ is anti-linear. The pointwise identification above, with its fixed unit phase, shows that orthogonality of $a$ to every $\db b$ is equivalent to vanishing of the bilinear integral below. Thus, for a smooth $(0,n-1)$-form $b$, the adjoint equation $\db^*a=0$ is equivalent to
+\[
+ \int_P (Ja)\wedge\db b=0\quad\text{for every }b.
+\]
+Integration by parts makes this equivalent to $\db(Ja)=0$. Thus $J$ maps harmonic top-degree forms anti-unitarily onto $H^0(P,K_P\otimes E^*)$. Cauchy--Schwarz in \eqref{eq:pairing} is an equality for $s=Ja_h/\norm{a_h}$ when $a_h\ne0$. Hence
+\begin{equation}\label{eq:dual-norm}
+ \norm{[a]}_H^2
+ =\sup_{s\ne0}\frac{\left|\int_Ps\wedge a\right|^2}{\norm{s}_G^2}.
+\end{equation}
+
+In a family, fiberwise Serre duality gives constant $h^0(X_y,K_{X_y}\otimes E_y^*)$. Grauert's theorem \cite{Gra60} therefore gives local freeness and base change for both bundles. Fiber integration is compatible with their holomorphic structures: locally, pairing a Dolbeault representative of a cohomology section with a holomorphic relative top form commutes with $\db$ on the base, since vertical exact terms integrate to zero. Thus the perfect fiberwise pairing is a holomorphic bundle pairing and gives \eqref{eq:relative-serre}.
+
+A local holomorphic frame of $f_*(K_{X/Y}\otimes E^*)$ is represented by smooth relative forms on the total space. Proper smooth fiber integration makes its Gram matrix $G$ smooth. The matrix is positive definite on every fiber, so its dual matrix and hence $H$ are smooth. Alternatively, smooth dependence of harmonic projections follows from the constant kernel dimension of the family of fiber Laplacians; see also \cite[Lemma 2.8]{BPW22}.
+\end{proof}
+
+\begin{remark}
+Formula~\eqref{eq:dual-norm} is an equality of metrics, not merely one side of Cauchy--Schwarz. This distinction is necessary for transferring a curvature inequality by duality. Local freeness of a coherent direct image, by itself, is not a substitute for checking its identification with the stated fiber cohomology. Our constant-dimension hypotheses supply that identification.
+\end{remark}
+
+
+\subsection{The dense product locus}
+\begin{lemma}\label{lem:product}
+If $f:X\to Y$ is an infinitesimally trivial proper holomorphic submersion, then there is a dense open subset $Y^\circ\subset Y$ such that $f$ is holomorphically locally a product over $Y^\circ$. Locally on $Y$, its complement may be taken to be an analytic subset.
+\end{lemma}
+\begin{proof}
+Put $T_{X/Y}=\Ker(df)$. By semicontinuity and the analytic cohomology-jump-locus theorem, $h^1(X_y,T_{X_y})$ is locally constant away from a proper analytic subset, locally on each connected component of $Y$. Over this open set, cohomology and base change apply to $R^1f_*T_{X/Y}$.
+
+For completeness, the local-triviality argument can be expressed directly through the tangent sequence
+\[
+ 0\longrightarrow T_{X/Y}\longrightarrow T_X
+ \longrightarrow f^*T_Y\longrightarrow0.
+\]
+Its connecting map sends the section $f^*(\partial/\partial t_j)$ to a section of $R^1f_*T_{X/Y}$ whose value at $y$ is $\rho_y(\partial/\partial t_j)$. That value is zero. By local freeness and base change, the connecting section is zero. Exactness therefore gives, after shrinking the base, a holomorphic vector field $V_j$ on $f^{-1}(U)$ with $df(V_j)=\partial/\partial t_j$.
+
+The holomorphic flows exist for a common small range of complex times on a neighborhood of the compact fiber $X_{y_0}$. Composing them in a fixed order, and reversing them in the opposite order, gives a biholomorphism from a product neighborhood onto an open neighborhood $W$ of that fiber. Its projection to the base is the corresponding coordinate translation. To obtain the entire inverse image of a base neighborhood, properness is essential: the image under $f$ of the relatively closed set $f^{-1}(U)\setminus W$ is closed in $U$ and omits $y_0$. Shrinking to a polydisk $U'$ avoiding that image gives $f^{-1}(U')\subset W$. Restricting the flow map over $U'$ therefore gives $U'\times X_{y_0}\simeq f^{-1}(U')$. Commutativity of the vector fields is unnecessary, because the order and its reverse have been fixed.
+\end{proof}
+
+\begin{lemma}\label{lem:extension}
+Let $H$ be a smooth Hermitian metric on a holomorphic vector bundle over $Y$. If $H$ is dual Nakano semipositive on a dense open subset, then it is dual Nakano semipositive on $Y$.
+\end{lemma}
+\begin{proof}
+The curvature of $H^*$ is continuous. Extend any tensor in $T_y^{1,0}Y\otimes\cH_y^*$ to a smooth local tensor and approach $y$ through the dense open set. The Nakano quadratic form of $H^*$ is nonpositive in the limit.
+\end{proof}
+
+We emphasize that Lemma~\ref{lem:extension} uses a smooth metric already defined everywhere. It is not a removable-singularity assertion for a singular Hermitian metric.
+
+
+\subsection{The negative-adjoint curvature identity}
+Work on $U\times P$ and put $\cF=p_*(K_P\otimes V)$. Assume that its fiber dimension is constant. Its metric $G$ is obtained by integrating the canonical density. Let $P_t$ be the orthogonal projection of smooth $V_t$-valued $(n,0)$-forms onto $\cF_t$. The Chern connection of $V$ in the horizontal direction $\partial/\partial t_j$ defines an operator $\nabla_j$ on these forms: in product fiber coordinates it differentiates the coefficient using the connection of $V$. The fiber canonical factor is independent of $t$.
+
+\begin{lemma}\label{lem:projected}
+The $(1,0)$ part of the Chern connection of $(\cF,G)$ is
+\[
+ D^{\cF}_j s=P_t\nabla_j s.
+\]
+If $B_js=(1-P_t)\nabla_js$, then for $s,r\in\cF_t$,
+\begin{equation}\label{eq:curvature}
+ \ip{R^{\cF}_{j\bar k}s}{r}_G
+ =\int_P\ip{R^V_{j\bar k}s}{r}_{k,\omega_P}\dV_{\omega_P}
+   -\ip{B_js}{B_kr}_{L^2}.
+\end{equation}
+Here $R^V_{j\bar k}$ denotes curvature evaluated on the horizontal product lifts.
+\end{lemma}
+\begin{proof}
+Metric compatibility and differentiation under the fiber integral show that $P_t\nabla_j$ is metric compatible. Its $(0,1)$ part is the holomorphic direct-image structure, so it is the Chern connection.
+
+To verify \eqref{eq:curvature}, fix $t_0$ and extend $s,r$ as holomorphic sections of $\cF$ that are normal at $t_0$ for this connection. Their representatives are jointly holomorphic relative top forms. The identity $\db_k\nabla_js=-R^V_{j\bar k}s$ gives at $t_0$
+\[
+ \partial_j\bar\partial_k\ip{s}{r}_G
+ =-\int_P\ip{R^V_{j\bar k}s}{r}\dV_{\omega_P}
+   +\ip{\nabla_js}{\nabla_kr}_{L^2}.
+\]
+In a normal holomorphic frame the negative of this mixed derivative is the curvature pairing. Normality also implies $P_{t_0}\nabla_js=P_{t_0}\nabla_kr=0$, so the last term is $\ip{B_js}{B_kr}$. This proves the formula, which is tensorial.
+\end{proof}
+
+\begin{proposition}\label{prop:negative-product}
+If the horizontal curvature of $(V,k)$ is Nakano seminegative on $U\times P$, then $(\cF,G)$ is Nakano seminegative.
+\end{proposition}
+\begin{proof}
+For arbitrary $s_1,\ldots,s_m\in\cF_t$, summing \eqref{eq:curvature} gives
+\begin{equation}\label{eq:nakano-curvature}
+ \sum_{j,k}\ip{R^{\cF}_{j\bar k}s_j}{s_k}_G
+ =\int_P\sum_{j,k}\ip{R^V_{j\bar k}s_j}{s_k}\dV_{\omega_P}
+   -\norm{\sum_j B_js_j}_{L^2}^2\leq0.
+\end{equation}
+Indeed, in a unitary fiber canonical frame the coefficients of the $s_j$ form a tuple of vectors of $V$. The first integrand is nonpositive by the assumed horizontal Nakano inequality. The second term is the negative of a squared norm. The full multi-section sum, rather than just the case $s_j=\xi_js$, gives the Nakano conclusion.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:top}]
+By Proposition~\ref{prop:serre}, $H$ is smooth and is isometrically dual to the canonical metric on $f_*(K_{X/Y}\otimes E^*)$. On the dense product locus supplied by Lemma~\ref{lem:product}, take $V=E^*$ in Proposition~\ref{prop:negative-product}. Its total-space Nakano seminegativity implies the horizontal inequality required there. The canonical direct image is therefore Nakano seminegative, and its dual is dual Nakano semipositive. Lemma~\ref{lem:extension} extends the inequality to every point of $Y$. If $\dim Y=0$ or the direct image has rank zero, the curvature assertion is vacuous.
+\end{proof}
+
+\begin{corollary}\label{cor:consequences}
+Under the geometric and constant-dimension hypotheses of Theorem~\ref{thm:top}:
+\begin{enumerate}
+\item A smooth Nakano-seminegative coefficient $(V,k)$ gives a Nakano-seminegative canonical metric on $f_*(K_{X/Y}\otimes V)$, provided its fiber dimension is constant.
+\item If $(E,h)$ is unitary flat, the harmonic metric on $R^nf_*E$ is Hermitian flat.
+\item If $(E,h)$ is dual Nakano semipositive and $Y$ is projective, $R^nf_*E$ is nef and its determinant has a smooth semipositive metric.
+\end{enumerate}
+Moreover, if $(E,he^{f^*\varphi})$ is dual Nakano semipositive for a smooth base function $\varphi$, then
+\begin{equation}\label{eq:scalar-bound}
+ i\Theta_H-i\ddbar\varphi\otimes\Id\geq_{\dNak}0.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The first assertion is metric Serre duality applied to $V^*$. For the second, work on a product chart: flatness gives $\db_P\nabla_js=\nabla_j\db_Ps=0$ for holomorphic relative top forms, so both the ambient curvature and the second-fundamental term in \eqref{eq:curvature} vanish. Extend the resulting identity by smoothness. Dual Nakano semipositivity implies Griffiths semipositivity; the quotient metric on the tautological line of $\mathbb P(R^nf_*E)$ is semipositive, proving nefness, while tracing curvature proves the determinant assertion. Finally, scalar rescaling by $e^{\varphi(y)}$ leaves the fiber harmonic representative unchanged and multiplies its norm by that factor, giving \eqref{eq:scalar-bound}.
+\end{proof}
+
+\section{Proof of the product descent theorem}\label{sec:product-proof}
+Set $N=m+n$, $R=a+p$, and $S=b+q$. In range (i), $R=N$ and $S\geq1$; in range (ii), $S=N$ and $R\geq1$. All norms in this section use the specified product metric and the stated coefficient metrics.
+
+\subsection{The fixed harmonic space and the closed lift}
+Put
+\[
+ V=H^q(Z,\Omega_Z^p\otimes M)
+      \simeq\cH^{p,q}(Z,M).
+\]
+The projection formula and product base change give a holomorphic identification
+\begin{equation}\label{eq:product-isometry}
+ (\cF,H)\simeq(G,h_G)\otimes(V,H_Z),
+\end{equation}
+where $H_Z$ is the harmonic inner product defined by $(\omega_Z,h_M)$. It is an isometry: in a local frame of $G$, the full fiber inner product is $h_G(y)H_Z$. This scalar is constant along $Z$ and changes neither the harmonic space nor its orthogonal projection $P_Z$. In particular, local freeness and constancy of cohomology require no additional assumption here. If $V=0$, the theorem is immediate; assume $\dim V=d_0>0$ and choose a fixed $H_Z$-orthonormal harmonic basis $\alpha_1,\ldots,\alpha_{d_0}$.
+
+Fix a positive auxiliary line bundle $(A,h_A)$ on $Y$. The following lemma records the domain issue needed for descent. All exterior products are ordered with the entire base form before the entire fiber form.
+
+\begin{lemma}[Bounded harmonic chain retraction]\label{lem:chain-retraction}
+For $0\leq j\leq m$, exterior product defines an isometry
+\[
+ J_j:L^2_{a,j}(Y,\cF\otimes A)
+       \longrightarrow L^2_{a+p,j+q}(X,L\otimes\pi^*A),
+ \qquad
+ J_jv=\sum_\nu\operatorname{pr}_Y^*v_\nu\wedge
+                         \operatorname{pr}_Z^*\alpha_\nu.
+\]
+Its Hilbert adjoint $\Pi_j=J_j^*$ is a contraction and
+$\Pi_jJ_j=\Id$. For $0\leq j<m$ it satisfies
+\begin{equation}\label{eq:chain-retraction}
+ \db_Y\Pi_jW=\Pi_{j+1}\db_XW
+\end{equation}
+whenever $W$ belongs to the maximal $L^2$ domain of $\db_X$ in degree $(a+p,j+q)$. In particular, $\Pi_jW$ belongs to the maximal domain of $\db_Y$. The corresponding lift satisfies $\db_XJ_jv=J_{j+1}\db_Yv$ on maximal domains. For $j=m$, $\db_XJ_mv=0$.
+\end{lemma}
+\begin{proof}
+The product volume identity and the integrated orthonormality of the $\alpha_\nu$ give $\|J_jv\|_X^2=\|v\|_Y^2$. This is an $L^2$ isometry; no pointwise orthonormality of the forms $\alpha_\nu(z)$ is asserted. The adjoint $\Pi_j$ first extracts the component with horizontal type $(a,j)$ and vertical type $(p,q)$, then projects its fiber coefficients onto $V$ using $P_Z$, and finally reads the resulting coefficients as a form on $Y$. The scalar factors from $h_G(y)$ and $h_A(y)$ occur in both inner products and cancel in this coefficient projection. Thus $\Pi_j$ is globally defined, $\|\Pi_j\|\leq1$, and $\Pi_jJ_j=\Id$.
+
+The product holomorphic cotangent splitting is preserved by $\db_X$. In that splitting write $W_{r,k}$ for the component with horizontal type $(a,r)$ and vertical type $(p,k)$. The component of $\db_XW$ with antiholomorphic degrees $(j+1,q)$ is
+\begin{equation}\label{eq:component-product}
+ (\db_XW)_{j+1,q}
+   =\db_YW_{j,q}+(-1)^{a+j+1}\db_ZW_{j+1,q-1},
+\end{equation}
+where the second term is absent if $q=0$. The sign follows from the base-before-fiber ordering. The identity holds in distributions for every $L^2$ form $W$; neither derivative on its right need separately belong to $L^2$.
+
+Pair fiber coefficients with the smooth harmonic test forms $\alpha_\nu$ and use compactly supported tests on the base. The operator $P_Z$, defined by the fixed reference metric $(\omega_Z,h_M)$, commutes with horizontal distributional differentiation in a holomorphic frame of $G\otimes A$. Integration by parts on compact $Z$ kills the vertical term because $\db_Z^*\alpha_\nu=0$. This proves \eqref{eq:chain-retraction} distributionally. If $\db_XW$ is $L^2$, its projected right side is $L^2$, which proves the maximal-domain assertion. The lift identity follows in the same way from $\db_Z\alpha_\nu=0$ and independence of $y$; in top base antiholomorphic degree its horizontal derivative vanishes.
+\end{proof}
+
+Now take the datum $f$ of Theorem~\ref{thm:product-descent} and write $J=J_b$. Its lift
+\begin{equation}\label{eq:harmonic-lift}
+ Jf=\sum_\nu\operatorname{pr}_Y^*f_\nu\wedge
+                    \operatorname{pr}_Z^*\alpha_\nu
+\end{equation}
+is globally defined, smooth, and compactly supported because $Z$ is compact. The lemma gives
+\begin{equation}\label{eq:lift-properties}
+ \db_XJf=0,\qquad \|Jf\|_X^2=\|f\|_Y^2.
+\end{equation}
+
+\subsection{Curvature and the exact inverse-energy identity}
+The product metric on $X$ is complete. Moreover, $X$ admits a positive Hermitian holomorphic line bundle: take the external product of a positive line bundle on $Y$ and an ample line bundle on $Z$ with a positive metric. Proposition~\ref{prop:characterization} therefore applies to the hypothesis of Theorem~\ref{thm:product-descent} and gives
+\begin{equation}\label{eq:total-curvature}
+ C_L=[i\Theta_{L,h},\Lambda_{\omega_X}]_{R,S}\geq0.
+\end{equation}
+This is the only use of the assumed total-space optimal estimate condition.
+
+Let
+\[
+ B_X=[i\pi^*\Theta_{A,h_A},\Lambda_{\omega_X}]_{R,S},
+ \qquad B_Y=[i\Theta_{A,h_A},\Lambda_{\omega_Y}]_{a,b}.
+\]
+At a point, diagonalize $i\Theta_A$ in a base unitary coframe, with eigenvalues $\lambda_1,\ldots,\lambda_m>0$. If a product monomial has horizontal holomorphic indices $I$ and antiholomorphic indices $J_0$, the eigenvalue of $B_X$ is
+\begin{equation}\label{eq:pullback-eigenvalue}
+ \sum_{i\in I}\lambda_i+\sum_{j\in J_0}\lambda_j
+                      -\sum_{k=1}^m\lambda_k.
+\end{equation}
+In range (i), total holomorphic degree $N$ forces $I=\{1,\ldots,m\}$, so this is $\sum_{j\in J_0}\lambda_j\geq0$. In range (ii), total antiholomorphic degree $N$ forces $J_0=\{1,\ldots,m\}$, so it is $\sum_{i\in I}\lambda_i\geq0$. Consequently,
+\begin{equation}\label{eq:whole-nonnegative}
+ B_X\geq0\quad\hbox{on the entire total degree }(R,S),
+ \qquad B_XJ=JB_Y.
+\end{equation}
+The first assertion includes components outside the image of $J$ and is needed for the operator-order argument. On the lifted component $B_Y$ is strictly positive, since $b\geq1$ in (i) and $a\geq1$ in (ii). Thus $Jf$ is pointwise orthogonal to $\Ker B_X$.
+
+On this product block the inverse acts only in the base directions, so $B_X^\dagger Jf=J(B_Y^{-1}f)$. The product isometry and Fubini therefore give the exact identity
+\begin{equation}\label{eq:inverse-energy}
+ \int_X q_{B_X}(Jf)\,dV_X
+   =\int_Y\ip{B_Y^{-1}f}{f}_{H\otimes h_A,\omega_Y}\,dV_Y.
+\end{equation}
+This quantity is finite because $f$ has compact support. The operator $B_X$ itself need not be invertible, so an ordinary inverse on the entire total degree would be incorrect.
+
+\subsection{Solving upstairs and descending a weak solution}
+For the actual metric on $L\otimes\pi^*A$, the curvature commutator is
+\[
+ C=C_L+B_X\geq B_X\geq0.
+\]
+By Lemma~\ref{lem:complete-estimate}, \eqref{eq:inverse-order}, and \eqref{eq:inverse-energy}, there is
+$U\in L^2_{R,S-1}(X,L\otimes\pi^*A)$ satisfying
+\begin{equation}\label{eq:upstairs-product}
+ \db_XU=Jf,\qquad
+ \|U\|_X^2\leq\int_Xq_C(Jf)\,dV_X
+       \leq\int_Y\ip{B_Y^{-1}f}{f}\,dV_Y.
+\end{equation}
+No assertion of smoothness of $U$ is needed.
+
+Since $J_bf$ belongs to $L^2$, the equation places $U$ in the maximal domain of $\db_X$. Set $u=\Pi_{b-1}U$. Lemma~\ref{lem:chain-retraction} now gives, in distributions,
+\[
+ \db_Yu=\Pi_b\db_XU=\Pi_bJ_bf=f.
+\]
+Here $b\geq1$ in both ranges, so $\Pi_{b-1}$ is defined. Contractivity gives
+\begin{equation}\label{eq:descent-contraction}
+ \|u\|_Y^2=\|\Pi_{b-1}U\|_Y^2\leq\|U\|_X^2.
+\end{equation}
+Combining this with \eqref{eq:upstairs-product} proves \eqref{eq:main-product-estimate} for every positive auxiliary $A$, and completes the proof of Theorem~\ref{thm:product-descent}. In particular, the argument requires neither smoothness of $U$ nor separate $L^2$ bounds for its horizontal and vertical derivatives.
+
+\begin{remark}
+The assumption tests positive auxiliary line bundles on $X$. The proof does not apply that assumption directly to $\pi^*A$, nor does it require fractional powers of an ample line bundle on $Z$. It uses the smooth curvature characterization first and then the semidefinite complete K\"ahler estimate. This accounts for the zero vertical curvature of the pulled-back auxiliary metric.
+\end{remark}
+
+\subsection{A curvature verification without solving upstairs}\label{sec:curvature-verification}
+There is a short second proof after the same use of Proposition~\ref{prop:characterization} to obtain \eqref{eq:total-curvature}. It is independent of the upstairs solution, but not of that imported characterization. Write
+$C_G=[i\Theta_G,\Lambda_Y]_{a,b}$ and
+$C_M=[i\Theta_M,\Lambda_Z]_{p,q}$.
+On the product component with these bidegrees, curvature separates:
+\begin{equation}\label{eq:split-curvature}
+ C_L=C_G\otimes\Id+\Id\otimes C_M.
+\end{equation}
+Fix $y$, a base form $\xi$ with values in $G_y$, and a nonzero harmonic form $\alpha\in V$. Integrate the nonnegative total curvature pairing from \eqref{eq:total-curvature} over $Z$. The compact-fiber Bochner identity gives
+\[
+ \int_Z\ip{C_M\alpha}{\alpha}\,dV_Z
+   =-\|D'_M\alpha\|^2-\|(D'_M)^*\alpha\|^2\leq0.
+\]
+Consequently,
+\begin{equation}\label{eq:independent-check}
+ \ip{C_G\xi}{\xi}\,\|\alpha\|^2
+ \geq\|\xi\|^2
+       \bigl(\|D'_M\alpha\|^2+\|(D'_M)^*\alpha\|^2\bigr)
+ \geq0.
+\end{equation}
+By \eqref{eq:product-isometry}, the curvature commutator of $\cF$ is $C_G\otimes\Id_V$, so the complete-base estimate gives the same conclusion. This calculation shows explicitly that Theorem~\ref{thm:product-descent} is a product consequence of established curvature and Bochner theory. It also works in other product bidegrees if total curvature-commutator semipositivity is imposed directly and the auxiliary base operators are positive. It does not supply a characterization of optimal estimates in arbitrary bidegrees.
+
+In Theorem~\ref{thm:product-descent}, projectivity of $Z$ supplies a positive line bundle on $X$ for the curvature-characterization step. Compactness and the K\"ahler property suffice for the fiberwise Hodge and Bochner arguments. In particular, if \eqref{eq:total-curvature} is assumed directly, a compact K\"ahler $Z$ suffices for the proof in the stated extremal ranges. These observations concern sufficient hypotheses; no necessity claim is made.
+
+\section{Examples and the limits of descent}\label{sec:examples}
+
+\subsection{A nonzero higher direct image with degree-specific positivity}
+Take $Y=\C^2$ with $\omega_Y=i(dy_1\wedge d\bar y_1+dy_2\wedge d\bar y_2)$, and let $G$ be the trivial line with metric
+\[
+ h_G=e^{-\varphi},\qquad
+ \varphi(y_1,y_2)=-|y_1|^2+2|y_2|^2.
+\]
+Take $Z=\mathbb P^1$ with a fixed K\"ahler metric and $M=\cO_Z$ with its flat metric. Put $(a,b,p,q)=(2,2,1,1)$, so range (i) applies. The curvature eigenvalues on $X$ are $-1,2,0$, and in total degree $(3,3)$ the curvature commutator is their sum, namely $1$. Lemma~\ref{lem:complete-estimate} therefore gives the required total-space optimal condition. Since
+\[
+ H^1(\mathbb P^1,K_{\mathbb P^1})\simeq\C,
+\]
+the direct image is $G$ tensored with a fixed one-dimensional Hermitian space, and Theorem~\ref{thm:product-descent} gives its optimal $(2,2)$ estimate. Its line curvature still has a negative eigenvalue. Thus this conclusion is a positivity statement in the specified degree, not Griffiths or Nakano semipositivity of the line metric. The example has $q>0$ and nonzero direct image. Since the induced metric is the original scalar metric up to a fixed factor, the example illustrates degree dependence rather than a new curvature effect of higher direct images.
+
+\subsection{Why the deformation hypothesis matters}
+On a disk in the upper half-plane consider the elliptic family
+$X_\tau=\C/(\mathbb Z+\tau\mathbb Z)$ and the flat coefficient $\cO_X$.
+It has K\"ahler total space after shrinking the disk: the invariant closed relative form
+\[
+ i\ddbar\frac{(\operatorname{Im}z)^2}{\operatorname{Im}\tau}
+\]
+is fiberwise positive and becomes K\"ahler after adding a positive base form. The holomorphic frame $dz$ of $\pi_*K_{X/Y}$ has squared norm $c\operatorname{Im}\tau$, with $c>0$. Its Serre-dual frame on $R^1\pi_*\cO_X$ therefore has metric $(c\operatorname{Im}\tau)^{-1}$ and curvature
+\[
+ i\Theta_{R^1\pi_*\cO_X}
+   =-\frac{i\,d\tau\wedge d\bar\tau}
+               {4(\operatorname{Im}\tau)^2}<0.
+\]
+The Kodaira--Spencer map is nonzero. This disproves removal of the deformation hypothesis in Theorem~\ref{thm:top}, even with flat coefficients.
+
+\subsection{A product manifold with varying harmonic representatives}
+Let $Z$ be an elliptic curve with flat area normalized to one. On a product disk times $Z$, equip the holomorphically trivial line bundle with
+\[
+ h_t(z)=e^{-(t+\bar t)\chi(z)},
+\]
+where $\chi$ is a nonconstant smooth real function. No curvature sign is imposed. A harmonic representative of a fixed nonzero class in $H^{0,1}(Z,\cO_Z)$ is
+\[
+ \alpha_t=\frac{e^{(t+\bar t)\chi}}{I(t)}\,d\bar z,
+ \qquad I(t)=\int_Ze^{(t+\bar t)\chi}\,dV_Z.
+\]
+Indeed, $h_t\alpha_t$ has constant coefficient and the integral of the coefficient of $\alpha_t$ is fixed. Nevertheless,
+\[
+ \left.\frac{\partial\alpha_t}{\partial\bar t}\right|_{t=0}
+ =\left(\chi-\int_Z\chi\,dV_Z\right)d\bar z\ne0.
+\]
+This derivative is exact with zero harmonic projection. A product manifold alone therefore does not make the naive harmonic lift a chain map. The metric splitting in Theorem~\ref{thm:product-descent} makes $P_Z$ independent of the base and eliminates this obstruction in the proof. The example imposes no total-space optimal estimate hypothesis and is not a counterexample to a descent theorem with other assumptions; in particular, it does not prove that metric splitting is necessary for the conclusion.
+
+\section{Removing metric splitting on a fixed product}\label{sec:variable-metric}
+
+Keep the product geometry and the holomorphic external-product line bundle of Theorem~\ref{thm:product-descent}, but now give $L=G\boxtimes M$ an arbitrary smooth Hermitian metric $h$. Only the Hermitian splitting is removed. The holomorphic bundle is still
+\[
+ \cF\simeq G\otimes V,\qquad
+ V=H^q(Z,\Omega_Z^p\otimes M),
+\]
+but its harmonic metric need not be a tensor product with a fixed metric on $V$. Write $\mathcal H_y=\cH^{p,q}(Z,L_y)$ and denote harmonic projection by $P_y$, with $Q_y=\Id-P_y$. These projections vary smoothly by elliptic theory. If $V=0$ the assertions are vacuous; below assume $\dim V>0$.
+
+\subsection{Quantities measuring the variation}
+Let $D$ be the horizontal Chern connection on the bundle of smooth vertical $(p,q)$-forms. The fiber K\"ahler metric is fixed, so in product holomorphic frames with $h=e^{-\phi}$,
+\[
+ D_i=\partial_i-\phi_i,\qquad D_{\bar i}=\partial_{\bar i}.
+\]
+At each base point choose an $\omega_Y$-unitary frame and put
+\begin{equation}\label{eq:product-variation-tensors}
+ B_i=QD_iP,\qquad C_i=QD_{\bar i}P,\qquad
+ \kappa(y)=\sum_{i=1}^m
+     \bigl(\|B_i\|_{\mathrm{HS}}^2+\|C_i\|_{\mathrm{HS}}^2\bigr).
+\end{equation}
+Here $B_i,C_i:\mathcal H_y\to\mathcal H_y^\perp$ are tensors: the projected derivatives are independent of the extension of a harmonic vector. Their Hilbert--Schmidt norms use the actual fiber metric $h_y$. The sum is independent of the unitary base frame.
+
+Let $D'_{Z,y}$ be the vertical $(1,0)$ Chern operator. Define a nonnegative Hermitian operator $\mathcal E_y$ on $\mathcal H_y$ by
+\begin{equation}\label{eq:fiber-energy-operator}
+ \ip{\mathcal E_y\alpha}{\beta}
+   =(D'_{Z,y}\alpha,D'_{Z,y}\beta)_{Z,y}
+       +((D'_{Z,y})^*\alpha,(D'_{Z,y})^*\beta)_{Z,y},
+ \qquad e(y)=\lambda_{\min}(\mathcal E_y).
+\end{equation}
+For $R=a+p$, $S=b+q$, set
+\begin{equation}\label{eq:total-margin}
+ C_L=[i\Theta_{L,h},\Lambda_{\omega_X}]_{R,S},
+ \qquad
+ \mu(y)=\min_{z\in Z}\lambda_{\min}\bigl(C_L(y,z)\bigr).
+\end{equation}
+The minimum exists by compactness. Under the total-space optimal estimate hypothesis in either range \eqref{eq:ranges}, Proposition~\ref{prop:characterization} gives $\mu\geq0$. These quantities use the coefficient metric, the fiber Laplacian, and its harmonic space; they do not assume a curvature inequality for $H$.
+
+\begin{theorem}[Descent with a nonsplit coefficient metric]\label{thm:variable-metric}
+Let $(Y,\omega_Y)$, $(Z,\omega_Z)$, $X$, and the holomorphic line bundle $L=G\boxtimes M$ be as in Theorem~\ref{thm:product-descent}. Let $h$ be any smooth Hermitian metric on $L$, and equip $\cF$ with its fiberwise harmonic metric $H$. Suppose $(L,h)$ satisfies the optimal $(a+p,b+q)$ estimate condition in one of the ranges \eqref{eq:ranges}.
+\begin{enumerate}
+\item In range \textnormal{(ii)}, namely $b=m$, $q=n$, and $1\leq a\leq m$, the metric $H$ satisfies the optimal $(a,m)$ estimate condition without any additional variation assumption.
+\item In range \textnormal{(i)}, the same conclusion as Theorem~\ref{thm:product-descent} holds if, at every $y\in Y$,
+\begin{equation}\label{eq:variation-budget}
+ \boxed{\quad \mu(y)+e(y)\ \geq\ 2m^2\kappa(y).\quad}
+\end{equation}
+In fact this sufficient condition works in both ranges.
+\end{enumerate}
+In each case the conclusion is exactly \eqref{eq:main-product-estimate}, with constant one, for every positive auxiliary line metric on $Y$ and every compactly supported smooth closed datum.
+\end{theorem}
+
+The curvature margin $\mu$ is included deliberately. The fiber energy $e$ can be zero, for example for holomorphic fiber $(n,0)$-forms. Positive total curvature can still absorb a small amount of harmonic variation. No semipositivity of $i\Theta_L$ as a $(1,1)$-form, no uniform global spectral gap, and no assertion that \eqref{eq:variation-budget} is necessary are part of the theorem.
+
+\subsection{Top antiholomorphic degrees: lifting and cohomological descent}
+\begin{proof}[Proof of Theorem~\ref{thm:variable-metric}(1)]
+Here $q=n$ and $b=m$. Fix a positive auxiliary line bundle $(A,h_A)$ on $Y$. Choose a basis $v_\nu$ of $H^n(Z,\Omega_Z^p\otimes M)$ and let $\alpha_\nu(y)$ be its smoothly varying harmonic representatives. For base forms define
+\[
+ J_jv=\sum_\nu\operatorname{pr}_Y^*v_\nu\wedge\alpha_\nu(y),
+ \qquad 0\leq j\leq m.
+\]
+This is an $L^2$ isometry by the definition of $H$, using the varying Gram matrix of the $\alpha_\nu$. No fixed fiber orthonormal basis is being assumed.
+
+For an arbitrary total $L^2$ form $W$ of degree $(a+p,j+n)$, define $\Pi_jW$ by extracting horizontal type $(a,j)$ and vertical type $(p,n)$ and then taking its vertical cohomology class. Every vertical $(p,n)$ coefficient is closed. The minimum-norm characterization \eqref{eq:minimum} therefore gives
+\begin{equation}\label{eq:top-cohomology-contraction}
+ \Pi_jJ_j=\Id,\qquad
+ \|\Pi_jW\|_{H\otimes h_A,\omega_Y}\leq
+       \|W\|_{h\otimes\pi^*h_A,\omega_X}.
+\end{equation}
+For $L^2$ coefficients, the class map can equivalently be defined by their fiber integrals against a fixed Serre-dual basis in $H^0(Z,\Omega_Z^{n-p}\otimes M^*)$. On smooth coefficients this is the class of the harmonic projection; density and the minimum-norm inequality extend it continuously to $L^2$. Thus $\Pi_j$ is independent of $h$ as a cohomology-valued map in a holomorphic frame of $G$, although its realization by harmonic representatives depends on $h$.
+
+The component identity \eqref{eq:component-product}, with $q=n$, has only a horizontal derivative and a vertically exact term contributing to the target. Fiber integration against the Serre-dual basis commutes with horizontal distributional differentiation, and Stokes' theorem kills the vertical exact term. Consequently,
+\begin{equation}\label{eq:top-cohomology-chain}
+ \db_{\cF}\Pi_jW=\Pi_{j+1}\db_XW,\qquad 0\leq j<m,
+\end{equation}
+on maximal $L^2$ domains. The right side is $L^2$ by \eqref{eq:top-cohomology-contraction}, which also justifies the domain assertion. This argument does not differentiate $P_y$.
+
+For a test datum $f\in A_c^{a,m}(Y,\cF\otimes A)$, the lift $J_mf$ has total antiholomorphic degree $m+n$. It is therefore automatically $\db_X$-closed, despite the variation of the $\alpha_\nu$. It is smooth and compactly supported. The operators $B_X,B_Y$ from Section~\ref{sec:product-proof} depend only on the auxiliary metric and the product K\"ahler form. Hence $B_X\geq0$ on the entire total degree, and
+\[
+ B_XJ_m=J_mB_Y,\qquad
+ \int_Xq_{B_X}(J_mf)\,dV_X
+    =\int_Y\ip{B_Y^{-1}f}{f}_{H\otimes h_A}\,dV_Y.
+\]
+The inverse identity uses the varying harmonic isometry, so it remains valid without metric splitting. Since $C_L\geq0$, Lemma~\ref{lem:complete-estimate} applied to $C_L+B_X$ gives $U$ with $\db_XU=J_mf$ and the indicated norm bound. Set $u=\Pi_{m-1}U$. Equations \eqref{eq:top-cohomology-contraction}--\eqref{eq:top-cohomology-chain} give $\db_{\cF}u=f$ and the same bound for $u$. No identity asserting that $J_j$ is a chain map for $j<m$ is used or generally true.
+\end{proof}
+
+\subsection{Curvature compression and the variation bound}
+\begin{proof}[Proof of Theorem~\ref{thm:variable-metric}(2)]
+The horizontal connection $D$ is metric compatible for fiber integration because $\omega_Z$ is fixed. Its $(0,1)$ part commutes with the fixed vertical Dolbeault operator and induces the holomorphic cohomology connection. Thus $PD$ is the Chern connection of $(\cF,H)$. Orthogonal projection gives
+\begin{equation}\label{eq:variable-gauss}
+ R^{\cF}_{i\bar j}
+    =P R^L_{i\bar j}P-B_j^\dagger B_i+C_i^\dagger C_j,
+\end{equation}
+where $R^L_{i\bar j}$ is multiplication by the horizontal coefficient curvature. This follows by expanding the curvature of $PD$ and using metric compatibility to identify the off-diagonal adjoints; it is the fixed-product form of the general projection formulas in \cite[Main Theorem 1 and Section 7]{CS24}.
+
+Write $\mathcal K^{a,b}=[iP\Theta_L^{\mathrm{hor}}P,\Lambda_Y]_{a,b}$. At a fixed $y$, lift a base $(a,b)$-form $\eta$ with values in $\mathcal H_y$ to the product by its harmonic fiber coefficients, denoting the lift by $\widehat\eta$. This is an algebraic isometry after fiber integration, with no claim that the lift is closed. Mixed horizontal--vertical curvature terms change the product bidegree block and are orthogonal to $\widehat\eta$. The remaining vertical term is governed by the compact-fiber identity
+\[
+ \int_Z\ip{[i\Theta_{L_y,h_y},\Lambda_Z]\alpha}{\alpha}\,dV_Z
+     =-\|D'_{Z,y}\alpha\|^2-\|(D'_{Z,y})^*\alpha\|^2
+     =-\ip{\mathcal E_y\alpha}{\alpha}
+\]
+for harmonic $\alpha$. Applying this to the fiber coefficients and polarizing yields
+\begin{equation}\label{eq:variable-compression}
+ \begin{split}
+ \ip{\mathcal K^{a,b}\eta}{\eta}
+   &=\int_Z\ip{C_L\widehat\eta}{\widehat\eta}\,dV_Z
+       +\ip{(\Id\otimes\mathcal E_y)\eta}{\eta}\\
+   &\geq (\mu(y)+e(y))\,\|\eta\|^2.
+ \end{split}
+\end{equation}
+This is where the total-space estimate hypothesis, through its curvature characterization, enters the variation argument.
+
+Let $S_{i\bar j}=-B_j^\dagger B_i+C_i^\dagger C_j$. Cauchy--Schwarz gives
+\[
+ \sum_{i,j}\|S_{i\bar j}\|_{\mathrm{op}}
+   \leq m\sum_i(\|B_i\|_{\mathrm{op}}^2+\|C_i\|_{\mathrm{op}}^2)
+   \leq m\kappa.
+\]
+Exterior multiplication by a unit elementary two-form has norm at most one, and $\|\Lambda_Y\|\leq m$. Hence
+\[
+ \left\|\left[i\sum_{i,j}S_{i\bar j}\,dy^i\wedge d\bar y^j,
+                         \Lambda_Y\right]\right\|_{\mathrm{op}}
+       \leq2m^2\kappa.
+\]
+Combining this bound with \eqref{eq:variable-gauss}--\eqref{eq:variable-compression} proves
+\begin{equation}\label{eq:variable-curvature-lower}
+ [i\Theta_{\cF,H},\Lambda_Y]_{a,b}
+       \geq(\mu+e-2m^2\kappa)\Id\geq0.
+\end{equation}
+The complete-base estimate, tensoring with each positive $A$ and using inverse order, gives \eqref{eq:main-product-estimate}. This proof controls harmonic variation through curvature; it does not claim that a varying harmonic lift is a chain map in range (i).
+\end{proof}
+
+\subsection{Controlling variation by mixed curvature}
+The tensors in \eqref{eq:product-variation-tensors} can be estimated without differentiating a chosen harmonic basis. Choose reference product metrics and write
+\[
+ h=e^{-\psi}(h_G^0\boxtimes h_M^0),\qquad \psi\in C^\infty(X,\mathbb R).
+\]
+Let $\delta=\db_Z$, with adjoint $\delta_y^*$ for $h_y$, and denote by $P_{\mathrm{ex}},P_{\mathrm{coex}}$ the projections onto $\im\delta$ and $\im\delta_y^*$ in vertical degree $(p,q)$. Then
+\begin{equation}\label{eq:variation-multipliers}
+ B_i=-P_{\mathrm{coex}}(\psi_i\,\cdot)P,
+ \qquad C_i=P_{\mathrm{ex}}(\psi_{\bar i}\,\cdot)P.
+\end{equation}
+Indeed, derivatives of representatives of a fixed cohomology class are vertically exact. Differentiating $\delta_y^*\alpha=0$, using
+$\delta_y^*=e^\psi\delta_0^*e^{-\psi}$, shows that their exact parts are the corresponding projections of $\psi_i\alpha$ and $\psi_{\bar i}\alpha$. Also $[D_i,\delta_y^*]=0$, so $QD_i\alpha$ is coexact, proving \eqref{eq:variation-multipliers}. In particular, $B_i=0$ if $q=n$ and $C_i=0$ if $q=0$. Neither identity forces the other tensor to vanish.
+
+For a more intrinsic estimate, set
+\[
+ T_i=[\delta,D_i]=-(\db_Z\psi_i)\wedge\cdot.
+\]
+This is the mixed coefficient-curvature operator. Let $G_{q+1},G_{q-1}$ be the fiber Green operators in the indicated antiholomorphic degrees. The harmonic equations imply
+$\delta B_i=T_iP$ and $\delta_y^*C_i=T_i^*P$. Since $B_i$ is coexact and $C_i$ exact, the minimum-norm solutions are
+\begin{equation}\label{eq:mixed-green-variation}
+ B_i=\delta_y^*G_{q+1}T_iP,
+ \qquad C_i=\delta G_{q-1}T_i^*P.
+\end{equation}
+The sources $T_iP$ and $T_i^*P$ are respectively exact and coexact, so they are orthogonal to the relevant harmonic kernels. In particular,
+$\|B_i\alpha\|^2=(G_{q+1}T_i\alpha,T_i\alpha)$ and
+$\|C_i\alpha\|^2=(G_{q-1}T_i^*\alpha,T_i^*\alpha)$.
+The term involving $q+1$ is omitted for $q=n$, and the term involving $q-1$ for $q=0$. If $\gamma_{q\pm1}(y)>0$ are lower bounds for the positive spectra of these fiber Laplacians, these energy identities give
+\begin{equation}\label{eq:mixed-variation-bound}
+ \kappa(y)\leq \mathcal V(y):=
+ \sum_i\left(
+   \gamma_{q+1}^{-1}\|T_iP\|_{\mathrm{HS}}^2
+   +\gamma_{q-1}^{-1}\|T_i^*P\|_{\mathrm{HS}}^2\right),
+\end{equation}
+again omitting nonexistent degrees. Only pointwise spectral bounds are needed.
+
+\begin{corollary}[A mixed-curvature sufficient condition]\label{cor:mixed-extension}
+In the setting of Theorem~\ref{thm:variable-metric}, condition
+$\mu(y)+e(y)\geq2m^2\mathcal V(y)$ for every $y$ implies the optimal base estimate in either range \eqref{eq:ranges}.
+\end{corollary}
+\begin{proof}
+Use \eqref{eq:mixed-variation-bound} in \eqref{eq:variation-budget}.
+\end{proof}
+These formulas quantify the effect of mixed coefficient curvature on a fixed product. They are compatible with the minimal-solution interpretation in \cite[Section 7]{CS24}. For a split metric, $T_i=B_i=C_i=0$, so the criterion recovers Theorem~\ref{thm:product-descent}. The constants are sufficient and not asserted to be sharp.
+
+\subsection{A nonsplit example in range (i)}
+Take $Y=\C^2$ with $\omega_Y=i\sum_{j=1}^2dy_j\wedge d\bar y_j$, $Z=\mathbb P^1$ with a fixed K\"ahler form of volume one, and $G=M=\cO$. The base metric is complete. Put
+\begin{equation}\label{eq:nonsplit-example}
+ h_t(y,z)=\exp\bigl(-|y|^2-t\rho(y)\chi(z)\bigr),\qquad
+ (a,b,p,q)=(2,1,1,1),
+\end{equation}
+where $\rho\in C_c^\infty(\C^2,\mathbb R)$ has a regular zero $y_0$, and $\chi\in C^\infty(Z,\mathbb R)$ is nonconstant with $\int_Z\chi\,dV_Z=0$. Thus $\rho(y_0)=0$ and $\db\rho(y_0)\ne0$. The direct image has rank one because $H^1(\mathbb P^1,K_{\mathbb P^1})\simeq\C$. This is range (i), but not range (ii), since $b=1<m=2$.
+
+At $t=0$ the curvature eigenvalues of $L$ are $1,1,0$, so the total $(3,2)$ commutator has eigenvalues $1,1,2$. The perturbation and its derivatives are supported over a fixed compact subset of $Y$. Thus, for all sufficiently small $|t|$, $C_L\geq\tfrac12\Id$ uniformly, and the complete estimate gives the required total-space optimal condition. Formula \eqref{eq:variation-multipliers} implies $\kappa=O(t^2)$ uniformly: the projections are contractions, the harmonic rank is fixed, and the multiplier derivatives are uniformly $O(t)$. Since $\mu\geq\tfrac12$ and $e\geq0$, inequality \eqref{eq:variation-budget} holds for sufficiently small $|t|$. The Gaussian base metric is fixed throughout; no growing pullback twist is introduced.
+
+The variation is explicit. Write $s=t\rho(y)$ and $I(s)=\int_Ze^{s\chi}\,dV_Z$. The harmonic representative of the class normalized by integral one and its squared norm are
+\[
+ \alpha_y=\frac{e^{s\chi}}{I(s)}\,\omega_Z,
+ \qquad H(y)=\frac{e^{-|y|^2}}{I(s)}.
+\]
+Indeed, $h_t\alpha_y$ is a constant multiple of $\omega_Z$ on each fiber, which is the harmonicity condition in this top degree. At $y_0$,
+\[
+ \partial_{\bar i}\alpha_y\big|_{y_0}
+        =t\rho_{\bar i}(y_0)\chi\,\omega_Z,
+\]
+which is nonzero for some $i$ when $t\ne0$. Thus both harmonic representatives and the harmonic metric vary, and the extension is not merely a rewriting of the split case. This perturbative example illustrates the sufficient criterion, not its necessity.
+
+\section{Descent on smooth proper K\"ahler fibrations}\label{sec:variation}
+
+We now replace the product geometry in Theorem~\ref{thm:variable-metric} by a smooth proper fibration. Two distinctions are essential. Horizontal coefficient curvature is no longer the entire ambient curvature of vertical forms: Kodaira--Spencer insertion and the bracket of horizontal lifts also contribute. Moreover, the horizontal metric of $X$ need not be the pullback of the specified base metric. We keep both effects in the hypotheses. The general conclusion below follows by controlling curvature and solving on the base. A stronger annihilation hypothesis in top antiholomorphic degrees gives an actual lifting--solving--descending proof in Theorem~\ref{thm:ks-descent}.
+
+\subsection{Geometric and harmonic quantities}
+Let $\pi:(X,\omega_X)\to(Y,\omega_Y)$ be a proper surjective holomorphic submersion of relative dimension $n$, where $\dim Y=m\geq1$ and both metrics are K\"ahler. Let $(L,h)$ be a smooth Hermitian holomorphic line bundle. Fix $p,q$ and assume that
+\[
+ h^q(X_y,\Omega^p_{X_y}\otimes L_y)
+\]
+is locally constant. Thus $\cF=R^q\pi_*(\Omega^p_{X/Y}\otimes L)$ is locally free, and its harmonic metric $H$, computed with $\omega_y=\omega_X|_{X_y}$, is smooth. Write $P_y$ for harmonic projection and $Q_y=\Id-P_y$. All assertions are vacuous on components where $\cF=0$; the quantities below are defined on positive-rank components.
+
+At a base point take holomorphic coordinates unitary for $\omega_Y$, and let $v_i$ be the $\omega_X$-orthogonal lifts of the coordinate fields. Put
+\begin{equation}\label{eq:fibration-geometry}
+ A_i=(\db v_i)|_{X_y},\qquad
+ W_{i\bar j}=[v_i,\bar v_j],\qquad
+ c_{i\bar j}=g_X(v_i,\bar v_j).
+\end{equation}
+The bracket is vertical. The $A_i$ are the distinguished Kodaira--Spencer representatives determined by $\omega_X$; in the conditions below they are actual tensors, not just cohomology classes. If $g_{\alpha\bar\beta}$ denotes the vertical metric in fiber coordinates, closedness of $\omega_X$ gives
+\begin{equation}\label{eq:bracket-gradient}
+ W_{i\bar j}
+ =g^{\bar\beta\alpha}(\partial_{\bar\beta}c_{i\bar j})\partial_\alpha
+  -g^{\bar\beta\alpha}(\partial_\alpha c_{i\bar j})\partial_{\bar\beta}.
+\end{equation}
+Thus fiber derivatives of the horizontal metric explicitly determine this bracket; compare \cite[Lemma 8.1]{CS24}.
+
+Let $\mathcal L^L_v=[\iota_v,D_L]=\iota_vD_L+D_L\iota_v$ be the covariant Lie derivative, with the graded commutator convention, where $D_L$ is the Chern connection extended to $L$-valued forms. On smooth vertical forms set
+\[
+ D_i=(\mathcal L^L_{v_i})^{p,q},\qquad
+ D_{\bar i}=(\mathcal L^L_{\bar v_i})^{p,q},\qquad
+ B_i=QD_iP,\qquad C_i=QD_{\bar i}P.
+\]
+Here the superscript denotes the type-preserving part after restriction to the fiber; relative forms may be lifted arbitrarily before differentiation, since the ideal generated by base differentials is preserved by these Lie derivatives. This $D$ is a metric connection on the bundle of smooth vertical $(p,q)$-forms, and $PD$ is the Chern connection of $(\cF,H)$. Indeed, $(\mathcal L_v\omega_X)|_{X_y}=0$ by closedness and horizontality. The type-changing terms in differentiating the fiber inner product are orthogonal to the fixed type. Fiber integration therefore gives
+\[
+ \partial_i(\alpha,\beta)_y=(D_i\alpha,\beta)_y
+                                    +(\alpha,D_{\bar i}\beta)_y.
+\]
+The holomorphic-structure assertion can be checked independently. In holomorphic submersion coordinates and a holomorphic frame of $L$, write $v_i=\partial_{y^i}+a_i^\alpha\partial_{z^\alpha}$ and let $\db_y$ denote the vertical Dolbeault operator. On relative forms,
+\begin{equation}\label{eq:relative-dolbeault-homotopy}
+ D_{\bar i}=\partial_{\bar y^i}
+       +\db_y\iota_{\bar a_i}+\iota_{\bar a_i}\db_y,
+ \qquad \bar a_i=\bar a_i^\alpha\partial_{\bar z^\alpha}.
+\end{equation}
+For a vertically closed form, the last two terms are vertically exact. Thus $PD^{0,1}$ induces precisely the direct-image Dolbeault operator. Metric compatibility then identifies $PD$ with the Chern connection. This does not assert that $D_{\bar i}$ preserves harmonic forms. These constructions agree with \cite[Sections 5--7]{CS24}.
+
+Define the finite-domain operators
+\[
+ K_i=(A_i\lrcorner)P,\qquad
+ \bar K_i=(\bar A_i\lrcorner)P,\qquad
+ T_{i\bar j}=P(\mathcal L^L_{W_{i\bar j}})^{p,q}P.
+\]
+The targets of $K_i$ and $\bar K_i$ have types $(p-1,q+1)$ and $(p+1,q-1)$, respectively; nonexistent types mean the zero operator. To fix the insertion signs, at a fiber-unitary frame put
+\begin{equation}\label{eq:ks-insertion-convention}
+\begin{split}
+ J_i&=\sum_{\alpha,\beta} A_i^\alpha{}_{\bar\beta}
+                  (d\bar z^\beta\wedge)\iota_{\partial_{z^\alpha}},\\
+ \bar J_i&=\sum_{\alpha,\beta}\overline{A_i^\alpha{}_{\bar\beta}}
+                  (dz^\beta\wedge)\iota_{\partial_{\bar z^\alpha}}.
+\end{split}
+\end{equation}
+Thus $K_i=J_iP$ and $\bar K_i=\bar J_iP$. The symmetry of the lowered Kodaira--Spencer tensor, following from $d\omega_X=0$, gives $\bar J_i=J_i^\dagger$ on the full vertical exterior algebra. This adjoint identity relates neighboring bidegrees; neither insertion is a self-map of the harmonic $(p,q)$-space. Introduce the nonnegative quantities
+\begin{equation}\label{eq:fibration-costs}
+\begin{split}
+ \kappa&=\sum_i\bigl(\|B_i\|_{\mathrm{HS}}^2+\|C_i\|_{\mathrm{HS}}^2\bigr),\\
+ \sigma&=\sum_i\bigl(\|K_i\|_{\mathrm{HS}}^2+\|\bar K_i\|_{\mathrm{HS}}^2\bigr),\\
+ \tau&=\left(\sum_{i,j}\|T_{i\bar j}\|_{\mathrm{HS}}^2\right)^{1/2}.
+\end{split}
+\end{equation}
+All fiber norms use $h_y,\omega_y$. These sums are invariant under a unitary change of base frame. Although covariant Lie derivatives are differential operators, their restrictions to the finite-dimensional harmonic space, and hence the displayed norms, are well defined.
+
+For $(R,S)=(a+p,b+q)$ define
+\begin{equation}\label{eq:fibration-margins}
+ \mu(y)=\min_{x\in X_y}\lambda_{\min}
+       [i\Theta_{L,h},\Lambda_{\omega_X}]_{R,S}(x),
+ \qquad e(y)=\lambda_{\min}\mathcal E_y,
+\end{equation}
+where $\mathcal E_y$ is the fiber energy operator in \eqref{eq:fiber-energy-operator}, now using the vertical Chern operator on $X_y$. In particular $e\geq0$.
+
+We finally define a metric-comparison term without assuming a curvature conclusion for $H$. At $x\in X_y$, let $V_x:T_y^{1,0}Y\to T_x^{1,0}X$ be horizontal lifting, and let $S_x$ be the positive $g_Y$-selfadjoint endomorphism satisfying
+\[
+ g_X(V_xS_x\xi,\overline{V_xS_x\eta})=g_Y(\xi,\bar\eta).
+\]
+It is the inverse square root of the positive matrix of $V_x^*g_X$ relative to $g_Y$. Use the curvature convention of Section~\ref{sec:analytic} to define scalar coefficient forms on $T_yY$ by
+\[
+ \beta_x(\xi,\bar\eta)=\Theta_L(V_x\xi,\overline{V_x\eta}),\qquad
+ \beta_x^\circ(\xi,\bar\eta)
+      =\Theta_L(V_xS_x\xi,\overline{V_xS_x\eta}).
+\]
+Thus $i\beta_x$ and $i\beta_x^\circ$ are real $(1,1)$-forms in this convention. Set
+\begin{equation}\label{eq:metric-comparison-cost}
+ \delta(y)=\max_{x\in X_y}
+  \bigl\|[i(\beta_x-\beta_x^\circ),\Lambda_{\omega_Y}]_{a,b}\bigr\|_{\mathrm{op}}.
+\end{equation}
+This is a pointwise algebraic quantity involving only the two metrics and the horizontal curvature of $L$. The map $S_x$ is used for algebraic comparison only; no holomorphicity or differential compatibility of $S_x$ is asserted.
+
+\subsection{The quantitative extension}
+\begin{theorem}[Descent under controlled geometric and harmonic variation]\label{thm:fibration-descent}
+In the setting above, assume that $\omega_X,\omega_Y$ are complete and that $X,Y$ admit positive holomorphic Hermitian line bundles. Let $(a,b,p,q)$ belong to either range \eqref{eq:ranges}. Suppose $(L,h)$ satisfies the optimal $(a+p,b+q)$ estimate condition with respect to $\omega_X$. If, for every $y$ on a positive-rank component,
+\begin{equation}\label{eq:fibration-budget}
+ \boxed{\quad
+ \mu(y)+e(y)\ \geq\
+ \delta(y)+2m^2\bigl(\tau(y)+\sigma(y)+\kappa(y)\bigr),
+ \quad}
+\end{equation}
+then $(\cF,H)$ satisfies the optimal $(a,b)$ estimate condition with respect to $\omega_Y$. More precisely,
+\begin{equation}\label{eq:fibration-curvature-bound}
+ [i\Theta_{\cF,H},\Lambda_{\omega_Y}]_{a,b}
+ \geq\bigl(\mu+e-\delta-2m^2(\tau+\sigma+\kappa)\bigr)\Id.
+\end{equation}
+Consequently \eqref{eq:main-product-estimate} holds with constant one. There is no splitting assumption on either the fibration or $(L,h)$.
+\end{theorem}
+
+Unlike Theorem~\ref{thm:variable-metric}(1), this theorem imposes a condition in both ranges. The quantities on the right of \eqref{eq:fibration-budget} measure harmonic variation, Kodaira--Spencer insertion, the bracket of horizontal lifts, and the mismatch of horizontal metrics. None is defined by the curvature of $\cF$. The constant $2m^2$ is a convenient sufficient bound, not a sharp constant.
+
+\begin{proof}
+The total degree is extremal in either range. Proposition~\ref{prop:characterization} gives
+\[
+ C_L=[i\Theta_{L,h},\Lambda_{\omega_X}]_{R,S}\geq0,
+ \qquad \mu\geq0.
+\]
+We first compare total curvature with the horizontal coefficient term. Fix $y$. The isometry $V_xS_x$ and the orthogonal extension of vertical covectors induce a pointwise exterior-power isometric embedding
+\[
+ I_x:\Lambda^{a,b}T_y^*Y\otimes
+       \Lambda^{p,q}T_x^*X_y\otimes L_x
+       \longrightarrow\Lambda^{R,S}T_x^*X\otimes L_x.
+\]
+Its image is the horizontal $(a,b)$, vertical $(p,q)$ block. On this block the pointwise algebraic identity is
+\begin{equation}\label{eq:pointwise-compression}
+ I_x^\dagger C_L(x)I_x
+  =[i\beta_x^\circ,\Lambda_Y]_{a,b}\otimes\Id
+       +\Id\otimes[i\Theta_{L_y,h_y},\Lambda_{\omega_y}]_{p,q}(x).
+\end{equation}
+Mixed curvature components change the horizontal--vertical degree and have zero diagonal compression. Choose an orthonormal basis $\{e_\nu\}$ of $\Lambda^{a,b}T_y^*Y$ and write
+$w=\sum_\nu e_\nu\otimes\alpha_\nu$, where each $\alpha_\nu$ is a harmonic vertical form. Although $I_x$ depends on $x$, the vertical coefficients remain the originally chosen harmonic forms. The compact-fiber Bochner--Kodaira--Nakano identity gives, by polarization on harmonic forms,
+\[
+ P[i\Theta_{L_y,h_y},\Lambda_{\omega_y}]P=-\mathcal E_y.
+\]
+Integration of \eqref{eq:pointwise-compression} therefore yields the explicit quadratic-form identity
+\begin{equation}\label{eq:compression-quadratic-identity}
+\begin{split}
+ \int_{X_y}\ip{C_L(x)I_xw(x)}{I_xw(x)}\,dV_y
+  ={}&\ip{[iP\beta^\circ P,\Lambda_Y]w}{w}\\
+    &-\sum_\nu\ip{\mathcal E_y\alpha_\nu}{\alpha_\nu}.
+\end{split}
+\end{equation}
+The left side is at least $\mu(y)\|w\|^2$. Equivalently,
+\begin{equation}\label{eq:fibration-algebraic-compression}
+ [iP\beta^\circ P,\Lambda_Y]_{a,b}
+ +\Id_{\Lambda^{a,b}T_y^*Y}\otimes
+       P[i\Theta_{L_y,h_y},\Lambda_{\omega_y}]P
+ \geq\mu(y)\Id.
+\end{equation}
+Here $P\beta^\circ P$ means compression of the multiplication coefficients to harmonic forms. Equation \eqref{eq:compression-quadratic-identity} differentiates neither $I_x$ nor $S_x$, and integrates with the fiber measure $dV_y$, not the total-space volume. No fiber-dependent horizontal volume factor is inserted. Moreover,
+\[
+ \left|\ip{[iP(\beta-\beta^\circ)P,\Lambda_Y]w}{w}\right|
+       \leq\delta(y)\|w\|^2
+\]
+by the pointwise norm bound defining $\delta$. Using $\mathcal E_y\geq e(y)\Id$ now gives
+\begin{equation}\label{eq:fibration-horizontal-lower}
+ [iP\beta P,\Lambda_Y]_{a,b}
+ \geq(\mu+e-\delta)\Id.
+\end{equation}
+In particular, no Bochner identity for a nonclosed auxiliary block metric is being used.
+
+We next account for the geometric curvature terms. With $\dagger$ denoting fiber adjoints, the covariant-Lie and orthogonal-projection identities give
+\begin{equation}\label{eq:fibration-exact-curvature}
+\begin{split}
+ R^{\cF}_{i\bar j}={}&P\beta_{i\bar j}P+T_{i\bar j}
+      +K_j^\dagger K_i-\bar K_i^\dagger\bar K_j\\
+     &-B_j^\dagger B_i+C_i^\dagger C_j.
+\end{split}
+\end{equation}
+For clarity, the full covariant Lie derivatives satisfy
+\[
+ [\mathcal L^L_{v_i},\mathcal L^L_{\bar v_j}]
+   =\mathcal L^L_{W_{i\bar j}}+\Theta_L(v_i,\bar v_j).
+\]
+With the convention \eqref{eq:ks-insertion-convention}, the type-changing parts of these Lie derivatives are $J_i$ and $\bar J_j$. Taking the fixed $(p,q)$ block gives
+\[
+ R^D_{i\bar j}
+  =(\mathcal L^L_{W_{i\bar j}}+\beta_{i\bar j})^{p,q}
+       -J_i\bar J_j+\bar J_jJ_i.
+\]
+Since $\bar J_i=J_i^\dagger$, harmonic compression of the last two terms is
+$-\bar K_i^\dagger\bar K_j+K_j^\dagger K_i$, with the signs and adjoint indices in \eqref{eq:fibration-exact-curvature}. Orthogonal projection of the metric connection gives
+\[
+ R^{\cF}_{i\bar j}=PR^D_{i\bar j}P
+                         -B_j^\dagger B_i+C_i^\dagger C_j,
+\]
+which proves the claimed identity. It agrees with the polarized formula \cite[(7.2)]{CS24}: in a local holomorphic $H$-normal frame at $y$, the harmonic components of both type-preserving derivatives vanish at $y$, and their remaining components are exactly $B_i$ and $C_i$. We use this established curvature identity with an explicit insertion convention, rather than assert a new one.
+
+Let $E_{i\bar j}$ be the sum of the five correction terms in \eqref{eq:fibration-exact-curvature}. Cauchy--Schwarz and the Hilbert--Schmidt bounds give
+\[
+ \sum_{i,j}\|E_{i\bar j}\|_{\mathrm{op}}
+       \leq m(\tau+\sigma+\kappa).
+\]
+Exterior multiplication by a unit elementary two-form has norm at most one, while $\|\Lambda_Y\|\leq m$. Therefore
+\[
+ \left\|\left[i\sum E_{i\bar j}\,dy^i\wedge d\bar y^j,
+                         \Lambda_Y\right]_{a,b}\right\|_{\mathrm{op}}
+       \leq2m^2(\tau+\sigma+\kappa).
+\]
+Together with \eqref{eq:fibration-horizontal-lower}, this proves \eqref{eq:fibration-curvature-bound}. Finally tensor with each positive auxiliary line $(A,h_A)$ on $Y$. Its commutator $B_Y$ is positive in the stated ranges. Lemma~\ref{lem:complete-estimate}, applied on the complete base, and inverse order give \eqref{eq:main-product-estimate}. This last step solves on $Y$; a chain-compatible harmonic lift is not needed for the quantitative theorem.
+\end{proof}
+
+\begin{remark}[An adapted horizontal metric]\label{rem:adapted-horizontal}
+If the chosen metrics satisfy
+\begin{equation}\label{eq:adapted-horizontal}
+ g_X(v_i,\bar v_j)=\pi^*g^Y_{i\bar j},
+\end{equation}
+then $S_x=\Id$ and $\delta=0$. Formula \eqref{eq:bracket-gradient} also gives $W_{i\bar j}=0$, so $\tau=0$. The sufficient condition reduces to
+\[
+ \mu+e\geq2m^2(\sigma+\kappa).
+\]
+This metric condition does not imply isotriviality; see Example~\ref{ex:elliptic-fibration} below. On a fixed product with its product K\"ahler metric, $A_i=0$ as well, and the condition is exactly \eqref{eq:variation-budget}. Thus Theorem~\ref{thm:fibration-descent} extends the quantitative part of Theorem~\ref{thm:variable-metric}.
+\end{remark}
+
+The harmonic variation in \eqref{eq:fibration-costs} can also be bounded spectrally. Let $\Delta_y$ be the vertical Dolbeault Laplacian in degree $(p,q)$ and $G_y$ its Green operator, extended by zero on the harmonic kernel. Differentiating $\Delta_yP_y=0$ gives
+\begin{equation}\label{eq:fibration-green}
+ B_i=-G_y[D_i,\Delta]P,
+ \qquad C_i=-G_y[D_{\bar i},\Delta]P.
+\end{equation}
+If $\gamma(y)>0$ is a lower bound for the positive spectrum, then
+\begin{equation}\label{eq:fibration-spectral-bound}
+ \kappa(y)\leq\gamma(y)^{-2}\sum_i
+ \left(\|[D_i,\Delta]P\|_{\mathrm{HS}}^2+
+       \|[D_{\bar i},\Delta]P\|_{\mathrm{HS}}^2\right).
+\end{equation}
+Thus the right side may replace $\kappa$ in \eqref{eq:fibration-budget}. No uniform global spectral gap is required. These commutators are computable from the vertical operators and their horizontal variation; on a product they reduce to the more specific mixed-curvature formulas of Section~\ref{sec:variable-metric}.
+
+One can alternatively assume $C_L\geq0$ directly. With this replacement, the proof needs neither completeness nor the existence of a positive auxiliary line on $X$; it only uses the compact fibers, the complete base, and the displayed budget. This version applies to K\"ahler fibers without a projectivity assumption. Semipositivity of $L$ by itself is not a substitute for the budget.
+
+\subsection{An exact top-degree lifting criterion}
+The following result extends the unconditional product conclusion in top antiholomorphic degrees under a geometric annihilation condition. It requires pointwise vanishing of the insertions on the specified Serre-dual sections, rather than only vanishing of their cohomology classes or harmonic projections. It does not require the Kodaira--Spencer class itself to vanish: for $p=n$ the insertion condition is automatic, even in a nonisotrivial family. Conversely, vanishing of a Kodaira--Spencer class does not by itself make the insertion of the distinguished representative pointwise zero for the chosen horizontal metric.
+
+\begin{theorem}[Top-degree descent by Kodaira--Spencer annihilation]\label{thm:ks-descent}
+Let $\pi:(X,\omega_X)\to(Y,\omega_Y)$ and $(L,h)$ satisfy the smoothness, completeness, and positive-auxiliary-line assumptions of Theorem~\ref{thm:fibration-descent}. Assume \eqref{eq:adapted-horizontal}, put $q=n$, and suppose $h^n(X_y,\Omega^p_{X_y}\otimes L_y)$ is locally constant. Let
+\[
+ \mathcal S=\pi_*(\Omega^{n-p}_{X/Y}\otimes L^*)
+                  \simeq\cF^*
+\]
+under relative Serre duality. Assume that, for every local holomorphic section $s$ of $\mathcal S$,
+\begin{equation}\label{eq:ks-annihilation}
+        A_i\lrcorner s|_{X_y}=0
+        \quad\text{pointwise on every fiber, for every }i.
+\end{equation}
+For $1\leq a\leq m$, the optimal $(a+p,m+n)$ estimate condition for $(L,h)$ implies the optimal $(a,m)$ estimate condition for $(\cF,H)$. No smallness condition on $B_i,C_i$ is required. If $p=n$, condition \eqref{eq:ks-annihilation} is automatic.
+\end{theorem}
+
+\begin{proof}
+We construct a bounded chain retraction and then solve upstairs. First we show that a relative holomorphic section $s$ has a holomorphic \emph{orthogonal} absolute extension. In holomorphic submersion coordinates write
+\[
+ v_i=\partial_{y^i}+a_i^\alpha\partial_{z^\alpha},
+ \qquad \theta^\alpha=dz^\alpha-a_i^\alpha dy^i.
+\]
+The orthogonal extension $\widehat s$ is obtained by replacing each relative $dz^\alpha$ by $\theta^\alpha$, with the same holomorphic coefficients in a holomorphic frame of $L^*$. This construction is intrinsic. The complete decomposition of the relevant derivative is
+\[
+ \db a_i^\alpha
+   =(\partial_{\bar z^\beta}a_i^\alpha)\bar\theta^\beta
+                 +\bar v_j(a_i^\alpha)d\bar y^j,
+ \qquad
+ W_{i\bar j}^{1,0}=-\bar v_j(a_i^\alpha)\partial_{z^\alpha}.
+\]
+Using $\db\theta^\alpha=-\db a_i^\alpha\wedge dy^i$ and the insertion convention above, the product rule gives
+\begin{equation}\label{eq:orthogonal-extension-obstruction}
+ \db\widehat s
+  =\sum_i dy^i\wedge\widehat{A_i\lrcorner s}
+       -\sum_{i,j}dy^i\wedge d\bar y^j
+               \wedge\iota_{W_{i\bar j}^{1,0}}\widehat s.
+\end{equation}
+The hats on relative mixed forms denote orthogonal extensions in both types. There is no omitted coefficient term: the coefficients of $s$ in the relative holomorphic frame and the chosen $L^*$ frame are holomorphic. The first sum vanishes by \eqref{eq:ks-annihilation}, and the second by $W_{i\bar j}=0$, which follows from \eqref{eq:adapted-horizontal}. Hence
+\begin{equation}\label{eq:holomorphic-orthogonal-extension}
+              \db\widehat s=0.
+\end{equation}
+For $p=n$, $s$ has relative degree zero and is already an absolute holomorphic section of $L^*$, proving the final assertion about the hypothesis.
+
+Fix a positive auxiliary line $(A,h_A)$ on $Y$. In this proof normalize the bilinear Serre pairing by
+\[
+ \ip{[\alpha]}{s}_{\mathrm{Serre}}
+                   =\int_{X_y}\alpha\wedge s,
+\]
+using the complex orientation, and define fiber integration with horizontal forms preceding the vertical forms. Use this same ordering in all lifts and pairings. For a total form $W$ of degree $(a+p,j+n)$ with values in $L\otimes\pi^*A$, define the $\cF\otimes A$-valued base form $\Pi_jW$ by
+\begin{equation}\label{eq:serre-fiber-projection}
+       \ip{\Pi_jW}{s}_{\mathrm{Serre}}
+             =\pi_*(W\wedge\widehat s),\qquad 0\leq j\leq m.
+\end{equation}
+Nondegeneracy of Serre duality makes this definition unique and compatible with changes of holomorphic frame of $\mathcal S$. Only the horizontal $(a,j)$, vertical $(p,n)$ component of $W$ contributes, since $\widehat s$ is orthogonally vertical. Write this component, at a fixed base point in an orthonormal base-form frame, as
+\[
+ W_{(a,j),(p,n)}=\sum_\nu\pi^*\eta_\nu\wedge\alpha_\nu.
+\]
+Each vertical $(p,n)$ coefficient is automatically closed. The normalization gives exactly
+\[
+ \Pi_jW=\sum_\nu\eta_\nu\otimes[\alpha_\nu],
+ \qquad [\alpha_\nu]\longleftrightarrow P_y\alpha_\nu
+       \quad\text{under the harmonic identification}.
+\]
+Thus contraction follows coefficientwise from orthogonal projection, without needing an identification of a chosen metric on $\mathcal S$ with a dual metric. By \eqref{eq:adapted-horizontal}, the pointwise norms split orthogonally and the normalized volume forms disintegrate as $dV_X=dV_Y\,dV_y$, with no binomial factor. Integrating the coefficientwise contraction yields
+\begin{equation}\label{eq:fibration-chain-contraction}
+ \|\Pi_jW\|_{L^2(Y,H\otimes h_A)}
+             \leq\|W\|_{L^2(X,h\otimes\pi^*h_A)}.
+\end{equation}
+The formula consequently extends to $L^2$ forms. To check the differential identity, choose a local holomorphic frame $s_\lambda$ of $\mathcal S$ and test the scalar coefficients of \eqref{eq:serre-fiber-projection} against compactly supported smooth base forms. Their pullbacks, multiplied by $\widehat s_\lambda$, have compact support upstairs by properness. Fiber integration commutes with distributional $\db$: the real fiber dimension is $2n$, so its pushforward sign is positive, and \eqref{eq:holomorphic-orthogonal-extension} removes the derivative of the dual section. Since the frame $s_\lambda$ is holomorphic, these scalar identities are precisely
+\begin{equation}\label{eq:fibration-chain-identity}
+       \db_{\cF}\Pi_jW=\Pi_{j+1}\db_XW,
+                         \qquad 0\leq j<m.
+\end{equation}
+They hold first for smooth forms and then as distributional identities for $L^2$ forms with $L^2$ differential. The right side is $L^2$ by \eqref{eq:fibration-chain-contraction}, proving that $\Pi_j$ maps the maximal domain into the maximal domain. No global bound on derivatives of a harmonic frame is used.
+
+For $f\in A_c^{a,m}(Y,\cF\otimes A)$ take its smooth fiberwise harmonic representative and its orthogonal horizontal--vertical lift $J_mf$. Then
+\[
+ \Pi_mJ_mf=f,\qquad \|J_mf\|_X=\|f\|_Y,
+ \qquad \db_XJ_mf=0.
+\]
+The last equality follows from total antiholomorphic degree $m+n$, not from constancy of the harmonic representatives. Properness makes the lift compactly supported. On total degree $(a+p,m+n)$, the commutator
+\[
+ B_X=[i\pi^*\Theta_A,\Lambda_{\omega_X}]
+\]
+is block diagonal and nonnegative. Indeed, diagonalize $i\Theta_A$ relative to $\omega_Y$ at $y$, with eigenvalues $\lambda_1,\ldots,\lambda_m>0$. Its pullback has the same horizontal eigenvalues and $n$ zero vertical eigenvalues. In total antiholomorphic degree $m+n$, formula \eqref{eq:scalar-eigenvalues} leaves the sum over the holomorphic indices only. On the lifted block that sum is $\sum_{i\in I}\lambda_i$ with $|I|=a\geq1$, exactly the eigenvalue of $B_Y=[i\Theta_A,\Lambda_Y]_{a,m}>0$. Other blocks may have a kernel, but the lifted datum is orthogonal to it. Using the extended quadratic form \eqref{eq:extended-inverse},
+\begin{equation}\label{eq:fibration-inverse-energy}
+ \int_X q_{B_X}(J_mf)\,dV_X
+       =\int_Y\ip{B_Y^{-1}f}{f}_H\,dV_Y.
+\end{equation}
+
+The total optimal hypothesis gives $C_L\geq0$ by Proposition~\ref{prop:characterization}. Apply Lemma~\ref{lem:complete-estimate} on $X$ to $L\otimes\pi^*A$, using inverse order and \eqref{eq:fibration-inverse-energy}. It yields a weak solution
+\[
+ \db_XU=J_mf,\qquad
+ \|U\|_X^2\leq\int_Y\ip{B_Y^{-1}f}{f}_H\,dV_Y.
+\]
+Set $u=\Pi_{m-1}U$. Equations \eqref{eq:fibration-chain-identity} and \eqref{eq:fibration-chain-contraction} give $\db_{\cF}u=f$ and the asserted optimal bound. This is the required lifting--solving--descending argument.
+\end{proof}
+
+\subsection{A nonisotrivial example and a necessary limitation}
+\begin{example}[An adapted metric on an elliptic family]\label{ex:elliptic-fibration}
+Let $Y$ be a disk with closure in the upper half-plane, with parameter $t$ and a complete Poincar\'e metric $\omega_Y$. Consider the smooth proper family
+\[
+ X_t=\C/(\mathbb Z+t\mathbb Z),\qquad v=\operatorname{Im}t.
+\]
+On its universal cover put
+\begin{equation}\label{eq:elliptic-adapted-metric}
+ \Omega=i\ddbar\frac{(\operatorname{Im}z)^2}{v}
+   =\frac{i}{2v}\left(dz-\frac{\operatorname{Im}z}{v}\,dt\right)
+             \wedge\overline{\left(dz-\frac{\operatorname{Im}z}{v}\,dt\right)},
+ \qquad \omega_X=\Omega+\pi^*\omega_Y.
+\end{equation}
+The potential changes by a pluriharmonic function under the lattice translations, so $\Omega$ descends. Writing $z=x+tu$ with real cycle coordinates shows $\Omega=dx\wedge du$, and every fiber has area one. Thus $\omega_X$ is K\"ahler and satisfies \eqref{eq:adapted-horizontal}. It is complete: horizontal length dominates base length, and the inverse image of a compact base set is compact by properness. The horizontal lift is
+\[
+ v_t=\partial_t+\frac{\operatorname{Im}z}{v}\partial_z,
+ \qquad A_t=\frac{i}{2v}\,d\bar z\otimes\partial_z\ne0.
+\]
+The family is nonisotrivial, despite $W_{t\bar t}=0$. It admits a positive auxiliary line bundle: a relatively ample theta bundle, equipped with a fiberwise positive smooth metric over a slightly larger disk, becomes positive after tensoring with a sufficiently positive base line metric. This only verifies the auxiliary-line hypothesis; the coefficient below remains flat.
+
+Take $L=\cO_X$ with the flat metric and $p=q=n=1$, $a=b=m=1$. The harmonic fiber line is generated by $\Omega|_{X_t}$, of constant norm. Its type-preserving horizontal derivatives vanish because $\Omega$ is closed and annihilates the horizontal lifts. The insertion terms vanish by degree. Thus
+\[
+ \mu=e=\delta=\tau=\sigma=\kappa=0.
+\]
+Both Theorems~\ref{thm:fibration-descent} and~\ref{thm:ks-descent} apply. The trace line $R^1\pi_*K_{X/Y}\simeq\cO_Y$ has its constant flat harmonic metric. This is a nonisotrivial example with no pullback twist of the coefficient, but its trace interpretation is classical; it is not presented as a new positivity phenomenon.
+
+On the same family, instead take $p=0$, $q=1$ and again $a=b=1$, with flat $L$. The total curvature commutator in degree $(1,2)$ is zero, so the complete estimate gives the total optimal condition. However, $R^1\pi_*\cO_X$ is dual to the Hodge line $\pi_*K_{X/Y}$, whose frame $dz$ has squared norm proportional to $v$. The induced metric is therefore $H=(c v)^{-1}$ for a positive constant $c$, and
+\[
+             i\Theta_H=-\frac{i\,dt\wedge d\bar t}{4v^2}<0.
+\]
+It fails the optimal $(1,1)$ condition by Proposition~\ref{prop:characterization}. Condition \eqref{eq:ks-annihilation} fails because $A_t\lrcorner dz\ne0$, and \eqref{eq:fibration-budget} fails because $\mu=e=\delta=\tau=0$ whereas $\sigma>0$. This proves that the unconditional part of Theorem~\ref{thm:variable-metric} cannot be transferred to arbitrary smooth proper K\"ahler fibrations.
+\end{example}
+
+\subsection{A general projected-curvature formulation}
+For comparison with other curvature formulas, let
+$\mathcal K^{a,b}=[iPR^DP,\Lambda_Y]_{a,b}$, where $R^D$ is the curvature of the type-preserving connection above. It includes the bracket and Kodaira--Spencer terms; it is not just horizontal coefficient curvature.
+\begin{proposition}[A general harmonic-variation criterion]\label{prop:variation}
+For $0\leq a\leq m$ and $1\leq b\leq m$, the inequality
+$\mathcal K^{a,b}\geq2m^2\kappa\Id$ implies
+$[i\Theta_{\cF,H},\Lambda_Y]_{a,b}\geq0$.
+On a complete base this gives the constant-one estimate for every auxiliary line metric whose commutator in degree $(a,b)$ is positive definite, and every closed $L^2$ datum of finite inverse energy.
+\end{proposition}
+\begin{proof}
+The Gauss identity is $R^{\cF}_{i\bar j}=PR^D_{i\bar j}P-B_j^\dagger B_i+C_i^\dagger C_j$. The norm argument in the proof of Theorem~\ref{thm:fibration-descent} bounds the correction commutator by $2m^2\kappa$. Apply Lemma~\ref{lem:complete-estimate} on the base.
+\end{proof}
+For general base degrees, positivity of an auxiliary line does not automatically make its commutator positive. The average scalar eigenvalue in \eqref{eq:scalar-eigenvalues} is $(a+b-m)m^{-1}\sum_j\lambda_j$. In middle degree $a+b=m$, no scalar auxiliary curvature gives a positive-definite commutator on a positive-rank bundle. The explicit shifted-estimate implication in Theorem~\ref{thm:fibration-descent} therefore retains the two extremal ranges; the projected-curvature formulation makes no unrestricted middle-degree assertion.
+
+
+\section{Relation to earlier positivity results}\label{sec:literature}
+
+\subsection{The negative-adjoint mechanism}
+Liu--Yang \cite[Theorem 4.1]{LY14} treat negative adjoint direct images under infinitesimal triviality. Their curvature identity is an integrated coefficient term minus a nonnegative energy; with smoothness and constant rank, the same identity gives the semidefinite case. Theorem~\ref{thm:top} combines that mechanism with an isometry of Serre-dual metrics. Its numerical and flatness consequences are recorded in Corollary~\ref{cor:consequences}. The curvature statement is therefore an explicitly attributed reformulation.
+
+Theorem~\ref{thm:product-descent} is a corollary of the smooth extremal-degree curvature characterizations in \cite[Theorems 1.5--1.6]{Wat21}, product base change, and compact-fiber Bochner theory, followed by the complete K\"ahler estimate on the base; Section~\ref{sec:curvature-verification} makes this deduction explicit. The lifting proof additionally verifies the closed lift, exact inverse-energy identity, and bounded chain retraction for maximal distributional domains. Theorem~\ref{thm:variable-metric} retains the fixed product geometry but permits nonsplit metrics: top antiholomorphic degrees admit a cohomological descent, and the other range is treated under a quantitative variation bound. These extensions use the same curvature characterization and standard projection identities. We do not assert that the exact formulations have previously appeared, and we make no priority claim for them. Theorems~\ref{thm:fibration-descent} and~\ref{thm:ks-descent} extend the discussion to smooth proper fibrations under explicit additional assumptions, not to unrestricted descent.
+
+\subsection{Positive adjoints and the specified metric}
+For a proper holomorphic submersion with K\"ahler total space and a smooth semipositive line bundle, Berndtsson \cite[Theorem 1.2]{Ber09} proves local freeness and Nakano semipositivity of the canonical metric on $f_*(K_{X/Y}\otimes L)$. No infinitesimal-triviality condition is needed. This full theorem is not a consequence of either restricted statement above.
+
+Mourougane--Takayama \cite[Theorem 1.1]{MT08} prove local freeness and Nakano semipositivity of $R^qf_*(K_{X/Y}\otimes V)$ for a smooth proper K\"ahler surjection with connected fibers and smooth Nakano-semipositive coefficients. Their metric is constructed through Takegoshi's injection into $f_*(\Omega^{n-q}_{X/Y}\otimes V)$. Their introduction distinguishes it from the ordinary metric of fiberwise harmonic $(n,q)$-representatives. No identification of those metrics is established here, so their theorem is not invoked as a curvature statement about our prescribed metric for $q>0$.
+
+Watanabe \cite[Theorem 1.1]{Wat25} also proves dual Nakano semipositivity of the positive adjoint $f_*(K_{X/Y}\otimes L)$ when the Kodaira--Spencer representatives vanish. It concerns a positive adjoint coefficient. The Serre dual of $R^nf_*E$ instead has coefficient $E^*$; these are different hypotheses. The estimate characterizations in \cite{DNWZ23,Wat21} distinguish the relevant Nakano and dual Nakano degree conditions.
+
+\subsection{Broader semipositivity and variation}
+Fujita's numerical semipositivity over curves \cite{Fuj78}, Kawamata's unipotent-monodromy semipositivity for algebraic fiber spaces between smooth projective varieties \cite{Kaw81}, Koll\'ar's higher-dualizing-image theorems \cite{Kol86a,Kol86b}, and Viehweg's weak positivity of pluricanonical direct images \cite{Vie83} form the algebraic background. Their boundary, singular-fiber, and pluricanonical assertions require additional arguments and are not consequences of the smooth statements here.
+
+Naumann \cite{Nau21} gives curvature formulas for fiberwise positive line coefficients in middle total fiber degree. Berndtsson--P\u{a}un--Wang \cite{BPW22} study twisted higher differentials and Kodaira--Spencer kernels, including Griffiths seminegativity with negative fiber coefficients under their specified metric and kernel hypotheses. Choi--Schumacher \cite{CS24} give the general twisted-Hodge curvature formula. The Gauss and minimal-solution formulas in Section~\ref{sec:variable-metric} are fixed-product instances of this established framework; their combination with \eqref{eq:variable-compression} gives a sufficient descent criterion, not a new general curvature identity. Theorem~\ref{thm:fibration-descent} uses the polarized identity of \cite[formula (7.2)]{CS24}, together with a horizontal metric comparison, to obtain an explicit sufficient descent bound. Theorem~\ref{thm:ks-descent} imposes pointwise annihilation on the Serre-dual sections so that orthogonal extensions are holomorphic and fiber integration is a bounded chain map. These hypotheses and conclusions should not be conflated with the different kernel and curvature hypotheses of \cite{BPW22}. Proposition~\ref{prop:variation} records the underlying coarser projected-curvature criterion. Takayama \cite{Tak24} extends the Mourougane--Takayama metrics across singular fibers under additional hypotheses; such singular extensions are outside the present smooth theory.
+
+The scope is thus concrete: top-cohomology dual Nakano positivity under infinitesimal triviality, extremal-degree optimal estimates on products, and conditional extensions to smooth proper K\"ahler fibrations. The geometric budget in Theorem~\ref{thm:fibration-descent} is sufficient and not asserted to be necessary or sharp. The exact top-degree argument requires \eqref{eq:adapted-horizontal} and \eqref{eq:ks-annihilation}; the elliptic counterexample excludes an unconditional fibration generalization. No priority claim is made for these consequences of the established curvature framework. The metric, the bidegree, and the mechanism used to descend remain explicit throughout.
+
+\clearpage
+\begin{thebibliography}{99}
+\bibitem[Ber09]{Ber09}
+Bo Berndtsson, \emph{Curvature of vector bundles associated to holomorphic fibrations}, Ann. of Math. (2) \textbf{169} (2009), no.~2, 531--560. \href{https://doi.org/10.4007/annals.2009.169.531}{doi:10.4007/annals.2009.169.531}.
+
+\bibitem[BPW22]{BPW22}
+Bo Berndtsson, Mihai P\u{a}un, and Xu Wang, \emph{Algebraic fiber spaces and curvature of higher direct images}, J. Inst. Math. Jussieu \textbf{21} (2022), no.~3, 973--1028. \href{https://doi.org/10.1017/S147474802000050X}{doi:10.1017/S147474802000050X}.
+
+\bibitem[CS24]{CS24}
+Y.-J. Choi and G. Schumacher, \emph{Curvature of higher direct images of sheaves of twisted holomorphic forms}, preprint (2024), \href{https://arxiv.org/abs/2407.04298}{arXiv:2407.04298}.
+
+\bibitem[Dem12]{Dem12}
+J.-P. Demailly, \emph{Analytic methods in algebraic geometry}, Surveys of Modern Mathematics, vol.~1, International Press, Somerville, MA, and Higher Education Press, Beijing, 2012.
+
+\bibitem[DNWZ23]{DNWZ23}
+Fusheng Deng, Jiafu Ning, Zhiwei Wang, and Xiangyu Zhou, \emph{Positivity of holomorphic vector bundles in terms of $L^p$-estimates for $\bar\partial$}, Math. Ann. \textbf{385} (2023), nos.~1--2, 575--607. \href{https://doi.org/10.1007/s00208-021-02348-7}{doi:10.1007/s00208-021-02348-7}.
+
+\bibitem[Fuj78]{Fuj78}
+T. Fujita, \emph{On K\"ahler fiber spaces over curves}, J. Math. Soc. Japan \textbf{30} (1978), no.~4, 779--794. \href{https://doi.org/10.2969/jmsj/03040779}{doi:10.2969/jmsj/03040779}.
+
+\bibitem[Gra60]{Gra60}
+Hans Grauert, \emph{Ein Theorem der analytischen Garbentheorie und die Modulr\"aume komplexer Strukturen}, Inst. Hautes \'{E}tudes Sci. Publ. Math. \textbf{5} (1960), 5--64. \href{https://doi.org/10.1007/BF02684746}{doi:10.1007/BF02684746}.
+
+\bibitem[Kaw81]{Kaw81}
+Y. Kawamata, \emph{Characterization of abelian varieties}, Compositio Math. \textbf{43} (1981), no.~2, 253--276.
+
+\bibitem[Kol86a]{Kol86a}
+J. Koll\'ar, \emph{Higher direct images of dualizing sheaves. I}, Ann. of Math. (2) \textbf{123} (1986), no.~1, 11--42. \href{https://doi.org/10.2307/1971351}{doi:10.2307/1971351}.
+
+\bibitem[Kol86b]{Kol86b}
+J. Koll\'ar, \emph{Higher direct images of dualizing sheaves. II}, Ann. of Math. (2) \textbf{124} (1986), no.~1, 171--202.
+
+\bibitem[LY14]{LY14}
+Kefeng Liu and Xiaokui Yang, \emph{Curvatures of direct image sheaves of vector bundles and applications}, J. Differential Geom. \textbf{98} (2014), no.~1, 117--145. \href{https://arxiv.org/abs/1303.2701}{arXiv:1303.2701}.
+
+\bibitem[MT08]{MT08}
+C. Mourougane and S. Takayama, \emph{Hodge metrics and the curvature of higher direct images}, Ann. Sci. \'Ec. Norm. Sup\'er. (4) \textbf{41} (2008), no.~6, 905--924. \href{https://doi.org/10.24033/asens.2084}{doi:10.24033/asens.2084}.
+
+\bibitem[Nau21]{Nau21}
+Philipp Naumann, \emph{Curvature of higher direct images}, Ann. Fac. Sci. Toulouse Math. (6) \textbf{30} (2021), no.~1, 171--201. \href{https://doi.org/10.5802/afst.1670}{doi:10.5802/afst.1670}.
+
+\bibitem[Tak24]{Tak24}
+S. Takayama, \emph{Singular Griffiths semi-positivity of higher direct images}, Math. Ann. \textbf{388} (2024), 4343--4353. \href{https://doi.org/10.1007/s00208-023-02632-8}{doi:10.1007/s00208-023-02632-8}.
+
+\bibitem[Vie83]{Vie83}
+E. Viehweg, \emph{Weak positivity and the additivity of the Kodaira dimension for certain fibre spaces}, in \emph{Algebraic varieties and analytic varieties (Tokyo, 1981)}, Adv. Stud. Pure Math., vol.~1, North-Holland, Amsterdam, 1983, pp.~329--353. \href{https://doi.org/10.2969/aspm/00110329}{doi:10.2969/aspm/00110329}.
+
+\bibitem[Wat25a]{Wat25}
+Y. Watanabe, \emph{Dual Nakano positivity and singular Nakano positivity of direct image sheaves}, Nagoya Math. J. \textbf{257} (2025), 55--78. \href{https://doi.org/10.1017/nmj.2024.20}{doi:10.1017/nmj.2024.20}.
+
+\bibitem[Wat25b]{Wat21}
+Yuta Watanabe, \emph{Curvature operator of holomorphic vector bundles and $L^2$-estimate condition for $(n,q)$ or $(p,n)$-forms}, Tohoku Math. J. (2) \textbf{77} (2025), no.~4, 445--471. \href{https://doi.org/10.2748/tmj.20231128}{doi:10.2748/tmj.20231128}. Theorem numbers cited here refer to \href{https://arxiv.org/abs/2109.12554v2}{arXiv:2109.12554v2}.
+\end{thebibliography}
+\end{document}
+

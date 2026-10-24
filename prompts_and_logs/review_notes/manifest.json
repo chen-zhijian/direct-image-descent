@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "recovered_on": "2026-10-24",
+  "source_context": "Local direct_image_two_theorems manuscript folder; absolute path omitted",
+  "note_status": "Historical research and AI-assisted review documents, not external peer-review certification",
+  "files": [
+    {
+      "file": "synopsis.txt",
+      "bytes": 6615,
+      "source_last_modified_utc": "2026-10-24T03:34:26.5788299Z",
+      "sha256": "67f08d3c0e1495fb0f464a086aa13b54e3fb6ada0dcaeebdd6da9543d1581775",
+      "copy_status": "byte-for-byte copy of the supplied local research note"
+    },
+    {
+      "file": "referee_report.txt",
+      "bytes": 7798,
+      "source_last_modified_utc": "2026-10-24T03:18:30.1354663Z",
+      "sha256": "cf520355290cc998ac03d9f9f38cbd65a8f806379d4a57d4d578d512d8fd6406",
+      "copy_status": "byte-for-byte copy of the supplied local research note"
+    },
+    {
+      "file": "metric_extension_note.txt",
+      "bytes": 5033,
+      "source_last_modified_utc": "2026-10-24T03:00:37.0236205Z",
+      "sha256": "303dc74f25016aa2c174f4c32f78374775ee07e560234032ba45a058ff427943",
+      "copy_status": "byte-for-byte copy of the supplied local research note"
+    },
+    {
+      "file": "fibration_extension_note.txt",
+      "bytes": 5610,
+      "source_last_modified_utc": "2026-10-24T03:34:26.4553675Z",
+      "sha256": "62df19703a1d7791594067af259fc9127923cb3875e58984119bb76a50ac05c9",
+      "copy_status": "byte-for-byte copy of the supplied local research note"
+    },
+    {
+      "file": "section7_referee_report.txt",
+      "bytes": 6597,
+      "source_last_modified_utc": "2026-10-24T03:36:12.9956891Z",
+      "sha256": "e7f350163a63eca3739223767259112da5036711ed4082337cd58b3396282b66",
+      "copy_status": "byte-for-byte copy of the supplied local research note"
+    }
+  ]
+}

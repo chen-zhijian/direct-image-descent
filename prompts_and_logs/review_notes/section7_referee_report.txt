@@ -1,0 +1,132 @@
+FOCUSED REFEREE REVIEW: THEOREMS 7.1 AND 7.3
+October 24, 2026
+
+Verdict and scope
+
+The statements of Theorems 7.1 and 7.3 are retained under their full
+existing hypotheses. This review found a false comparison of geometric
+hypotheses and an unstated endpoint restriction, and expanded several
+compressed proof steps. It found no counterexample or theorem-level
+gap requiring an additional hypothesis. This is a focused mathematical
+audit, not certification of novelty or an exhaustive review of every
+result elsewhere in the article.
+
+Findings, ordered by significance
+
+1. Incorrect comparison with Kodaira--Spencer class vanishing.
+
+The introduction to Theorem 7.3 said that pointwise annihilation of
+the Serre-dual sections was stronger than vanishing of a Kodaira--Spencer
+class. That implication is false: for p=n, the dual sections have
+degree zero and annihilation is automatic, including in the article's
+nonisotrivial elliptic example with nonzero Kodaira--Spencer class.
+
+The revised article requires pointwise vanishing of the insertions,
+rather than merely vanishing of their cohomology classes or harmonic
+projections. It expressly does not require the Kodaira--Spencer class
+itself to vanish. Conversely, a zero Kodaira--Spencer class does not
+force the insertion of the distinguished representative for the chosen
+horizontal metric to vanish pointwise. The accompanying extension
+note and synopsis are corrected consistently.
+
+2. Chain identity endpoint was not stated.
+
+Pi_j was defined only for 0<=j<=m, but the displayed chain identity
+mentioned Pi_(j+1) without a range. The revision states 0<=j<m. This
+is exactly the range used to descend the solution Pi_(m-1)U.
+
+3. Curvature comparison needed a more explicit quadratic-form argument.
+
+The original argument is valid, but a reader could mistake the
+fiber-dependent inverse-square-root map S_x for a differential lift
+and consequently doubt the use of harmonicity. The revision defines
+the pointwise exterior-power embedding I_x and proves its exact
+diagonal curvature-block identity. With a fixed orthonormal base-form
+frame and harmonic vertical coefficients, integration gives the
+horizontal curvature pairing minus the fiber Bochner energy.
+
+No derivative of I_x or S_x is taken. Mixed coefficient curvature
+changes horizontal/vertical degree and has zero diagonal compression.
+The integral uses the fiber measure, with no total horizontal volume
+factor. The delta estimate is stated as an explicit quadratic-form
+bound after harmonic compression. The original budget and constant
+2 m^2 remain valid.
+
+4. Kodaira--Spencer insertion signs and projected connection.
+
+The revision defines J_i=(A_i^alpha_barbeta dbar z^beta wedge)iota_alpha
+and the conjugate insertion explicitly. Kahler symmetry of the lowered
+tensor gives bar J_i=J_i^*. Taking the fixed-type block of the full
+covariant-Lie commutator produces -J_i bar J_j+bar J_j J_i. Harmonic
+compression then gives exactly +K_j^*K_i-bar K_i^*bar K_j; orthogonal
+Gauss projection adds -B_j^*B_i+C_i^*C_j.
+
+The relative Dolbeault homotopy
+ D_bar_i=partial_bar_yi+dbar_y iota_bar_a_i+iota_bar_a_i dbar_y
+is displayed, proving that P D^(0,1) induces the direct-image
+holomorphic structure. This does not claim that D_bar_i preserves
+harmonic representatives. The fiber metric-compatibility identity is
+also displayed. Comparison with Choi--Schumacher is made in a
+holomorphic H-normal frame, fixing the derivative-term interpretation.
+
+5. Theorem 7.3: exact orthogonal extension and chain contraction.
+
+The revision displays the complete obstruction formula
+ dbar(hat s)=sum dy^i wedge hat(A_i contraction s)
+   -sum dy^i wedge dbar y^j wedge iota_(W_i barj^(1,0))(hat s).
+The adapted horizontal metric kills W, and pointwise annihilation
+kills the first term. Holomorphic coefficients in a holomorphic L^*
+frame contribute no additional derivative term.
+
+The Serre pairing is normalized explicitly by integral alpha wedge s,
+using the same order as fiber integration. The projection is then
+exactly componentwise vertical cohomology extraction; under the Hodge
+identification it is harmonic projection. This gives Pi_j J_j=Id
+without a hidden phase and proves contraction without assuming an
+extra isometry on the Serre-dual bundle. Adaptedness gives
+dV_X=dV_Y dV_y for normalized volumes, with no binomial factor.
+
+Local holomorphic dual frames and compactly supported base tests
+justify the distributional identity. Properness supplies compact
+support upstairs. The contraction proves the maximal-domain claim;
+no global bounds on derivatives of harmonic frames are needed.
+
+6. Auxiliary curvature kernels and optimal estimates.
+
+The revised proof diagonalizes the positive auxiliary curvature on
+the base. In total top antiholomorphic degree its pullback commutator
+has eigenvalues given by sums over holomorphic horizontal indices.
+On the lifted (a,p) block these are exactly the base eigenvalues,
+strictly positive because a>=1. The extended quadratic form q_(B_X)
+is used in the inverse-energy identity, avoiding an apparent inverse
+of an operator that can have a kernel on other blocks.
+
+Source and novelty checks
+
+Watanabe's arXiv:2109.12554v2, Definitions 1.3--1.4 and Theorems
+1.5--1.6, support the fixed-metric extremal characterization with the
+same auxiliary-bundle and compact-support quantifiers. Completeness
+supplies the converse and the semidefinite estimate used here.
+
+Choi--Schumacher, arXiv:2407.04298v1, formula (7.2) and the horizontal
+bracket calculation in Lemma 8.1, apply to the prescribed ordinary
+harmonic metric with arbitrary smooth Hermitian coefficients. The
+manuscript attributes these identities and asserts no new general
+curvature formula, unrestricted descent, sharpness, or priority.
+This review does not establish originality of the sufficient conditions.
+
+The nonisotrivial elliptic trace example and the negative R^1 pi_*O
+counterexample were recomputed. They support the stated limitations;
+neither requires a pullback twist of the flat coefficient bundle.
+
+Validation
+
+Separate mathematical checks covered Theorem 7.1, Theorem 7.3, and
+their source/analytic inputs. The new proof passages were checked
+again after revision. The revised article compiles to 27 pages with
+no LaTeX warnings or overfull boxes. Reference checks found no missing
+or duplicate labels or missing citations; all page renders were
+inspected, with the revised proof pages also inspected at full size.
+Theorems 1.1, 1.2, 6.1, 7.1, and 7.3 retain their numbering. The
+original dualN_ai.tex is not changed, and dated backups preserve the
+pre-review article.

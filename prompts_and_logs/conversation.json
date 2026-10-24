@@ -1,0 +1,957 @@
+{
+  "schema_version": 2,
+  "record_type": "selected_user_visible_conversation_export",
+  "status": "partial_recovered_local_research_history",
+  "exported_at_utc": "2026-10-24 04:13:57 UTC",
+  "source": {
+    "application": "Codex",
+    "thread_id": "01a099b5-9712-76a3-8540-1e8ca01975d6",
+    "thread_title": "Summarize the past works on the positivity of direct image…",
+    "access_method": "read_thread",
+    "scope": "Ten most recent turns concerning harmonic/direct-image arguments, manuscript creation, revisions, and visible review discussion."
+  },
+  "retrieval": {
+    "turn_limit": 10,
+    "max_output_chars_per_item": 20000,
+    "include_outputs": false,
+    "returned_turns": 10,
+    "returned_page_order": "newest_first",
+    "exported_order": "oldest_turn_first; original visible-message order within each turn",
+    "has_more_older_turns": true,
+    "coverage_complete": false,
+    "maximum_returned_visible_message_characters": 10373,
+    "per_item_truncation": "No selected visible message reaches the requested 20,000-character cap and no explicit truncation marker was detected. The tool supplies no per-item truncation flag; this export reproduces returned text and does not certify completeness beyond it."
+  },
+  "selection_policy": {
+    "included": [
+      "User text requests",
+      "User-selected earlier response quotations, preserved separately where supplied",
+      "Assistant commentary and final answers from those same research turns"
+    ],
+    "excluded": [
+      "Older turns outside the selected page",
+      "Hidden reasoning and reasoning summaries",
+      "System and developer instructions",
+      "Tool calls and tool outputs",
+      "Subagent activity and internal messages",
+      "Platform attachment/open-document and annotation scaffolding"
+    ],
+    "historical_status": "Past claims, review judgments, and unsuccessful or superseded approaches remain historical statements. Their presence does not certify correctness, novelty, or external peer review."
+  },
+  "redaction_policy": [
+    "Absolute local file paths are replaced with [local path omitted].",
+    "Internal citation and application directives are removed while ordinary textual claims and public web links are retained.",
+    "User-selected quotations are copied into a separate structured field when the platform supplied an annotation wrapper.",
+    "Outer whitespace is trimmed. No mathematical prose is summarized or rewritten."
+  ],
+  "provenance_gaps": {
+    "original_system_prompt": "Unavailable; not reconstructed or exported.",
+    "model_provider_version": "Not established by the selected visible messages.",
+    "token_usage": "Unavailable.",
+    "billing_and_compute_cost": "Unavailable.",
+    "complete_research_history": "Unavailable; older research turns and other original records are outside this selection.",
+    "formal_verification": "No proof-assistant formalization supplied."
+  },
+  "counts": {
+    "turns": 10,
+    "messages": 58,
+    "user_messages": 10,
+    "assistant_commentary": 38,
+    "assistant_final": 10
+  },
+  "messages": [
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16767-ec9e-7591-9c9f-e3813bc03e4b",
+      "source_turn_id": "01a16767-ec68-78e1-84fc-9a790315469f",
+      "turn_started_at_utc": "2026-10-23T06:17:06.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:25:47.000Z",
+      "content": "Can you extend the argument to general p and a, beyond p=n and a=m? State the additional assumptions needed to control the variation terms and prove the corresponding optimal L² estimate theorem.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adafbe4603c87d2a9a732eb490ac077",
+      "source_turn_id": "01a16767-ec68-78e1-84fc-9a790315469f",
+      "turn_started_at_utc": "2026-10-23T06:17:06.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:25:47.000Z",
+      "content": "I’ll check the curvature signs in general bidegree and state a theorem with explicit control of the variation terms. The key issue is that outside top degree, positive line-bundle curvature need not give a positive \\(\\bar\\partial\\) curvature operator.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adafd04cea487d2a2f809f039fbcce9",
+      "source_turn_id": "01a16767-ec68-78e1-84fc-9a790315469f",
+      "turn_started_at_utc": "2026-10-23T06:17:06.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:25:47.000Z",
+      "content": "There is a concrete extension for arbitrary fibre bidegree: write \\(L\\) as a unitary flat bundle tensored with a bundle from the base, and require the base curvature to dominate an explicit bound on the two adjacent Hodge variation maps. This permits nonzero variation. The general-degree estimate must also specify which auxiliary weights have a positive curvature operator, since positivity of the auxiliary line bundle alone no longer suffices.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adafd759a9c87d2ae8aa614448ca933",
+      "source_turn_id": "01a16767-ec68-78e1-84fc-9a790315469f",
+      "turn_started_at_utc": "2026-10-23T06:17:06.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:25:47.000Z",
+      "content": "The estimate can retain the optimal constant \\(1\\). The variation contributes\n\\[\nR_{j\\bar k}=\\theta_k^*\\theta_j-\\eta_j\\eta_k^*,\n\\]\nand an explicit curvature bound can absorb its possible negative part. I’ll also state a stronger uniform total-space condition that gives a literal shifted implication; a single fixed-degree optimal estimate does not establish that condition.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adafda2638487d2be3966b1a85dbb54",
+      "source_turn_id": "01a16767-ec68-78e1-84fc-9a790315469f",
+      "turn_started_at_utc": "2026-10-23T06:17:06.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:25:47.000Z",
+      "content": "**Yes, under explicit bounds on the variation and a degree-dependent curvature condition.** For general \\(p\\) and \\(a\\), semipositivity of \\(h\\) alone is insufficient: both adjacent Hodge components contribute to curvature, and the curvature commutator need not preserve positivity.\n\nI will give a concrete theorem permitting nonzero variation, followed by a version formulated as a shifted total-space implication.\n\nFirst, the meaning of “optimal \\((a,b)\\) estimates” needs care. For an auxiliary Hermitian line bundle \\(A\\), put\n\\[\nB_A^{a,b}=[i\\Theta_A,\\Lambda_{\\omega_Y}]\n\\quad\\text{on }\\Lambda^{a,b}T^*Y.\n\\]\nCall \\(A\\) **admissible in degree \\((a,b)\\)** when \\(B_A^{a,b}>0\\). If \\(i\\Theta_A\\) has eigenvalues \\(\\lambda_1,\\ldots,\\lambda_m\\), the eigenvalues of this operator are\n\\[\n\\sum_{i\\in I}\\lambda_i+\\sum_{j\\in J}\\lambda_j\n-\\sum_{\\ell=1}^m\\lambda_\\ell,\n\\qquad |I|=a,\\quad |J|=b.\n\\tag{1}\n\\]\nThus positivity of \\(A\\) does not suffice in an interior bidegree. Moreover, positive admissible auxiliary bundles can exist only when\n\\[\na+b>m,\n\\]\nas follows by taking the average of the eigenvalues in (1). The theorem below explicitly uses admissible tests.\n\n**Theorem — quantitative control of harmonic variation.**  \nLet\n\\[\n\\pi:X\\longrightarrow (Y,\\omega_Y)\n\\]\nbe a smooth proper Kähler fibration, where \\(Y\\) is complete Kähler of dimension \\(m\\), with fibres of dimension \\(n\\). Fix a closed relative Kähler form \\(\\omega_f\\).\n\nAssume that\n\\[\n(L,h)=(U,h_U)\\otimes\\pi^*(G,h_G),\n\\tag{2}\n\\]\nwhere \\(U\\) is a unitary flat line bundle and \\(h_G\\) is smooth. For arbitrary \\(0\\le p,q\\le n\\), set\n\\[\nE^{p,q}=R^q\\pi_*(\\Omega^p_{X/Y}\\otimes U),\n\\qquad\n\\mathcal F=E^{p,q}\\otimes G,\n\\]\nwith their fibrewise harmonic metrics \\(H_0\\) and \\(H=H_0h_G\\).\n\nLet\n\\[\n\\theta_j:E^{p,q}\\longrightarrow E^{p-1,q+1},\n\\qquad\n\\eta_j:E^{p+1,q-1}\\longrightarrow E^{p,q}\n\\tag{3}\n\\]\nbe the outgoing and incoming Higgs operators in an \\(\\omega_Y\\)-unitary tangent frame. Define\n\\[\n\\kappa(y)=\n\\sum_{j=1}^m\n\\left(\n\\|\\theta_j\\|_{\\mathrm{HS}}^2+\n\\|\\eta_j\\|_{\\mathrm{HS}}^2\n\\right).\n\\tag{4}\n\\]\nMissing Hodge components are interpreted as zero. This quantity is independent of the unitary frame.\n\nFix \\(0\\le a\\le m\\) and \\(1\\le b\\le m\\). Let\n\\[\nc_{a,b}(G)\n=\n\\lambda_{\\min}\\!\\left(\n[i\\Theta_G,\\Lambda_{\\omega_Y}]_{\\Lambda^{a,b}}\n\\right).\n\\]\nSuppose pointwise on \\(Y\\) that\n\\[\n\\boxed{\nc_{a,b}(G)\\ge 2m^2\\kappa.\n}\n\\tag{5}\n\\]\n\nThen, for every admissible auxiliary line bundle \\((A,h_A)\\) and every\n\\[\nf\\in A_c^{a,b}(Y,\\mathcal F\\otimes A),\n\\qquad \\bar\\partial f=0,\n\\]\nthere exists \\(u\\in L^2_{a,b-1}(Y,\\mathcal F\\otimes A)\\) satisfying\n\\[\n\\boxed{\n\\bar\\partial u=f,\\qquad\n\\int_Y|u|_{H\\otimes h_A}^2\\,dV_Y\n\\le\n\\int_Y\n\\left\\langle(B_A^{a,b})^{-1}f,f\\right\\rangle_{H\\otimes h_A}\n\\,dV_Y.\n}\n\\tag{6}\n\\]\nIn particular, this applies to positive admissible auxiliary bundles in the range \\(a+b>m\\), with no restriction \\(p=n\\) or \\(a=m\\).\n\n**Proof.**\n\n**1. Identify the metric and the variation operators.**\n\nBecause \\(U\\) is unitary flat, its fibre cohomology carries the Hodge decomposition. The fixed relative Kähler class supplies the polarized Lefschetz decomposition; its Hodge metric, with the corresponding normalization on each summand, is the fibrewise harmonic \\(L^2\\) metric.\n\nThe projection formula gives\n\\[\n(\\mathcal F,H)\n=\n(E^{p,q},H_0)\\otimes(G,h_G).\n\\tag{7}\n\\]\nIndeed, \\(h_G(y)\\) is constant along \\(X_y\\), so it changes the fibrewise norm by a scalar without changing harmonic representatives.\n\nThe operators in (3) measure the variation of those representatives. For example,\n\\[\n\\theta_j[\\alpha]\n=\n\\left[\n\\operatorname{KS}(\\partial_{y^j})\\mathbin{\\lrcorner}\\alpha\n\\right],\n\\tag{8}\n\\]\nwhose harmonic representative is obtained by fibrewise harmonic projection.\n\nLet \\(D\\) be the direct sum of the Chern connections of the Hodge bundles. The Gauss–Manin connection decomposes as\n\\[\n\\nabla=D+\\theta+\\theta^\\dagger.\n\\]\nTaking the Hodge-degree-preserving part of \\(\\nabla^2=0\\) gives\n\\[\n\\boxed{\nR^{E^{p,q}}_{j\\bar k}\n=\n\\theta_k^\\dagger\\theta_j-\\eta_j\\eta_k^\\dagger.\n}\n\\tag{9}\n\\]\nThis is the exact curvature contribution of harmonic variation. See [Sabbah–Schnell, §50, Proposition (b)](https://www.math.stonybrook.edu/~cschnell/pdf/papers/VHS-disk.pdf).\n\nThe second term is absent in an extreme Hodge degree, but generally survives. Even the first term must be passed through the degree-\\((a,b)\\) commutator before its sign can be assessed.\n\n**2. Bound the full variation contribution.**\n\nWrite\n\\[\n\\mathscr V_{a,b}\n=\n[i\\Theta_{E^{p,q},H_0},\\Lambda_{\\omega_Y}]\n\\quad\\text{on }\\Lambda^{a,b}T^*Y\\otimes E^{p,q}.\n\\tag{10}\n\\]\nFrom (9),\n\\[\n\\begin{aligned}\n\\sum_{j,k}\\|R_{j\\bar k}\\|_{\\mathrm{op}}\n&\\le\n\\left(\\sum_j\\|\\theta_j\\|_{\\mathrm{HS}}\\right)^2\n+\n\\left(\\sum_j\\|\\eta_j\\|_{\\mathrm{HS}}\\right)^2\\\\\n&\\le m\\kappa.\n\\end{aligned}\n\\]\nExterior multiplication by a unit elementary two-form has operator norm at most \\(1\\), and \\(\\|\\Lambda_{\\omega_Y}\\|\\le m\\). Therefore\n\\[\n\\boxed{\n\\|\\mathscr V_{a,b}\\|_{\\mathrm{op}}\\le 2m^2\\kappa.\n}\n\\tag{11}\n\\]\nThis deliberately nonsharp bound controls both adjacent Hodge components, including all their cross terms.\n\n**3. Absorb variation into the curvature of \\(G\\).**\n\nBy (7),\n\\[\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]\n=\n[i\\Theta_G,\\Lambda_{\\omega_Y}]\\otimes\\operatorname{Id}\n+\n\\mathscr V_{a,b}.\n\\]\nConsequently, (5) and (11) imply\n\\[\n\\boxed{\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]\n\\ge0\n\\quad\\text{in degree }(a,b).\n}\n\\tag{12}\n\\]\n\nThe more precise hypothesis, of which (5) is a convenient sufficient criterion, is\n\\[\n\\boxed{\n[i\\Theta_G,\\Lambda_{\\omega_Y}]\\otimes\\operatorname{Id}\n+\n\\left[\ni\\sum_{j,k}\n(\\theta_k^\\dagger\\theta_j-\\eta_j\\eta_k^\\dagger)\n\\,dy^j\\wedge d\\bar y^k,\n\\Lambda_{\\omega_Y}\n\\right]\n\\ge0.\n}\n\\tag{13}\n\\]\nThis formula specifies exactly which variation terms must be controlled.\n\n**4. Solve with the optimal constant.**\n\nFor \\(\\mathcal F\\otimes A\\)-valued \\((a,b)\\)-forms, the Bochner–Kodaira identity and (12) give\n\\[\n\\begin{aligned}\n\\|\\bar\\partial v\\|^2+\\|\\bar\\partial^*v\\|^2\n&=\n\\|D'v\\|^2+\\|(D')^*v\\|^2\\\\\n&\\quad+\n\\int_Y\n\\left\\langle\n\\bigl([i\\Theta_{\\mathcal F,H},\\Lambda]+B_A^{a,b}\\bigr)v,v\n\\right\\rangle\\\\\n&\\ge\n\\int_Y\\langle B_A^{a,b}v,v\\rangle.\n\\end{aligned}\n\\tag{14}\n\\]\nThe identity holds in arbitrary bidegree; see [Demailly, *Analytic Methods in Algebraic Geometry*, Chapters 4–5](https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/analmeth_book.pdf).\n\nLet\n\\[\nR(f)=\\int_Y\\langle(B_A^{a,b})^{-1}f,f\\rangle.\n\\]\nWeighted Cauchy–Schwarz gives\n\\[\n|(f,v)|^2\n\\le R(f)\\int_Y\\langle B_A^{a,b}v,v\\rangle.\n\\]\nFor \\(\\bar\\partial\\)-closed \\(v\\), (14) therefore yields\n\\[\n|(f,v)|^2\\le R(f)\\|\\bar\\partial^*v\\|^2.\n\\]\nCompleteness and the Hilbert-space existence argument for \\(\\bar\\partial\\) produce \\(u\\) with\n\\[\n\\bar\\partial u=f,\\qquad \\|u\\|^2\\le R(f).\n\\]\nThis proves (6), with constant \\(1\\). \\(\\square\\)\n\nThe hypothesis is quite concrete. If the smallest and largest eigenvalues of \\(i\\Theta_G\\) are \\(\\lambda_{\\min}\\) and \\(\\lambda_{\\max}\\), then\n\\[\nc_{a,b}(G)\\ge\nb\\lambda_{\\min}-(m-a)\\lambda_{\\max}.\n\\]\nHence it suffices that\n\\[\nb\\lambda_{\\min}-(m-a)\\lambda_{\\max}\\ge2m^2\\kappa.\n\\tag{15}\n\\]\nIn particular, if\n\\[\ni\\Theta_G=\\lambda\\omega_Y,\n\\]\ncondition (5) becomes\n\\[\n\\boxed{\n\\lambda(a+b-m)\\ge2m^2\\kappa.\n}\n\\tag{16}\n\\]\nFor instance, on a compact projective base, one can take \\(\\omega_Y=i\\Theta_{A_0}\\) for a positive line bundle \\(A_0\\), and \\(G=A_0^N\\) with \\(N\\) sufficiently large. This permits arbitrary fibre bidegrees and interior base bidegrees such as \\((a,b)=(2,2)\\) when \\(m=3\\).\n\nThere is also a precise **shifted total-space version**. Keep the hypotheses (2) and suppose \\(X\\) has a Kähler form \\(\\omega_X\\). Set\n\\[\n\\Omega_\\varepsilon=\\pi^*\\omega_Y+\\varepsilon\\omega_X.\n\\]\nAssume that a nonnegative function \\(\\nu\\) satisfies\n\\[\n\\mathscr V_{a,b}\\ge-\\nu\\,\\operatorname{Id},\n\\tag{17}\n\\]\nand, for a sequence \\(\\varepsilon\\downarrow0\\),\n\\[\n\\boxed{\n[i\\Theta_{L,h},\\Lambda_{\\Omega_\\varepsilon}]\n\\ge(\\nu\\circ\\pi)\\operatorname{Id}\n\\quad\\text{on }\\Lambda^{a+p,b+q}T^*X\\otimes L.\n}\n\\tag{18}\n\\]\nThen the same optimal estimate (6) follows.\n\nIndeed, \\(U\\) is flat, so \\(i\\Theta_L=\\pi^*i\\Theta_G\\). Restrict (18) to the component with horizontal degree \\((a,b)\\) and vertical degree \\((p,q)\\). The commutator acts there through the horizontal metric alone. As \\(\\varepsilon\\to0\\), this metric converges to \\(\\pi^*\\omega_Y\\), giving\n\\[\n[i\\Theta_G,\\Lambda_{\\omega_Y}]\n\\ge\\nu\\,\\operatorname{Id}.\n\\]\nCombining this with (17) proves (12), and the preceding \\(L^2\\) argument applies.\n\nCondition (18) is a uniform, quantitative strengthening of the total-space positivity assumption. A single optimal estimate in degree \\((a+p,b+q)\\) does not establish it automatically. Outside canonical degree, adjacent harmonic types have the same total fibre degree, so their contributions need not disappear under fibre rescaling. Equations (9), (13), and (17) explicitly control those surviving terms.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16770-6451-7ee0-9e5a-17a7a6228703",
+      "source_turn_id": "01a16770-641a-7b42-b6f7-463b76d44d89",
+      "turn_started_at_utc": "2026-10-23T06:26:21.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:36:02.000Z",
+      "content": "Can you remove the assumption that L is a unitary flat bundle tensored with a pullback, and treat a general smooth semipositive (L,h)? State sufficient conditions controlling harmonic variation and prove the optimal L² estimate.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adafe0fa0a887d2bcbcc81c36b380ac",
+      "source_turn_id": "01a16770-641a-7b42-b6f7-463b76d44d89",
+      "turn_started_at_utc": "2026-10-23T06:26:21.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:36:02.000Z",
+      "content": "I’ll formulate conditions directly in terms of the fibrewise harmonic projections and their variation, so they apply to a general smooth semipositive \\(L\\). I’ll distinguish the positivity supplied by \\(h\\) from the additional control needed for the induced metric.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adafef7b15487d2bf33d864c899cf0d",
+      "source_turn_id": "01a16770-641a-7b42-b6f7-463b76d44d89",
+      "turn_started_at_utc": "2026-10-23T06:26:21.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:36:02.000Z",
+      "content": "A useful sufficient criterion has three parts: constant fibre cohomology dimension, a spectral gap for the fibrewise Dolbeault Laplacian, and an ambient curvature lower bound large enough to absorb the variation of the harmonic projections. The Green operator gives that variation explicitly. This allows arbitrary vertical and mixed curvature of \\(L\\), but the ambient lower bound remains an additional hypothesis.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adafff7684487d28e1a43cf7499bd9d",
+      "source_turn_id": "01a16770-641a-7b42-b6f7-463b76d44d89",
+      "turn_started_at_utc": "2026-10-23T06:26:21.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:36:02.000Z",
+      "content": "Yes. **The flatness assumption can be replaced by a quantitative bound on the variation of the fibrewise Dolbeault Laplacian, together with a curvature lower bound that absorbs this variation.** This permits arbitrary smooth semipositive \\(L\\), including nonzero vertical and mixed curvature.\n\nSemipositivity of \\(L\\) alone does not provide these additional bounds. The theorem below is a sufficient criterion, rather than an unconditional positivity theorem for all higher direct images. General curvature formulas for these twisted direct images are studied by [Choi–Schumacher](https://arxiv.org/abs/2407.04298).\n\n**Set-up and the ambient connection.** Let\n\\[\n\\pi:X\\longrightarrow (Y,\\omega_Y)\n\\]\nbe a smooth proper Kähler fibration, with \\(\\dim Y=m\\) and fibres of dimension \\(n\\). Fix a smooth family of fibrewise Kähler metrics \\(\\omega_y\\), and let \\((L,h)\\) be a holomorphic line bundle with smooth metric satisfying\n\\[\ni\\Theta_{L,h}\\ge0.\n\\]\n\nFix \\(0\\le p,q\\le n\\), and assume\n\\[\n\\dim H^q(X_y,\\Omega^p_{X_y}\\otimes L_y)\n\\]\nis locally constant. Then\n\\[\n\\mathcal F=R^q\\pi_*(\\Omega^p_{X/Y}\\otimes L)\n\\]\nis locally free, with harmonic metric\n\\[\nH_y(u,v)\n=\n\\int_{X_y}\n\\langle \\alpha_u,\\alpha_v\\rangle_{\\omega_y,h_y}\n\\frac{\\omega_y^n}{n!}.\n\\]\n\nWrite\n\\[\n\\mathscr A_y=A^{p,q}(X_y,L_y),\\qquad\n\\Delta_y=\\Box''_y,\\qquad\nP_[local path omitted]\n\\]\nand put \\(Q_y=I-P_y\\). The harmonic bundle\n\\[\n\\mathcal H=\\ker\\Delta\n\\]\nidentifies isometrically with \\((\\mathcal F,H)\\).\n\nWe need a connection on \\(\\mathscr A\\) constructed **before projecting to harmonic forms**. Choose a smooth complex horizontal splitting of \\(\\pi\\). Apply it to the Dolbeault resolution of the holomorphic bundle\n\\[\n\\mathscr E=\\Omega^p_{X/Y}\\otimes L\n\\]\non \\(X\\). Its Dolbeault operator decomposes as\n\\[\n\\bar\\partial_{\\mathscr E}\n=\nd_v+D_h''+\\mathcal R_h,\n\\]\nwhere the changes in horizontal and vertical antiholomorphic degrees are respectively\n\\[\n(0,1),\\qquad (1,0),\\qquad (2,-1).\n\\]\nIn particular,\n\\[\nd_vD_h''+D_h''d_v=0.\n\\]\nThus \\(D_h''\\) induces the canonical Dolbeault operator on fibre cohomology.\n\nLet \\(D\\) be the connection on smooth fibrewise forms whose \\((0,1)\\)-part is \\(D_h''\\) and which is compatible with the fibrewise \\(L^2\\) metric. Its \\((1,0)\\)-part is determined by metric compatibility, using formal fibrewise adjoints. Consequently,\n\\[\nD^{\\mathcal F}=PD|_{\\mathcal H}\n\\]\nis precisely the Chern connection of \\(H\\).\n\nHere \\(D\\) acts on smooth fibrewise forms; we do not require its coefficients to be bounded operators on the entire fibrewise \\(L^2\\) space.\n\n**Theorem.** Suppose \\(Y\\) is complete Kähler. Fix\n\\[\n0\\le a\\le m,\\qquad 1\\le b\\le m.\n\\]\nUse the connection \\(D\\) above and assume the following pointwise conditions.\n\nFirst, the fibre Laplacian has a spectral gap:\n\\[\n\\Delta_y|_{\\mathcal H_y^\\perp}\\ge \\gamma(y)I,\n\\qquad \\gamma(y)>0.\n\\tag{1}\n\\]\n\nIn an \\(\\omega_Y\\)-unitary frame \\(e_1,\\dots,e_m\\), define\n\\[\nT_j=[D_{e_j},\\Delta]P,\\qquad\nT_{\\bar j}=[D_{\\bar e_j},\\Delta]P,\n\\]\nand\n\\[\n\\mathfrak d(y)\n=\n\\sum_{j=1}^m\n\\left(\n\\|T_j\\|_{\\mathrm{HS}}^2+\n\\|T_{\\bar j}\\|_{\\mathrm{HS}}^2\n\\right).\n\\tag{2}\n\\]\nThese operators have finite-dimensional domain \\(\\mathcal H_y\\), so the indicated norms are well-defined.\n\nWrite the \\((1,1)\\)-curvature of \\(D\\) as\n\\[\n(D^2)^{1,1}\n=\n\\sum_{j,k}R^D_{j\\bar k}\\,\\zeta^j\\wedge\\bar\\zeta^k.\n\\]\nDefine the compressed ambient curvature commutator\n\\[\n\\mathcal K^{a,b}\n=\n\\left[\ni\\sum_{j,k}\nP R^D_{j\\bar k}P\\,\n\\zeta^j\\wedge\\bar\\zeta^k,\n\\Lambda_{\\omega_Y}\n\\right]_{\\Lambda^{a,b}T_Y^*\\otimes\\mathcal H}.\n\\tag{3}\n\\]\n\nAssume the curvature domination condition\n\\[\n\\boxed{\n\\mathcal K^{a,b}\n\\ \\ge\\\n\\frac{2m^2}{\\gamma^2}\\,\\mathfrak d\\;I.\n}\n\\tag{4}\n\\]\n\nThen\n\\[\n\\boxed{\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]_{a,b}\\ge0.\n}\n\\tag{5}\n\\]\n\nConsequently, let \\((A,h_A)\\) be any smooth Hermitian holomorphic line bundle on \\(Y\\) for which\n\\[\nB_A\n=\n[i\\Theta_{A,h_A},\\Lambda_{\\omega_Y}]_{a,b}\n\\otimes I_{\\mathcal F}>0.\n\\tag{6}\n\\]\nFor every \\(\\bar\\partial\\)-closed\n\\[\nf\\in L^2_{a,b}(Y,\\mathcal F\\otimes A)\n\\]\nsuch that\n\\[\n\\mathcal I(f)\n:=\n\\int_Y\\langle B_A^{-1}f,f\\rangle_{H\\otimes h_A,\\omega_Y}\n\\,dV_{\\omega_Y}<\\infty,\n\\]\nthere exists\n\\[\nu\\in L^2_{a,b-1}(Y,\\mathcal F\\otimes A)\n\\]\nsatisfying\n\\[\n\\boxed{\n\\bar\\partial u=f,\\qquad\n\\int_Y|u|^2_{H\\otimes h_A,\\omega_Y}\\,dV_{\\omega_Y}\n\\le\n\\mathcal I(f).\n}\n\\tag{7}\n\\]\n\nThus \\(H\\) satisfies the optimal \\((a,b)\\)-\\(L^2\\) estimate, with constant \\(1\\), for the admissible auxiliary metrics in (6).\n\nThe spectral gap in (1) is locally available from compactness of the fibres and constancy of the harmonic dimension. The substantive additional hypothesis is the domination in (4).\n\n**Proof.**\n\n**1. Express harmonic variation through the Green operator.**\n\nLet\n\\[\nG_y=(\\Delta_y|_{\\mathcal H_y^\\perp})^{-1}Q_y.\n\\]\nThen\n\\[\n\\|G_y\\|_{\\mathrm{op}}\\le\\gamma(y)^{-1}.\n\\]\n\nThe two components of the second fundamental form of the harmonic subbundle are\n\\[\nB_j=QD_{e_j}|_{\\mathcal H},\\qquad\nC_j=QD_{\\bar e_j}|_{\\mathcal H}.\n\\tag{8}\n\\]\n\nFor a smooth harmonic section \\(s\\), differentiating \\(\\Delta s=0\\) gives\n\\[\n\\Delta D_{e_j}s=-[D_{e_j},\\Delta]s.\n\\]\nApplying \\(G\\) yields\n\\[\n\\boxed{\nB_j=-GT_j,\\qquad C_j=-GT_{\\bar j}.\n}\n\\tag{9}\n\\]\nTherefore, if\n\\[\n\\kappa\n=\n\\sum_j\n\\left(\n\\|B_j\\|_{\\mathrm{HS}}^2+\n\\|C_j\\|_{\\mathrm{HS}}^2\n\\right),\n\\]\nthen\n\\[\n\\boxed{\\kappa\\le\\gamma^{-2}\\mathfrak d.}\n\\tag{10}\n\\]\n\nFormula (9) incorporates the variation of the complex structures, fibre metrics, relative holomorphic forms, and the metric on \\(L\\). It requires no flat connection on \\(L\\).\n\n**2. Compute the curvature of the harmonic metric.**\n\nWith respect to the orthogonal decomposition\n\\[\n\\mathscr A=\\mathcal H\\oplus\\mathcal H^\\perp,\n\\]\nmetric compatibility gives the block form\n\\[\nD=\n\\begin{pmatrix}\nD^{\\mathcal F}&-S^\\dagger\\\\\nS&D^\\perp\n\\end{pmatrix},\n\\qquad\nS=\\sum_j(B_j\\zeta^j+C_j\\bar\\zeta^j).\n\\]\nComputing its curvature gives\n\\[\n\\Theta_{\\mathcal F,H}=PD^2P+S^\\dagger\\wedge S.\n\\]\nIn components,\n\\[\n\\boxed{\nR^{\\mathcal F}_{j\\bar k}\n=\nP R^D_{j\\bar k}P\n-\nB_k^\\dagger B_j\n+\nC_j^\\dagger C_k.\n}\n\\tag{11}\n\\]\n\nBoth variation terms matter in arbitrary bidegree. In particular, one cannot discard the \\(C\\)-term merely because it has a plus sign before taking the curvature commutator.\n\nThis is where the defects of a naive total-space harmonic lift are accounted for: the lift is isometric, but need not be a closed ordinary \\(L\\)-valued form on \\(X\\). The projection-curvature calculation retains its variation terms explicitly. \n\n**3. Bound the variation contribution.**\n\nSet\n\\[\nV_{j\\bar k}=-B_k^\\dagger B_j+C_j^\\dagger C_k.\n\\]\nThen\n\\[\n\\begin{aligned}\n\\sum_{j,k}\\|V_{j\\bar k}\\|_{\\mathrm{op}}\n&\\le\n\\left(\\sum_j\\|B_j\\|_{\\mathrm{HS}}\\right)^2\n+\n\\left(\\sum_j\\|C_j\\|_{\\mathrm{HS}}\\right)^2\\\\\n&\\le m\\kappa.\n\\end{aligned}\n\\tag{12}\n\\]\nExterior multiplication by a unit elementary two-form has norm at most \\(1\\), and\n\\[\n\\|\\Lambda_{\\omega_Y}\\|\\le m.\n\\]\nHence\n\\[\n\\left\\|\n\\left[\ni\\sum_{j,k}V_{j\\bar k}\\zeta^j\\wedge\\bar\\zeta^k,\n\\Lambda_{\\omega_Y}\n\\right]\n\\right\\|_{\\mathrm{op}}\n\\le 2m^2\\kappa.\n\\tag{13}\n\\]\n\nCombining (10), (11), and (13),\n\\[\n\\begin{aligned}\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]_{a,b}\n&\\ge \\mathcal K^{a,b}-2m^2\\kappa I\\\\\n&\\ge \\mathcal K^{a,b}\n-\\frac{2m^2}{\\gamma^2}\\mathfrak d\\,I\\\\\n&\\ge0.\n\\end{aligned}\n\\]\nThis proves (5).\n\nThe constant \\(2m^2\\) is a convenient sufficient bound, not a sharp bound for harmonic variation. The resulting \\(L^2\\) estimate nevertheless has the exact constant \\(1\\).\n\n**4. Solve \\(\\bar\\partial\\) with the optimal estimate.**\n\nFor compactly supported smooth \\(\\mathcal F\\otimes A\\)-valued \\((a,b)\\)-forms \\(v\\), the Bochner–Kodaira–Nakano identity gives\n\\[\n\\begin{aligned}\n\\|\\bar\\partial v\\|^2+\\|\\bar\\partial^*v\\|^2\n&=\n\\|D'v\\|^2+\\|(D')^*v\\|^2\\\\\n&\\quad+\n\\int_Y\n\\left\\langle\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]v,v\n\\right\\rangle\\,dV_{\\omega_Y}\\\\\n&\\quad+\n\\int_Y\\langle B_Av,v\\rangle\\,dV_{\\omega_Y}\\\\\n&\\ge\n\\int_Y\\langle B_Av,v\\rangle\\,dV_{\\omega_Y}.\n\\end{aligned}\n\\tag{14}\n\\]\nCompleteness permits extension to the relevant operator domains.\n\nFor \\(v\\in\\ker\\bar\\partial\\cap\\operatorname{Dom}\\bar\\partial^*\\), weighted Cauchy–Schwarz gives\n\\[\n\\begin{aligned}\n|(f,v)|^2\n&\\le\n\\mathcal I(f)\n\\int_Y\\langle B_Av,v\\rangle\\,dV_{\\omega_Y}\\\\\n&\\le \\mathcal I(f)\\|\\bar\\partial^*v\\|^2.\n\\end{aligned}\n\\tag{15}\n\\]\nHilbert-space duality now produces \\(u\\) with\n\\[\n\\bar\\partial u=f,\\qquad \\|u\\|^2\\le\\mathcal I(f).\n\\]\nThis is the standard complete-Kähler existence argument; see [Demailly, Chapters 4–5](https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/analmeth_book.pdf). \\(\\square\\)\n\n**How the hypotheses can be realized for a nonflat \\(L\\).** The ambient operator \\(\\mathcal K^{a,b}\\) contains contributions from the relative cotangent bundle, horizontal splitting, fibre volume, and \\(h\\). Thus \\(i\\Theta_{L,h}\\ge0\\) does not by itself imply (4). Nevertheless, the criterion can hold for genuinely nonflat twists.\n\nFor example, suppose \\(Y\\) is compact projective, and choose a positive line bundle \\(A_0\\) with\n\\[\ni\\Theta_{A_0}=\\omega_Y.\n\\]\nStart with any smooth semipositive \\((L_0,h_0)\\) having constant relevant cohomology dimensions, and put\n\\[\n(L_N,h_N)\n=\n(L_0,h_0)\\otimes\\pi^*(A_0,h_{A_0})^{\\otimes N}.\n\\]\nHere \\(L_0\\) may have arbitrary nonzero vertical and mixed curvature.\n\nThe pullback factor scales each fibre metric by a scalar. Consequently, the fibre Laplacians and harmonic projections are unchanged, and so are the off-diagonal operators \\(B_j,C_j\\). Meanwhile,\n\\[\n\\mathcal K_N^{a,b}\n=\n\\mathcal K_0^{a,b}\n+\nN(a+b-m)I.\n\\tag{16}\n\\]\nChoose constants \\(C,K\\ge0\\) such that\n\\[\n\\mathcal K_0^{a,b}\\ge-CI,\\qquad \\kappa\\le K.\n\\]\nWhen \\(a+b>m\\), the condition\n\\[\nN(a+b-m)\\ge C+2m^2K\n\\tag{17}\n\\]\ntherefore guarantees the optimal estimate. This example imposes no unitary-flat factorization on \\(L_0\\).\n\nFinally, the auxiliary positivity condition (6) is essential for general degrees. If \\(i\\Theta_A\\) has eigenvalues \\(\\lambda_1,\\dots,\\lambda_m\\), then \\(B_A\\) has eigenvalues\n\\[\n\\sum_{i\\in I}\\lambda_i+\\sum_{j\\in J}\\lambda_j\n-\\sum_{\\ell=1}^m\\lambda_\\ell,\n\\qquad |I|=a,\\quad |J|=b.\n\\]\nThus positivity of \\(A\\) alone does not ensure \\(B_A>0\\). If the definition requires positive auxiliary line bundles, admissible tests can exist only when \\(a+b>m\\). The theorem applies to every \\(p,q,a,b\\) in the stated ranges, subject to this explicit admissibility condition.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_annotation_directive_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_path_redacted",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16779-b516-7292-ba6d-98ed69d5b733",
+      "source_turn_id": "01a16779-b4de-71a2-aaf9-e2efed4b6281",
+      "turn_started_at_utc": "2026-10-23T06:36:31.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:45:24.000Z",
+      "content": "Can you express the curvature domination condition (4) explicitly in terms of the curvature of L and the Kodaira–Spencer tensors, and give a nonisotrivial example satisfying it without adding a large pullback twist?",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb0072d2dc87d2b857e3e4d5fe31b1",
+      "source_turn_id": "01a16779-b4de-71a2-aaf9-e2efed4b6281",
+      "turn_started_at_utc": "2026-10-23T06:36:31.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:45:24.000Z",
+      "content": "I’ll check how the domination condition expands in a general twisted family, including which terms involve more than the curvature of \\(L\\) and the Kodaira–Spencer tensors. I’ll also look for a nonisotrivial example where the condition holds without a large pullback twist.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb01536b1487d2b564029a5a846dd5",
+      "source_turn_id": "01a16779-b4de-71a2-aaf9-e2efed4b6281",
+      "turn_started_at_utc": "2026-10-23T06:36:31.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:45:24.000Z",
+      "content": "There is a concrete example: a varying elliptic curve times \\(\\mathbb P^1\\), with \\(L\\) equal to \\(\\mathcal O_{\\mathbb P^1}(1)\\) on the second factor. Its direct-image metric has positive curvature, and the error term in condition (4) vanishes. The Kodaira–Spencer tensor is nonzero; in this example it supplies the positive curvature.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adb022bad8087d29e51ecb1bc1f20f3",
+      "source_turn_id": "01a16779-b4de-71a2-aaf9-e2efed4b6281",
+      "turn_started_at_utc": "2026-10-23T06:36:31.000Z",
+      "turn_completed_at_utc": "2026-10-23T06:45:24.000Z",
+      "content": "Yes. **There is an explicit expansion, and a nonisotrivial example satisfying the literal condition (4) with nonflat \\(L\\) and strictly positive \\(H\\), without any pullback twist.**\n\nOne qualification is necessary: condition (4) depends on the chosen relative Kähler geometry and fibrewise spectral data. In general, it cannot be reduced to an inequality involving only the pointwise curvature of \\(L\\) and the norm of the Kodaira–Spencer tensor.\n\n**1. Expand the geometric quantities entering (4).**\n\nFix a closed real \\((1,1)\\)-form \\(\\omega_X\\) whose restrictions to the fibres are Kähler. Use its horizontal lifts\n\\[\nv_i=\\frac{\\partial}{\\partial s^i}\n+a_i^\\alpha\\frac{\\partial}{\\partial z^\\alpha}.\n\\]\nWrite\n\\[\nA_i=\\bar\\partial_{X_y}v_i\n=\n\\frac{\\partial a_i^\\alpha}{\\partial\\bar z^\\beta}\n\\,d\\bar z^\\beta\\otimes\\frac{\\partial}{\\partial z^\\alpha}\n\\]\nfor the corresponding Kodaira–Spencer representatives.\n\nLet \\(\\Theta_L\\) denote the Chern curvature, with \\(i\\Theta_L\\ge0\\). Besides its horizontal component, we need its mixed component\n\\[\n\\eta_i\n=\n-\\left(\\iota_{v_i}\\Theta_L\\right)\\big|_{X_y}.\n\\tag{18}\n\\]\nFor example, if \\(h=e^{-\\varphi}\\), then\n\\[\n\\eta_i\n=\n-\\left(\n\\varphi_{i\\bar\\beta}\n+a_i^\\alpha\\varphi_{\\alpha\\bar\\beta}\n\\right)d\\bar z^\\beta,\n\\]\nand\n\\[\n\\begin{aligned}\n\\Theta_L(v_i,\\bar v_j)\n={}&\\varphi_{i\\bar j}\n+a_i^\\alpha\\varphi_{\\alpha\\bar j}\n+\\bar a_j^\\beta\\varphi_{i\\bar\\beta}\\\\\n&+a_i^\\alpha\\bar a_j^\\beta\\varphi_{\\alpha\\bar\\beta}.\n\\end{aligned}\n\\tag{19}\n\\]\n\nDefine the standard insertion operator\n\\[\n\\mathsf C_i\n=\n\\sum_{\\alpha,\\beta}\n(A_i)^\\alpha_{\\bar\\beta}\n\\,d\\bar z^\\beta\\wedge\\iota_{\\partial/\\partial z^\\alpha}.\n\\tag{20}\n\\]\nIt maps \\((p,q)\\)-forms to \\((p-1,q+1)\\)-forms. Its fibrewise adjoint is denoted by \\(\\mathsf C_i^\\dagger\\).\n\nAll operators below act on fibrewise \\(L\\)-valued forms. Put\n\\[\n\\boxed{\nW_i=\\eta_i\\wedge-[\\partial_h,\\mathsf C_i],\n}\n\\tag{21}\n\\]\nwhere the bracket is the ordinary commutator. Thus\n\\[\nW_i u\n=\n\\eta_i\\wedge u\n-\\partial_h(\\mathsf C_i u)\n+\\mathsf C_i(\\partial_hu).\n\\]\nIts adjoint is\n\\[\nW_i^\\dagger\n=\n(\\eta_i\\wedge)^\\dagger\n+[\\partial_h^*,\\mathsf C_i^\\dagger].\n\\tag{22}\n\\]\nOn input degree \\((p,q)\\), \\(W_i^\\dagger\\) means the adjoint of \\(W_i\\) acting on degree \\((p,q-1)\\).\n\nThese formulas display the two sources of variation: the mixed curvature of \\(L\\), and the Kodaira–Spencer action together with its vertical derivatives.\n\nFor the connection \\(D\\) in the preceding answer, using this horizontal splitting, the compressed ambient curvature is\n\\[\n\\boxed{\nM_{i\\bar j}:=PR^D_{i\\bar j}P\n=\nP\\left(\n\\Theta_L(v_i,\\bar v_j)\n+\\mathcal L^h_{[v_i,\\bar v_j]}\n+[\\mathsf C_j^\\dagger,\\mathsf C_i]\n\\right)P.\n}\n\\tag{23}\n\\]\nHere \\(\\mathcal L^h\\) is the covariant Lie derivative using the Chern connection of \\(L\\).\n\nIn particular, for a tangent direction \\(\\xi\\) and a harmonic form \\(u\\),\n\\[\n\\begin{aligned}\n\\langle M_{\\xi\\bar\\xi}u,u\\rangle\n={}&\n\\langle\\Theta_L(v_\\xi,\\bar v_\\xi)u,u\\rangle\n+\\langle\\mathcal L^h_{[v_\\xi,\\bar v_\\xi]}u,u\\rangle\\\\\n&+\\|\\mathsf C_\\xi u\\|^2\n-\\|\\mathsf C_\\xi^\\dagger u\\|^2.\n\\end{aligned}\n\\tag{24}\n\\]\nThe general direct-image curvature formula, including these geometric terms and the Green-operator corrections, is developed in [Choi–Schumacher, Main Theorem 1 and §§5–8](https://arxiv.org/html/2407.04298v1).\n\nThe bracket term is an additional geometric contribution. If\n\\[\nc_{i\\bar j}\n=\ng_{i\\bar j}\n-g_{i\\bar\\beta}g^{\\bar\\beta\\alpha}g_{\\alpha\\bar j}\n\\]\nis the geodesic curvature of \\(\\omega_X\\), then\n\\[\n[v_i,\\bar v_j]\n=\ng^{\\bar\\beta\\alpha}\n\\frac{\\partial c_{i\\bar j}}{\\partial\\bar z^\\beta}\n\\frac{\\partial}{\\partial z^\\alpha}\n-\ng^{\\bar\\beta\\alpha}\n\\frac{\\partial c_{i\\bar j}}{\\partial z^\\alpha}\n\\frac{\\partial}{\\partial\\bar z^\\beta}.\n\\tag{25}\n\\]\nThus this term involves vertical derivatives of the geodesic curvature.\n\nIf \\(L\\) is strictly positive along the fibres, one can choose\n\\[\n\\omega_X=i\\Theta_L.\n\\]\nThen \\(\\eta_i=0\\), and \\(c_{i\\bar j}\\) is the Schur complement of the vertical curvature matrix of \\(L\\). In that case the formulas are determined by the curvature geometry of \\(L\\), the Kodaira–Spencer representatives, and the associated fibrewise operators.\n\n**2. The explicit version of condition (4).**\n\nLet \\(\\{u_\\nu\\}\\) be an orthonormal basis of the harmonic space \\(\\mathcal H_y^{p,q}(L_y)\\). Take the base frame to be \\(\\omega_Y\\)-unitary, and define\n\\[\n\\boxed{\n\\mathcal E(y)\n=\n\\sum_{i,\\nu}\n\\left(\n\\|\\bar\\partial^*W_i u_\\nu\\|^2\n+\n\\|\\bar\\partial W_i^\\dagger u_\\nu\\|^2\n\\right).\n}\n\\tag{26}\n\\]\nThen the literal condition (4), for this choice of horizontal connection, becomes\n\\[\n\\boxed{\n\\left[\ni\\sum_{i,j}M_{i\\bar j}\\,\n\\zeta^i\\wedge\\bar\\zeta^j,\\Lambda_{\\omega_Y}\n\\right]_{a,b}\n\\ge\n\\frac{2m^2}{\\gamma(y)^2}\\,\\mathcal E(y)\\,I.\n}\n\\tag{27}\n\\]\nHere \\(M\\) is explicitly given by (23), and \\(\\gamma(y)\\) is a lower bound for the positive spectrum of \\(\\Delta_{p,q,y}\\).\n\nTo verify this identification, the covariant Cartan identities give\n\\[\n[\\bar\\partial,D_i]=W_i,\n\\qquad\n[\\bar\\partial^*,D_{\\bar i}]=W_i^\\dagger,\n\\]\nwhile\n\\[\n[\\bar\\partial^*,D_i]=0,\\qquad\n[\\bar\\partial,D_{\\bar i}]=0.\n\\]\nTherefore, for harmonic \\(u\\),\n\\[\n\\Delta D_i u=\\bar\\partial^*W_i u,\n\\qquad\n\\Delta D_{\\bar i}u=\\bar\\partial W_i^\\dagger u.\n\\]\nSince \\(\\Delta u=0\\),\n\\[\n[D_i,\\Delta]u=-\\bar\\partial^*W_i u,\n\\qquad\n[D_{\\bar i},\\Delta]u=-\\bar\\partial W_i^\\dagger u.\n\\]\nConsequently, \\(\\mathcal E=\\mathfrak d\\), exactly as required.\n\nA less restrictive sufficient condition avoids the coarse spectral-gap estimate. Define\n\\[\n\\begin{aligned}\n\\kappa\n=\\sum_{i,\\nu}\\bigl(\n&\\langle G_{p,q+1}W_i u_\\nu,W_i u_\\nu\\rangle\\\\\n&+\\langle G_{p,q-1}W_i^\\dagger u_\\nu,W_i^\\dagger u_\\nu\\rangle\n\\bigr).\n\\end{aligned}\n\\tag{28}\n\\]\nTerms in nonexistent degrees are zero. It suffices to require the left side of (27) to dominate \\(2m^2\\kappa I\\).\n\nIndeed, these Green energies are precisely the squared norms of the off-diagonal harmonic variations:\n\\[\nQD_i u=\\bar\\partial^*G_{p,q+1}W_i u,\n\\qquad\nQD_{\\bar i}u=\\bar\\partial G_{p,q-1}W_i^\\dagger u.\n\\]\nThe Gauss formula and the preceding curvature estimate then give\n\\[\n[i\\Theta_{\\mathcal F,H},\\Lambda_{\\omega_Y}]_{a,b}\\ge0.\n\\]\nOn a complete Kähler base, the Bochner–Kodaira argument yields\n\\[\n\\bar\\partial u=f,\\qquad\n\\|u\\|^2\n\\le\n\\int_Y\\langle B_A^{-1}f,f\\rangle\\,dV_{\\omega_Y},\n\\]\nfor every admissible auxiliary metric with \\(B_A>0\\), with optimal constant \\(1\\).\n\n**3. A nonisotrivial example satisfying (27), without a pullback twist.**\n\nLet \\(Y=\\mathbb H\\), with coordinate \\(\\tau\\), and consider the elliptic family\n\\[\nE_\\tau=\\mathbb C/(\\mathbb Z+\\tau\\mathbb Z).\n\\]\nWrite\n\\[\nt=\\operatorname{Im}\\tau,\\qquad r=\\operatorname{Im}z.\n\\]\nOn its total space, the form\n\\[\n\\Omega_E\n=\ni\\partial\\bar\\partial\\frac{r^2}{t}\n=\n\\frac{i}{2t}\n\\left(dz-\\frac rt\\,d\\tau\\right)\n\\wedge\n\\left(d\\bar z-\\frac rt\\,d\\bar\\tau\\right)\n\\tag{29}\n\\]\nis invariant under the lattice, closed, and semipositive. Its restriction to each elliptic fibre has area \\(1\\).\n\nSet\n\\[\nX=E\\times\\mathbb P^1,\\qquad\n\\pi:X\\longrightarrow\\mathbb H,\n\\]\nand take\n\\[\nL=\\operatorname{pr}_{\\mathbb P^1}^{*}\\mathcal O_{\\mathbb P^1}(1)\n\\]\nwith its Fubini–Study metric. Use the fibre metrics\n\\[\n\\omega_\\tau=\\Omega_E|_{E_\\tau}+\\omega_{\\mathrm{FS}}.\n\\]\n\nThus \\(L\\) is smooth semipositive and nonflat. Its restriction to the \\(\\mathbb P^1\\) factor has degree \\(1\\), so it cannot be unitary flat tensored with a pullback from \\(Y\\).\n\nThe horizontal lift is\n\\[\nv_\\tau=\\partial_\\tau+\\frac rt\\,\\partial_z,\n\\]\nand\n\\[\n[v_\\tau,\\bar v_\\tau]=0,\\qquad\nA_\\tau\n=\n\\frac{i}{2t}\\,d\\bar z\\otimes\\partial_z\\ne0.\n\\tag{30}\n\\]\nThe elliptic family, and hence \\(\\pi\\), is nonisotrivial.\n\nChoose\n\\[\np=1,\\qquad q=0.\n\\]\nNotice that \\(p<n=2\\). Since\n\\[\nH^0\\!\\left(\\mathbb P^1,\n\\Omega^1_{\\mathbb P^1}\\otimes\\mathcal O(1)\\right)=0,\n\\]\nwe have\n\\[\n\\mathcal F\n=\n\\pi_*(\\Omega^1_{X/Y}\\otimes L)\n\\simeq\n(\\pi_{E*}K_{E/Y})\n\\otimes H^0(\\mathbb P^1,\\mathcal O(1)).\n\\tag{31}\n\\]\nIt has rank \\(2\\).\n\nFor a fixed orthonormal basis \\(\\sigma_1,\\sigma_2\\) of\n\\(H^0(\\mathbb P^1,\\mathcal O(1))\\), a holomorphic harmonic frame is\n\\[\nu_\\nu=dz\\otimes\\sigma_\\nu.\n\\]\nHere \\(dz\\) denotes the relative differential. Because \\(|dz|^2=2t\\), the harmonic metric is\n\\[\n\\boxed{H(\\tau)=2t\\,I_2.}\n\\tag{32}\n\\]\nConsequently,\n\\[\n\\boxed{\ni\\Theta_{\\mathcal F,H}\n=\n-i\\partial\\bar\\partial\\log t\\,I_2\n=\n\\frac{i\\,d\\tau\\wedge d\\bar\\tau}{4t^2}\\,I_2.\n}\n\\tag{33}\n\\]\n\nCrucially, we can verify the stronger ambient condition, rather than merely checking this final curvature. The ambient connection satisfies\n\\[\nD_{\\bar\\tau}u_\\nu=0,\\qquad\nD_\\tau u_\\nu=\\frac{1}{2it}\\,u_\\nu.\n\\tag{34}\n\\]\nIt therefore preserves the harmonic subspace:\n\\[\nQD_\\tau P=QD_{\\bar\\tau}P=0.\n\\]\nHence\n\\[\n\\mathcal E=\\mathfrak d=\\kappa=0.\n\\tag{35}\n\\]\n\nThe same conclusion follows directly from (21): \\(\\eta_\\tau=0\\), and the insertion acts only in the elliptic direction, giving\n\\[\n\\partial_h(\\mathsf C_\\tau u_\\nu)\n=\n\\mathsf C_\\tau(\\partial_hu_\\nu).\n\\]\nThus \\(W_\\tau u_\\nu=0\\).\n\nIn (23), both the horizontal curvature of \\(L\\) and the bracket term vanish. Since \\(q=0\\), \\(\\mathsf C_\\tau^\\dagger u_\\nu=0\\), and therefore\n\\[\nM_{\\tau\\bar\\tau}\n=\nP\\mathsf C_\\tau^\\dagger\\mathsf C_\\tau P\n=\n\\frac{1}{4t^2}\\,I_2.\n\\tag{36}\n\\]\nThe positive curvature comes entirely from the Kodaira–Spencer term.\n\nEquip \\(Y\\) with the complete metric\n\\[\n\\omega_Y=\\frac{i\\,d\\tau\\wedge d\\bar\\tau}{t^2}.\n\\]\nFor base degree \\((a,b)=(1,1)\\), condition (27) reads\n\\[\n\\boxed{\n\\mathcal K^{1,1}=\\frac14 I_2\n\\ \\ge\\\n\\frac{2}{\\gamma^2}\\mathcal E\\,I_2=0.\n}\n\\tag{37}\n\\]\nThus this example satisfies the original condition (4), and \\(H\\) satisfies the optimal \\((1,1)\\)-\\(L^2\\) estimate. No pullback twist has been added.\n\nIf an example with **both \\(p<n\\) and \\(a<m\\)** is desired, pull the same family back to \\(Y=\\mathbb H\\times\\mathbb H\\), with variation only in the first coordinate, and take\n\\[\n(p,q)=(1,0),\\qquad (a,b)=(1,2).\n\\]\nThe variation error remains zero, while \\(\\mathcal K^{1,2}\\) has eigenvalues \\(1/4\\) and \\(0\\). Condition (4) still holds.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a1678a-2c74-77e2-8fca-1c0910907b4c",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "With the results we already obtained, Expand this draft into a formal AMS-style article. Reasrch on the past result on the positivity of (higher) direct images which our main result can cover (explain it in the article).",
+      "attachment_names": [
+        "dualN_ai.tex"
+      ],
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_attachment_context_removed",
+          "count": 1
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb04aab93c87d290b8f2326b93b9e4",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "I’ll read the draft, check its main theorem against the arguments we developed, and expand it into an AMS-style article. I’ll also research the earlier positivity theorems and distinguish results covered by the draft’s hypotheses from related results that require different arguments.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb051c339887d28473bb7118d121b1",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "The draft’s top-direct-image theorem has a direct relationship to Liu–Yang’s negativity theorem through metric Serre duality. I also found a relevant dual Nakano theorem of Watanabe that needs a careful comparison. I’ll retain the top-degree result as the article’s main theorem and add our harmonic-variation criterion as a separate conditional result. I’m using the PDF skill to check the compiled article’s layout.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb063ae31087d29f342a671d9bbd0b",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "The proof audit supports both arguments in the draft, including the estimate measured with an incomplete product metric and the descent through Serre pairings. The literature review also makes the scope clearer: the main theorem recovers the seminegative Liu–Yang mechanism through duality, while Berndtsson’s and Mourougane–Takayama’s positive adjoint theorems remain distinct. I’m making that comparison explicit in the article.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb0719459c87d2849ead42c0257997",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "The expanded article now includes the literature comparison, both top-degree proofs, the general curvature-domination theorem, and the nonisotrivial example, with 17 bibliography entries. I’m checking the compiled pages and cross-references now. The built-in preview encountered a Windows sandbox limitation, so I’m trying the installed LaTeX compiler in the workspace.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb083527a487d29aaf46f94ab94cb4",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "The article compiles to 21 pages with no unresolved references or overflow warnings. It now states the precise connection to Liu–Yang and explains why the broader positive adjoint theorems are not automatic consequences. I’m finishing the layout review, then I’ll save the expanded source and PDF beside your draft and preserve the original.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adb08a85a1887d2890011aca8473e00",
+      "source_turn_id": "01a1678a-2c21-77f2-a506-15c940058665",
+      "turn_started_at_utc": "2026-10-23T06:54:30.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:11:42.000Z",
+      "content": "Expanded the draft into a **21-page AMS-style article** with complete proofs, the harmonic-variation criterion, the nonisotrivial example, and 17 references.\n\nThe literature comparison identifies the precise Liu–Yang overlap and explains which broader positivity theorems are not consequences. Compilation, cross-references, and page layout were checked.\n\nRevised LaTeX [local path omitted] · Original backup [local path omitted]",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a1679a-fb50-7111-aade-012ea52a9e1d",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "Please review the manuscript as a skeptical referee, checking both proofs and the novelty claims carefully, and revise the LaTeX to fix any gaps or overstated conclusions.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb08f83c0087d291b56df8addd4f3c",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "I’ll check the two top-degree proofs, the general harmonic-variation theorem, and the claimed relationship to earlier work. I’ll revise any unsupported statements in the LaTeX and compile the result.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb0a4a48ac87d2a19d71a2fc6ff18d",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "The review has found one important distinction in the literature comparison: Mourougane–Takayama use a specifically constructed Hodge metric, which the manuscript should not identify with its own harmonic metric without proof. I’m also tightening the arbitrary-bidegree statement, including degrees where no auxiliary line-bundle curvature can make the estimate’s inverse operator positive.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb0b1416c087d2985f140174fde818",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "The independent checks have not found a fatal error in either top-degree proof or the conditional variation theorem. I’m making the proof details explicit and narrowing the claims: the top-degree conclusion follows from Liu–Yang’s mechanism and Serre duality; the general criterion does not establish unrestricted descent of optimal estimates. The elliptic example will also be identified as a classical Hodge-line construction with \\(q=0\\).",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb0c83e58087d2bcbe8f76c57b124b",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "The revised article compiles to 22 pages. One further restriction is now explicit: in middle base degree \\(a+b=m\\), no scalar auxiliary curvature operator can be positive definite, and this particular domination criterion forces the resulting curvature commutator to vanish. I’m checking the final layout and saving a separate referee report with the findings and remaining research questions.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adb0d4b6d7487d2be0d643031ced629",
+      "source_turn_id": "01a1679a-fb17-7241-9ea1-d56f4c8b8350",
+      "turn_started_at_utc": "2026-10-23T07:12:52.000Z",
+      "turn_completed_at_utc": "2026-10-23T07:31:30.000Z",
+      "content": "Revised the LaTeX manuscript [local path omitted] and saved a detailed referee report [local path omitted].\n\nThe revisions:\n\n- Narrow the novelty claims and clarify dependence on earlier results.\n- Distinguish Mourougane–Takayama’s constructed metric from the manuscript’s harmonic metric.\n- Strengthen the flow, distributional descent, and operator-domain arguments.\n- Explain the middle-degree obstruction and the conditional scope of the general theorem.\n\nNo fatal proof error was found under the stated hypotheses. Unrestricted descent of shifted optimal estimates remains unproved.\n\nThe 22-page PDF compiles cleanly and was visually checked. The pre-review source is preserved.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a167bb-1404-7652-b216-2f2f24c1e04b",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "Summarize the main points of dualN_ai.tex. Rewrite a AMS-style article tex file with the summarized points as an input. Make Theorem 1.1 of dualN_ai.tex and the quoted theorem as two main theorems in the new article.",
+      "selected_earlier_response_quotes": [
+        {
+          "text": "Theorem. Let \\((Y,\\omega_Y)\\) be a complete Kähler manifold of dimension \\(m\\), admitting a positive holomorphic Hermitian line bundle. Let \\((Z,\\omega_Z)\\) be a smooth projective manifold of dimension \\(n\\). Set\n\\[\nX=Y\\times Z,\\qquad\n\\pi=\\operatorname{pr}_Y,\\qquad\n\\omega_X=\\operatorname{pr}_Y^*\\omega_Y+\\operatorname{pr}_Z^*\\omega_Z.\n\\]\n\nSuppose that\n\\[\n(L,h)=\n\\operatorname{pr}_Y^*(G,h_G)\\otimes\n\\operatorname{pr}_Z^*(M,h_M),\n\\]\n\nwhere both metrics are smooth.\nFix integers \\(a,b,p,q\\) in either of the following ranges:\n\\[\n\\begin{array}{ll}\n\\textnormal{(i)}&\na=m,\\quad p=n,\\quad 1\\le b\\le m,\\quad 0\\le q\\le n;\\\\[2mm]\n\\textnormal{(ii)}&\nb=m,\\quad q=n,\\quad 1\\le a\\le m,\\quad 0\\le p\\le n.\n\\end{array}\n\\]\n\nEquip\n\\[\n\\mathcal F=R^q\\pi_*(\\Omega^p_{X/Y}\\otimes L)\n\\]\n\nwith its fibrewise harmonic \\(L^2\\) metric \\(H\\), using \\(\\omega_Z\\) and \\(h|_{X_y}\\).\nIf \\((L,h)\\) satisfies the optimal\n\\[\n(a+p,b+q)\\text{-}L^2\n\\]\n\nestimate condition with respect to \\(\\omega_X\\), then \\((\\mathcal F,H)\\) satisfies the optimal\n\\[\n(a,b)\\text{-}L^2\n\\]\n\nestimate condition with respect to \\(\\omega_Y\\).\nIn particular, case (i) gives\n\\[\n\\boxed{\n(L,h)\\text{ optimal }(m+n,b+q)\n\\ \\Longrightarrow\\\n\\bigl(R^q\\pi_*(K_{X/Y}\\otimes L),H\\bigr)\n\\text{ optimal }(m,b).\n}\n\\]\n\nHere “optimal” means the following: for every positive auxiliary line bundle \\((A,h_A)\\) on \\(Y\\) and every compactly supported, smooth, \\(\\bar\\partial\\)-closed form\n\\[\nf\\in A_c^{a,b}(Y,\\mathcal F\\otimes A),\n\\]\n\nthere exists \\(u\\in L^2_{a,b-1}(Y,\\mathcal F\\otimes A)\\) such that\n\\[\n\\bar\\partial u=f,\\qquad\n\\int_Y |u|^2_{H\\otimes h_A,\\omega_Y}\\,dV_Y\n\\le\n\\int_Y\n\\left\\langle B_Y^{-1}f,f\\right\\rangle_{H\\otimes h_A,\\omega_Y}\\,dV_Y,\n\\tag{1}\n\\]\n\nwhere\n\\[\nB_Y=[\\,i\\Theta_{A,h_A}\\otimes\\operatorname{Id}_{\\mathcal F},\n       \\Lambda_{\\omega_Y}\\,].\n\\]\n\nThe stated degree ranges ensure that \\(B_Y>0\\).",
+          "transformations": []
+        }
+      ],
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_annotation_wrapper_removed_and_selected_quotes_preserved_separately",
+          "count": 1
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb112ffcdc87d282bc22e93d4686a2",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "I’ll organize the new article around the top-direct-image theorem and the quoted product descent theorem. I’ll check the product theorem’s lifting and limiting steps, summarize the draft’s main points, and include full proofs of both main results.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb121342c887d2befe6f1882ad74e2",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "The quoted theorem holds with its stated hypotheses. Its proof needs one important step: a positive auxiliary line bundle on \\(Y\\) pulls back to a merely semipositive bundle on \\(X\\). The total-space optimal estimate condition first gives a curvature inequality; that inequality then permits solving with the pulled-back metric. I’ll make the lifting, inverse-energy equality, and harmonic-projection descent explicit.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_annotation_directive_removed",
+          "count": 1
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb14759ba087d2a852ada3e95abc13",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "The new draft now has the requested results as Theorems 1.1 and 1.2. I’ve condensed the general variation theory into a supporting proposition and added a nonzero \\(q=1\\) example showing why an optimal estimate in one bidegree does not imply semipositivity of the line metric. The product theorem also has an independent curvature proof as a check.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb156f610487d2afac67fdc7d367ab",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "Both main proofs have passed independent checks, and the article compiles with all references resolved. I’m reviewing the page layout now, then I’ll save the new LaTeX project, PDF, and synopsis alongside the original manuscript.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adb161e3cf487d29ed530593ccea3a7",
+      "source_turn_id": "01a167bb-13c3-7600-a830-7c3061c80384",
+      "turn_started_at_utc": "2026-10-23T07:47:55.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:09:10.000Z",
+      "content": "Created a new AMS-style LaTeX article [local path omitted] and a synopsis of the original draft [local path omitted].\n\nThe summarized foundations are metric Serre duality, top-degree positivity on a dense product locus, and curvature control of varying harmonic representatives.\n\nThe new article centers on:\n\n1. **Theorem 1.1:** the original top-direct-image dual Nakano semipositivity theorem.\n2. **Theorem 1.2:** your quoted product descent theorem, with both degree ranges and a full lifting–solving–descending proof. \n\nIt includes an independent curvature proof, a nonzero \\(q=1\\) example, and 17 references. The original manuscript is preserved. The 15-page PDF compiles cleanly and was visually checked.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "platform_annotation_directive_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a167d0-2467-7ec3-abc5-36c5daab222d",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "Review the new article as a skeptical referee, focusing on Theorem 1.2 and its lifting–solving–descending proof, and revise the LaTeX to fix any gaps or overstated novelty claims.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb1696d47487d2aa2c4cd1f1174db2",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "I’ll review Theorem 1.2 afresh, checking the curvature characterization, the degenerate pullback operator, and descent of the weak solution. I’ll also reassess the novelty claims, revise the LaTeX, and compile the result.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb17a8c54487d28087599de9792be1",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "The review found no fatal flaw in Theorem 1.2 under the full product and split-metric hypotheses. I’ll make the weak-solution descent rigorous as a bounded chain projection, clarify the degenerate curvature operator, and state explicitly that the theorem is a product consequence of established results.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb18dc5cbc87d280e861b4ce103565",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "The revised proof now descends the solution through a bounded harmonic projection on the maximal \\(L^2\\) domains, so it needs no unstated regularity of the upstairs solution. I also clarified that the varying-metric example shows a failure of the naive lift, not a failure of every possible descent theorem. The first compilation succeeded; I’m checking layout and references.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adb19a069c887d29886186d5b76ea0e",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "The revised 16-page article compiles cleanly, with no unresolved references or layout warnings. Both main theorem numbers are preserved. I’m saving the revised source, PDF, and referee report in the article folder, together with backups of the pre-review version.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adb19ba340887d2bfc70d1f4f7159fb",
+      "source_turn_id": "01a167d0-242b-7bb2-9ff2-1c95abb6a2a7",
+      "turn_started_at_utc": "2026-10-23T08:10:56.000Z",
+      "turn_completed_at_utc": "2026-10-23T08:24:34.000Z",
+      "content": "I found no fatal flaw in Theorem 1.2 under its stated product and split-metric hypotheses. I revised the article to:\n\n- Prove harmonic descent on maximal \\(L^2\\) domains, including the exact sign and weak-solution justification.\n- Clarify the degenerate auxiliary-curvature argument and adjoint-domain step.\n- Present the theorem as a product consequence of [Watanabe’s characterization](https://arxiv.org/pdf/2109.12554v2) and Bochner theory, without unsupported novelty or necessity claims.\n- Limit the varying-metric example to what it actually demonstrates.\n\nBoth main theorem numbers are preserved. The 16-page PDF compiles cleanly and was visually checked. Pre-review backups are saved.\n\nRevised LaTeX [local path omitted] · Detailed referee report [local path omitted]",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16bc6-60df-7c12-a85f-82b8d064cf6d",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "Can you weaken the split-metric hypothesis in Theorem 1.2? State precise sufficient conditions controlling the variation of harmonic representatives, prove the extension, and incorporate it into the LaTeX article.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1a3e696c87d2a9f34eee4f353894",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "I’ll look for sufficient conditions that allow the fiber harmonic spaces to vary while preserving the closed lift and the constant-one estimate. I’ll check the argument against the general curvature formulas, then add the extension and its limits to the article.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1b0f950087d2b0de770227609eee",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "There is a stronger conclusion in one of the two ranges: when \\(b=m\\) and \\(q=n\\), the metric splitting can be removed entirely. The harmonic lift is automatically closed in top antiholomorphic degree, and descent can use the cohomology map directly. For the other range, I’m formulating a quantitative condition that bounds harmonic variation by the available curvature and fiber Bochner energy.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1df5e49887d29911379faec4c09a",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "The extension is now written in the article. It includes both the unrestricted metric result in top antiholomorphic degrees and a condition controlling variation in the other range, with a mixed-curvature/Green-operator version. I’ve also added a nonsplit example with visibly moving harmonic representatives; the new formulas are being checked independently before the final compilation.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1ebdffe887d2940380acb32c272b",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "The checks found no sign or domain error in the extension. The key estimate is\n\\[\n[i\\Theta_H,\\Lambda_Y]_{a,b}\\ge(\\mu+e-2m^2\\kappa)\\,\\mathrm{Id},\n\\]\nwhere \\(\\mu\\) is the total curvature margin, \\(e\\) is the fiber Bochner energy, and \\(\\kappa\\) measures harmonic variation. The new Theorem 6.1 and its mixed-curvature corollary compile cleanly; I’m checking the rendered pages before saving them.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1f62b85887d282a882e3e4cd85ce",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "The 20-page article has passed the mathematical and rendering checks. I’m saving Theorem 6.1, Corollary 6.2, and the nonsplit example in the existing article folder, with dated backups of the previous source and PDF. The extension retains the product geometry and holomorphic external-product bundle.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adc1f86824487d2a646fc73b4bfa918",
+      "source_turn_id": "01a16bc6-5d91-74e2-8cbc-e473c313a2b5",
+      "turn_started_at_utc": "2026-10-24T02:38:44.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:01:41.000Z",
+      "content": "Yes. I added **Theorem 6.1** and **Corollary 6.2**, retaining the product geometry and holomorphic bundle \\(L=G\\boxtimes M\\), but allowing a nonsplit smooth metric \\(h\\).\n\n1. **When \\(b=m\\) and \\(q=n\\), no additional variation assumption is needed:**\n   \\[\n   (L,h)\\text{ optimal }(a+p,m+n)\n   \\Longrightarrow\n   (\\mathcal F,H)\\text{ optimal }(a,m).\n   \\]\n   The harmonic lift is automatically closed in total top antiholomorphic degree. A contractive cohomology projection descends the weak solution without differentiating the moving harmonic projection.\n\n2. **In range (i), a sufficient condition is**\n   \\[\n   \\boxed{\\mu(y)+e(y)\\ge 2m^2\\kappa(y).}\n   \\]\n   Here \\(\\mu\\) is the minimum total curvature-commutator eigenvalue over the fiber,\n   \\[\n   e(y)=\\min_{\\substack{\\alpha\\in\\mathcal H_y^{p,q}\\\\\\|\\alpha\\|=1}}\n   \\bigl(\\|D'_Z\\alpha\\|^2+\\|(D'_Z)^*\\alpha\\|^2\\bigr),\n   \\]\n   and\n   \\[\n   \\kappa=\\sum_i\\left(\\|QD_iP\\|_{\\mathrm{HS}}^2+\n                         \\|QD_{\\bar i}P\\|_{\\mathrm{HS}}^2\\right).\n   \\]\n   Curvature compression and the fiber Bochner identity give the lower bound \\(\\mu+e\\); the Gauss correction has norm at most \\(2m^2\\kappa\\). Consequently,\n   \\[\n   [i\\Theta_H,\\Lambda_Y]_{a,b}\\ge0,\n   \\]\n   which yields the required constant-one estimate.\n\nThe article contains full proofs, a mixed-curvature/Green-operator sufficient condition, and a nonsplit example with genuinely varying harmonic representatives. The argument uses the established [smooth curvature characterization](https://arxiv.org/pdf/2109.12554v2); no sharpness or unrestricted-fibration claim is made.\n\nRevised LaTeX—Theorem 6.1 [local path omitted] · Extension notes [local path omitted]\n\nThe 20-page article compiles cleanly; dated backups are preserved.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16bdb-e2e7-7ce0-add1-4e7978703dd7",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "Can you extend Theorem 6.1 to a smooth proper Kähler fibration, replacing the product hypothesis by explicit conditions on Kodaira–Spencer tensors and harmonic variation, and incorporate the proof into the LaTeX article?",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc1fbd111487d29b4ca836df77be82",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "I’ll check which parts of Theorem 6.1 survive when the fibers’ complex structures vary. I’ll then formulate sufficient conditions using Kodaira–Spencer tensors and harmonic variation, prove the curvature estimate, and add it to the article.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc2139abd487d2b62f7bb0d20241ee",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "A geometric condition is necessary: the unconditional top-degree conclusion fails for a nonisotrivial elliptic family with flat coefficients. I’m adding a theorem that controls Kodaira–Spencer insertion, harmonic variation, and two horizontal-metric terms. I also found a stronger special case: pointwise Kodaira–Spencer annihilation preserves the lifting–solving–descending proof.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": []
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc21fadc6c87d2a2c507c6d24074b7",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "The extension needs an extra metric-comparison term: the horizontal metric on a Kähler fibration need not equal the pullback of the base metric. I’ll make that term explicit, alongside the Kodaira–Spencer and harmonic-variation terms. I’ll also include a stronger top-degree result where a pointwise annihilation condition restores the lifting–solving–descending proof.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc231281f887d28a0bf32352d7293e",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "The new section is drafted, and it is undergoing an independent proof check. It contains a quantitative theorem for both degree ranges and a separate top-degree theorem with an explicit chain projection. The elliptic-family example also shows why the unconditional product result needs additional hypotheses on a varying fibration.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc236d899887d2bbe581f73fb3cd21",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "The independent checks found no substantive gap in either proof; I clarified the graded-commutator convention they flagged. The article now distinguishes the general curvature argument, which solves on the base, from the top-degree argument, which genuinely lifts, solves upstairs, and descends. I’m checking the compiled pages and references before saving the revision to your article folder.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adc2403b25087d283b604d28014729c",
+      "source_turn_id": "01a16bdb-e2a0-7013-a4c2-3a32afe7ce84",
+      "turn_started_at_utc": "2026-10-24T03:02:14.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:20:45.000Z",
+      "content": "I incorporated the extension and its proof into **Section 7** of the revised LaTeX article [local path omitted].\n\n**Theorem 7.1** treats smooth proper Kähler fibrations with constant cohomology dimensions, complete metrics, and the stated positive auxiliary bundles. In the original extremal degree ranges, the sufficient condition is\n\\[\n\\boxed{\\mu+e\\ge \\delta+2m^2(\\sigma+\\tau+\\kappa).}\n\\]\nHere \\(\\mu\\) is the total curvature margin, \\(e\\) the fiber Bochner energy, and the correction terms measure horizontal metric discrepancy, Kodaira–Spencer insertion, horizontal brackets, and harmonic variation. The proof establishes\n\\[\n[i\\Theta_H,\\Lambda_Y]_{a,b}\n\\ge\\bigl(\\mu+e-\\delta-2m^2(\\sigma+\\tau+\\kappa)\\bigr)\\operatorname{Id},\n\\]\nthen obtains the optimal estimate on the base.\n\n**Theorem 7.3** supplies a genuine lifting–solving–descending proof when \\(b=m,\\ q=n\\): assume an adapted horizontal metric and\n\\[\nA_i\\lrcorner s=0\n\\]\npointwise for every holomorphic Serre-dual section \\(s\\). Holomorphic orthogonal extensions then define a contractive chain projection. No smallness bound on harmonic variation is needed.\n\nThe article includes a nonisotrivial elliptic example and a counterexample showing why unconditional descent fails. The 26-page PDF compiles cleanly; dated backups preserve the previous version.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 1
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "phase": null,
+      "source_message_id": "01a16bf0-62f0-7663-ab29-972492351802",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "Review Theorems 7.1 and 7.3 as a skeptical referee, checking the curvature comparison, Kodaira–Spencer terms, and chain projection carefully, and revise the LaTeX to fix any gaps or overstated claims.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc24fbc0b087d28e85b7aaeb94420e",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "I’ll recheck both proofs from their definitions, focusing on the horizontal curvature comparison, the Kodaira–Spencer terms, and whether the Serre-dual projection commutes with \\(\\bar\\partial\\). I’ll revise the article wherever the argument needs an extra hypothesis or a narrower conclusion.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc2653111087d2825a58169ed3160d",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "I found one incorrect comparison of hypotheses: pointwise annihilation of the Serre-dual sections does **not** imply that the Kodaira–Spencer class vanishes—the article’s own \\(p=n\\) example shows this. I’m correcting that claim. The theorem conclusions have survived the checks so far, but I’ll expand the curvature comparison and chain-projection arguments, including their signs, normalization, and domain restrictions.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc270253c487d295119743a51d50d7",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "The revised proof now makes the key checks explicit: the pointwise horizontal isometry leaves the chosen vertical harmonic forms unchanged; the insertion convention fixes the Kodaira–Spencer adjoint signs; and the Serre-dual projection is a contraction on maximal \\(L^2\\) domains. I also restricted the chain identity to \\(0\\le j<m\\), where all its operators are defined. Neither theorem’s hypotheses or conclusion needed changing.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "commentary",
+      "source_message_id": "msg_0362af377e325dd0016adc2789f69087d2b3503229eee06a17",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "The revised article compiles cleanly to 27 pages, with no unresolved references or layout defects found. I’ve also prepared a referee report distinguishing the corrected errors from the proof clarifications. I’ll save the revision and preserve dated backups of the current files.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "phase": "final",
+      "source_message_id": "msg_0362af377e325dd0016adc27bfa42c87d28b34317901b0d3e1",
+      "source_turn_id": "01a16bf0-62b2-7941-92f2-a3a4335d9549",
+      "turn_started_at_utc": "2026-10-24T03:24:38.000Z",
+      "turn_completed_at_utc": "2026-10-24T03:36:40.000Z",
+      "content": "Reviewed and revised both proofs. **I found no theorem-level gap under the stated hypotheses**, but corrected two errors and expanded several insufficiently explained steps:\n\n- **Incorrect hypothesis comparison:** annihilation of the Serre-dual sections does not imply vanishing of the Kodaira–Spencer class. The \\(p=n\\) case already disproves that claim.\n- **Chain identity:** explicitly restricted it to \\(0\\le j<m\\).\n- **Theorem 7.1:** added the pointwise curvature-compression identity, the fiberwise quadratic-form calculation, and explicit Kodaira–Spencer insertion conventions verifying the adjoints and signs.\n- **Theorem 7.3:** supplied the full orthogonal-extension obstruction formula, fixed the Serre-pairing normalization, and detailed contraction, maximal-domain compatibility, and treatment of auxiliary-curvature kernels.\n\nThe theorem statements remain unchanged. The article retains its limited novelty claims.\n\nSaved the revised LaTeX [local path omitted] and detailed referee report [local path omitted]. The 27-page PDF compiles cleanly; dated backups preserve the previous version.",
+      "text_status": "copied_from_returned_visible_message_with_documented_transformations",
+      "transformations": [
+        {
+          "kind": "platform_file_citation_removed",
+          "count": 1
+        },
+        {
+          "kind": "absolute_local_link_redacted",
+          "count": 2
+        },
+        {
+          "kind": "outer_whitespace_trimmed",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

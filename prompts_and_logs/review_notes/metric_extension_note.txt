@@ -1,0 +1,116 @@
+EXTENSION TO NONSPLIT COEFFICIENT METRICS
+October 24, 2026
+
+The revised article retains Theorems 1.1 and 1.2 and adds Theorem 6.1
+and Corollary 6.2. All new statements keep the product complex geometry,
+the product Kahler metric, and the holomorphic external-product line
+bundle. Only the Hermitian splitting is removed.
+
+Theorem 6.1(1): no extra assumption in range (ii)
+
+For b=m, q=n, 1<=a<=m and 0<=p<=n, every smooth Hermitian metric h
+on L=G box M is allowed. If (L,h) satisfies the total optimal
+(a+p,m+n) estimate, then its harmonic direct image satisfies the
+optimal (a,m) estimate with the same constant-one auxiliary bound.
+
+The proof retains lifting, solving and descending. The harmonic lift
+of a top base antiholomorphic datum has total antiholomorphic degree
+m+n, and is automatically closed. The fiber cohomology extraction
+is metric-independent because every vertical (p,n)-form is closed.
+It can be defined by fixed Serre-dual fiber integrals, commutes with
+distributional horizontal differentiation, and annihilates vertically
+exact terms. Its contraction property is the minimum-norm property of
+harmonic representatives. No false chain identity for the moving
+harmonic lift in lower base degrees is asserted.
+
+Theorem 6.1(2): a quantitative condition in range (i)
+
+Let P be harmonic projection, Q=1-P, D the horizontal Chern connection,
+B_i=QD_iP, C_i=QDbar_iP, and
+
+  kappa = sum_i (||B_i||_HS^2 + ||C_i||_HS^2).
+
+Let mu(y) be the minimum eigenvalue over the fiber of the TOTAL
+curvature commutator in degree (a+p,b+q). It is nonnegative by the
+assumed optimal estimate and Watanabe's smooth characterization.
+Let e(y) be the minimum eigenvalue, on the harmonic fiber space, of
+the operator with quadratic form
+
+  ||D'_Z alpha||^2 + ||(D'_Z)* alpha||^2.
+
+The pointwise sufficient condition is
+
+  mu(y) + e(y) >= 2 m^2 kappa(y).
+
+The total-curvature compression and fiber Bochner identity give
+K >= (mu+e) Id for the compressed horizontal curvature commutator.
+The Gauss identity gives
+
+  R^H_i barj = P R^L_i barj P - B_j* B_i + C_i* C_j.
+
+The commutator of its correction has operator norm at most
+2 m^2 kappa. Thus the base curvature commutator is nonnegative and
+the complete-Kahler estimate yields the desired constant-one bound.
+The total margin mu matters: e can vanish, and strict total curvature
+can still absorb small harmonic variation. Neither necessity nor
+sharpness of this sufficient condition is claimed.
+
+Corollary 6.2: mixed-curvature test
+
+Write h=h0 exp(-psi) with h0 a reference product metric. Set
+T_i=[dbar_Z,D_i]=-(dbar_Z psi_i) wedge. Then
+
+  B_i=dbar_Z* G_(q+1) T_i P,
+  C_i=dbar_Z G_(q-1) T_i* P.
+
+Positive spectral lower bounds in the adjacent fiber degrees bound
+kappa by the squared Hilbert-Schmidt norms of these mixed-curvature
+operators divided by the corresponding spectral gaps. Substitution
+in the theorem gives a sufficient condition stated entirely in terms
+of coefficient curvature, harmonic compression and fiber spectra.
+Endpoint terms are omitted. No uniform global spectral gap is needed.
+
+Nonvacuity and limitations
+
+The article gives h_t=exp(-|y|^2-t rho(y)chi(z)) on C^2 times P^1,
+with (a,b,p,q)=(2,1,1,1). For sufficiently small nonzero t, total
+commutator positivity persists and kappa=O(t^2). The harmonic
+representative is e^(t rho chi) omega_Z / integral e^(t rho chi),
+so its variation is explicit and nonzero. The Gaussian base metric
+is fixed; there is no increasingly large pullback twist.
+
+The extension does not remove the product geometry or establish an
+unconditional result in range (i). Semipositivity of the line metric
+alone is not asserted to imply the quantitative bound. The curvature
+and Green identities are established Hodge-theoretic mechanisms;
+the article attributes their general antecedents and makes no
+unsupported priority claim.
+
+Separate mathematical checks
+
+The weak top-degree cohomology projection, its maximal-domain identity,
+the varying Gram-matrix inverse-energy equality, Gauss signs,
+mixed-curvature compression, Green-operator signs, spectral factors,
+endpoint cases and the example were independently checked after
+the new section was written. Minor clarifications about the auxiliary
+bundle, L2 density, regular zero in the example, and Green kernels
+were incorporated.
+
+Primary references
+
+Watanabe, arXiv:2109.12554v2, Definitions 1.3-1.4 and Theorems 1.5-1.6:
+https://arxiv.org/pdf/2109.12554v2
+
+Choi-Schumacher, arXiv:2407.04298, Main Theorem 1 and Section 7:
+https://arxiv.org/html/2407.04298v1
+
+The former supplies the optimal-estimate characterization; the latter
+provides the general curvature and minimal-solution antecedents.
+
+Artifact validation
+
+The article compiles to 20 pages with no warnings, unresolved references,
+overfull boxes or underfull boxes in the final log. Label and citation
+checks pass. All pages were rendered and visually reviewed; the theorem,
+proofs, mixed-curvature formulas and example were inspected at full size.
+The earlier source and PDF are preserved before the extension is saved.

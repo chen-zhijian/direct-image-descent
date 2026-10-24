@@ -1,0 +1,108 @@
+EXTENSION TO SMOOTH PROPER KAHLER FIBRATIONS
+October 24, 2026
+
+Theorems 1.1, 1.2, and 6.1 are retained. Section 7 now gives two
+precise extensions beyond the product hypothesis. The article's title,
+abstract, introduction, literature discussion, and scope are updated.
+
+1. Theorem 7.1: a quantitative fibration extension
+
+Let pi:(X,omega_X)->(Y,omega_Y) be a smooth proper surjective
+holomorphic submersion, with complete Kahler metrics and positive
+auxiliary holomorphic Hermitian line bundles on X and Y. Let (L,h)
+be an arbitrary smooth Hermitian holomorphic line bundle. Assume
+locally constant fiber cohomology dimension and use its ordinary
+fiberwise harmonic metric H on F=R^q pi_*(Omega^p_(X/Y) tensor L).
+
+In either extremal range of (1.2), total optimal (a+p,b+q) estimates
+imply optimal (a,b) estimates for H under the pointwise condition
+
+  mu + e >= delta + 2 m^2 (tau + sigma + kappa).
+
+Here mu is the minimum eigenvalue over a fiber of the total curvature
+commutator; e is the least fiber Bochner-energy eigenvalue on the
+harmonic space. The costs are:
+
+- kappa: squared Hilbert-Schmidt norms of the nonharmonic parts of
+  the type-preserving horizontal covariant Lie derivatives;
+- sigma: squared Hilbert-Schmidt norms of the actual Kodaira--Spencer
+  and conjugate Kodaira--Spencer insertions on harmonic forms;
+- tau: the tensor norm of the harmonic compression of the covariant
+  Lie derivative along brackets of horizontal lifts;
+- delta: the operator norm of the horizontal curvature commutator
+  discrepancy after comparing the horizontal metric with omega_Y
+  by the positive inverse-square-root isometry.
+
+All quantities are defined from coefficient curvature, the fibration,
+and vertical harmonic data; the hypothesis does not assume positivity
+of the final direct-image metric.
+
+The proof separates three steps: pointwise isometric compression of
+total curvature and the compact-fiber Bochner identity; the established
+Choi--Schumacher curvature formula plus Gauss and operator-norm bounds;
+and the complete-Kahler estimate on the base. It does not claim that
+the naive harmonic lift is closed in arbitrary varying families.
+Green operators give an additional spectral bound for kappa.
+
+If the horizontal metric equals pi^*omega_Y, delta=tau=0. The sufficient
+condition becomes mu+e >= 2 m^2(sigma+kappa). On a fixed product the
+Kodaira--Spencer tensor is zero, recovering the quantitative condition
+of Theorem 6.1. If total curvature nonnegativity is assumed directly,
+completeness and a positive auxiliary line are not needed on X.
+
+2. Theorem 7.3: an exact top-degree lifting theorem
+
+Assume q=n, b=m, an adapted horizontal metric as above, and pointwise
+annihilation A_i contraction s=0 for every local holomorphic section
+s of pi_*(Omega^(n-p)_(X/Y) tensor L^*). This requires pointwise
+annihilation, rather than only vanishing of the insertion classes or
+harmonic projections. It does NOT require the Kodaira--Spencer class
+itself to vanish. In particular, annihilation is automatic when p=n,
+including in nonisotrivial families.
+
+Then total optimal (a+p,m+n) implies optimal (a,m), without a smallness
+bound on harmonic variation. The orthogonal absolute extensions of
+these Serre-dual sections are holomorphic. Fiber integration against
+them defines a contractive chain projection on maximal L2 domains.
+The harmonic lift of a top-base-degree datum is automatically closed;
+the adapted metric gives exact inverse-energy equality. Solve upstairs
+and apply the chain projection to obtain the constant-one estimate.
+
+3. Nonisotrivial example and limitation
+
+A varying elliptic family over a disk has the closed relative form
+Omega=i d dbar ((Im z)^2 / Im t). With a complete base metric, adding
+its pullback gives an adapted complete Kahler metric and nonzero
+Kodaira--Spencer tensor. Flat coefficients and p=q=1 give the flat
+trace direct image; all costs vanish. No coefficient pullback twist
+is added. A positive auxiliary line exists independently.
+
+On the same family, flat coefficients with p=0,q=1 satisfy the total
+optimal (1,2) condition, but R^1 pi_*O has metric proportional to
+(Im t)^(-1) and strictly negative curvature. Thus the unconditional
+part of Theorem 6.1 does not extend to arbitrary varying fibrations.
+
+4. Attribution and verification
+
+The curvature identity is explicitly attributed to Choi--Schumacher,
+formula (7.2), with the bracket geometry from their Lemma 8.1. The
+optimal-estimate characterization is attributed to Watanabe. The
+sufficient conditions are not claimed necessary, sharp, or a new
+general direct-image positivity theorem. The distinct prescribed
+metrics in other higher-direct-image results remain distinguished.
+
+Independent mathematical audits checked the metric comparison,
+curvature identity and signs, invariant norm bounds, Green identities,
+holomorphic extension and chain projection, and elliptic computations.
+Compilation and PDF layout are checked separately. These checks do not
+replace external mathematical refereeing or a comprehensive priority
+search. The original dualN_ai.tex remains unchanged.
+
+Referee revision, October 24, 2026: the later focused review of
+Theorems 7.1 and 7.3 corrected the comparison of annihilation with
+vanishing of Kodaira--Spencer classes. It expanded the pointwise
+curvature compression, insertion conventions and signs, orthogonal
+extension obstruction, exact Serre normalization, and maximal-domain
+chain argument. The chain identity is explicitly limited to j<m.
+The theorem hypotheses and conclusions were retained. See
+section7_referee_report.txt for the findings and revision record.

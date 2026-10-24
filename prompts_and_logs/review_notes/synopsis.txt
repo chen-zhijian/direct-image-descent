@@ -1,0 +1,114 @@
+SUMMARY OF THE SOURCE MANUSCRIPT AND THE NEW ARTICLE
+
+The source manuscript dualN_ai.tex establishes or records six main points:
+
+1. Under infinitesimal triviality and constant top cohomology dimension,
+   a smooth dual Nakano semipositive coefficient bundle has a smooth
+   dual Nakano semipositive top direct image R^n pi_* E.
+2. The top (0,n) L2 density and harmonic representative are independent
+   of the auxiliary fiber metric. Relative Serre duality is an isometry
+   with the dual of the canonical adjoint direct image.
+3. Vanishing Kodaira--Spencer maps give local products on a dense open
+   locus. A negative-adjoint curvature identity proves positivity there,
+   and smoothness extends it everywhere. Flatness, scalar lower bounds,
+   and numerical nefness follow under their stated hypotheses.
+4. General harmonic lifts need not commute with differentiation. A
+   product manifold alone is insufficient if the coefficient metric
+   varies along the fibers and base together.
+5. For arbitrary Hodge degrees, compressed ambient curvature dominating
+   the harmonic variation gives a conditional curvature inequality and
+   constant-one estimates. This is not automatic from semipositivity.
+   Auxiliary scalar tests are impossible in middle base degree.
+6. The main curvature mechanism has established antecedents. The
+   Mourougane--Takayama metric must be distinguished from the ordinary
+   harmonic metric; broad adjoint, pluricanonical, and singular extension
+   results are not claimed as consequences.
+
+The new standalone AMS article makes two results its main theorems:
+
+Theorem 1.1 retains the source manuscript's top-direct-image theorem.
+Theorem 1.2 is the quoted product descent theorem in the ranges
+  (i) a=m, p=n, b>=1; or (ii) b=m, q=n, a>=1,
+with the remaining indices in their stated dimension ranges.
+
+The product theorem is proved by smooth curvature characterization,
+closed harmonic lifting, an exact inverse-energy identity, a complete
+Kahler solution on the product, and contractive harmonic descent.
+Its pullback auxiliary bundle is only semipositive; this is handled
+through the curvature theorem, not by an invalid direct use of the
+positive-auxiliary hypothesis. A second fiber Bochner calculation shares
+the same curvature-characterization input and avoids solving upstairs.
+A nonzero q=1 example shows that the resulting
+degree-specific estimate need not imply semipositive line curvature.
+
+The referee revision of October 23, 2026 retains both main theorem
+statements and strengthens the analytic details. A bounded harmonic
+chain-retraction lemma gives descent on maximal distributional L2
+domains. The complete-Kahler existence proof now spells out the
+adjoint-domain argument, and the exact exterior-product sign is fixed.
+Theorem 1.2 is explicitly presented as a product corollary of Watanabe's
+extremal-degree curvature characterization and compact-fiber Bochner
+theory, with no priority, necessity, or sharpness claim. The varying
+metric example only obstructs naive harmonic lifting; it does not prove
+that metric splitting is necessary for the conclusion.
+
+The extension of October 24, 2026 adds Theorem 6.1 and Corollary 6.2.
+The holomorphic product and fixed product Kahler metric are retained,
+but the coefficient metric need not split.
+
+- In range (ii), b=m and q=n, arbitrary smooth coefficient metrics are
+  allowed. A top-degree harmonic lift is automatically closed, and
+  the metric-independent cohomology map descends the weak solution.
+- In range (i), a sufficient condition is mu+e >= 2 m^2 kappa, where
+  mu is the minimum total curvature-commutator eigenvalue over a fiber,
+  e is the minimum fiber Bochner-energy eigenvalue on harmonic forms,
+  and kappa is the squared Hilbert-Schmidt size of harmonic variation.
+  Compression gives a horizontal curvature lower bound mu+e, while
+  the Gauss correction is bounded by 2 m^2 kappa.
+- Mixed coefficient curvature and adjacent-degree Green operators
+  give a directly usable sufficient bound for kappa.
+- A nonsplit metric on C^2 times P^1 has explicitly varying harmonic
+  representatives and satisfies the criterion for a small perturbation
+  of a fixed Gaussian base metric.
+
+These Section 6 results are sufficient product consequences of known
+methods; no sharpness or priority claim is made.
+
+The further fibration extension of October 24, 2026 replaces the short
+supporting Section 7 by a full proof for smooth proper Kahler fibrations.
+Theorem 7.1 assumes constant cohomology dimension, complete metrics,
+positive auxiliary bundles, the total optimal condition, and
+
+  mu+e >= delta+2 m^2(tau+sigma+kappa).
+
+Here sigma measures actual Kodaira--Spencer insertion, tau the compressed
+horizontal-bracket term, and delta the discrepancy between horizontal
+metrics; kappa, mu, and e extend the Section 6 quantities. Pointwise
+metric comparison, fiber Bochner integration, the Choi--Schumacher
+curvature formula, and the complete estimate on the base prove the
+result. An adapted horizontal metric makes delta=tau=0.
+
+Theorem 7.3 proves exact top-degree lifting, solving, and descending
+under an adapted horizontal metric and pointwise Kodaira--Spencer
+annihilation of every holomorphic Serre-dual section. Holomorphic
+orthogonal extensions give a contractive distributional chain map;
+no smallness bound on harmonic variation is needed in this theorem.
+The annihilation is automatic for p=n. A nonisotrivial elliptic trace
+example satisfies the assumptions with flat coefficients. On the
+same family, R^1 pi_*O supplies a counterexample to unconditional
+descent, although the total optimal condition holds.
+
+The new section attributes the curvature identities to the existing
+literature and makes no necessity, sharpness, or priority claim. It
+does not assert unrestricted descent on varying fibrations. See
+fibration_extension_note.txt for the assumptions and checks in detail.
+
+The subsequent focused referee revision of Theorems 7.1 and 7.3
+retains both theorem statements. It corrects the false suggestion that
+annihilation of the Serre-dual sections implies vanishing of the
+Kodaira--Spencer class. It adds explicit curvature-compression and
+insertion-sign calculations, the full orthogonal-extension obstruction,
+a normalized coefficientwise chain projection, and the maximal-domain
+and auxiliary-kernel details. See section7_referee_report.txt.
+The new main.tex is self-contained; it does not input the old manuscript
+or this summary file. The original dualN_ai.tex is preserved.

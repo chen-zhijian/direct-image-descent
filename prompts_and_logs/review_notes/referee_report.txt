@@ -1,0 +1,159 @@
+REFEREE REVIEW AND REVISION RECORD
+Dual Nakano positivity of top direct images and optimal estimates on product fibrations
+October 23, 2026
+
+Historical scope note, October 24, 2026: this report concerns the
+pre-extension 16-page version. The current article adds Section 6
+on nonsplit coefficient metrics. See metric_extension_note.txt for
+the added statements and their separate mathematical checks.
+The subsequent fibration extension is recorded separately in
+fibration_extension_note.txt; this historical review is not an audit
+of the later Section 7 statements.
+
+Scope and verdict
+
+This review concentrates on Theorem 1.2, Section 4, and the analytic
+input in Section 2. I found no fatal mathematical error in the product
+theorem under its full hypotheses: a complete Kahler base, a compact
+projective Kahler fiber, an external-product holomorphic line bundle
+AND metric, and either of the two stipulated extremal degree ranges.
+The theorem has therefore been retained, not weakened. Theorem 1.1
+and its proof are preserved. This focused review is not a certification
+of originality or a new exhaustive audit of every supporting result.
+
+The substantial concern is the theorem's interpretation. It is a
+formal product consequence of established smooth curvature
+characterizations and compact-fiber Bochner theory. The manuscript
+should not suggest a new general higher-direct-image positivity
+principle. The revision makes this dependence explicit.
+
+1. Positive auxiliary tests versus a degenerate pullback
+
+The assumed optimal estimate tests strictly positive auxiliary line
+metrics on X. The pullback pi^*A is only semipositive when the fiber
+has positive dimension. Applying the assumption directly to pi^*A
+would be invalid. The existing proof correctly avoids this by first
+using Watanabe's curvature characterization to obtain
+
+  C_L = [i Theta_L, Lambda_X]_(a+p,b+q) >= 0.
+
+I checked Definitions 1.3-1.4 and Theorems 1.5-1.6 of arXiv:2109.12554v2:
+their fixed-metric, positive-auxiliary-bundle and compactly supported
+closed-data quantifiers match those used here. The revised citation
+specifies these definitions and the local-weight extension input,
+Proposition 3.1. Existence of a positive auxiliary bundle on X follows
+from the base assumption and projectivity of Z. Completeness of the
+product follows from completeness of Y and compactness of Z.
+
+In both stipulated ranges, B_X = [i pi^*Theta_A,Lambda_X] is nonnegative
+on the ENTIRE total degree, not merely the lifted component. On the
+lifted block it is exactly B_Y tensor Id, with B_Y positive definite.
+The lift is orthogonal to ker B_X. The revised text states explicitly
+that B_X^dagger Jf = J(B_Y^(-1)f). Fubini then gives the exact inverse
+energy identity. The extended-inverse order inequality for C_L+B_X
+and B_X does not require their simultaneous diagonalization.
+
+2. Solving with a semidefinite curvature commutator
+
+Lemma 2.3 uses the complete-metric Bochner-Kodaira-Nakano inequality
+and an extended inverse which is infinite on vectors with nonzero
+kernel component. Its proof is valid for the required weak solution.
+The revision explicitly specifies the maximal distributional
+operators, compact smooth approximation in the joint graph norm,
+and Fatou's lemma for a possibly unbounded nonnegative curvature term.
+
+The Hahn-Banach step was previously compressed. The revision writes
+w = w_0 + w_perp relative to ker dbar. Because im T is contained in
+ker S, every w_perp belongs to Dom T* and T*w_perp=0. This justifies
+passing from closed adjoint tests to all adjoint tests and hence the
+equation Tv=g. No closed-range hypothesis is being assumed.
+
+3. Descent of the weak solution
+
+The new Lemma 4.1 constructs isometric harmonic lifts J_j and bounded
+adjoints Pi_j=J_j*, with Pi_j J_j=Id. It proves the chain identity
+
+  dbar_Y Pi_j W = Pi_(j+1) dbar_X W
+
+on maximal L2 domains. The proof extracts the relevant product
+component and tests distributions against a smooth harmonic fiber
+basis. Vertical integration by parts kills the exact component.
+Separate horizontal and vertical derivatives of W need not be L2.
+
+The formerly unspecified sign is now (-1)^(a+j+1) in the component
+equation, consistent with the declared base-before-fiber ordering.
+The fixed reference metric H_Z and projection P_Z are distinguished
+from the full fiber inner product, which is scaled by h_G(y).
+This scalar changes neither the harmonic space nor P_Z.
+
+For the solution U, setting u=Pi_(b-1)U now gives dbar u=f and
+||u||<=||U|| directly. The cases q=0, n=0, b=m, and the top-base-degree
+lift were checked. The integrated isometry does not assert pointwise
+orthonormality of the harmonic basis.
+
+4. Novelty and the second curvature proof
+
+The product isometry identifies F with G tensor a fixed Hermitian
+cohomology space V. For nonzero harmonic alpha in V, compact-fiber
+Bochner theory gives
+
+  integral <C_M alpha,alpha>
+    = -||D'_M alpha||^2 -||(D'_M)*alpha||^2 <= 0.
+
+Integrating the total nonnegative curvature on xi tensor alpha forces
+C_G >= 0 in the specified base degree. This already proves the base
+estimate by standard complete-Kahler theory, without an upstairs
+solution. Thus Theorem 1.2 is explicitly described as a corollary of
+known methods. No claim is made that the exact packaged statement was
+previously published, or that the present formulation has priority.
+
+The second proof is now described as independent of the upstairs
+solution, while sharing Watanabe's characterization. The article also
+states that neither its degree ranges nor splitting hypotheses are
+proved necessary or sharp. The conventional constant-one estimate
+is distinguished from sharpness of a numerical constant in every case.
+
+5. Examples and limits
+
+The C^2 times P^1 example is correct: the total (3,3) commutator is 1,
+and H^1(P^1,K_{P^1}) is one-dimensional. The direct image is the original
+scalar metric up to a fixed factor. The revision describes it as an
+illustration of degree dependence, not a new positivity phenomenon.
+
+The nonsplit metric on a product elliptic family makes the naive
+harmonic lift fail to be a chain map. It has no assumed total-space
+optimal estimate and does not disprove all nonsplit descent results.
+The revision expressly limits its claim to that proof obstruction.
+The manuscript continues to distinguish the ordinary harmonic metric
+from the metric in the general Mourougane-Takayama theorem and makes
+no claim to recover their full theorem or Berndtsson's general result.
+
+Primary sources used in this review
+
+Y. Watanabe, Curvature operator of holomorphic vector bundles and
+L2-estimate condition for (n,q) and (p,n)-forms:
+https://arxiv.org/pdf/2109.12554v2
+Exact preprint numbering is used in the manuscript's citations.
+
+B. Berndtsson, Curvature of vector bundles associated to holomorphic
+fibrations, Theorem 1.2:
+https://annals.math.princeton.edu/wp-content/uploads/annals-v169-n2-p04.pdf
+
+C. Mourougane and S. Takayama, Hodge metrics and the curvature of
+higher direct images, especially the introduction and Theorem 1.1:
+https://www.numdam.org/item/10.24033/asens.2084.pdf
+
+J.-P. Demailly, Analytic methods in algebraic geometry, Chapters 4-5:
+https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/analmeth_book.pdf
+
+Validation
+
+The revised article compiled successfully to 16 pages. The final log
+has no warnings, overfull or underfull boxes, or unresolved references.
+All labels and bibliography references resolve, with Theorems 1.1
+and 1.2 retaining their numbers. All pages were rendered and visually
+checked, including the full theorem and lifting/descent proof pages.
+The chain-retraction lemma was independently rechecked after editing.
+
+The accompanying revised LaTeX and compiled PDF contain the changes.
+The pre-review source and PDF are preserved separately.

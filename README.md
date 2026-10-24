@@ -58,7 +58,11 @@ No Lean formalization or other machine-checked proof is supplied. `verification/
 
 ## Maintenance
 
-Revise the LaTeX source and regenerate `papers/paper_v1.pdf` together. Keep this PDF path stable so existing repository and website links continue to reach the maintained manuscript. Update the corresponding title, authors, summary, and repository link on [the personal website](https://chen-zhijian.github.io/) when those details change.
+The owner maintains the manuscript in its original local LaTeX file. Automatic syncing is configured to check for changes every 15 minutes while the owner's computer and synchronization service are available. A successful run publishes the packaged source, rebuilt `papers/paper_v1.pdf`, and `verification/build_manifest.json` together. Failed builds leave the last published manuscript in place. The PDF path stays stable, so the existing repository and [personal website](https://chen-zhijian.github.io/) links reach the updated manuscript.
+
+When the manuscript changes, the maintenance agent reviews the title, author credits, summary, and scope statements in this README and on the website, and updates them where needed. Build and consistency checks do not establish mathematical correctness. Automatic syncing does not reconstruct or regenerate the historical AI conversation and usage records.
+
+Other contributors can use the documented build procedure above: edit `papers/src/`, rebuild and inspect the PDF, run `python verification/scripts/verify.py`, and commit the source, PDF, and build manifest together. Coordinate manuscript revisions with the owner so the original source and repository remain consistent.
 
 See [LICENSE](LICENSE) for the repository's licensing status.
 

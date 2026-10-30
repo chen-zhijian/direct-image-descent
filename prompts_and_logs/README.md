@@ -2,6 +2,8 @@
 
 This directory contains a partial recovery of local research records, collected on October 24, 2026 with the author's authorization.
 
+These records are preserved for historical provenance from the first-version and predecessor work. The current paper is [paper v2](../papers/paper_v2.pdf), based on [direct_image_descent.tex](../papers/src/direct_image_descent.tex), dated October 30, 2026. This directory does not contain a recovered development transcript or review record for that revision. Its earlier titles, scope descriptions, and mathematical judgments may therefore differ from or be superseded by v2. The archived [first-version source](../papers/src/main.tex) and [PDF](../papers/paper_v1.pdf) remain available unchanged.
+
 ## Selected visible conversation
 
 [conversation.json](conversation.json) exports 58 original user-visible messages from the ten most recent turns of the Codex chat titled “Summarize the past works on the positivity of direct image…”. The selected turns run from October 23 to October 24, 2026 and cover the general variation discussion, development of the predecessor draft, creation of the two-theorem article, referee-style revisions, and the nonsplit-metric and fibration extensions.
@@ -14,7 +16,7 @@ Hidden reasoning, reasoning summaries, system/developer instructions, tool calls
 
 ## Research and review notes
 
-[review_notes/](review_notes/README.md) contains five byte-for-byte copies of the current local synopsis and review/extension notes. Their file hashes and source modification timestamps are recorded in [review_notes/manifest.json](review_notes/manifest.json). These documents refer to different manuscript stages; “referee” and “independent check” describe the research workflow and do not establish external journal peer review.
+[review_notes/](review_notes/README.md) contains five byte-for-byte copies of the local synopsis and review/extension notes as recovered on October 24, 2026. Their file hashes and source modification timestamps are recorded in [review_notes/manifest.json](review_notes/manifest.json). These documents refer to different historical manuscript stages; “referee” and “independent check” describe the research workflow and do not establish external journal peer review or review of v2.
 
 ## Remaining gaps
 

@@ -1,0 +1,3279 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{microtype,enumitem,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+ citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\hypersetup{pdftitle={Optimal estimates for direct images: product descent and top-degree rigidity},
+ pdfauthor={Zhijian Chen, Zhuo Liu, Chenghao Qing}}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\ddbar}{\partial\bar\partial}
+\newcommand{\Id}{\operatorname{Id}}
+\title[Optimal estimates and top-degree rigidity]
+{Optimal estimates for direct images:\\ product descent and top-degree rigidity}
+\author{Zhijian Chen}
+\address{Institute of Mathematics, Academy of Mathematics and Systems Science,
+ Chinese Academy of Sciences, Beijing 100190, China}
+\email{chenzhijian@amss.ac.cn}
+\author{Zhuo Liu}
+\address{Beijing Institute of Mathematical Sciences and Applications;
+ Department of Mathematics and Yau Mathematical Sciences Center,
+ Tsinghua University, Beijing, China}
+\email{liuzhuo@amss.ac.cn}
+\author{Chenghao Qing}
+\address{Yau Mathematical Sciences Center, Tsinghua University,
+ Beijing 100084, China}
+\email{qingchenghao@amss.ac.cn}
+\date{30 October 2026}
+\subjclass[2020]{Primary 32L10; Secondary 32G05, 32L20, 32W05}
+\keywords{Higher direct images, optimal $L^2$ estimates, singular Hermitian
+ metrics, multiplier ideals, harmonic metrics, relative duality}
+\begin{document}
+\begin{abstract}
+We prove product descent of optimal $L^2$ estimates for prescribed
+direct-image metrics.  For arbitrary singular semipositive line metrics,
+a rigidity theorem gives non-product adjoint descent in top fiber degree $q=n$.
+We identify the smooth adjoint metric with the Mourougane--Takayama
+metric and give counterexamples to unrestricted descent.
+\end{abstract}
+\maketitle
+\enlargethispage{8pt}
+\tableofcontents
+
+\section{Introduction}\label{sec:introduction}
+
+Let $\pi:X\to Y$ be a proper holomorphic submersion between complex
+manifolds, with compact
+fibers $X_y$ of dimension $n$ and base dimension $m$.  Fix K\"ahler
+metrics and a Hermitian holomorphic line bundle $(L,h)$ on $X$.
+For smooth $h$, the fiber cohomology
+$H^q(X_y,\Omega_{X_y}^p\otimes L_y)$ carries its harmonic norm.
+For a metric with plurisubharmonic weights, the relevant sheaf is
+\[
+ \mathcal F^{p,q}_h
+ =R^q\pi_*(\Omega_{X/Y}^p\otimes L\otimes\mathcal I(h)),
+\]
+and the prescribed norm is the minimum weighted $L^2$ norm of a
+Dolbeault representative, wherever the fiberwise identification is
+defined.  The multiplier ideal and the choice of norm are part of the
+statement.
+
+The positivity of direct images developed from Hodge-theoretic
+semipositivity, the theorems of Fujita and Kawamata
+\cite{Fuj78,Kaw81}, Viehweg's weak positivity \cite{Vie83}, and
+Koll\'ar's higher-direct-image theorems \cite{Kol86a,Kol86b}.
+Takegoshi treated Nakano semipositive coefficients under proper
+K\"ahler morphisms using harmonic methods \cite{Take95}.
+Mourougane--Takayama studied Hodge metrics on adjoint direct images
+\cite{MT07}; Berndtsson proved Nakano semipositivity of the natural
+$L^2$ metric on $f_*(K_{X/Y}\otimes L)$ for a smooth semipositive
+line metric \cite{Ber09}.
+Mourougane--Takayama obtained the higher-direct-image version
+\cite{MT08} and extended the induced tautological metrics across
+singular fibers \cite{MT09}.
+Curvature formulas for other Hodge degrees were subsequently developed
+by, among others, Liu--Yang, Naumann, Berndtsson--P\u aun--Wang,
+and Choi--Schumacher \cite{LY14,Nau21,BPW22,CS24}.
+
+For singular coefficients, Berndtsson--P\u aun established positivity
+of relative Bergman metrics \cite{BP08}, and P\u aun--Takayama
+developed singular metric positivity for twisted pluricanonical
+direct images \cite{PT18}.
+These methods enter Cao--P\u aun's work on algebraic fiber spaces over
+abelian varieties \cite{CP17}; Hacon--Popa--Schnell give a detailed
+treatment of the adjoint direct-image metric and its minimal extension
+property \cite{HPS18}.
+The formulation of positivity by optimal $\bar\partial$ estimates
+was developed in \cite{DNWZ23,WatCurv}.
+For ordinary adjoint direct images, singular Nakano positivity is proved
+in \cite{Wat25,IMW24}; the latter allows arbitrary singular
+semipositive line metrics and proper K\"ahler fibrations.
+Takayama proves singular Griffiths semipositivity and the minimal
+extension property for higher direct images with smooth Nakano
+semipositive coefficients \cite{Tak24}.
+
+The multiplier ideal in a singular higher direct image is essential.
+Demailly--Peternell--Schneider prove a hard Lefschetz theorem with
+multiplier ideals \cite{DPS01}, and Wu studies the resulting
+parallel sections \cite{Wu21}.
+Matsumura establishes relative injectivity and torsion-freeness for
+arbitrary singular semipositive metrics \cite{Mat22}.
+Our top-degree argument uses instead the rigidity forced by
+nonvanishing, together with relative duality and the divisorial
+decomposition of a positive current \cite{RRV71,Siu74}.
+
+The product descent question compares an optimal estimate in total
+degree $(a+p,b+q)$ with the estimate in base degree $(a,b)$ for the
+prescribed direct-image metric.  The smooth and weighted optimal
+estimates are defined in Definitions~\ref{def:smooth-optimal}
+and~\ref{def:singular-estimate}; $\mathscr E(H)$ denotes the sheaf of
+locally square-integrable holomorphic sections.  We use the ranges
+\begin{equation}\label{eq:ranges}
+\begin{array}{ll}
+\mathrm{(i)}&a=m,\quad p=n,\quad 1\le b\le m,\quad0\le q\le n,\\
+\mathrm{(ii)}&b=m,\quad q=n,\quad 1\le a\le m,\quad0\le p\le n.
+\end{array}
+\end{equation}
+
+\begin{theorem}[Smooth product descent]\label{thm:product-descent}
+Let $(Y,\omega_Y)$ be complete K\"ahler of dimension $m\ge1$, admitting
+a positive Hermitian holomorphic line bundle.  Let $(Z,\omega_Z)$
+be smooth projective of dimension $n$, and set
+\[
+ X=Y\times Z,\quad\pi=\operatorname{pr}_Y,\quad
+ \omega_X=\omega_Y+\omega_Z,\quad
+ (L,h)=(G,h_G)\boxtimes(M,h_M),
+\]
+where $G$ and $M$ are holomorphic line bundles on $Y$ and $Z$,
+respectively, and both metrics are smooth.  In either range \eqref{eq:ranges}, if $(L,h)$
+satisfies the optimal $(a+p,b+q)$ estimate, then
+\[
+ \bigl(\mathcal F,H\bigr)
+ =\bigl(R^q\pi_*(\Omega_{X/Y}^p\otimes L),H\bigr)
+\]
+satisfies the optimal $(a,b)$ estimate for its prescribed harmonic
+metric.
+\end{theorem}
+
+In range~\textnormal{(ii)}, Proposition~\ref{thm:variable-metric}
+allows an arbitrary smooth metric on $G\boxtimes M$, with the same
+product geometry.  Singular semipositive product metrics give
+the following result.
+
+\begin{theorem}[Singular product descent]\label{thm:singular-product}
+Let $(Y,\omega_Y)$ be complete K\"ahler of dimension $m\ge1$
+and $(Z,\omega_Z)$ compact K\"ahler of dimension $n$.  On $X=Y\times Z$, with $\pi=\operatorname{pr}_Y$, let
+\[
+ (L,h)=(G,h_G)\boxtimes(M,h_M),
+\]
+where $G$ and $M$ are holomorphic line bundles on $Y$ and $Z$
+with arbitrary psh metric weights.  Fix $0\le p,q\le n$ and define
+\[
+ V=H^q(Z,\Omega_Z^p\otimes M\otimes\mathcal I(h_M)),\quad
+ E_0=G\otimes V,\quad H=h_G\otimes H_V.
+\]
+Here $H_V$ is the minimum weighted $L^2$ norm of Dolbeault
+representatives, whose existence is proved in
+Lemma~\ref{prop:fiber-norm}.  There is a canonical identification
+\begin{equation}\label{eq:singular-product-sheaf}
+ \begin{aligned}
+ \mathcal F&:=R^q\pi_*(\Omega_{X/Y}^p\otimes L\otimes\mathcal I(h))\\
+  &=(G\otimes\mathcal I(h_G))\otimes V=\mathscr E(H).
+ \end{aligned}
+\end{equation}
+For almost every $y$, $H_y$ is the prescribed weighted fiberwise
+quotient norm.  The pair in \eqref{eq:singular-product-sheaf}
+satisfies the weighted optimal estimates in all degrees
+\[
+ (m,b),\quad1\le b\le m,\qquad\text{and}\qquad
+ (a,m),\quad1\le a\le m,
+\]
+for every $p,q$.  The metric $H$ on the torsion-free sheaf
+$\mathcal F$ is Griffiths semipositive and has the minimal extension
+property.
+\end{theorem}
+
+The top adjoint degree admits a non-product result for completely
+arbitrary singular semipositive coefficient metrics.
+
+\begin{theorem}[Rigidity and descent in top adjoint degree]
+\label{thm:singular-top-rigidity}
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion
+between connected complex manifolds, with connected fibers of dimension
+$n\ge1$.  Fix a K\"ahler form $\omega_X$ on $X$, put
+$\omega_y=\omega_X|_{X_y}$, and let $(L,h)$ be a holomorphic line
+bundle with arbitrary psh metric weights.  Set
+\[
+ \mathcal F_n=R^n\pi_*
+   (K_{X/Y}\otimes L\otimes\mathcal I(h)).
+\]
+Either $\mathcal F_n=0$, or there exist an effective
+divisor $D$ on $X$ and a holomorphic line bundle $G$ on $Y$ with a singular
+Hermitian metric $h_G$ having psh local weights such that
+\begin{equation}\label{eq:top-singular-factorization}
+ (L,h)\simeq
+ (\mathcal O_X(D),h_D)\otimes\pi^*(G,h_G).
+\end{equation}
+Here $s_D$ is the canonical section of $\mathcal O_X(D)$ and $h_D$
+is the divisorial metric characterized by $|s_D|_{h_D}=1$ off $D$.
+In the second case,
+\begin{equation}\label{eq:top-singular-sheaf}
+ \mathcal I(h)=\mathcal O_X(-D)\cdot
+       \pi^{-1}\mathcal I(h_G)\mathcal O_X,
+ \qquad
+ \mathcal F_n\simeq G\otimes\mathcal I(h_G).
+\end{equation}
+The prescribed weighted fiberwise quotient norm is, almost everywhere,
+\begin{equation}\label{eq:top-singular-metric}
+ H=V^{-1}h_G,
+ \qquad
+ V=\int_{X_y}\frac{\omega_y^n}{n!}>0,
+\end{equation}
+where $V$ is independent of $y$, and the trace of a top Dolbeault class
+is normalized by integration. In particular,
+$\mathcal F_n=\mathscr E(H)$ as a subsheaf of $G$.
+
+If $(Y,\omega_Y)$ is complete K\"ahler of dimension $m\geq1$, then
+$(\mathcal F_n,H)$ satisfies the singular optimal $(m,b)$ estimate for
+every $1\leq b\leq m$.
+\end{theorem}
+
+For smooth vector coefficients, isometric Serre duality gives the
+following complementary statement.
+
+\begin{theorem}[Top direct images under infinitesimal triviality]
+\label{thm:top-dual}
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion of
+relative dimension $n$ between K\"ahler manifolds.  Assume that all
+fiberwise Kodaira--Spencer maps vanish.  Let $(E,h)$ be a smooth
+Hermitian holomorphic vector bundle such that $(E^*,h^*)$ is Nakano
+seminegative, and assume that $h^n(X_y,E_y)$ is locally constant.
+Then the prescribed harmonic metric on $R^n\pi_*E$ is smooth and
+dual Nakano semipositive, that is, its dual metric is Nakano
+seminegative.
+\end{theorem}
+
+For smooth semipositive line coefficients, Mourougane--Takayama
+\cite[Theorem~1.1]{MT08} imply that the prescribed harmonic metric on
+\[
+ R^q\pi_*(K_{X/Y}\otimes L),\qquad 0\le q\le n,
+\]
+is Nakano semipositive for every proper K\"ahler submersion.
+On a complete K\"ahler base this gives the optimal $(m,b)$ estimates
+for $1\le b\le m$.
+Remark~\ref{rem:mt-comparison} gives the detailed metric comparison.
+
+The smooth split-product implication is a consequence of the curvature
+characterization in \cite{WatCurv} and the fiberwise Bochner identity.
+The singular split-product result combines scalar weighted estimates
+with the multiplier-ideal product formula \cite{Dem82,DEL00}.
+We therefore present these statements as consequences of existing
+theory.
+The failure of partial positivity under fiber integration has a close
+precedent in Inayama's polydisc counterexamples
+\cite[Theorem~1.1]{Ina26}; our compact-fiber examples concern a proper
+direct image with its prescribed cohomological metric.
+The top-degree singular result concerns $q=n$ and identifies the
+actual sheaf and its quotient metric.
+
+Section~\ref{sec:counterexamples} gives compact-fiber counterexamples
+to the unrestricted degreewise implication.  One occurs on a trivial
+family in range~\textnormal{(i)}, with a nonsplit metric which is not
+semipositive; another uses a flat coefficient on a varying elliptic
+family in range~\textnormal{(ii)}.  Thus infinitesimal triviality alone
+does not replace metric splitting in the original degreewise problem.
+Section~\ref{sec:extension} proves Griffiths semipositivity and the
+minimal extension property for the scalar-factor metrics in the
+singular positive results.
+
+
+\section{Curvature estimates and weighted cohomology}\label{sec:analytic}
+
+We use $dV_\omega=\omega^d/d!$ on a K\"ahler $d$-fold and the
+curvature convention $i\Theta_{L,e^{-\varphi}}=i\partial\bar\partial\varphi$.
+All estimates use the specified form and coefficient metrics.
+A singular semipositive line metric
+means $h=e^{-\varphi}$ in local holomorphic frames, with
+$\varphi\in\operatorname{PSH}$ and $\varphi\not\equiv-\infty$.
+It is positive and finite almost everywhere and locally bounded below
+by a positive smooth metric.  Put
+\[
+ C_{E;r,s}=[i\Theta_{E,h}\otimes\Id,\Lambda_\omega]_{r,s}.
+\]
+For scalar curvature with eigenvalues $\lambda_1,\ldots,\lambda_d$,
+its eigenvalue on $dz^I\wedge d\bar z^J$ is
+\begin{equation}\label{eq:commutator-eigenvalue}
+ \sum_{i\in I}\lambda_i+\sum_{j\in J}\lambda_j
+       -\sum_{k=1}^d\lambda_k.
+\end{equation}
+
+\begin{definition}\label{def:smooth-optimal}
+Let $(S,\omega)$ admit a positive Hermitian holomorphic line bundle.
+In a degree $r=d$, $1\le s\le d$, or $s=d$, $1\le r\le d$,
+a smooth Hermitian bundle $(E,h)$ satisfies the \emph{optimal $(r,s)$
+estimate} if, for every smooth positive auxiliary line bundle $(A,h_A)$
+and every $\bar\partial$-closed $f\in C_c^\infty(S,\Lambda^{r,s}T_S^*
+\otimes E\otimes A)$, there is a distributional solution
+$u\in L^2_{r,s-1}(S,E\otimes A)$ with
+\begin{equation}\label{eq:optimal-bound}
+ \bar\partial u=f,\qquad
+ \|u\|_{h h_A,\omega}^2\le
+ \int_S\langle B_A^{-1}f,f\rangle_{h h_A,\omega}\,dV_\omega,
+ \quad B_A=[i\Theta_A\otimes\Id_E,\Lambda_\omega]_{r,s}.
+\end{equation}
+\end{definition}
+Formula~\eqref{eq:commutator-eigenvalue} gives $B_A>0$ in these ranges.
+
+\begin{proposition}[Smooth curvature characterization]\label{prop:smooth-test}
+On a complete K\"ahler manifold admitting a positive Hermitian line
+bundle, Definition~\ref{def:smooth-optimal} is equivalent to
+$C_{E;r,s}\ge0$.
+\end{proposition}
+The necessary implication is \cite[Theorems 1.5--1.6]{WatCurv}, with the
+fixed-metric definitions in \cite[Definitions 1.3--1.4]{WatCurv}.
+The sufficient implication follows from the next lemma.
+
+For a nonnegative Hermitian operator $C$, define its extended inverse
+quadratic form by
+\begin{equation}\label{eq:extended-inverse}
+ q_C(f)=\sup_v\{2\operatorname{Re}\langle f,v\rangle
+                         -\langle Cv,v\rangle\}.
+\end{equation}
+To see its meaning, diagonalize $C$ at a point, with eigenvalues
+$\mu_\nu\ge0$, and write $f=\sum_\nu f_\nu e_\nu$.  Maximizing each
+scalar expression in \eqref{eq:extended-inverse} gives
+\[
+ q_C(f)=
+ \begin{cases}
+ \displaystyle\sum_{\mu_\nu>0}\frac{|f_\nu|^2}{\mu_\nu},
+       &f_\nu=0\text{ whenever }\mu_\nu=0,\\[4pt]
+ +\infty,&\text{otherwise}.
+ \end{cases}
+\]
+Thus it equals $\langle C^\dagger f,f\rangle$ for
+$f\perp\ker C$, where $C^\dagger$ is the inverse on $(\ker C)^\perp$
+and zero on $\ker C$.  This definition also works when the rank of
+$C$ changes.  Directly comparing the expressions inside the supremum gives
+\begin{equation}\label{eq:inverse-order}
+ C\ge B\ge0\quad\Longrightarrow\quad q_C\le q_B.
+\end{equation}
+
+\begin{lemma}[Complete K\"ahler estimate]\label{lem:complete-estimate}
+Let $(S,\omega)$ be complete K\"ahler, let $(E,h)$ be smooth, and let
+$C=C_{E;r,s}\ge0$, where $s\ge1$.  If $f\in L^2_{r,s}(S,E)$,
+$\bar\partial f=0$, and $I(f)=\int_Sq_C(f)\,dV_\omega<\infty$, then
+there exists $u\in L^2_{r,s-1}(S,E)$ satisfying
+$\bar\partial u=f$ and $\|u\|^2\le I(f)$.
+\end{lemma}
+\begin{proof}
+All operators in this proof act between the Hilbert spaces defined by
+the fixed metrics.  Set
+\[
+ T=\bar\partial_{\max}:L^2_{r,s-1}(S,E)\longrightarrow L^2_{r,s}(S,E),
+ \qquad
+ S_1=\bar\partial_{\max}:L^2_{r,s}(S,E)\longrightarrow L^2_{r,s+1}(S,E),
+\]
+with $S_1=0$ if $s=d$.  They are densely defined and closed, since
+convergence in their graph norms implies convergence of the
+corresponding distributional derivatives.  Moreover,
+$\operatorname{im}T\subset\ker S_1$ follows from
+$\bar\partial^2=0$ in distributions.  The operator $T^*$ is the
+Hilbert-space adjoint, whose local expression is the formal
+$\bar\partial$-adjoint.
+
+The Bochner--Kodaira--Nakano identity gives, for compactly supported
+smooth $w$,
+\[
+ \|\bar\partial w\|^2+\|\bar\partial^*w\|^2
+ =\|D'w\|^2+\|(D')^*w\|^2+
+   \int_S\langle Cw,w\rangle\,dV_\omega.
+\]
+We first justify using its inequality for
+$w\in\operatorname{Dom}S_1\cap\operatorname{Dom}T^*$.
+Completeness provides compactly supported Lipschitz cutoffs
+$0\le\chi_\nu\le1$ with
+\[
+ \chi_\nu\longrightarrow1\quad\text{pointwise},\qquad
+ |d\chi_\nu|_\omega\le C/\nu.
+\]
+For example, compose the distance from a fixed point with a cutoff
+that equals one on $[0,\nu]$ and zero on $[2\nu,\infty)$.
+On a disconnected manifold one first truncates to finitely many
+components and then makes the same construction on each component.
+The distributional product formulas are
+\[
+ S_1(\chi_\nu w)=\chi_\nu S_1w+\bar\partial\chi_\nu\wedge w,
+ \qquad
+ T^*(\chi_\nu w)=\chi_\nu T^*w
+                    -(\bar\partial\chi_\nu\wedge)^*w.
+\]
+The error terms have norms at most $C\nu^{-1}\|w\|$.  Dominated
+convergence therefore shows that $\chi_\nu w\to w$ in the joint
+graph norm
+$\|w\|+\|S_1w\|+\|T^*w\|$.  For a fixed $\nu$, choose finitely many
+coordinate and bundle charts covering its support.  After a smooth
+partition of unity, convolution of the coefficient distributions
+approximates $\chi_\nu w$ by compactly supported smooth forms in
+that same graph norm.  This is the local Friedrichs lemma applied
+simultaneously to the first-order operator $(S_1,T^*)$; its
+coefficients and the reference metrics are smooth on the compact
+coordinate sets.  A diagonal choice gives smooth $w_\nu$ such that
+\[
+ w_\nu\to w,\qquad S_1w_\nu\to S_1w,\qquad T^*w_\nu\to T^*w
+ \quad\text{in }L^2.
+\]
+Choose a subsequence converging pointwise almost everywhere.
+Since $C\ge0$, Fatou's lemma, followed by the smooth Bochner
+inequality, gives
+\[
+ \int_S\langle Cw,w\rangle\,dV_\omega
+ \le\liminf_\nu\int_S\langle Cw_\nu,w_\nu\rangle\,dV_\omega
+ \le\|S_1w\|^2+\|T^*w\|^2.
+\]
+Finite $I(f)$ implies $f\perp\ker C$ almost everywhere.  The
+diagonal expression for $q_C$ gives the pointwise inequality
+\[
+ |\langle f,w\rangle|
+ \le q_C(f)^{1/2}\langle Cw,w\rangle^{1/2}.
+\]
+After integration and Cauchy--Schwarz, for
+$w\in\ker S_1\cap\operatorname{Dom}T^*$ we obtain
+\[
+ |(f,w)|^2\le I(f)\int_S\langle Cw,w\rangle\,dV_\omega
+             \le I(f)\|T^*w\|^2.
+\]
+Consequently the rule
+\[
+ \ell(T^*w)=(f,w),\qquad
+ w\in\ker S_1\cap\operatorname{Dom}T^*,
+\]
+defines a bounded functional on this subspace of $L^2_{r,s-1}$:
+if $T^*w=0$, the preceding inequality forces $(f,w)=0$.
+Its norm is at most $I(f)^{1/2}$.  With inner products linear in
+the first variable, $\ell$ is antilinear; Hahn--Banach and Riesz
+give $u\in L^2_{r,s-1}$ with
+$\ell(v)=(u,v)$ and $\|u\|^2\le I(f)$.
+
+It remains to test against all of $\operatorname{Dom}T^*$.
+For arbitrary
+$w\in\operatorname{Dom}T^*$, write $w=w_0+w_\perp$ according to
+$\ker S_1\oplus(\ker S_1)^\perp$.  Since $\operatorname{im}T\subset
+\ker S_1$, for every $v\in\operatorname{Dom}T$ one has
+$(Tv,w_\perp)=0$.  The definition of the Hilbert adjoint implies
+$w_\perp\in\operatorname{Dom}T^*$ and $T^*w_\perp=0$.
+Thus $w_0\in\operatorname{Dom}T^*\cap\ker S_1$.  Since also
+$f\in\ker S_1$, we conclude
+\[
+ (u,T^*w)=(u,T^*w_0)=(f,w_0)=(f,w).
+\]
+This identity means that $u\in\operatorname{Dom}(T^*)^*$ and
+$(T^*)^*u=f$.  Closedness and dense definition of $T$ give
+$(T^*)^*=T$, so $\bar\partial u=f$.  See also
+\cite[Chapters 4--5]{Dem12}.
+\end{proof}
+
+For singular metrics we formulate optimal estimates for finite-energy data.
+\begin{definition}\label{def:singular-estimate}
+Let $E_0$ be a holomorphic vector bundle on a smooth K\"ahler manifold
+and $H$ a measurable metric, locally bounded below by a positive
+smooth metric.  Define
+\[
+ \mathscr E(H)(U)=\{s\in H^0(U,E_0):|s|_H^2\in L^1_{\rm loc}(U)\}.
+\]
+The pair $(\mathscr E(H),H)$ satisfies the \emph{weighted optimal
+$(a,b)$ estimate} if, for every smooth positive auxiliary line $A$
+and every distributionally closed measurable $(a,b)$-form $f$ with
+\[
+ I_A(f)=\int_Y\langle B_A^{-1}f,f\rangle_{Hh_A,\omega_Y}\,dV_Y<\infty,
+\]
+there is a distributional solution $\bar\partial u=f$ with
+$\|u\|_{Hh_A,\omega_Y}^2\le I_A(f)$.  The Dolbeault operators are
+their maximal distributional realizations.
+\end{definition}
+Finite inverse energy implies local weighted $L^2$ integrability,
+since $B_A^{-1}$ has a positive lower bound on every compact set.
+
+\begin{lemma}[$L^2$ removability]\label{lem:l2-removal}
+Let $A$ be a nowhere-dense analytic subset of a complex manifold.  If
+$u,g\in L^2_{\mathrm{loc}}$ and $\bar\partial u=g$ off $A$, then
+this identity holds distributionally everywhere.
+\end{lemma}
+\begin{proof}
+Work in a coordinate neighborhood $U\subset\mathbb C^N$, with a
+holomorphic bundle frame if necessary.  All calculations are
+coefficientwise, and the smooth reference metrics are equivalent
+on compact subsets to Euclidean metrics.  Let $u$ have type $(p,q)$
+and put $k=p+q$.  If $q=N$, the equation is automatic, so assume
+$q<N$ and fix $\tau\in C_c^\infty(U,\Lambda^{N-p,N-q-1})$.
+Choose a nonzero holomorphic function $f$ on $U$ with
+$A\cap U\subset\{f=0\}$ and $|f|<1$.  Set
+\[
+ \chi_j=\max\{0,1+j^{-1}\log|f|\}.
+\]
+These functions are locally Lipschitz and psh, and satisfy
+\[
+ 0\le\chi_j\le1,\qquad
+ \chi_j=0\text{ on }\{|f|\le e^{-j}\},\qquad
+ \chi_j\longrightarrow1\text{ almost everywhere}.
+\]
+For $\eta\in C_c^\infty(U)$, nonnegative smooth regularizations of
+$\chi_j$ and the identity
+$\Delta(\chi_j^2)=2|\nabla\chi_j|^2+2\chi_j\Delta\chi_j$
+give, in the distributional sense,
+\[
+ 2\int_U\eta^2|\nabla\chi_j|^2
+ \le\langle\Delta(\chi_j^2),\eta^2\rangle
+ =\int_U\chi_j^2\Delta(\eta^2)
+ \le\int_U|\Delta(\eta^2)|.
+\]
+Consequently $\sup_j\|d\chi_j\|_{L^2(K)}<\infty$ for every
+$K\Subset U$.  Also $\chi_j\to1$ in $L^2_{\mathrm{loc}}$.  For
+every compactly supported smooth real one-form $\zeta$,
+\[
+ (d\chi_j,\zeta)_{L^2}
+   =(\chi_j,d^*\zeta)_{L^2}
+   \longrightarrow(1,d^*\zeta)_{L^2}=0.
+\]
+The local $L^2$ bound and density of smooth tests imply
+$d\chi_j\rightharpoonup0$ in $L^2_{\mathrm{loc}}$.
+
+For fixed $j$, the support of $\chi_j\tau$ is compact and contained
+in $\{|f|\ge e^{-j}\}\subset U\setminus A$.  Coefficientwise
+mollification gives forms
+$\tau_{j,\varepsilon}\in C_c^\infty(U\setminus\{f=0\})$, with
+supports in a fixed compact subset of $U\setminus\{f=0\}$, such that
+\[
+ \|\tau_{j,\varepsilon}-\chi_j\tau\|_{W^{1,2}}\longrightarrow0
+ \qquad(\varepsilon\to0).
+\]
+The equation off $A$ gives
+$\int g\wedge\tau_{j,\varepsilon}
+ =(-1)^{k+1}\int u\wedge\bar\partial\tau_{j,\varepsilon}$.
+For a compact set containing these supports, Cauchy--Schwarz yields
+\[
+ \begin{split}
+ &\left|\int g\wedge(\tau_{j,\varepsilon}-\chi_j\tau)\right|
+ +\left|\int u\wedge
+       \bar\partial(\tau_{j,\varepsilon}-\chi_j\tau)\right|\\
+ &\hspace{1cm}\le
+ C(\|g\|_{L^2}+\|u\|_{L^2})
+   \|\tau_{j,\varepsilon}-\chi_j\tau\|_{W^{1,2}}
+ \longrightarrow0 .
+ \end{split}
+\]
+Letting $\varepsilon\to0$ therefore gives the exact identity
+\[
+ \int_U\chi_jg\wedge\tau
+ =(-1)^{k+1}\left(
+    \int_Uu\wedge\bar\partial\chi_j\wedge\tau
+      +\int_U\chi_ju\wedge\bar\partial\tau\right).
+\]
+For $K\Subset U$ containing $\operatorname{supp}\tau$, the functional
+\[
+ \ell_\tau(\alpha)=\int_Uu\wedge\alpha\wedge\tau,\qquad
+ |\ell_\tau(\alpha)|
+       \le C_\tau\|u\|_{L^2(K)}\|\alpha\|_{L^2(K)}
+\]
+is continuous on $L^2_{0,1}(K)$.  Hence
+$\ell_\tau(\bar\partial\chi_j)\to0$ by weak convergence.  Moreover,
+\[
+ \|(\chi_j-1)u\|_{L^2(K)}^2
+   =\int_K|\chi_j-1|^2|u|^2\longrightarrow0,\qquad
+ \|(\chi_j-1)g\|_{L^2(K)}\longrightarrow0,
+\]
+because $|\chi_j-1|\le1$ and $u,g\in L^2(K)$.
+Passing to the limit in the preceding identity gives
+\[
+ \int_Ug\wedge\tau=(-1)^{k+1}\int_Uu\wedge\bar\partial\tau
+ \qquad\text{for every }\tau,
+\]
+which is $\bar\partial u=g$ on $U$.
+\end{proof}
+
+\begin{lemma}[Weighted fiber cohomology]\label{prop:fiber-norm}
+Let $Z$ be compact Hermitian, and let $(M,h_M)$ have psh local weights.
+For every $p,q$, the vector space
+\[
+ V=H^q(Z,\Omega_Z^p\otimes M\otimes\mathcal I(h_M))
+\]
+has the positive-definite quotient norm
+\begin{equation}\label{eq:weighted-quotient}
+ \|v\|_{H_V}^2
+ =\min\{\|\alpha\|_{h_M}^2:\bar\partial\alpha=0, [\alpha]=v\}.
+\end{equation}
+The minimum is attained uniquely in
+$\ker\bar\partial\cap\ker\bar\partial^*$ for the maximal weighted
+Hilbert complex.
+\end{lemma}
+\begin{proof}
+Let $\mathscr L^{p,j}$ consist of germs $u$ such that both $u$ and
+$\bar\partial u$ are locally $L^2(h_M)$.  The complex
+\begin{equation}\label{eq:weighted-resolution}
+ 0\longrightarrow\Omega_Z^p\otimes M\otimes\mathcal I(h_M)
+ \longrightarrow\mathscr L^{p,0}\xrightarrow{\bar\partial}
+ \cdots\xrightarrow{\bar\partial}\mathscr L^{p,n}\longrightarrow0
+\end{equation}
+is a fine resolution, as follows.  For a smooth partition function
+$\rho$, the identity
+\[
+ \bar\partial(\rho u)=\rho\bar\partial u+\bar\partial\rho\wedge u
+\]
+shows that multiplication by $\rho$ preserves each graph sheaf:
+on a relatively compact coordinate set,
+\[
+ \|\rho u\|_{h_M}+\|\bar\partial(\rho u)\|_{h_M}
+ \le C_\rho\bigl(\|u\|_{h_M}+\|\bar\partial u\|_{h_M}\bigr).
+\]
+Thus smooth partitions of unity act on the sheaves
+$\mathscr L^{p,j}$.
+
+For local exactness, trivialize $M$ on a coordinate ball and write
+$h_M=e^{-\varphi}$.  Let $j\ge1$ and let
+$u\in\mathscr L^{p,j}$ satisfy $\bar\partial u=0$.
+After shrinking to a Euclidean ball $B$ with
+$\|u\|_{L^2(B,e^{-\varphi})}<\infty$, write
+\[
+ u=\sum_{|I|=p}dz^I\wedge u_I,\qquad
+ \bar\partial u_I=0.
+\]
+For $c>0$, the scalar H\"ormander theorem on $B$ with weight
+$\varphi+c|z|^2$ gives $(0,j-1)$-forms $v_I$ satisfying
+\[
+ \bar\partial v_I=u_I,\qquad
+ \int_B|v_I|^2e^{-\varphi-c|z|^2}
+ \le\frac1{cj}\int_B|u_I|^2e^{-\varphi-c|z|^2}.
+\]
+The inverse bound follows from
+$i\partial\bar\partial(\varphi+c|z|^2)\ge
+c\,i\sum dz_\ell\wedge d\bar z_\ell$: multiply a scalar
+$(0,j)$-form by the Euclidean holomorphic volume form to obtain
+an $(n,j)$-form, whose curvature operator has lower bound $cj$.
+Since $e^{-c|z|^2}$ is bounded above and below by positive constants
+on $B$, the form
+\[
+ v=(-1)^p\sum_{|I|=p}dz^I\wedge v_I
+\]
+is locally $L^2(h_M)$ and satisfies $\bar\partial v=u$.
+Therefore $v\in\mathscr L^{p,j-1}$.
+The Euclidean and original smooth form metrics are locally
+equivalent, so this proves exactness for the prescribed metric.
+In degree zero, a distributional $\bar\partial$-closed coefficient
+is holomorphic, and its weighted square integrability is exactly
+membership in $\mathcal I(\varphi)$.  This identifies the kernel
+with $\Omega_Z^p\otimes M\otimes\mathcal I(h_M)$.
+See also \cite[Theorem 5.3(a)]{WatNadel}.
+
+Write $\mathcal H_j=L^2_{p,j}(Z,M,h_M)$ and
+$d_j=\bar\partial_{\max}$, so
+\[
+ \operatorname{Dom}d_j
+  =\{u\in\mathcal H_j:\bar\partial u
+           \text{ is represented by an element of }\mathcal H_{j+1}\}.
+\]
+These operators are closed.  Indeed, if
+$u_\ell\to u$ in $\mathcal H_j$ and
+$d_ju_\ell\to v$ in $\mathcal H_{j+1}$, the local lower bound for
+$h_M$ gives the same convergences in ordinary $L^2_{\rm loc}$.
+Thus $\bar\partial u=v$ in distributions, so
+$u\in\operatorname{Dom}d_j$ and $d_ju=v$.
+
+To verify dense definition, put
+$A=\operatorname{Supp}(\mathcal O_Z/\mathcal I(h_M))$.
+This is a nowhere-dense analytic subset.  On $Z\setminus A$, the weight
+$e^{-\varphi}$ is locally integrable because
+$1\in\mathcal I(\varphi)$ there.  Hence every compactly supported
+smooth form in $Z\setminus A$, as well as its derivative, is
+weighted $L^2$.  Smooth forms are dense for this locally finite
+weighted measure on relatively compact coordinate sets.
+Moreover, if $\chi_\ell$ are bounded cutoffs exhausting
+$Z\setminus A$, then for every $u\in\mathcal H_j$,
+\[
+ \|(1-\chi_\ell)u\|_{h_M}^2
+   =\int_Z|1-\chi_\ell|^2|u|_{h_M}^2\,dV_Z\longrightarrow0,
+\]
+since $A$ has measure zero.  A partition of unity and local
+approximation prove density in all of $\mathcal H_j$.
+
+Global sections of the graph sheaves on compact $Z$ are exactly
+these maximal domains.  The fine resolution therefore computes
+the algebraic, initially unreduced, Hilbert-complex quotient:
+\[
+ V=\ker d_q/\operatorname{im}d_{q-1},\qquad \dim V<\infty.
+\]
+Finiteness follows from coherence of the multiplier ideal and
+finite-dimensional coherent cohomology on a compact complex
+manifold.  We now prove that this algebraic quotient is separated.
+For $q\ge1$, equip
+$D=\operatorname{Dom}d_{q-1}$ with the graph norm
+\[
+ \|v\|_D^2=\|v\|_{\mathcal H_{q-1}}^2
+                         +\|d_{q-1}v\|_{\mathcal H_q}^2,
+ \qquad K=\ker d_q.
+\]
+Both $D$ and $K$ are Banach spaces, and
+$d_{q-1}:D\to K$ is bounded.  Choose a finite-dimensional algebraic
+complement $W\subset K$ to its range, with the norm induced from
+$K$.  The bounded surjection
+\[
+ D\oplus W\longrightarrow K,\qquad (u,w)\longmapsto d_{q-1}u+w
+\]
+has kernel $\ker d_{q-1}\oplus\{0\}$.  The open mapping theorem gives
+a topological isomorphism
+\[
+ (D/\ker d_{q-1})\oplus W\xrightarrow{\ \sim\ }K,\qquad
+ ([v],w)\longmapsto d_{q-1}v+w.
+\]
+The first summand is closed in the domain, and its image is
+$B_q=\operatorname{im}d_{q-1}$.  Therefore $B_q$ is closed in $K$.
+Since $K$ is closed in $\mathcal H_q$, $B_q$ is also closed in
+$\mathcal H_q$.
+
+Let $\alpha\in K$ represent a class, and let $P_{B_q}$ be the
+orthogonal projection in $\mathcal H_q$.  Then
+\[
+ \alpha_h=\alpha-P_{B_q}\alpha\in K\cap B_q^\perp,\qquad
+ [\alpha_h]=[\alpha].
+\]
+The definition of the Hilbert adjoint gives
+\[
+ B_q^\perp=\ker d_{q-1}^*,\qquad
+ \|\alpha_h+d_{q-1}v\|^2
+       =\|\alpha_h\|^2+\|d_{q-1}v\|^2
+       \quad(v\in\operatorname{Dom}d_{q-1}).
+\]
+This proves existence and uniqueness of the minimum in
+\eqref{eq:weighted-quotient}.  A class has minimum zero only when
+$\alpha_h=0$, which is equivalent to its being zero.  For $q=0$,
+the same argument uses $B_0=\operatorname{im}d_{-1}=0$.
+\end{proof}
+
+
+\section{Smooth product descent}\label{sec:smooth-product}
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:product-descent}]
+Put $V=H^q(Z,\Omega_Z^p\otimes M)$.  Product base change and the
+projection formula give the holomorphic identification
+$\mathcal F=G\otimes_{\mathbb C}V$.  Choose a basis
+$v_1,\ldots,v_N$ of $V$ and its harmonic representatives
+$\alpha_1,\ldots,\alpha_N$ for the fixed metrics $(h_M,\omega_Z)$.
+If $e_G$ is a local frame of $G$, the representative of
+$e_G(y)\otimes v_\nu$ on $X_y$ is $e_G(y)\otimes\alpha_\nu$:
+the factor $|e_G(y)|_{h_G}^2$ is a positive constant on that fiber,
+so multiplication by it preserves the minimum-norm representative.
+Thus the Gram matrix is
+\[
+ H_{\nu\bar\mu}(y)
+  =|e_G(y)|_{h_G}^2
+       \int_Z\langle\alpha_\nu,\alpha_\mu\rangle_{h_M,\omega_Z}\,dV_Z
+  =|e_G(y)|_{h_G}^2(H_V)_{\nu\bar\mu}.
+\]
+This proves the holomorphic isometry
+\begin{equation}\label{eq:product-isometry}
+ (\mathcal F,H)=(G,h_G)\otimes(V,H_V),\qquad
+ V=H^q(Z,\Omega_Z^p\otimes M).
+\end{equation}
+If $V=0$ there is nothing to prove.  Otherwise choose
+$0\ne\alpha\in\mathcal H^{p,q}(Z,M)$.
+
+The product is complete and admits a positive line bundle, obtained
+by externally tensoring a positive line on $Y$ with an ample line on
+$Z$.  Proposition~\ref{prop:smooth-test} therefore gives
+\[
+ C_L=[i\Theta_{L,h},\Lambda_{\omega_X}]_{a+p,b+q}\ge0.
+\]
+The product cotangent splitting is orthogonal, and
+$dV_X=dV_Y\,dV_Z$.  The curvature and Lefschetz contractions satisfy
+\[
+ i\Theta_{L,h}=\operatorname{pr}_Y^*i\Theta_{G,h_G}
+                +\operatorname{pr}_Z^*i\Theta_{M,h_M},\qquad
+ \Lambda_X=\Lambda_Y+\Lambda_Z,
+\]
+\[
+ [i\Theta_G\wedge,\Lambda_Z]=0,\qquad
+ [i\Theta_M\wedge,\Lambda_Y]=0.
+\]
+Consequently the component
+$\Lambda^{a,b}T_Y^*\otimes\Lambda^{p,q}T_Z^*\otimes L$
+is invariant, and its curvature operator is
+\[
+ C_L=C_G\otimes\Id+\Id\otimes C_M,\quad
+ C_G=[i\Theta_G,\Lambda_Y]_{a,b},\quad
+ C_M=[i\Theta_M,\Lambda_Z]_{p,q}.
+\]
+Fix $y$ and $\xi\in\Lambda^{a,b}T_y^*Y\otimes G_y$.  Pointwise
+nonnegativity of $C_L$, followed by integration over the fiber,
+gives
+\[
+ 0\le\int_Z\langle C_L(\xi\otimes\alpha),
+                              \xi\otimes\alpha\rangle\,dV_Z
+   =\langle C_G\xi,\xi\rangle\|\alpha\|^2
+      +|\xi|^2\int_Z\langle C_M\alpha,\alpha\rangle\,dV_Z .
+\]
+Since $\bar\partial_M\alpha=\bar\partial_M^*\alpha=0$, the
+compact-fiber Bochner identity reads
+\[
+ 0=\|\bar\partial_M\alpha\|^2+\|\bar\partial_M^*\alpha\|^2
+   =\|D'_M\alpha\|^2+\|(D'_M)^*\alpha\|^2
+         +\int_Z\langle C_M\alpha,\alpha\rangle\,dV_Z .
+\]
+In particular,
+\[
+ \int_Z\langle C_M\alpha,\alpha\rangle\,dV_Z
+ =-\|D'_M\alpha\|^2-\|(D'_M)^*\alpha\|^2.
+\]
+Consequently,
+\begin{equation}\label{eq:product-curvature-proof}
+ \langle C_G\xi,\xi\rangle\|\alpha\|^2
+ \ge |\xi|^2\bigl(\|D'_M\alpha\|^2+\|(D'_M)^*\alpha\|^2\bigr)
+ \ge0.
+\end{equation}
+Dividing \eqref{eq:product-curvature-proof} by $\|\alpha\|^2>0$
+shows that $C_G\ge0$ at every $y$.  The constant matrix $H_V$ in
+the Gram formula implies
+$i\Theta_{\mathcal F,H}=i\Theta_{G,h_G}\otimes\Id_V$.
+Hence
+$C_{\mathcal F;a,b}=C_G\otimes\Id_V\ge0$.
+For any positive auxiliary line $A$ on $Y$, the total curvature
+operator of $\mathcal F\otimes A$ is
+\[
+ C_{\mathcal F\otimes A;a,b}=C_{\mathcal F;a,b}+B_A\ge B_A>0.
+\]
+If $f$ is a datum in Definition~\ref{def:smooth-optimal}, its compact
+support and smoothness imply $f\in L^2$ and finite inverse energy.
+Lemma~\ref{lem:complete-estimate} and \eqref{eq:inverse-order} give
+\[
+ \bar\partial u=f,\qquad
+ \|u\|^2\le\int_Yq_{C_{\mathcal F;a,b}+B_A}(f)\,dV_Y
+       \le\int_Y\langle B_A^{-1}f,f\rangle\,dV_Y .
+\]
+\end{proof}
+
+\begin{remark}\label{rem:product-attribution}
+If $C_L\ge0$ is assumed directly, smooth compact
+K\"ahler fibers suffice; projectivity was used only to provide a
+positive auxiliary line on $X$.
+\end{remark}
+
+\begin{proposition}[Nonsplit metrics in range (ii)]\label{thm:variable-metric}
+Keep the product geometry and holomorphic line bundle
+$L=G\boxtimes M$ of Theorem~\ref{thm:product-descent}, but give $L$
+an arbitrary smooth metric $h$.  In range (ii), its optimal
+$(a+p,m+n)$ estimate implies the optimal $(a,m)$ estimate for the
+prescribed harmonic metric on $R^n\pi_*(\Omega_{X/Y}^p\otimes L)$.
+\end{proposition}
+\begin{proof}
+Let $V=H^n(Z,\Omega_Z^p\otimes M)$.  If $V=0$ the assertion is
+empty.  Product base change identifies the direct image
+holomorphically with $G\otimes V$.  Choose a basis $v_\nu$ and fixed smooth
+representatives $\eta_\nu$.  On a base coordinate neighborhood
+$U$, choose a holomorphic frame of $G$; the metric $h$ then gives
+a smooth family of metrics $h_y$ on $M$.
+Let $\Delta_y$ be the fiberwise $\bar\partial$-Laplacian in degree
+$(p,n)$.  Its kernel has the constant dimension $\dim V$.
+On fixed Sobolev spaces, the coefficients of $\Delta_y$ depend
+smoothly on $y$.  Choose $\delta>0$ with
+$\operatorname{Spec}(\Delta_{y_0})\cap\{|\zeta|\le2\delta\}=\{0\}$
+at a fixed $y_0$.  After shrinking $U$, the circle
+$\Gamma=\{|\zeta|=\delta\}$ remains in the resolvent set and
+\[
+ P_y=\frac1{2\pi i}\int_\Gamma(\zeta-\Delta_y)^{-1}\,d\zeta
+\]
+is the harmonic projection.  Indeed, the spectral projection has
+locally constant rank, equal at $y_0$ to $\dim V$, while
+$\dim\ker\Delta_y=\dim V$ for every $y$.
+The resolvent depends smoothly on $y$ between Sobolev spaces:
+the inverse identity
+\[
+ (\zeta-\Delta_y)^{-1}
+ =(\zeta-\Delta_{y_0})^{-1}
+ \bigl[\Id-(\Delta_y-\Delta_{y_0})
+                   (\zeta-\Delta_{y_0})^{-1}\bigr]^{-1}
+\]
+is a locally convergent operator Neumann series, uniformly on
+$\Gamma$.  Elliptic regularity and Sobolev embedding give
+\[
+ y\longmapsto P_y\eta_\nu\in C^\infty(U,H^s(Z))
+ \quad\text{for every }s,\qquad
+ (y,z)\longmapsto(P_y\eta_\nu)(z)\in C^\infty(U\times Z).
+\]
+
+Set $\alpha_\nu(y)=P_y\eta_\nu$.  If $G_y$ is the Green operator,
+the top-antiholomorphic-degree Hodge identity gives
+\[
+ \eta_\nu-\alpha_\nu(y)
+   =\Delta_yG_y\eta_\nu
+   =\bar\partial_Z\bar\partial_{h_y}^*G_y\eta_\nu .
+\]
+Thus $\alpha_\nu(y)$ represents $v_\nu$, and
+\[
+ H_{\nu\bar\mu}(y)
+   =\int_Z\langle\alpha_\nu(y),\alpha_\mu(y)\rangle_{h_y,\omega_Z}
+                  \,dV_Z
+\]
+is the smooth Gram matrix of the prescribed metric, in the frame
+of $G$ just chosen.  A change of that frame rescales $h_y$ by a
+constant on each fiber and preserves its harmonic subspace.
+
+For $0\le j\le m$, define the harmonic lift and the cohomology
+projection by
+\[
+ J_jv=\sum_\nu\pi^*v_\nu\wedge\alpha_\nu(y),\qquad
+ \Pi_jW=[W_{(a,j),(p,n)}]_{\bar\partial_Z}.
+\]
+Here $W$ has total bidegree $(a+p,j+n)$, and the subscript selects
+horizontal degree $(a,j)$ and vertical degree $(p,n)$.
+Every vertical $(p,n)$-form is $\bar\partial_Z$-closed.  In a
+horizontal orthonormal form basis, apply the minimum-norm property
+separately to each vertical coefficient $w_{I,J}$.  This gives
+\[
+ |\Pi_jW(y)|_H^2
+   =\sum_{I,J}\|[w_{I,J}]\|_{H_y}^2
+   \le\sum_{I,J}\|w_{I,J}\|_{L^2(Z,h_y)}^2
+   \le\int_Z|W(y,z)|_{h,\omega_X}^2\,dV_Z .
+\]
+For a harmonic lift the first inequality is an equality and the
+other product components vanish.  Integrating over $Y$ yields
+\begin{equation}\label{eq:top-projection}
+ \Pi_jJ_j=\Id,\qquad \|J_jv\|_X=\|v\|_Y,\qquad
+ \|\Pi_jW\|_Y\le\|W\|_X.
+\end{equation}
+These identities remain valid after twisting by a base line $A$,
+since its norm is constant on each fiber.
+
+To compute the projection, choose the fixed Serre-dual basis
+$\beta^\nu\in H^0(Z,\Omega_Z^{n-p}\otimes M^{-1})$, normalized by
+\[
+ \int_Z\eta_\mu\wedge\beta^\nu=\delta_\mu^\nu.
+\]
+In local holomorphic frames, write the selected component as
+$\sum_{I,J}dt^I\wedge d\bar t^J\wedge w_{I,J}$.  Then
+\[
+ \Pi_jW
+ =\sum_{I,J,\nu}
+       \left(\int_Zw_{I,J}(y,z)\wedge\beta^\nu(z)\right)
+                      dt^I\wedge d\bar t^J\otimes v_\nu.
+\]
+Thus $\Pi_j$ is independent of the coefficient metric.  For
+$0\le j<m$, the component formula is
+\[
+ (\bar\partial_XW)_{(a,j+1),(p,n)}
+ =\bar\partial_YW_{(a,j),(p,n)}
+   +(-1)^{a+j+1}\bar\partial_ZW_{(a,j+1),(p,n-1)}
+\]
+For a smooth vertical $(p,n-1)$ coefficient $\gamma$,
+\[
+ \int_Z\bar\partial_Z\gamma\wedge\beta^\nu
+  =\int_Z\bar\partial_Z(\gamma\wedge\beta^\nu)=0,
+ \qquad \bar\partial_Z\beta^\nu=0.
+\]
+Consequently the coefficients of the preceding component formula
+satisfy
+\[
+ \int_Z(\bar\partial_XW)_{(a,j+1),(p,n)}\wedge\beta^\nu
+  =\bar\partial_Y
+        \int_ZW_{(a,j),(p,n)}\wedge\beta^\nu.
+\]
+Equivalently,
+\begin{equation}\label{eq:top-chain}
+ \Pi_{j+1}\bar\partial_XW=\bar\partial_Y\Pi_jW.
+\end{equation}
+The same identity holds for $W$ in the maximal domain.  For every
+compactly supported base test form $\tau$, the form
+$\pi^*\tau\wedge\beta^\nu$ has compact support on $U\times Z$.
+Distributional differentiation and fiber integration give
+\[
+ \operatorname{pr}_{Y*}
+       \bigl(\bar\partial_Z\gamma\wedge\beta^\nu\bigr)=0,\qquad
+ \operatorname{pr}_{Y*}
+       \bigl(\bar\partial_Y\eta\wedge\beta^\nu\bigr)
+   =\bar\partial_Y\operatorname{pr}_{Y*}
+       \bigl(\eta\wedge\beta^\nu\bigr)
+\]
+when paired with $\tau$, for any distributional vertical
+coefficients $\gamma,\eta$ of the indicated degrees.  These are
+the same integration-by-parts identities, since
+$\bar\partial_Z(\pi^*\tau\wedge\beta^\nu)=0$.
+In particular neither summand in the component formula has to be
+separately $L^2$.  The bounded projection estimate ensures that
+both sides of \eqref{eq:top-chain}, whenever the left side is
+defined from $\bar\partial_XW\in L^2$, represent the claimed
+distributional derivative of an $L^2$ form.
+
+Let $f$ be a compactly supported smooth $(a,m)$ datum and let $A>0$.
+The lift $F=J_mf$ is smooth and supported in
+$\operatorname{supp}f\times Z$, hence is $L^2$ with compact support.
+It has total antiholomorphic degree $m+n$, so
+$\bar\partial_XF=0$ for degree reasons.
+For
+\[
+ B_X=[i\pi^*\Theta_A,\Lambda_X]_{a+p,m+n},\qquad
+ B_Y=[i\Theta_A,\Lambda_Y]_{a,m},
+\]
+Choose horizontal unitary covectors with
+$i\Theta_A=i\sum_{i=1}^m\lambda_i\,dt_i\wedge d\bar t_i$,
+$\lambda_i>0$, and vertical unitary covectors on $Z$.
+The pulled-back curvature has eigenvalues
+$\lambda_1,\ldots,\lambda_m,0,\ldots,0$.  On a total
+$(a+p,m+n)$ component with horizontal holomorphic index set $I$
+and vertical holomorphic index set $K$,
+formula~\eqref{eq:commutator-eigenvalue} gives
+\[
+ B_X\big|_{I,K}=\left(\sum_{i\in I}\lambda_i\right)\Id,
+ \qquad |I|+|K|=a+p.
+\]
+Therefore $B_X\ge0$; its possible zero eigenspaces have $I=\varnothing$.
+The lift $J_mf$ lies in the block $|I|=a\ge1$, $|K|=p$, on which
+the eigenvalue is exactly that of $B_Y$ on the corresponding
+horizontal component.  Hence
+\[
+ B_XJ_m=J_mB_Y,\qquad
+ J_mf\perp\ker B_X,\qquad
+ B_X^\dagger J_mf=J_m(B_Y^{-1}f).
+\]
+The lift isometry and its polarized identity now give the exact
+inverse-energy formula
+\[
+ \int_Xq_{B_X}(J_mf)\,dV_X
+ =\int_X\langle J_m(B_Y^{-1}f),J_mf\rangle\,dV_X
+ =\int_Y\langle B_Y^{-1}f,f\rangle\,dV_Y.
+\]
+The hypothesis and Proposition~\ref{prop:smooth-test} give
+$C_L\ge0$.  The curvature of $L\otimes\pi^*A$ is represented by
+$C_L+B_X\ge B_X$.  Equations
+\eqref{eq:extended-inverse}--\eqref{eq:inverse-order} give
+\[
+ \int_Xq_{C_L+B_X}(J_mf)\,dV_X
+ \le\int_Xq_{B_X}(J_mf)\,dV_X<\infty.
+\]
+The complete-manifold estimate supplies $U$ with
+$\bar\partial_XU=J_mf$ and
+$\|U\|^2\le\int_Y\langle B_Y^{-1}f,f\rangle\,dV_Y$.
+Set $u=\Pi_{m-1}U$.  Finally,
+\[
+ \bar\partial_Yu
+   =\Pi_m\bar\partial_XU=\Pi_mJ_mf=f,\qquad
+ \|u\|^2\le\|U\|^2
+       \le\int_Y\langle B_Y^{-1}f,f\rangle\,dV_Y,
+\]
+by \eqref{eq:top-projection}--\eqref{eq:top-chain}.
+\end{proof}
+
+\begin{corollary}[Descent from a dense metrically split locus]
+\label{cor:dense-product-descent}
+Let $\pi:X\to Y$ be a proper holomorphic submersion, with $X$ and
+$Y$ complete K\"ahler and admitting positive line bundles.  Assume
+that the dimensions $h^q(X_y,\Omega_{X_y}^p\otimes L_y)$ are constant.
+Suppose that, on a dense open subset $Y^\circ$, there are local
+product charts in which
+\[
+ \omega_X=\pi^*\omega_Y+\omega_Z,\qquad
+ (L,h)=(G_U,h_{G_U})\boxtimes(M_U,h_{M_U}),
+\]
+with fixed fiber data.  In either range \eqref{eq:ranges}, the
+upstairs optimal estimate implies the downstairs optimal estimate.
+\end{corollary}
+\begin{proof}
+The upstairs hypothesis and Proposition~\ref{prop:smooth-test}
+give $C_L\ge0$ on $X$.  Fix a product chart over $U\subset Y^\circ$.
+If the common cohomology rank is zero, the conclusion is immediate.
+Otherwise choose a nonzero harmonic fiber class $\alpha$.  For a horizontal tensor
+$\xi$, the same pointwise splitting and compact-fiber integration
+used in \eqref{eq:product-curvature-proof} give
+\[
+ \langle C_{G_U;a,b}\xi,\xi\rangle\|\alpha\|^2
+ \ge|\xi|^2\bigl(\|D'_{M_U}\alpha\|^2+
+                         \|(D'_{M_U})^*\alpha\|^2\bigr)\ge0.
+\]
+The local Gram matrix is $h_{G_U}H_{V_U}$ with $H_{V_U}$ constant,
+so
+\[
+ C_{\mathcal F;a,b}
+   =[i\Theta_{\mathcal F,H},\Lambda_Y]_{a,b}
+   =C_{G_U;a,b}\otimes\Id_{V_U}\ge0\quad\text{on }U.
+\]
+To pass across $Y\setminus Y^\circ$, constant cohomology dimension
+and Grauert's theorem give local freeness and base change for
+$\mathcal F$.  In a local smooth trivialization of the proper
+submersion, the fiber Laplacians are smooth elliptic families.
+Their kernels have constant dimension; the spectral projection
+construction above therefore gives smooth harmonic representatives
+of local frames.  Their Gram entries are integrals over a fixed
+compact smooth fiber of smoothly varying coefficients, so
+$H_{\nu\bar\mu}\in C^\infty(Y)$.  In particular
+$C_{\mathcal F;a,b}$ is continuous on all of $Y$.
+
+Fix $y_0\in Y$, a sequence $y_\ell\in Y^\circ$ with $y_\ell\to y_0$,
+and $\xi_0\in\Lambda^{a,b}T_{y_0}^*Y\otimes\mathcal F_{y_0}$.
+Choose a local smooth section $\xi$ with $\xi(y_0)=\xi_0$.  Then
+\[
+ \langle C_{\mathcal F;a,b}(y_0)\xi_0,\xi_0\rangle
+ =\lim_{\ell\to\infty}
+   \langle C_{\mathcal F;a,b}(y_\ell)\xi(y_\ell),\xi(y_\ell)\rangle
+ \ge0 .
+\]
+Thus $C_{\mathcal F;a,b}\ge0$ everywhere.  For each positive
+auxiliary line $A$ on the complete base,
+$C_{\mathcal F\otimes A;a,b}\ge B_A>0$.
+Lemma~\ref{lem:complete-estimate} and
+\eqref{eq:inverse-order} give the claimed optimal estimate.
+\end{proof}
+Infinitesimal triviality supplies dense holomorphic product charts,
+but not the two metric splittings in this corollary.  The
+counterexample in Corollary~\ref{cor:counter-higher-q} is already a
+globally trivial family.
+
+
+\section{Top direct images and the smooth adjoint case}\label{sec:smooth-duality}
+
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion of
+relative dimension $n$ between K\"ahler manifolds.  A smooth Hermitian
+bundle $(E,h)$ is \emph{dual Nakano semipositive} if $(E^*,h^*)$ is
+Nakano seminegative.  The submersion is \emph{infinitesimally trivial}
+if its Kodaira--Spencer maps
+\[
+ \rho_y:T_y^{1,0}Y\longrightarrow H^1(X_y,T_{X_y})
+\]
+vanish for every $y$.  In this section the dimension
+$h^n(X_y,E_y)$ is assumed locally constant.
+
+
+Theorem~\ref{thm:top-dual} is the metric Serre-dual form of the negative-adjoint
+mechanism in Liu--Yang \cite[Theorem 4.1]{LY14}.  We give the metric
+identification and the dense-locus argument explicitly.
+
+\begin{lemma}[Isometric Serre duality]\label{lem:serre-isometry}
+For a compact complex $n$-fold $Z$ and a smooth Hermitian bundle
+$(E,h)$, the quotient norm on $H^n(Z,E)$ is independent of the
+Hermitian metric on $Z$.  With the canonical $L^2$ norm on
+$H^0(Z,K_Z\otimes E^*)$, Serre duality is an isometry.  In the family,
+\begin{equation}\label{eq:serre-isometry}
+ (R^n\pi_*E,H)
+ \simeq\bigl(\pi_*(K_{X/Y}\otimes E^*),G\bigr)^*
+\end{equation}
+as smooth Hermitian holomorphic bundles.
+\end{lemma}
+\begin{proof}
+\emph{The ambient Hilbert norm.}
+In a holomorphic coordinate chart put
+$d\lambda_z=i^{n^2}dz_1\wedge\cdots\wedge dz_n
+\wedge d\bar z_1\wedge\cdots\wedge d\bar z_n$.
+For $a=a_0\,d\bar z_1\wedge\cdots\wedge d\bar z_n$ and
+$\omega=i\sum g_{j\bar k}dz_j\wedge d\bar z_k$,
+\[
+ |a|_{h,\omega}^2=(\det g)^{-1}|a_0|_h^2,
+ \qquad dV_\omega=(\det g)d\lambda_z,
+ \qquad |a|_{h,\omega}^2dV_\omega=|a_0|_h^2d\lambda_z.
+\]
+The same identity, with $h^*$ in place of $h$, holds for
+$s=s_0\,dz_1\wedge\cdots\wedge dz_n$.
+Thus both Hilbert norms are independent of $\omega$.
+The subspace
+\[
+ \mathcal B=\overline{\bar\partial A^{0,n-1}(Z,E)}^{\,L^2_{0,n}}
+\]
+is the closure of the same set in this fixed Hilbert norm.
+For a smooth representative $a$, compact Hodge theory gives
+$a=a_h+\bar\partial b$ with $a_h\perp\mathcal B$, and therefore
+\[
+ \inf_{c\in\mathcal B}\|a+c\|^2=\|a_h\|^2,
+ \qquad \|a_h+c\|^2=\|a_h\|^2+\|c\|^2.
+\]
+This proves the asserted independence of the quotient norm.
+
+\emph{The duality map and equality of norms.}
+The exterior-product pairing defines an antilinear isometry $J$ by
+\[
+ s\wedge a=\langle s,Ja\rangle_{h^*,\omega}dV_\omega,
+ \qquad
+ J:\Lambda^{0,n}T_Z^*\otimes E\longrightarrow
+       \Lambda^{n,0}T_Z^*\otimes E^*.
+\]
+The fixed unit phase from the exterior ordering is included in $J$.
+With the Hermitian products linear in their first entry, one has
+\[
+ (Ja,Jc)_{L^2}=(c,a)_{L^2},\qquad
+ \int_ZJa\wedge\bar\partial b=(\bar\partial b,a)_{L^2}.
+\]
+For smooth $a$ and $b\in A^{0,n-1}(Z,E)$, Stokes gives
+\[
+ \int_ZJa\wedge\bar\partial b
+ =(-1)^{n+1}\int_Z\bar\partial(Ja)\wedge b.
+\]
+Since $b$ is arbitrary, the nondegenerate test-form pairing implies
+\[
+ a\perp\bar\partial A^{0,n-1}(Z,E)
+ \ \Longleftrightarrow\
+ \int_Z Ja\wedge\bar\partial b=0\quad\text{for all }b
+ \ \Longleftrightarrow\ \bar\partial(Ja)=0.
+\]
+Every $(0,n)$-form is $\bar\partial$-closed.  Consequently $J$
+identifies harmonic $(0,n)$-forms antiunitarily with
+$H^0(Z,K_Z\otimes E^*)$.  For the minimum representative $a_h$,
+the integral $\int_Zs\wedge a$ depends only on $[a]$, because
+$\bar\partial s=0$.  Moreover,
+\[
+ \left|\int_Zs\wedge a\right|
+ =\left|\int_Zs\wedge a_h\right|
+ \le\|s\|_{L^2}\|a_h\|_{L^2},\qquad
+ \int_ZJa_h\wedge a_h=\|a_h\|_{L^2}^2.
+\]
+The upper bound is thus attained, and
+\begin{equation}\label{eq:serre-norm-sup}
+ \|[a]\|_H^2
+ =\sup_{s\ne0}
+   \frac{|\int_Zs\wedge a|^2}{\|s\|_G^2};
+\end{equation}
+For the zero class both sides are zero; otherwise use $s=Ja_h$.
+
+\emph{Holomorphic and smooth dependence on the base.}
+Constant fiber dimension and Grauert's theorem \cite{Gra60} give local freeness
+and base change.  The Serre pairing is holomorphic by relative duality
+\cite{RRV71}: for a relative
+Dolbeault representative, its base $\bar\partial$ derivative differs
+from the representative of the cohomological derivative by a
+fiberwise exact term, whose integral against a holomorphic top form
+vanishes.  Let $s_1,\ldots,s_r$ be a local holomorphic frame of
+$\pi_*(K_{X/Y}\otimes E^*)$ and let $e_1,\ldots,e_r$ be its
+Serre-dual frame.  Fiberwise Serre duality gives the constant rank
+of the first bundle, and
+\[
+ G_{\alpha\bar\beta}(y)
+ =\int_{X_y}\langle s_\alpha(y),s_\beta(y)\rangle_{h^*,\omega_y}
+                 dV_{\omega_y},\qquad
+ H(y)=(G(y)^{-1})^{\mathsf T}.
+\]
+To justify smoothness of $G$, use a local $C^\infty$ trivialization
+$\pi^{-1}(U)\simeq U\times X_{y_0}$ and a finite partition of unity
+on its compact fibers.  Each matrix entry is then a finite sum
+$\int_{X_{y_0}}a_{\alpha\bar\beta}(y,z)\,dV_0(z)$ with smooth
+integrand.  On relatively compact $U'\Subset U$, every derivative
+of the integrand is bounded on $\overline{U'}\times X_{y_0}$, so
+\[
+ \partial_y^\gamma G_{\alpha\bar\beta}(y)
+ =\int_{X_{y_0}}\partial_y^\gamma
+       a_{\alpha\bar\beta}(y,z)\,dV_0(z).
+\]
+The matrix $G(y)$ is positive definite, hence its inverse and $H$
+are smooth.  Formula~\eqref{eq:serre-norm-sup} identifies this dual
+metric with the prescribed harmonic metric.
+\end{proof}
+
+\begin{lemma}[Dense product locus]\label{lem:dense-product}
+An infinitesimally trivial proper holomorphic submersion is
+holomorphically locally a product over a dense open $Y^\circ\subset Y$.
+Locally on $Y$, the complement can be chosen analytic.
+\end{lemma}
+\begin{proof}
+Work over a connected coordinate neighborhood and remove the analytic
+locus where $h^1(X_y,T_{X_y})$ exceeds its generic value.  Grauert's
+theorem gives, on the remaining dense open set,
+\[
+ \mathcal T=R^1\pi_*T_{X/Y}\ \text{locally free},\qquad
+ \mathcal T\otimes\mathbb C(y)\simeq H^1(X_y,T_{X_y}).
+\]
+These local dense open sets cover a dense open $Y^\circ\subset Y$.
+Apply $\pi_*$ to
+\[
+ 0\longrightarrow T_{X/Y}\longrightarrow T_X
+   \xrightarrow{d\pi}\pi^*T_Y\longrightarrow0.
+\]
+The resulting exact sequence contains
+\[
+ \pi_*T_X\longrightarrow\pi_*\pi^*T_Y
+       \xrightarrow{\delta}\mathcal T.
+\]
+For $\xi_j=\partial/\partial t_j$ regarded as a section of
+$\pi_*\pi^*T_Y$, base change identifies
+\[
+ \delta(\xi_j)(y)=\rho_y(\xi_j(y))=0.
+\]
+Write $\delta(\xi_j)=\sum_\alpha f_{j\alpha}e_\alpha$ in a local
+frame of $\mathcal T$.  Thus $f_{j\alpha}(y)=0$ for every $y$, and
+$\delta(\xi_j)=0$ as a section.  Exactness, followed by one shrinking
+for the finitely many indices $j$, gives
+\[
+ V_j\in H^0(\pi^{-1}(U),T_X),\qquad d\pi(V_j)=\xi_j.
+\]
+
+Center the coordinates at $y_0=0$ and let $\Phi_j^\zeta$ be the
+local holomorphic flow of $V_j$.  Compactness of $X_0$ gives a
+common $\varepsilon>0$ on which all successive flows below are
+defined near this fiber for $|t_j|<\varepsilon$.  Their base
+coordinates satisfy
+\[
+ \frac{d}{d\zeta}\pi(\Phi_j^\zeta(x))=e_j,
+ \qquad \pi(\Phi_j^\zeta(x))=\pi(x)+\zeta e_j.
+\]
+Consequently
+\[
+ F(t,z)=\Phi_m^{t_m}\circ\cdots\circ\Phi_1^{t_1}(z),
+ \qquad F:\Delta_\varepsilon^m\times X_0\longrightarrow X,
+ \qquad \pi F(t,z)=t.
+\]
+At $(0,z)$, $dF$ identifies the vertical tangent with $T_zX_0$
+and sends the coordinate directions to $V_j(z)$, so it is invertible.
+Compactness allows a common shrinking on which it stays invertible.
+For fixed $t$, the composition of flows is injective; different $t$
+have different images under $\pi$.  Thus $F$ is a biholomorphism
+onto an open $W$ containing $X_0$, with inverse
+\[
+ x\longmapsto\left(t(x),
+   \Phi_1^{-t_1(x)}\circ\cdots\circ\Phi_m^{-t_m(x)}(x)\right).
+\]
+These two maps are inverse.  The relatively closed set
+$C=\pi^{-1}(\Delta_\varepsilon^m)\setminus W$ has closed image
+$\pi(C)$ by properness, and $0\notin\pi(C)$.
+Choose $U'\ni0$ disjoint from $\pi(C)$.  Then
+\[
+ \pi^{-1}(U')\subset W,\qquad
+ F|_{U'\times X_0}:U'\times X_0\xrightarrow{\sim}\pi^{-1}(U').
+\]
+This proves local product structure at every point of $Y^\circ$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:top-dual}]
+Put $V=E^*$.  By Lemma~\ref{lem:dense-product}, it suffices first
+to work on a product chart $U\times Z$ over $Y^\circ$.
+Let $P_y$ be the
+orthogonal projection onto $H^0(Z,K_Z\otimes V_y)$ and let
+$\nabla_i,\nabla_{\bar j}$ be the horizontal Chern derivatives of $V$.
+The canonical density of Lemma~\ref{lem:serre-isometry} permits
+integration with a fixed fiber metric.  Therefore the metric
+derivative contains no derivative of a fiber volume form:
+\[
+ \partial_i(s,t)_{L^2}
+   =(\nabla_i s,t)_{L^2}+(s,\nabla_{\bar i}t)_{L^2}.
+\]
+For $s,t$ in the direct image, orthogonality gives
+$(\nabla_i s,t)=(P\nabla_i s,t)$.
+Moreover, a holomorphic direct-image section is a holomorphic
+relative top form on $U\times Z$, so $\nabla_{\bar j}s=0$.
+Thus the projected connection has the correct metric compatibility
+and $(0,1)$ part, and is the Chern connection:
+\[
+ D_i^G=P\nabla_i,\qquad B_i=(1-P)\nabla_i|_{\operatorname{im}P}.
+\]
+The operator $B_i$ is tensorial: for a holomorphic function $f$ on $U$,
+\[
+ (1-P)\nabla_i(fs)
+ =(1-P)((\partial_i f)s+f\nabla_i s)=fB_i s.
+\]
+We now compute its curvature contribution rather than assume a
+subbundle formula.  The result is
+\begin{equation}\label{eq:negative-adjoint-curvature}
+ \langle R^G_{i\bar j}s,t\rangle_G
+ =\int_Z\langle R^V_{i\bar j}s,t\rangle_{h^*,\omega_Z}\,dV_Z
+       -(B_i s,B_j t)_{L^2}.
+\end{equation}
+Choose a local holomorphic frame normal for $G$ at $y_0$, and take
+$s,t$ with constant coefficients in this frame.  The normality
+conditions are $G(y_0)=\Id$ and $\partial_iG(y_0)=0$, hence
+$P\nabla_i s(y_0)=0$.  Since
+$R^V_{i\bar j}=[\nabla_i,\nabla_{\bar j}]$ and
+$\nabla_{\bar j}s=0$, differentiating the preceding metric identity gives
+\[
+ \begin{aligned}
+ \bar\partial_j\partial_i(s,t)_{L^2}
+   &=(\nabla_{\bar j}\nabla_i s,t)_{L^2}
+          +(\nabla_i s,\nabla_j t)_{L^2}\\
+   &=-\int_Z\langle R^V_{i\bar j}s,t\rangle_{h^*,\omega_Z}\,dV_Z
+          +(\nabla_i s,\nabla_j t)_{L^2}.
+ \end{aligned}
+\]
+At $y_0$, $\nabla_i s=B_i s$ and
+$\langle R^G_{i\bar j}s,t\rangle
+=-\bar\partial_j\partial_i(s,t)_{L^2}$.
+Substitution proves
+\eqref{eq:negative-adjoint-curvature}.
+For arbitrary $s_1,\ldots,s_m$,
+\[
+ \sum_{i,j}\langle R^G_{i\bar j}s_i,s_j\rangle_G
+ =\int_Z\sum_{i,j}\langle R^V_{i\bar j}s_i,s_j\rangle_{h^*,\omega_Z}\,dV_Z
+   -\Bigl\|\sum_iB_i s_i\Bigr\|^2\le0.
+\]
+For the first term, write $s_i(z)=v_i(z)\,dz_1\wedge\cdots\wedge dz_n$
+in a fiber coordinate chart.  Nakano seminegativity of $V$ applied
+to $\sum_i\partial_{t_i}\otimes v_i(z)$ gives
+\[
+ \sum_{i,j}\langle R^V_{i\bar j}v_i(z),v_j(z)\rangle_{h^*}\le0.
+\]
+Multiplication by the positive canonical density and integration
+prove the asserted sign.  Thus $G$ is Nakano seminegative on
+$Y^\circ$.
+
+To pass across its complement, choose any $y_0\in Y$ and extend
+the entries of a tensor in $T_{y_0}^{1,0}Y\otimes G_{y_0}$ smoothly
+to $s_1(y),\ldots,s_m(y)$ in local frames.  Lemma~\ref{lem:serre-isometry}
+makes the function
+\[
+ Q(y)=\sum_{i,j}\langle R^G_{i\bar j}(y)s_i(y),s_j(y)\rangle_G
+\]
+continuous.  For $y_\nu\in Y^\circ$ tending to $y_0$,
+$Q(y_0)=\lim_\nu Q(y_\nu)\le0$.
+The isometry \eqref{eq:serre-isometry} gives the asserted dual
+Nakano semipositivity of $H$.
+\end{proof}
+
+\begin{remark}[Smooth semipositive adjoints and the prescribed metric]
+\label{rem:mt-comparison}
+Let $\pi:X\to Y$ be a proper K\"ahler holomorphic submersion and
+let $(L,h)$ be a smooth semipositive line bundle on $X$.  For every
+$0\le q\le n$, the ordinary fiberwise harmonic metric on
+\[
+ \mathcal E_q=R^q\pi_*(K_{X/Y}\otimes L)
+\]
+is Nakano semipositive.  This is a consequence of
+Mourougane--Takayama \cite[Theorem 1.1]{MT08}, with the following
+explicit comparison of metrics.  Connected fibers may be assumed:
+locally on the base, disconnected fibers give an orthogonal direct
+sum of the connected cases.
+
+Write $m=\dim Y$, $c_d=i^{d^2}$ and
+$\omega_y=\omega_X|_{X_y}$.  In the notation of
+\cite[Corollary 4.4]{MT08}, take the relative injection
+\[
+ S_\omega:\mathcal E_q\longrightarrow
+        \pi_*(\Omega_{X/Y}^{n-q}\otimes L).
+\]
+For a local holomorphic section $s$, put $\sigma=S_\omega s$.
+The base-change assertion in \cite[Lemma 4.9]{MT08} is
+\[
+ \mathcal E_q\otimes\mathbb C(y)
+    \xrightarrow{\sim}H^q(X_y,K_{X_y}\otimes L_y).
+\]
+Thus every fiber class is the value of a local holomorphic section.
+Corollary 4.4 and Lemma 4.7(1) of \cite{MT08} give
+\begin{equation}\label{eq:mt-three-identities}
+ \bar\partial_y\sigma_y=0,\qquad
+ D'_{h_y}\sigma_y=0,\qquad
+ s_y=\left[\frac{c_{n+m-q}}{q!}\omega_y^q\wedge\sigma_y\right].
+\end{equation}
+Work over a Stein coordinate ball on the base.  The Leray spectral
+sequence and Cartan's theorem B identify sections of $\mathcal E_q$
+with degree-$q$ cohomology on its inverse image.  If $\rho$ is a
+Dolbeault representative of $s$, the identity
+$(c_{n+m-q}/q!)L_\omega S_\omega=\Id$ says, after the relative
+canonical bundle is identified using $dt=dt_1\wedge\cdots\wedge dt_m$,
+\[
+ (\rho-c_{n+m-q}\omega_X^q\wedge\sigma/q!)\wedge dt
+       =\bar\partial(b\wedge dt).
+\]
+Restricting the relative coefficients to $X_y$ kills all horizontal
+differentials and gives
+\[
+ \rho_y-c_{n+m-q}\omega_y^q\wedge\sigma_y/q!
+      =\bar\partial_y b_y.
+\]
+
+Set $\alpha_y=c_{n+m-q}\omega_y^q\wedge\sigma_y/q!$.
+The fiber star identity \cite[Corollary 2.2]{MT08} yields
+\[
+ *_y\alpha_y=\frac{c_{n+m-q}}{c_{n-q}}\sigma_y.
+\]
+Since $\omega_y$ is K\"ahler, \eqref{eq:mt-three-identities} gives
+\[
+ \bar\partial_y\alpha_y=0,\qquad
+ \bar\partial_y^*\alpha_y
+ =-*_yD'_{h_y}(*_y\alpha_y)=0.
+\]
+To check the minimizing property explicitly, every representative
+of the same class has the form $\alpha_y+\bar\partial_y v$.  On the
+compact fiber, integration by parts gives
+\[
+ (\alpha_y,\bar\partial_y v)_{L^2}
+   =(\bar\partial_y^*\alpha_y,v)_{L^2}=0,\qquad
+ \|\alpha_y+\bar\partial_yv\|^2
+   =\|\alpha_y\|^2+\|\bar\partial_yv\|^2.
+\]
+The identity extends to the maximal domain by graph approximation.
+Thus $\alpha_y$ is the ordinary harmonic, minimum-norm representative.
+For the metric of \cite[Definition 5.1]{MT08}, the pointwise
+Lefschetz identity gives
+\[
+ g_{\mathrm{MT},y}(s_y,s_y)
+   =\frac{c_{n-q}}{q!}\int_{X_y}
+      \omega_y^q\wedge\sigma_y\wedge h_y\overline{\sigma_y}
+   =\int_{X_y}|\sigma_y|_{h_y,\omega_y}^2\,dV_y.
+\]
+The star is an isometry and $|c_{n+m-q}/c_{n-q}|=1$, so
+\begin{equation}\label{eq:mt-metric-equality}
+ H_y(s_y,s_y)=\|\alpha_y\|^2_{L^2}
+             =\|\sigma_y\|^2_{L^2}
+             =g_{\mathrm{MT},y}(s_y,s_y).
+\end{equation}
+This equality holds on every fiber vector.  Polarization therefore
+gives $H_y(s_y,t_y)=g_{\mathrm{MT},y}(s_y,t_y)$ for all $s_y,t_y$.
+
+Mourougane--Takayama's curvature theorem therefore applies to
+the prescribed $H$.  For a complete K\"ahler base and
+$1\le b\le m$, Nakano semipositivity implies
+\[
+ [i\Theta_{\mathcal E_q,H},\Lambda_{\omega_Y}]_{m,b}\ge0.
+\]
+Indeed, write in unitary coordinates
+$u=\sum_{|J|=b}u_J\,dz_1\wedge\cdots\wedge dz_m\wedge d\bar z_J$,
+and let $u_{iK}$ be its signed alternating coefficients, zero if
+$i\in K$.  Then
+\[
+ \langle[i\Theta_{\mathcal E_q,H},\Lambda]u,u\rangle
+   =\sum_{|K|=b-1}\sum_{i,j}
+        \langle R_{i\bar j}u_{iK},u_{jK}\rangle_H\ge0.
+\]
+Each inner sum is the Nakano form evaluated on
+$\sum_i\partial_{z_i}\otimes u_{iK}$.
+After twisting by a positive auxiliary line $A$, its commutator is
+\[
+ C_{\mathcal E_q\otimes A;m,b}
+   =[i\Theta_{\mathcal E_q,H},\Lambda]_{m,b}+B_A\ge B_A>0.
+\]
+For every datum in Definition~\ref{def:smooth-optimal},
+Lemma~\ref{lem:complete-estimate} and inverse order
+\eqref{eq:inverse-order} give
+\[
+ \bar\partial u=f,\qquad
+ \|u\|^2_{Hh_A}
+ \le\int_Y\langle B_A^{-1}f,f\rangle_{Hh_A}\,dV_Y,
+ \quad B_A=[i\Theta_A\otimes\operatorname{Id},\Lambda_{\omega_Y}]_{m,b}.
+\]
+This proves general descent in range (i) for smooth semipositive
+$L$, including $q>0$.  The same comparison works for a smooth Nakano
+semipositive
+vector coefficient.
+\end{remark}
+
+
+\section{Singular product metrics}\label{sec:singular-product}
+
+\begin{lemma}[Scalar estimates in the two extremal ranges]
+\label{lem:singular-scalar}
+Let $(G,h_G)$ be a holomorphic line bundle with psh local weights.
+If $(Y,\omega_Y)$ is complete K\"ahler of dimension $m$, then
+$(G\otimes\mathcal I(h_G),h_G)$ satisfies the weighted optimal
+$(m,b)$ estimate for $1\le b\le m$ and the weighted optimal
+$(a,m)$ estimate for $1\le a\le m$.  The second assertion holds
+on any K\"ahler manifold.
+\end{lemma}
+\begin{proof}
+Fix a smooth positive auxiliary metric $h_A$ on a holomorphic line
+bundle $A$, and write $E=G\otimes A$ and $h=h_Gh_A$.
+For the first assertion, choose a smooth reference metric $h_{G,0}$
+and define the globally defined function $\chi$ by
+\[
+ h_G=h_{G,0}e^{-\chi},\qquad h_0=h_{G,0}h_A,\qquad h=h_0e^{-\chi}.
+\]
+Locally $\chi$ is a psh function plus a smooth function.  Its
+distributional complex Hessian is therefore a current of order zero,
+whose singular part is nonnegative.  Denote by
+\[
+ R=i\Theta_{E,h_0}+(i\partial\bar\partial\chi)_{\rm ac}
+   =i\Theta_{A,h_A}+(i\Theta_{G,h_G})_{\rm ac}
+\]
+the absolutely continuous curvature form.  It has measurable
+coefficients and satisfies $R\ge i\Theta_{A,h_A}$ almost everywhere.
+On $(m,b)$-forms, put
+\[
+ C=[R,\Lambda_Y]_{m,b},\qquad
+ B_A=[i\Theta_{A,h_A},\Lambda_Y]_{m,b}.
+\]
+The eigenvalue formula \eqref{eq:commutator-eigenvalue} gives
+$C\ge B_A>0$, and hence
+\[
+ \langle C^{-1}f,f\rangle_h
+ \le\langle B_A^{-1}f,f\rangle_h
+ \quad\text{almost everywhere}.
+\]
+If the right-hand side has finite integral, then on each compact
+$K\subset Y$ there is $c_K>0$ with
+\[
+ B_A^{-1}\ge c_K\Id,\qquad
+ \int_K|f|_h^2\,dV_Y\le c_K^{-1}I_A(f).
+\]
+In particular, $f$ has locally $L^2$ coefficients also for the smooth
+reference metric, since $h$ is locally bounded below.
+
+Apply \cite[Section~5, Theorem~5.1]{Dem82} to the smooth line bundle
+$(E,h_0)$ and the singular weight $\chi$.  The input of that theorem
+is precisely a distributionally closed $(m,b)$-form with locally
+$L^2$ coefficients and finite inverse energy for the absolutely
+continuous curvature.  Its conclusion, in the present notation, is
+\[
+ \bar\partial u=f,\qquad
+ \int_Y|u|_h^2\,dV_Y
+ \le\int_Y\langle C^{-1}f,f\rangle_h\,dV_Y
+ \le I_A(f).
+\]
+This proves the first estimate for the specified $\omega_Y$.
+
+For the second assertion, set $k=h^{-1}$ on $E^*$ and $r=m-a$.
+The metric $k$ is positive and finite almost everywhere and locally
+bounded above.  Define
+\[
+ B=[i\Theta_{A,h_A},\Lambda_Y]_{a,m},\qquad
+ Q=[-i\Theta_{A,h_A},\Lambda_Y]_{r,0}.
+\]
+If $i\Theta_{A,h_A}$ is diagonal in a unitary coframe, with eigenvalues
+$\lambda_1,\ldots,\lambda_m>0$, then
+\[
+ B(dz^I\wedge d\bar z^{1}\wedge\cdots\wedge d\bar z^{m})
+   =\beta_I\,dz^I\wedge d\bar z^{1}\wedge\cdots\wedge d\bar z^{m},
+ \qquad \beta_I=\sum_{i\in I}\lambda_i,\quad |I|=a,
+\]
+whereas $Q(dz^{I^c})=\beta_I dz^{I^c}$.  In particular, both
+operators are positive.  We prove the compactly supported dual-test
+inequality
+\begin{equation}\label{eq:singular-dual-test}
+ \int_Y\langle Qw,w\rangle_k\,dV_Y
+ \le\|\bar\partial w\|_k^2,\qquad
+ w\in C_c^\infty(Y,\Lambda^{r,0}T_Y^*\otimes E^*).
+\end{equation}
+All terms are finite because $k$ is locally bounded above.
+
+Choose a coordinate ball with holomorphic frames and write
+$h_G=e^{-\varphi}$ and $h_A=e^{-\psi}$, where $\varphi$ is psh and
+$\psi$ is smooth.  On a smaller ball, convolution with radial
+regularizing kernels gives smooth psh functions
+$\varphi_\varepsilon\downarrow\varphi$.  For a compactly supported
+smooth $(r,0)$-form $v$ in this ball, set
+\[
+ k_\varepsilon=e^{\varphi_\varepsilon+\psi},\qquad
+ s_\varepsilon=e^{(\varphi_\varepsilon+\psi)/2}.
+\]
+The coefficient curvature is
+\[
+ i\Theta_{E^*,k_\varepsilon}
+ =-i\partial\bar\partial(\varphi_\varepsilon+\psi).
+\]
+On $(r,0)$-forms, the commutator
+$[-i\partial\bar\partial\varphi_\varepsilon,\Lambda_Y]$ is
+nonnegative: its eigenvalues are the sums of the complementary
+$m-r$ eigenvalues of $i\partial\bar\partial\varphi_\varepsilon$.
+Also $\bar\partial^*v=0$ by bidegree.  The smooth
+Bochner--Kodaira--Nakano identity therefore gives
+\begin{equation}\label{eq:dual-local-smooth}
+ \|\bar\partial v\|_{k_\varepsilon}^2
+ \ge\|D'_{k_\varepsilon}v\|_{k_\varepsilon}^2
+   +\|(D'_{k_\varepsilon})^*v\|_{k_\varepsilon}^2
+   +\int\langle Qv,v\rangle_{k_\varepsilon}\,dV_Y.
+\end{equation}
+By the K\"ahler identity, $(D'_{k_\varepsilon})^*$ is
+$i[\Lambda_Y,\bar\partial]$, up to the fixed conventional sign.
+Write this operator as $P$.  It is independent of the coefficient
+metric, so the second term on the right equals
+$\|s_\varepsilon Pv\|^2$.
+
+To pass to the limit in the connection term, put
+$t_\varepsilon=e^{\varphi_\varepsilon/2}$.
+These functions are nonnegative smooth psh functions and are uniformly
+bounded on compact subballs.  For a real compactly supported cutoff
+$\eta$, the Euclidean Laplacian satisfies
+\[
+ \Delta(t_\varepsilon^2)
+ =2t_\varepsilon\Delta t_\varepsilon
+       +2|\nabla t_\varepsilon|^2
+ \ge2|\nabla t_\varepsilon|^2.
+\]
+Integration by parts consequently gives the uniform local bound
+\[
+ 2\int\eta^2|\nabla t_\varepsilon|^2
+ \le\int t_\varepsilon^2\Delta(\eta^2)
+ \le\bigl(\sup_{\operatorname{supp}\eta}t_\varepsilon^2\bigr)
+          \int|\Delta(\eta^2)|.
+\]
+Since $t_\varepsilon\to e^{\varphi/2}$ almost everywhere and the
+functions are uniformly bounded, dominated convergence and weak
+compactness give, after passage to a subsequence,
+\[
+ s_\varepsilon\longrightarrow s=e^{(\varphi+\psi)/2}
+       \text{ strongly in }L^2_{\rm loc},\qquad
+ s_\varepsilon\rightharpoonup s
+       \text{ weakly in }W^{1,2}_{\rm loc}.
+\]
+More explicitly, on each compact subball $K$,
+\[
+ \int_K|s_\varepsilon-s|^2\longrightarrow0,\qquad
+ \sup_\varepsilon\int_K|ds_\varepsilon|^2<\infty.
+\]
+For every compactly supported smooth test function $\zeta$ and every
+real coordinate $x_j$, any weak derivative limit $a_j$ satisfies
+\[
+ \int a_j\zeta
+ =\lim_\varepsilon\int (\partial_{x_j}s_\varepsilon)\zeta
+ =-\lim_\varepsilon\int s_\varepsilon\partial_{x_j}\zeta
+ =-\int s\partial_{x_j}\zeta.
+\]
+Thus $a_j=\partial_{x_j}s$ distributionally.
+In the chosen holomorphic frame,
+\[
+ D'_{k_\varepsilon}v
+   =\partial v+\partial\log k_\varepsilon\wedge v,\qquad
+ s_\varepsilon D'_{k_\varepsilon}v
+   =s_\varepsilon\partial v+2\partial s_\varepsilon\wedge v
+   \rightharpoonup T_sv,
+\]
+where $T_sv=s\partial v+2\partial s\wedge v\in L^2_{\rm loc}$.
+The remaining terms of \eqref{eq:dual-local-smooth} converge by
+dominated convergence: $v$, $Pv$, $\bar\partial v$, and $Q$ are smooth
+on a fixed compact support, and $k_\varepsilon$ is uniformly bounded
+there.  In particular,
+\[
+ \|T_sv\|^2\le\liminf_{\varepsilon\to0}
+       \|s_\varepsilon D'_{k_\varepsilon}v\|^2,\qquad
+ \|s_\varepsilon Pv-sPv\|\longrightarrow0,\qquad
+ \|s_\varepsilon\bar\partial v-s\bar\partial v\|\longrightarrow0.
+\]
+Passing to the limit in \eqref{eq:dual-local-smooth} therefore yields
+\begin{equation}\label{eq:dual-local-limit}
+ \|s\bar\partial v\|^2\ge\|T_sv\|^2+\|sPv\|^2
+                          +\int\langle Qv,v\rangle_k\,dV_Y.
+\end{equation}
+
+The densities in this inequality are invariant under holomorphic
+frame changes.  If the frame of $E^*$ is multiplied by a nowhere
+vanishing holomorphic function $g$, then the coefficients and square
+root of the metric become
+\[
+ v'=g^{-1}v,\qquad s'=|g|s.
+\]
+Since $2\partial|g|=(|g|/g)\partial g$, the weak product rule gives
+\[
+ T_{s'}v'=\frac{|g|}{g}T_sv,\qquad
+ s'Pv'=\frac{|g|}{g}sPv,\qquad
+ s'\bar\partial v'=\frac{|g|}{g}s\bar\partial v.
+\]
+Thus their squared norms agree on overlaps.
+
+Cover $\operatorname{supp}w$ by finitely many such balls and choose
+real smooth functions $\rho_j$ supported in them with
+$\sum_j\rho_j^2=1$ on a neighborhood of $\operatorname{supp}w$.
+Apply \eqref{eq:dual-local-limit} to $\rho_jw$ and sum.  The product
+rules are
+\[
+ \bar\partial(\rho_jw)=\rho_j\bar\partial w
+                             +\bar\partial\rho_j\wedge w,\qquad
+ T_s(\rho_jw)=\rho_jT_sw+s\partial\rho_j\wedge w,
+\]
+and
+\[
+ P(\rho_jw)=\rho_jPw+[P,\rho_j]w,\qquad
+ |[P,\rho_j]w|=|(\partial\rho_j\wedge)^*w|.
+\]
+The last identity follows directly from
+$P=\pm i[\Lambda_Y,\bar\partial]$; its possible unit factor has no
+effect on the norm.  Every cross term in the sum vanishes because
+$\sum_j\rho_j\,d\rho_j=0$; explicitly,
+\begin{align*}
+ \sum_j\|s\bar\partial(\rho_jw)\|^2
+ &=\|s\bar\partial w\|^2
+        +\sum_j\|s\bar\partial\rho_j\wedge w\|^2,\\
+ \sum_j\|T_s(\rho_jw)\|^2
+ &=\|T_sw\|^2+\sum_j\|s\partial\rho_j\wedge w\|^2,\\
+ \sum_j\|sP(\rho_jw)\|^2
+ &=\|sPw\|^2+\sum_j\|s[P,\rho_j]w\|^2,\\
+ \sum_j\int_Y\langle Q(\rho_jw),\rho_jw\rangle_k\,dV_Y
+ &=\int_Y\langle Qw,w\rangle_k\,dV_Y.
+\end{align*}
+For example, the first cross term is
+$2\operatorname{Re}\int\langle s\bar\partial w,
+s(\sum_j\rho_j\bar\partial\rho_j)\wedge w\rangle=0$;
+the other two have the same linear dependence on
+$\sum_j\rho_jd\rho_j$.
+For each real $\rho_j$, exterior
+multiplication and contraction satisfy
+\[
+ |\bar\partial\rho_j\wedge w|^2
+ =|\partial\rho_j|^2|w|^2
+ =|\partial\rho_j\wedge w|^2
+      +|(\partial\rho_j\wedge)^*w|^2.
+\]
+Consequently the quadratic partition errors on the two sides cancel,
+leaving
+\[
+ \|\bar\partial w\|_k^2
+ \ge\|T_sw\|^2+\|sPw\|^2
+             +\int_Y\langle Qw,w\rangle_k\,dV_Y.
+\]
+The frame covariance just established makes the first two integrals
+well defined.  Discarding them proves
+\eqref{eq:singular-dual-test}.
+
+Now let $f$ be an $E$-valued $(a,m)$-form of finite inverse-$B$
+energy.  It has locally $L^2$ coefficients; closedness is automatic
+in this bidegree.  The complementary-index eigenvalue calculation
+above gives the pointwise wedge-pairing inequality
+\[
+ \left|\frac{f\wedge w}{dV_Y}\right|
+ \le\langle B^{-1}f,f\rangle_h^{1/2}
+             \langle Qw,w\rangle_k^{1/2}.
+\]
+Indeed, the coefficient indexed by $I$ in $f$ pairs only with that
+indexed by $I^c$ in $w$, the two curvature factors are
+$\beta_I^{-1}$ and $\beta_I$, and the line-metric factors are
+$h$ and $k=h^{-1}$.  Integration and Cauchy--Schwarz give
+\[
+ \left|\int_Yf\wedge w\right|^2
+ \le I_A(f)\int_Y\langle Qw,w\rangle_k\,dV_Y
+ \le I_A(f)\|\bar\partial w\|_k^2.
+\]
+Define a complex-linear functional on the subspace
+\[
+ \mathcal R=\{\bar\partial w:
+  w\in C_c^\infty(Y,\Lambda^{r,0}T_Y^*\otimes E^*)\}
+ \subset L^2_{r,1}(Y,E^*,k)
+\]
+by
+\[
+ \ell(\bar\partial w)=(-1)^{a+m}\int_Yf\wedge w.
+\]
+The preceding inequality proves that this definition is independent
+of the choice of $w$: a difference with $\bar\partial w=0$ has zero
+pairing with $f$.  It also gives $\|\ell\|\le I_A(f)^{1/2}$.
+Hahn--Banach extends $\ell$ to the whole Hilbert space with the same
+bound.  Riesz representation, followed by the pointwise isometric
+wedge duality between $(r,1)$-forms with metric $k$ and
+$(a,m-1)$-forms with metric $h=k^{-1}$, produces $u$ satisfying
+\[
+ \|u\|_h^2\le I_A(f),\qquad
+ \int_Yu\wedge\bar\partial w
+       =(-1)^{a+m}\int_Yf\wedge w.
+\]
+The isometry is the usual conjugate Hodge-star identification,
+combined with the duality $E\otimes E^*\to\mathbb C$.
+Since $h$ is locally bounded below,
+$u$ is locally $L^2$ in a smooth metric.  Both sides are therefore
+ordinary distributional pairings.  Finally,
+\[
+ 0=\int_Y\bar\partial(u\wedge w)
+   =\int_Y\bar\partial u\wedge w
+       +(-1)^{a+m-1}\int_Yu\wedge\bar\partial w
+\]
+is precisely the distributional identity $\bar\partial u=f$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:singular-product}]
+In product coordinate charts, the local weight of $h$ is
+$\varphi_G(y)+\varphi_M(z)$.  The multiplier-ideal product formula
+\cite[Theorem~2.6(i)]{DEL00} gives
+\begin{equation}\label{eq:product-multiplier}
+ \mathcal I(h)=
+ \bigl(\operatorname{pr}_Y^{-1}\mathcal I(h_G)\mathcal O_X\bigr)
+ \bigl(\operatorname{pr}_Z^{-1}\mathcal I(h_M)\mathcal O_X\bigr).
+\end{equation}
+Put
+\[
+ \mathcal A=G\otimes\mathcal I(h_G),\qquad
+ \mathcal B=\Omega_Z^p\otimes M\otimes\mathcal I(h_M),
+\]
+Then
+\[
+ \Omega_{X/Y}^p\otimes L\otimes\mathcal I(h)
+       \simeq\mathcal A\boxtimes\mathcal B.
+\]
+The external tensor product is an ordinary tensor product: the
+coherent sheaf $\operatorname{pr}_Z^*\mathcal B$ is flat over $Y$.
+Indeed, $\mathcal B$ is flat over the one-point base, and its pullback
+to the product is obtained by base change to $Y$; flatness is preserved
+under this base change.
+
+Resolve $\mathcal A$ locally on the smooth base by a
+bounded complex $P^\bullet$ of finite free modules.  Such a resolution
+exists because the local analytic rings of $Y$ are regular.
+The complex
+\[
+ \pi^*P^\bullet\otimes\operatorname{pr}_Z^*\mathcal B
+\]
+is exact in negative degrees by flatness and resolves
+$\mathcal A\boxtimes\mathcal B$.
+The derived projection formula is therefore applicable to this
+ordinary external product and gives
+\[
+ R\pi_*(\mathcal A\boxtimes\mathcal B)
+ \simeq\mathcal A\otimes^{\mathbf L}_{\mathcal O_Y}
+             R\pi_*\operatorname{pr}_Z^*\mathcal B.
+\]
+Product base change gives the canonical identifications
+\[
+ R^j\pi_*\operatorname{pr}_Z^*\mathcal B
+       \simeq\mathcal O_Y\otimes_{\mathbb C}H^j(Z,\mathcal B).
+\]
+These sheaves are locally free: their fibers are the fixed
+finite-dimensional cohomology groups of the compact manifold $Z$.
+In particular, the projection spectral sequence has terms
+\[
+ E_2^{-i,j}=\operatorname{Tor}^{\mathcal O_Y}_i
+ \bigl(\mathcal A,
+       \mathcal O_Y\otimes_{\mathbb C}H^j(Z,\mathcal B)\bigr)
+ \Longrightarrow
+ R^{j-i}\pi_*(\mathcal A\boxtimes\mathcal B),
+\]
+and $E_2^{-i,j}=0$ for $i>0$.  It collapses to the column $i=0$,
+giving
+\[
+ R^q\pi_*(\mathcal A\boxtimes\mathcal B)
+       \simeq\mathcal A\otimes_{\mathbb C}H^q(Z,\mathcal B)
+       =\mathcal A\otimes_{\mathbb C}V.
+\]
+Together with \eqref{eq:product-multiplier}, this proves the first
+equality in \eqref{eq:singular-product-sheaf}.
+
+Choose a base point outside the analytic cosupport of
+$\mathcal I(h_G)$ at which the weight of $h_G$ is finite.  Such points
+have full measure.  On its fiber, the weight differs from the weight
+of $h_M$ by the finite constant $\varphi_G(y)$, so
+\[
+ \mathcal I(h|_{X_y})=\mathcal I(h_M),\qquad
+ \|\alpha\|_{h|_{X_y},\omega_Z}^2
+       =h_G(y)\|\alpha\|_{h_M,\omega_Z}^2
+\]
+in a local frame of $G$.  Multiplication of every norm in the fixed
+fiber complex by the same positive constant leaves its domains and
+its cohomology unchanged.  Taking the minimum over all closed
+representatives in Lemma~\ref{prop:fiber-norm} consequently gives
+$H_y=h_G(y)H_V$ under the canonical fiber identification.
+
+If $V=0$, the remaining conclusions are immediate.  Otherwise choose
+an $H_V$-orthonormal basis $e_1,\ldots,e_N$.  A holomorphic section
+$s=\sum_{\nu=1}^N s_\nu\otimes e_\nu$ of $E_0$ has
+\[
+ |s|_H^2=\sum_{\nu=1}^N|s_\nu|_{h_G}^2.
+\]
+Since this is a finite sum of nonnegative functions, its local
+integrability is equivalent to local integrability of every term.
+This proves
+$\mathscr E(H)=(G\otimes\mathcal I(h_G))\otimes_{\mathbb C}V$.
+
+Finally write a datum in either stated extremal degree as
+$f=\sum_{\nu=1}^N f_\nu\otimes e_\nu$.  The basis is constant and
+holomorphic, hence $\bar\partial f=0$ implies
+$\bar\partial f_\nu=0$ for every $\nu$.  The auxiliary curvature
+acts trivially on $V$, so
+\[
+ B_A=B_{A,G}\otimes\Id_V,\qquad
+ I_A(f)=\sum_{\nu=1}^N I_A(f_\nu)<\infty.
+\]
+Lemma~\ref{lem:singular-scalar} supplies solutions
+$\bar\partial u_\nu=f_\nu$ with
+$\|u_\nu\|_{h_Gh_A}^2\le I_A(f_\nu)$.
+For $u=\sum_\nu u_\nu\otimes e_\nu$, orthogonality gives
+\[
+ \bar\partial u=f,\qquad
+ \|u\|_{Hh_A}^2
+   =\sum_{\nu=1}^N\|u_\nu\|_{h_Gh_A}^2
+   \le\sum_{\nu=1}^N I_A(f_\nu)=I_A(f).
+\]
+This proves both families of estimates for every $p,q$.
+Proposition~\ref{prop:scalar-mep}, applied to $H=h_G\otimes H_V$
+and $\mathcal F=(G\otimes\mathcal I(h_G))\otimes V$, proves
+Griffiths semipositivity and the minimal extension property.
+\end{proof}
+
+\begin{remark}\label{rem:singular-scope}
+The fiberwise norm identification holds almost everywhere.
+At a base point where $h_G=+\infty$, the restricted weight is
+identically $-\infty$ on the fiber.  The coherent sheaf in
+\eqref{eq:singular-product-sheaf} is defined on all of $Y$.
+\end{remark}
+\section{Top adjoint descent for arbitrary singular semipositive metrics}
+\label{sec:singular-top-adjoint}
+
+Let $\pi:X\to Y$ be a proper surjective holomorphic submersion with
+connected fibers of dimension $n\geq1$, where $X$ and $Y$ are connected
+complex manifolds. Fix a K\"ahler form $\omega_X$ on $X$ and put
+$\omega_y=\omega_X|_{X_y}$. For a singular Hermitian line bundle $(L,h)$
+with psh local weights, write
+\[
+ T_h=\frac{i}{2\pi}\Theta_{L,h},\qquad
+ \mathcal F_n=R^n\pi_*
+   \bigl(K_{X/Y}\otimes L\otimes\mathcal I(h)\bigr).
+\]
+Thus $dd^c=(i/2\pi)\partial\bar\partial$ in this section.
+This normalization gives $T_{h_D}=[D]$ for the canonical singular
+metric $h_D$ on $\mathcal O_X(D)$: if $s_D=f e_D$ is the canonical
+section, then $|e_D|_{h_D}^2=|f|^{-2}$ and $|s_D|_{h_D}=1$ off $D$.
+
+The proof of Theorem~\ref{thm:singular-top-rigidity} uses the
+following two sheaf-theoretic facts.
+
+\begin{lemma}[Top-degree duality and projection]
+\label{lem:top-duality-projection}
+For a coherent sheaf $\mathcal A$ on $X$,
+\begin{equation}\label{eq:top-duality-coherent}
+ \mathcal Hom_Y\!\left(
+ R^n\pi_*(K_{X/Y}\otimes\mathcal A),\mathcal O_Y\right)
+ \simeq \pi_*\mathcal Hom_X(\mathcal A,\mathcal O_X).
+\end{equation}
+For a coherent sheaf $\mathcal B$ on $Y$,
+\begin{equation}\label{eq:top-projection-coherent}
+ R^n\pi_*(K_{X/Y}\otimes\pi^*\mathcal B)
+ \simeq\mathcal B.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $C=R\pi_*(K_{X/Y}\otimes\mathcal A)$, with cohomological indexing,
+so that $\mathcal H^k(C)=0$ unless $0\leq k\leq n$; the upper bound
+is the coherent cohomological-dimension theorem for a proper map
+with $n$-dimensional fibers.  Work locally on the smooth base.
+Coherent sheaves on $X$ and $Y$ have finite locally free resolutions
+locally.  The smooth morphism $\pi$ has relative dualizing complex
+$\pi^!\mathcal O_Y=K_{X/Y}[n]$.  Analytic relative duality
+\cite{RRV71} therefore gives
+\[
+ \begin{aligned}
+ R\mathcal Hom_Y(C,\mathcal O_Y)
+ &\simeq R\pi_*R\mathcal Hom_X
+       (K_{X/Y}\otimes\mathcal A,K_{X/Y}[n])\\
+ &\simeq R\pi_*R\mathcal Hom_X(\mathcal A,\mathcal O_X)[n].
+ \end{aligned}
+\]
+The invertible factor $K_{X/Y}$ cancels inside the derived Hom.
+Our shift convention is $\mathcal H^j(Q[n])=\mathcal H^{j+n}(Q)$.
+On the left the spectral sequence is
+\[
+ \begin{gathered}
+ E_2^{p,q}=\mathcal Ext_Y^p(\mathcal H^{-q}(C),\mathcal O_Y)
+ \Longrightarrow
+ \mathcal H^{p+q}(R\mathcal Hom_Y(C,\mathcal O_Y)),\\
+ p\geq0,\qquad -n\leq q\leq0.
+ \end{gathered}
+\]
+Total degree $-n$ has only $(p,q)=(0,-n)$. An incoming differential
+to this term has negative first index, whereas an outgoing differential
+$d_r$ has second index $-n-r+1<-n$. Thus the degree $-n$ edge map
+identifies its abutment with
+$\mathcal Hom_Y(R^n\pi_*(K_{X/Y}\otimes\mathcal A),\mathcal O_Y)$.
+On the right, before shifting, the spectral sequence
+\[
+ {}'E_2^{a,b}=R^a\pi_*\mathcal Ext_X^b(\mathcal A,\mathcal O_X)
+ \Longrightarrow
+ \mathcal H^{a+b}(R\pi_*R\mathcal Hom_X(\mathcal A,\mathcal O_X))
+\]
+has $a,b\geq0$. At $(0,0)$ the source of an incoming $d_r$ has
+first index $-r$, and the target of an outgoing $d_r$ has second
+index $1-r$; both vanish for $r\geq2$.  Its degree-zero edge term is
+therefore $\pi_*\mathcal Hom_X(\mathcal A,\mathcal O_X)$.
+Taking degree $-n$ after the shift
+proves \eqref{eq:top-duality-coherent}.
+
+We record the map underlying this isomorphism.  Normalize the relative
+trace
+\[
+ \operatorname{Tr}_\pi:R^n\pi_*K_{X/Y}\longrightarrow\mathcal O_Y
+\]
+so that its fiber map is integration of Dolbeault $(n,n)$-classes.  If
+$\lambda:\mathcal A|_{\pi^{-1}(U)}\to\mathcal O_{\pi^{-1}(U)}$
+is a sheaf morphism, the duality map sends it to
+\begin{equation}\label{eq:top-duality-trace-map}
+ \operatorname{Tr}_\pi\circ
+ R^n\pi_*(\Id_{K_{X/Y}}\otimes\lambda):
+ R^n\pi_*(K_{X/Y}\otimes\mathcal A)|_U\longrightarrow\mathcal O_U.
+\end{equation}
+This is the evaluation pairing followed by the trace in relative
+duality.  Its functoriality fixes the cohomological identifications
+used below.
+
+The submersion $\pi$ is flat. Since $Y$ is smooth, $\mathcal B$ also has
+local finite locally free resolutions, so the derived projection formula gives
+\[
+ R\pi_*(K_{X/Y}\otimes\pi^*\mathcal B)
+ \simeq (R\pi_*K_{X/Y})\otimes^{\mathbf L}\mathcal B.
+\]
+Here ordinary $\pi^*\mathcal B$ equals its derived pullback. The tensor
+spectral sequence has terms
+\[
+ {}''E_2^{-j,k}
+ =\mathcal Tor_j^{\mathcal O_Y}(R^k\pi_*K_{X/Y},\mathcal B),
+ \qquad j\geq0,\quad 0\leq k\leq n,
+\]
+and abuts in degree $k-j$. In degree $n$ its only term is
+${}''E_2^{0,n}=(R^n\pi_*K_{X/Y})\otimes\mathcal B$.
+An outgoing $d_r$ has positive first index; an incoming $d_r$ starts at
+$(-r,n+r-1)$, whose second index exceeds $n$. Both vanish.
+Fiberwise Serre duality gives
+$h^n(X_y,K_{X_y})=h^0(X_y,\mathcal O_{X_y})=1$ for every $y$.
+Grauert's theorem therefore makes $R^n\pi_*K_{X/Y}$ a line bundle
+with base change. Its trace map is an isomorphism on every fiber, hence
+\[
+ R^n\pi_*K_{X/Y}\simeq\mathcal O_Y.
+\]
+The preceding degree-$n$ edge isomorphism followed by
+$\operatorname{Tr}_\pi\otimes\Id_{\mathcal B}$ proves
+\eqref{eq:top-projection-coherent}.  In particular, if $\mathcal B$
+is a line bundle near $y$, its fiber map is
+\[
+ H^n(X_y,K_{X_y})\otimes\mathcal B_y\longrightarrow\mathcal B_y,
+ \qquad [v]\otimes e\longmapsto
+       \left(\int_{X_y}v\right)e.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:singular-top-rigidity}]
+On the smooth space $X$, the double dual of the coherent rank-one ideal
+$\mathcal I(h)$ is an invertible ideal $\mathcal O_X(-D)$, where $D$ is
+effective. Factoring out this invertible ideal gives
+\begin{equation}\label{eq:divisorial-ideal-factorization}
+ \mathcal I(h)=\mathcal O_X(-D)\mathcal J,
+ \qquad
+ \operatorname{codim}_X
+ \operatorname{Supp}(\mathcal O_X/\mathcal J)\geq2.
+\end{equation}
+For a prime divisor $P$, its coefficient in $D$ is
+$\lfloor\nu_P(T_h)\rfloor$. To verify this for arbitrary psh weights,
+put $a=\nu_P(T_h)$. Near a smooth generic point of $P=\{z_1=0\}$,
+Siu decomposition gives
+\[
+ \varphi=a\log|z_1|^2+\eta,\qquad
+ \eta\text{ psh},\qquad \nu_P(dd^c\eta)=0.
+\]
+For $k=\lfloor a\rfloor$, put
+\[
+ u_k=\tfrac12(\varphi-k\log|z_1|^2).
+\]
+In the convention $d^c=\tfrac{i}{2\pi}(\bar\partial-\partial)$
+used in \cite{Dem12}, the psh function $u_k$ has Lelong number
+$a-k<1$ at generic points of $P$.  Skoda's criterion
+\cite[Lemma~5.6(a)]{Dem12} therefore gives
+\[
+ e^{-2u_k}=|z_1|^{2k}e^{-\varphi}\in L^1_{\mathrm{loc}},
+ \qquad \operatorname{ord}_P\mathcal I(h)\leq k
+\]
+there.  The factor $1/2$ converts the weight convention in that
+criterion to the convention $h=e^{-\varphi}$ used here.
+Conversely, if $g=z_1^\ell u$ with $u$ a unit and $\ell<k$, local
+upper bounds for $\eta$ and a lower bound for $|u|$ give
+\[
+ |g|^2e^{-\varphi}\geq c|z_1|^{-2(a-\ell)},\qquad
+ \int_0^\epsilon r^{1-2(a-\ell)}\,dr=+\infty,
+ \quad a-\ell\geq1.
+\]
+Thus $g\notin\mathcal I(h)$ and the generic order is exactly $k$.
+Coherence makes $D$ locally finite. Subtracting these integer parts
+from the divisorial terms in Siu decomposition gives
+\begin{equation}\label{eq:residual-positive-current}
+ M=L(-D),\qquad h_M=h/h_D,
+ \qquad T_{h_M}=T_h-[D]\geq0.
+\end{equation}
+The residual weights, initially defined almost everywhere, have psh
+representatives because their distributional complex Hessians are
+positive.  We use these representatives from now on.
+There is also an equality of multiplier ideals
+\[
+ \mathcal J=\mathcal I(h_M),\qquad
+ \mathcal I(h)=\mathcal O_X(-D)\mathcal I(h_M).
+\]
+Indeed, write $s_D=f e_D$ and
+$\varphi_h=\log|f|^2+\varphi_M$ in compatible frames. Then
+\[
+ |g|^2e^{-\varphi_h}=|g/f|^2e^{-\varphi_M}.
+\]
+If this is integrable, the local upper bound for the psh function
+$\varphi_M$ implies $g/f\in L^2_{\mathrm{loc}}$ off $D$. A meromorphic
+function with this property has no divisorial poles: in a transverse
+coordinate a pole of order $r\geq1$ has divergent integral
+$\int_0^\epsilon t^{1-2r}\,dt$. It then extends across the remaining
+codimension-two set by Hartogs. Thus $g/f$ is holomorphic and belongs
+to $\mathcal I(\varphi_M)$. The reverse implication follows from the
+same displayed equality.
+
+Matsumura's torsion-freeness theorem
+\cite[Corollary~1.5]{Mat22} applies because the restrictions of
+$\omega_X$ make $\pi$ a proper K\"ahler morphism in the sense of
+\cite[Remark~1.4(1)]{Mat22}.  The projection formula and
+$K_X=K_{X/Y}\otimes\pi^*K_Y$ give
+\[
+ \mathcal F_n\simeq
+ R^n\pi_*(K_X\otimes L\otimes\mathcal I(h))\otimes K_Y^{-1},
+\]
+so $\mathcal F_n$ is torsion-free.
+Suppose $\mathcal F_n\ne0$. Its generic rank is positive. To obtain a
+nonzero dual germ at an arbitrary $y\in Y$, put $R=\mathcal O_{Y,y}$
+and $K=\operatorname{Frac}(R)$. Choose a nonzero $K$-linear functional
+on $(\mathcal F_n)_y\otimes_R K$. If $v_1,\ldots,v_N$ generate
+$(\mathcal F_n)_y$ and $\ell(v_j)=a_j/b_j$, put $d=\prod_jb_j\ne0$.
+Then
+\[
+ 0\ne d\ell\in\operatorname{Hom}_R((\mathcal F_n)_y,R).
+\]
+Coherence extends this germ to a section of $\mathcal F_n^*$ near $y$.
+Moreover,
+\[
+ \mathcal Hom_X(\mathcal J,\mathcal O_X)=\mathcal O_X.
+\]
+In fact, away from the codimension-two cosupport of $\mathcal J$,
+such a homomorphism is multiplication by a holomorphic function.
+Hartogs extends that function to $X$, and the extended multiplication
+agrees with the homomorphism because $\mathcal O_X$ is torsion-free.
+Applying \eqref{eq:top-duality-coherent} to $\mathcal A=M\otimes\mathcal J$
+therefore yields
+\begin{equation}\label{eq:top-dual-section}
+ \mathcal F_n^*\simeq\pi_*M^{-1}.
+\end{equation}
+After shrinking to a connected neighborhood $U$ of $y$, we obtain
+a nonzero $\sigma\in H^0(\pi^{-1}(U),M^{-1})$.
+The space $\pi^{-1}(U)$ is connected: the map is proper and open,
+and its fibers are connected.  Thus $\sigma$ defines the effective divisor
+$E=\operatorname{div}(\sigma)$.
+
+We next show that every component of $E$ is vertical. Cover
+$\pi^{-1}(U)$ by countably many relatively compact submersion charts
+$V_\alpha\times W_\alpha$, in which $M$ is trivial and the psh weights
+$\varphi_\alpha$ are integrable. Fubini gives measure-zero sets
+$N_\alpha\subset V_\alpha$ such that
+\[
+ \begin{gathered}
+ \int_{V_\alpha}\int_{W_\alpha}
+ |\varphi_\alpha(y,z)|\,dV_z\,dV_y<\infty
+ \\
+ \Longrightarrow\quad
+ \int_{W_\alpha}|\varphi_\alpha(y,z)|\,dV_z<\infty
+ \quad(y\notin N_\alpha).
+ \end{gathered}
+\]
+Using a countable exhaustion in each chart, put
+$U_0=U\setminus\bigcup_\alpha N_\alpha$. For $y\in U_0$ all restricted
+weights are locally integrable psh functions and define a semipositive
+metric on $M_y$. Also put
+$S=\{y\in U:\dim(E\cap X_y)=n\}$. Properness and the fiber-dimension
+theorem make $S$ a proper analytic subset. For $y\in U_0\setminus S$,
+the section $\sigma_y$ is nonzero and has effective divisor $E_y$.
+Consequently
+\begin{equation}\label{eq:zero-fiber-degree}
+ 0\leq\int_{X_y}T_{h_M|_{X_y}}\wedge\omega_y^{n-1}
+ =\int_{X_y}c_1(M_y)\wedge\omega_y^{n-1}
+ =-\int_{E_y}\omega_y^{n-1}\leq0.
+\end{equation}
+For the middle equality, choose a smooth reference metric $h_0$ on
+$M_y$ and write $h_M|_{X_y}=h_0e^{-\chi}$, with
+$\chi\in L^1(X_y)$. Since $d\omega_y=0$ and $X_y$ is compact,
+\[
+ \int_{X_y}dd^c\chi\wedge\omega_y^{n-1}
+ =\langle\chi,dd^c\omega_y^{n-1}\rangle=0.
+\]
+The next equality uses $M_y^{-1}\simeq\mathcal O_{X_y}(E_y)$.
+If a component of $E$ dominated $U$, its generic fiber would be a
+nonzero effective divisor. Positivity of its K\"ahler volume would
+contradict \eqref{eq:zero-fiber-degree}. Thus $E$ is vertical.
+
+Let $E_0$ be a vertical prime component and $B_0=\pi(E_0)$. By
+properness, $B_0$ is irreducible analytic, and the fiber-dimension bound gives
+\[
+ \dim B_0\geq\dim E_0-n=\dim U-1.
+\]
+Hence $B_0$ is a prime divisor. Over its connected smooth locus,
+$\pi^{-1}(B_0)$ is a connected complex manifold: the restricted map
+is a proper submersion with connected fibers. It is therefore
+irreducible. The closed analytic subset $E_0$ has the same dimension
+and dominates $B_0$, so it equals the closure of this inverse image.
+If $b_0$ locally defines a smooth point of $B_0$, the submersion property
+gives $d(b_0\circ\pi)\ne0$ there. Thus the pullback divisor is generically
+reduced; no additional divisorial component can lie over the
+codimension-two singular locus of $B_0$. Assigning to $B_0$ the
+multiplicity of $E_0$ in $E$ proves
+\begin{equation}\label{eq:vertical-divisor-pullback}
+ E=\pi^*B
+\end{equation}
+for an effective divisor $B$ on $U$. Properness makes these image
+components locally finite: a compact inverse image of a compact
+base neighborhood meets only finitely many local components of $E$.
+Shrink $U$ so that $B=(b)$.
+The meromorphic section $\tau_U=\sigma/(b\circ\pi)$ has order zero
+along every prime divisor.  In a local frame, its coefficient and
+the reciprocal coefficient are holomorphic off a codimension-two
+set and extend by Hartogs.  Thus $\tau_U$ is a nowhere-vanishing
+holomorphic frame of $M^{-1}$. In the dual
+frame $e_U=\tau_U^{-1}$, write $|e_U|_{h_M}^2=e^{-\varphi_U}$.
+The weight $\varphi_U$ is a global psh function on $\pi^{-1}(U)$.
+
+Its restriction to each compact connected fiber is constant or
+identically $-\infty$. Define $\psi_U(y)$ to be that value; then
+\begin{equation}\label{eq:residual-weight-descends}
+ \varphi_U=\psi_U\circ\pi.
+\end{equation}
+For a local holomorphic section $s:W\to\pi^{-1}(U)$ of the submersion,
+$\psi_U|_W=\varphi_U\circ s$ is psh. It cannot be identically
+$-\infty$ on an open $W$, since that would make $\varphi_U$ identically
+$-\infty$ on the open set $\pi^{-1}(W)$.
+On overlaps write $e_V=a_{UV}e_U$. The holomorphic unit $a_{UV}$ is
+constant on each compact connected fiber, so
+$a_{UV}=g_{UV}\circ\pi$ for a holomorphic unit $g_{UV}$ on $U\cap V$.
+This also follows from $\pi_*\mathcal O_X=\mathcal O_Y$.
+The frame identities and metric identities give, respectively,
+\[
+ g_{UV}g_{VW}=g_{UW},\qquad
+ \psi_V=\psi_U-\log|g_{UV}|^2.
+\]
+Thus the $g_{UV}$ define a line bundle $G$, with frames
+$\epsilon_V=g_{UV}\epsilon_U$, and
+$|\epsilon_U|_{h_G}^2=e^{-\psi_U}$ defines a psh metric on it.
+The maps $\pi^*\epsilon_U\mapsto e_U$ glue to
+\[
+ (M,h_M)\simeq\pi^*(G,h_G),
+\]
+which proves \eqref{eq:top-singular-factorization}.
+
+The residual multiplier-ideal identity proved above now reads
+\[
+ \mathcal I(h)=\mathcal O_X(-D)\mathcal I(\psi_U\circ\pi).
+\]
+In submersion coordinates $(y,z)$ the weight is $\psi_U(y)+0(z)$.
+The multiplier-ideal product formula \cite[Theorem~2.6(i)]{DEL00}
+therefore gives
+\[
+ \mathcal I(\psi_U\circ\pi)
+ =\pi^{-1}\mathcal I(\psi_U)\mathcal O_X.
+\]
+These equalities glue, proving the first part of
+\eqref{eq:top-singular-sheaf}. In particular there is an isomorphism
+of the actual coherent sheaves
+\[
+ K_{X/Y}\otimes L\otimes\mathcal I(h)
+ \simeq K_{X/Y}\otimes\pi^*(G\otimes\mathcal I(h_G)).
+\]
+Apply \eqref{eq:top-projection-coherent} to
+$\mathcal B=G\otimes\mathcal I(h_G)$. This proves
+$\mathcal F_n\simeq G\otimes\mathcal I(h_G)$.
+
+We identify this sheaf isomorphism and its fiber maps before computing
+the norm.  Put
+\[
+ \mathcal B=G\otimes\mathcal I(h_G),\qquad
+ \mathcal C=K_{X/Y}\otimes L\otimes\mathcal I(h).
+\]
+Under \eqref{eq:top-singular-factorization}, multiplication by $s_D$
+is the holomorphic isomorphism
+\begin{equation}\label{eq:top-sheaf-multiplication}
+ \mu:K_{X/Y}\otimes\pi^*\mathcal B\xrightarrow{\ \sim\ }\mathcal C,
+ \qquad \eta\otimes g\longmapsto s_D\eta\otimes g.
+\end{equation}
+Locally it sends a coefficient $a$ to $fa$, where $s_D=f e_D$;
+the identity $\mathcal I(h)=f\,\pi^*\mathcal I(h_G)$ proves both
+surjectivity and injectivity.  Fix the isomorphism
+\[
+ \Phi:\mathcal F_n\xrightarrow{(R^n\pi_*\mu)^{-1}}
+ R^n\pi_*(K_{X/Y}\otimes\pi^*\mathcal B)
+ \xrightarrow{\ \operatorname{Tr}_\pi\ }\mathcal B,
+\]
+where the second arrow is the projection isomorphism of
+Lemma~\ref{lem:top-duality-projection}, normalized by its trace.
+
+Define the exceptional sets
+\[
+ \begin{aligned}
+ S_I&=\operatorname{Supp}(\mathcal O_Y/\mathcal I(h_G)),\qquad
+ P_G=\{y:\psi_U(y)=-\infty\},\\
+ S_D&=\{y:\dim(|D|\cap X_y)=n\}
+      =\{y:X_y\subset |D|\},\\
+ Y_{\rm good}&=Y\setminus(S_I\cup S_D\cup P_G).
+ \end{aligned}
+\]
+The definition of $P_G$ is independent of the local frame.
+The set $S_I$ is proper analytic and $P_G$ has measure zero.
+Properness of $D\to Y$ and the fiber-dimension theorem make $S_D$
+analytic.  It is proper, since $S_D=Y$ would imply $|D|=X$.
+Connectedness of $X_y$ justifies the second expression for $S_D$.
+Consequently $Y_{\rm good}$ has full measure.  This choice also
+excludes whole fibers contained in horizontal components of $D$.
+
+For $y\in Y_{\rm good}$, the restriction $D_y=D|_{X_y}$ is an
+effective Cartier divisor, and $h_G(y)$ is positive and finite.
+In compatible local frames, the factorization gives
+\[
+ \varphi_h=\log|f_j|^2+\psi_U\circ\pi
+\]
+as an equality of psh functions everywhere: both sides are psh and
+agree almost everywhere.  Its restriction to each such fiber gives
+\[
+ (L_y,h_y)=(\mathcal O_{X_y}(D_y),h_{D_y})\otimes(G_y,h_G(y)).
+\]
+The preceding divisor integrability argument, applied on $X_y$,
+shows that
+\begin{equation}\label{eq:top-good-fiber-ideal}
+ \mathcal I(h_y)=\mathcal O_{X_y}(-D_y)
+               =\mathcal I(h)\mathcal O_{X_y}.
+\end{equation}
+In the second equality we use $y\notin S_I$ and that a local equation
+of $D$ restricts to a nonzero divisor on the smooth connected fiber.
+In particular, writing $i_y:X_y\hookrightarrow X$, the natural map
+\[
+ i_y^*\mathcal C\longrightarrow K_{X_y}\otimes L_y
+\]
+is locally multiplication by the nonzero divisor $f_j|_{X_y}$.
+It is injective, with image
+$K_{X_y}\otimes L_y\otimes\mathcal I(h_y)$.
+Thus the restriction of \eqref{eq:top-sheaf-multiplication} is
+\[
+ \mu_y:K_{X_y}\otimes G_y\xrightarrow{\ \sim\ }
+ K_{X_y}\otimes L_y\otimes\mathcal I(h_y).
+\]
+
+Set $Y'=Y\setminus S_I$.  On $\pi^{-1}(Y')$, the source of $\mu$
+is $K_{X/Y}\otimes\pi^*G$.  Naturality of the cohomological
+base-change maps gives, for $y\in Y_{\rm good}$, the commutative diagram
+\[
+ \begin{array}{ccc}
+ (R^n\pi_*(K_{X/Y}\otimes\pi^*G))\otimes\mathbb C(y)
+ &\xrightarrow{\ (R^n\pi_*\mu)_y\ }&\mathcal F_n\otimes\mathbb C(y)\\[3pt]
+ \big\downarrow\beta_y^0&&\big\downarrow\beta_y^h\\[3pt]
+ H^n(X_y,K_{X_y})\otimes G_y
+ &\xrightarrow{\ H^n(\mu_y)\ }&
+ H^n(X_y,K_{X_y}\otimes L_y\otimes\mathcal I(h_y)).
+ \end{array}
+\]
+Both horizontal arrows are isomorphisms.  The map $\beta_y^0$ is
+an isomorphism by Grauert's theorem, since
+$h^n(X_y,K_{X_y})=1$.  Hence $\beta_y^h$ is an isomorphism as well.
+This proves that the fiber space carrying the prescribed norm is
+identified with the fiber of the actual direct image by its
+canonical base-change map.  Under this identification,
+put $\widehat\Phi_y=\Phi_y\circ(\beta_y^h)^{-1}$.  Compatibility
+of the relative trace with the fiber trace gives
+\begin{equation}\label{eq:top-fiber-trace-identification}
+ \widehat\Phi_y\bigl(H^n(\mu_y)([v]\otimes\epsilon)\bigr)
+       =\left(\int_{X_y}v\right)\epsilon.
+\end{equation}
+
+Fix $y\in Y_{\rm good}$ and $0\ne\epsilon\in G_y$, and write
+$c_y=|\epsilon|_{h_G(y)}^2$.  Let
+\[
+ \mathcal H_r=L^2_{n,r}(X_y,\omega_y),\qquad
+ \mathcal K_r=L^2_{n,r}(X_y,L_y;h_y,\omega_y),
+ \qquad 0\leq r\leq n.
+\]
+These spaces consist of equivalence classes modulo sets of measure
+zero.  If $s_D=f_j e_j$ and
+$u=u_j\otimes(e_j\otimes\epsilon)$ locally, division by $f_j$ on
+$X_y\setminus D_y$ defines compatible scalar forms $u_j/f_j$.
+Multiplication by $s_D\otimes\epsilon$ is therefore a bijection
+of Hilbert spaces
+\begin{equation}\label{eq:divisor-isometry-complex}
+ T_r:\mathcal H_r\xrightarrow{\ \sim\ }\mathcal K_r,
+ \qquad T_rv=s_Dv\otimes\epsilon,\qquad
+ \|T_rv\|_{h_y}^2=c_y\|v\|^2.
+\end{equation}
+Indeed the pointwise equality off $D_y$ is
+\[
+ |f_jv|^2\,|f_j|^{-2}c_y=c_y|v|^2,
+\]
+and $D_y$ has measure zero; the inverse map is division by the
+local equations followed by any measurable extension on $D_y$.
+
+Let $d_r$ and $d_r^h$ be the maximal distributional
+$\bar\partial$ operators on $\mathcal H_r$ and $\mathcal K_r$,
+respectively.  Set
+$\mathcal H_{n+1}=\mathcal K_{n+1}=0$ and $T_{n+1}=0$.
+We verify the equality of graph domains.  For $v\in\operatorname{Dom}d_r$,
+the distributional product rule with the holomorphic function $f_j$
+gives
+\[
+ \bar\partial(f_jv)=f_j\bar\partial v,\qquad
+ T_rv\in\operatorname{Dom}d_r^h,\qquad
+ d_r^hT_rv=T_{r+1}d_rv.
+\]
+Conversely, take $u\in\operatorname{Dom}d_r^h$ and set
+$v=T_r^{-1}u$ and $w=T_{r+1}^{-1}d_r^hu$.  By
+\eqref{eq:divisor-isometry-complex}, $v,w$ are ordinary $L^2$ forms,
+and off $D_y$,
+\[
+ \bar\partial v=\bar\partial(u_j/f_j)
+               =(\bar\partial u_j)/f_j=w.
+\]
+Lemma~\ref{lem:l2-removal} gives $\bar\partial v=w$ on the entire
+fiber.  Thus
+\begin{equation}\label{eq:top-weighted-domain-identities}
+ \begin{gathered}
+ T_r(\operatorname{Dom}d_r)=\operatorname{Dom}d_r^h,
+ \qquad d_r^hT_r=T_{r+1}d_r,\\
+ \|T_rv\|_{h_y}^2+\|d_r^hT_rv\|_{h_y}^2
+       =c_y\bigl(\|v\|^2+\|d_rv\|^2\bigr).
+ \end{gathered}
+\end{equation}
+In particular $U_r=c_y^{-1/2}T_r$ is unitary, and taking Hilbert
+adjoints in $d_r^hU_r=U_{r+1}d_r$ gives, with equality of domains,
+\[
+ (d_r^h)^*U_{r+1}=U_rd_r^*.
+\]
+It follows that $T_r$ takes kernels, images, and harmonic subspaces
+onto their weighted counterparts.  The ordinary compact Dolbeault
+complex has closed range; hence so does the weighted complex.
+
+The induced cohomology map is exactly $H^n(\mu_y)$ in the preceding
+base-change diagram.  To see this, use the fine resolutions by
+locally $L^2$ maximal graph sheaves in
+Lemma~\ref{prop:fiber-norm}.  The same local calculation proves
+that $T_\bullet$ is a morphism of these resolutions.  On their
+degree-zero kernels its map is
+\[
+ K_{X_y}\otimes G_y\longrightarrow
+ K_{X_y}\otimes L_y\otimes\mathcal I(h_y),\qquad
+ \eta\otimes\epsilon\longmapsto s_D\eta\otimes\epsilon,
+\]
+which is $\mu_y$.  Functoriality of the resolution isomorphism gives
+\[
+ [T_nv]=H^n(\mu_y)([v]\otimes\epsilon).
+\]
+Thus the weighted complex realizes the cohomological identification in
+\eqref{eq:top-fiber-trace-identification}.
+
+Put $dV_y=\omega_y^n/n!$ and $V_y=\int_{X_y}dV_y$.
+The ordinary maximal Dolbeault quotient is $H^n(X_y,K_{X_y})$,
+and its trace is $[v]\mapsto\int_{X_y}v$.
+For $a\in\operatorname{Dom}d_{n-1}$, distributional Stokes on
+the compact fiber gives
+\[
+ \int_{X_y}d_{n-1}a=0.
+\]
+Serre duality with $H^0(X_y,\mathcal O_{X_y})=\mathbb C$ makes
+this trace an isomorphism.  Thus the representatives of a fixed
+class of trace $\lambda$ are precisely the $L^2$ top forms
+with integral $\lambda$.
+For a unitary coframe $\zeta^1,\ldots,\zeta^n$,
+\[
+ dV_y=i^{n^2}\zeta^1\wedge\cdots\wedge\zeta^n
+           \wedge\overline{\zeta^1}\wedge\cdots
+           \wedge\overline{\zeta^n},\qquad |dV_y|^2=1.
+\]
+Consequently every $v=a\,dV_y$ satisfies
+\[
+ \left|\int_{X_y}v\right|^2
+ =\left|\int_{X_y}a\,dV_y\right|^2
+ \leq V_y\int_{X_y}|a|^2\,dV_y=V_y\|v\|^2,
+\]
+with equality for $v=(\lambda/V_y)dV_y$ when its trace is $\lambda$.
+Combining this calculation with the bijection of graph domains
+and the cohomological identification yields the exact minimization
+formula
+\begin{equation}\label{eq:top-quotient-norm-minimization}
+ \begin{aligned}
+ |\lambda\epsilon|_{H_y}^2
+ &=\min_{\widehat\Phi_y([u])=\lambda\epsilon}\|u\|_{h_y}^2\\
+ &=c_y\min_{\int_{X_y}v=\lambda}\|v\|^2
+   =\frac{c_y|\lambda|^2}{V_y}.
+ \end{aligned}
+\end{equation}
+The minimizing weighted representative is
+$s_D(\lambda/V_y)dV_y\otimes\epsilon$.
+This expression is independent of the chosen frame: replacing
+$\epsilon$ by $a\epsilon$ replaces $c_y$ by $|a|^2c_y$
+and $\lambda$ by $a^{-1}\lambda$.
+
+Finally, fiber integration under the proper submersion gives a
+smooth function $V_y=\pi_*(\omega_X^n/n!)$, and
+\[
+ d\,\pi_*(\omega_X^n/n!)=\pi_*d(\omega_X^n/n!)=0.
+\]
+Connectedness of $Y$ makes it a constant $V>0$.
+Equation~\eqref{eq:top-quotient-norm-minimization} proves
+$H=V^{-1}h_G$ on $Y_{\rm good}$, and hence almost everywhere,
+as asserted in \eqref{eq:top-singular-metric}.
+In a frame of $G$, local square integrability for this metric is
+exactly $|g|^2e^{-\psi}\in L^1_{\mathrm{loc}}$; the constant $V^{-1}$
+does not affect it. Therefore
+$\mathscr E(H)=G\otimes\mathcal I(h_G)=\mathcal F_n$.
+
+Finally, for a positive auxiliary line $A$ and a closed $(m,b)$ datum
+of finite inverse energy, Lemma~\ref{lem:singular-scalar} gives
+$\bar\partial u=f$ and
+\[
+ \|u\|_{Hh_A}^2=V^{-1}\|u\|_{h_Gh_A}^2
+ \leq V^{-1}\int_Y\langle B_A^{-1}f,f\rangle_{h_Gh_A}\,dV_Y
+ =\int_Y\langle B_A^{-1}f,f\rangle_{Hh_A}\,dV_Y.
+\]
+This is the prescribed weighted optimal estimate.
+\end{proof}
+
+\begin{remark}\label{rem:top-singular-scope}
+For disconnected fibers the argument applies locally to their connected
+components, and the resulting metrics form an orthogonal direct sum.
+\end{remark}
+
+\section{Counterexamples to unrestricted descent}\label{sec:counterexamples}
+
+\begin{proposition}\label{prop:counter-i}\label{sec:counter-i}
+There is a complete K\"ahler product $X=Y\times\mathbb P^1$ and a
+smooth metric on $L=\operatorname{pr}_{\mathbb P^1}^*\OO(2)$ such that
+\[
+ (L,h)\text{ is optimal }(3,2),\qquad
+ (\pi_*(K_{X/Y}\otimes L),H)\text{ is not optimal }(2,2).
+\]
+This is range (i) with $m=2,n=p=1,a=b=2,q=0$.
+\end{proposition}
+\begin{proof}
+Put $r=1/48$, $Y=\Delta_r\times\Delta$, and
+\begin{equation}\label{eq:base-example}
+ \omega_Y=\frac{i\,dt\wedge d\bar t}{(1-|t|^2/r^2)^2}
+          +\frac{i\,ds\wedge d\bar s}{(1-|s|^2)^2},\qquad
+ \psi_Y=-r^2\log(1-|t|^2/r^2)-\log(1-|s|^2).
+\end{equation}
+Differentiation gives
+\[
+ \partial_t\bar\partial_t[-r^2\log(1-|t|^2/r^2)]
+       =(1-|t|^2/r^2)^{-2}.
+\]
+The analogous identity holds in $s$, so $\omega_Y=i\ddbar\psi_Y$.
+Each disk metric is complete: the length of a curve approaching
+its boundary dominates the radial integral
+$\int_0^R(1-\rho^2/R^2)^{-1}d\rho=+\infty$.
+The product metric is therefore complete.  On
+$Z=\mathbb P^1$ set
+\[
+ \omega_Z=\frac{i\,dz\wedge d\bar z}{(1+|z|^2)^2},\quad
+ \chi=\frac{1-|z|^2}{1+|z|^2},\quad
+ h_0=(1+|z|^2)^{-2}\text{ on }M=K_Z^{-1}.
+\]
+The expression for $\chi$ in the coordinate $\zeta=1/z$ is
+$(|\zeta|^2-1)/(|\zeta|^2+1)$, so it extends smoothly over infinity.
+Its coordinate derivatives are
+\[
+ \chi_z=-\frac{2\bar z}{(1+|z|^2)^2},\qquad
+ \chi_{z\bar z}=-\frac{2(1-|z|^2)}{(1+|z|^2)^3}.
+\]
+Consequently
+\begin{equation}\label{eq:chi-identities}
+ |\partial\chi|_{\omega_Z}^2
+    =\frac{4|z|^2}{(1+|z|^2)^2}\le1,
+ \qquad i\ddbar\chi=-2\chi\omega_Z.
+\end{equation}
+Use $\omega_X=\omega_Y+\omega_Z$ and
+\begin{equation}\label{eq:counter-metric}
+ h=h_0e^{-6(t+\bar t)\chi}(1-|s|^2)^6.
+\end{equation}
+Both $X$ and $Y$ admit positive auxiliary lines: use $e^{-\psi_Y}$
+on the base and its external product with $\OO_Z(1)$ on $X$.
+
+The weight of $h$ in the standard $\OO(2)$ frame is
+\[
+ \varphi=2\log(1+|z|^2)+6(t+\bar t)\chi-6\log(1-|s|^2).
+\]
+Use the unit tangent vectors
+\[
+ e_t=(1-|t|^2/r^2)\partial_t,\quad
+ e_z=(1+|z|^2)\partial_z,\quad
+ e_s=(1-|s|^2)\partial_s.
+\]
+The only mixed coefficient is
+\[
+ B=\varphi_{t\bar z}(1-|t|^2/r^2)(1+|z|^2)
+   =-\frac{12z(1-|t|^2/r^2)}{1+|z|^2},\qquad |B|\le6.
+\]
+The diagonal coefficients are $0$, $2-12(t+\bar t)\chi$, and $6$.
+Thus the curvature matrix is
+\begin{equation}\label{eq:counter-matrix}
+ \begin{pmatrix}0&B&0\\\bar B&c&0\\0&0&6\end{pmatrix},
+ \qquad |B|\le6,\quad c=2-12(t+\bar t)\chi\in(3/2,5/2).
+\end{equation}
+If $\lambda_-\le\lambda_+$ are the first block's eigenvalues,
+$\lambda_-+\lambda_+=c>0$; here
+$|12(t+\bar t)\chi|<24r=1/2$ gives the asserted interval for $c$.
+Moreover,
+\[
+ \det\begin{pmatrix}6&B\\\bar B&6+c\end{pmatrix}
+       =36+6c-|B|^2\ge6c>0,
+\]
+The first principal minor of this shifted block is $6>0$, so the
+positive determinant makes the block positive definite.  Its
+eigenvalues are $6+\lambda_-$ and $6+\lambda_+$, whence
+$\lambda_->-6$.  All three pair sums
+\begin{equation}\label{eq:positive-pairs}
+ c,\qquad6+\lambda_-,\qquad6+\lambda_+
+\end{equation}
+are positive.  Equations~\eqref{eq:commutator-eigenvalue} and
+Proposition~\ref{prop:smooth-test} prove the upstairs estimate.
+
+The holomorphic section $dz\otimes\partial_z$ is the global identity
+section of $K_Z\otimes K_Z^{-1}$ and generates its one-dimensional
+space of sections.  It has norm one for $(\omega_Z,h_0)$, because
+\[
+ |dz|_{\omega_Z}^2\,|\partial_z|_{h_0}^2
+       =(1+|z|^2)^2(1+|z|^2)^{-2}=1.
+\]
+In cohomological degree zero the representative is unique, so the
+prescribed direct-image metric is its integral:
+\[
+ H(t,s)=(1-|s|^2)^6\int_Ze^{-6(t+\bar t)\chi}\,\omega_Z.
+\]
+With $z=\rho e^{i\theta}$,
+$\omega_Z=2\rho(1+\rho^2)^{-2}d\rho\,d\theta$ and
+$d\chi=-4\rho(1+\rho^2)^{-2}d\rho$.  Therefore the pushforward
+of $\omega_Z/(2\pi)$ under $\chi$ is $dx/2$ on $[-1,1]$, giving
+\begin{equation}\label{eq:explicit-H}
+ H(t,s)=2\pi(1-|s|^2)^6\frac{\sinh u}{u},
+ \qquad u=6(t+\bar t).
+\end{equation}
+Put $F(u)=\log(\sinh u/u)$, with its smooth value at zero.
+Then $F''(0)=1/3$ and
+\[
+ -\partial_t\bar\partial_t\log H(0)=-36F''(0)=-12,\qquad
+ -\partial_s\bar\partial_s\log H(0)=6,
+ \qquad\partial_t\bar\partial_s\log H=0.
+\]
+Since $\omega_Y(0)$ is the identity,
+\begin{equation}\label{eq:negative-trace}
+ i\Theta_H(0)=-12i\,dt\wedge d\bar t+6i\,ds\wedge d\bar s,
+ \qquad[i\Theta_H,\Lambda_Y]_{2,2}(0)=-6.
+\end{equation}
+The necessary implication of Proposition~\ref{prop:smooth-test}
+disproves the downstairs estimate.
+\end{proof}
+
+\begin{corollary}\label{cor:counter-higher-q}
+For every $k\ge1$, a counterexample in range (i) exists with
+$m=2,n=k+1,p=n,q=k,a=b=2$, even on a holomorphically trivial family.
+\end{corollary}
+\begin{proof}
+Append factors $Z_j=\mathbb P^1$, $1\le j\le k$, with fixed
+Fubini--Study metrics and flat trivial coefficient lines.  Write
+$Z_0$ for the original factor, whose adjoint coefficient is trivial.
+In the K\"unneth decomposition only the multi-index $(0,1,\ldots,1)$
+contributes, since $H^0(\mathbb P^1,K)=0$ and
+$H^1(\mathbb P^1,K)=\mathbb C$.  Thus
+\[
+ H^k\!\left(\prod_{j=0}^kZ_j,K_{\prod Z_j}\otimes L_y\right)
+ \simeq H^0(Z_0,K_{Z_0}\otimes L_y)
+       \otimes\bigotimes_{j=1}^kH^1(Z_j,K_{Z_j})\simeq\mathbb C.
+\]
+Let $\eta_j=\omega_{Z_j}/\operatorname{Vol}(Z_j)$.  These are
+harmonic representatives of trace one, with
+$\|\eta_j\|^2=\operatorname{Vol}(Z_j)^{-1}$.
+The fiber Laplacian on the product is the sum of the factor
+Laplacians; hence the wedge of the original holomorphic generator
+with $\eta_1,\ldots,\eta_k$ is harmonic.  Product integration gives
+\[
+ H_k(t,s)=H(t,s)\prod_{j=1}^k\operatorname{Vol}(Z_j)^{-1},\qquad
+ i\Theta_{H_k}=i\Theta_H.
+\]
+The curvature eigenvalues upstairs are
+$\lambda_-,\lambda_+,6,0,\ldots,0$.  In dimension $N=k+3$, each
+$(N,N-1)$ curvature eigenvalue is a sum omitting one of these
+numbers.  Omitting $\lambda_-$, $\lambda_+$, $6$, or one of the
+zeros gives, respectively,
+\[
+ 6+\lambda_+,\qquad 6+\lambda_-,\qquad c,\qquad6+c,
+\]
+all positive.  The upstairs estimate follows from
+Proposition~\ref{prop:smooth-test}, whereas the downstairs curvature
+trace remains $-6$ at the origin.
+\end{proof}
+
+The metric \eqref{eq:counter-metric} is not semipositive: its first
+curvature block has negative determinant wherever $B\ne0$.
+
+\begin{proposition}\label{prop:counter-ii}\label{sec:counter-ii}
+There is a proper holomorphic submersion between complete K\"ahler
+manifolds admitting positive auxiliary lines for which
+\[
+ (\OO_X,1)\text{ is optimal }(1,2),\qquad
+ (R^1\pi_*\OO_X,H)\text{ is not optimal }(1,1).
+\]
+This is range (ii) with $m=n=a=b=q=1,p=0$, and the coefficient
+metric is flat.
+\end{proposition}
+\begin{proof}
+Let
+\[
+ Y=\{|t-t_0|<R\}\Subset\{\operatorname{Im}t>0\},\quad
+ \psi_Y=-R^2\log(1-|t-t_0|^2/R^2),\quad\omega_Y=i\ddbar\psi_Y.
+\]
+Form the holomorphic quotient
+\[
+ X=(Y\times\mathbb C)/\mathbb Z^2,\qquad
+ (a,b)\cdot(t,z)=(t,z+a+bt).
+\]
+The action is free: $a+bt=0$ and $\operatorname{Im}t>0$ imply
+$b=a=0$.  It is properly discontinuous.  Indeed, on any compact
+subset of $Y\times\mathbb C$, $\operatorname{Im}t\ge c>0$ and
+$|a+bt|\le C$ force
+\[
+ |b|\le C/c,\qquad |a|\le C+|b|\sup|t|,
+\]
+so only finitely many lattice translates can meet that compact set.
+The quotient is therefore a complex manifold, and the quotient
+projection to $Y$ is a holomorphic submersion.
+The real coordinates $z=x+tu$, $x,u\in\mathbb R/\mathbb Z$, identify
+$X$ smoothly with $Y\times(\mathbb R/\mathbb Z)^2$, proving that
+$\pi:X\to Y$ is a proper holomorphic submersion.
+
+Write $v=\operatorname{Im}t$, $w=\operatorname{Im}z$, and $F=w^2/v$.
+Its complex Hessian in the order $(t,z)$ is
+\[
+ (F_{\alpha\bar\beta})
+ =\frac1{2v}\begin{pmatrix}w^2/v^2&-w/v\\-w/v&1\end{pmatrix}.
+\]
+It has rank one and is nonnegative.  Thus, on the cover,
+\begin{equation}\label{eq:elliptic-form}
+ \Omega=i\ddbar\frac{w^2}{v}
+ =\frac{i}{2v}\left(dz-\frac{w}{v}dt\right)
+              \wedge\overline{\left(dz-\frac{w}{v}dt\right)}.
+\end{equation}
+Lattice translation changes the potential by
+$2bw+b^2v=\operatorname{Im}(2bz+b^2t)$, so $\Omega$ descends.
+It is closed and semipositive, with positive vertical restriction;
+therefore $\omega_X=\Omega+\pi^*\omega_Y$ is K\"ahler.  Moreover,
+\[
+ dz-(w/v)dt=dx+t\,du,\qquad\Omega=dx\wedge du,
+ \qquad\int_{X_t}\Omega=1.
+\]
+For the associated distances,
+\[
+ \omega_X\ge\pi^*\omega_Y
+ \quad\Longrightarrow\quad
+ d_Y(\pi(x),\pi(x'))\le d_X(x,x').
+\]
+If $(x_\nu)$ is $d_X$-Cauchy, then $\pi(x_\nu)\to y\in Y$.
+Choose a compact neighborhood $K$ of $y$ containing the projected
+tail.  Properness makes $\pi^{-1}(K)$ compact, so some subsequence
+converges to $x$.  For any $\varepsilon>0$, choose a sufficiently
+late subsequence term with $d_X(x_{\nu_j},x)<\varepsilon/2$ and
+use the Cauchy condition to obtain
+$d_X(x_\nu,x)\le d_X(x_\nu,x_{\nu_j})+d_X(x_{\nu_j},x)<\varepsilon$.
+Thus $(X,\omega_X)$ is complete.
+
+For the positive auxiliary line, take the quotient with automorphy
+factor
+\[
+ (a,b)\cdot(t,z,\xi)
+ =(t,z+a+bt,e^{-\pi ib^2t-2\pi ibz}\xi).
+\]
+If $j_{a,b}(t,z)=e^{-\pi ib^2t-2\pi ibz}$, then
+\[
+ j_{a,b}(t,z+a'+b't)j_{a',b'}(t,z)
+   =e^{-2\pi iba'}j_{a+a',b+b'}(t,z)
+   =j_{a+a',b+b'}(t,z).
+\]
+This is the cocycle identity.  The metric descends because
+\[
+ |j_{a,b}(t,z)|^2e^{-2\pi(w+bv)^2/v}
+  =e^{2\pi b^2v+4\pi bw}e^{-2\pi(w+bv)^2/v}
+  =e^{-2\pi w^2/v}.
+\]
+Its curvature is $i\partial\bar\partial(2\pi w^2/v)=2\pi\Omega$.
+Tensoring by the pullback of $e^{-\psi_Y}$ gives positive curvature
+$2\pi\Omega+\pi^*\omega_Y$.  For the coefficient line $(\OO_X,1)$,
+the curvature commutator is zero, so its upstairs estimate follows
+from Lemma~\ref{lem:complete-estimate} after auxiliary twisting.
+
+Under a lattice translation, $dz$ changes to $dz+b\,dt$.
+Its class modulo base differentials is therefore invariant, defining
+a holomorphic relative form.  On every fiber it spans
+$H^0(X_t,K_{X_t})$, so it frames $\pi_*K_{X/Y}$, and
+\[
+ \omega_t=\frac{i}{2v}dz\wedge d\bar z,\quad
+ \int_{X_t}\omega_t=1,\quad\|dz\|^2=2v.
+\]
+Relative Serre duality gives the holomorphic identification
+\[
+ R^1\pi_*\OO_X\simeq(\pi_*K_{X/Y})^*.
+\]
+For the pairing $\int\alpha\wedge dz$, the holomorphic dual frame
+has harmonic representative
+\[
+ \alpha_t=\frac{d\bar z}{2iv},\qquad
+ \int_{X_t}d\bar z\wedge dz=2iv,\qquad H(t)=\|\alpha_t\|^2=\frac1{2v}.
+\]
+The constant-coefficient form $\alpha_t$ is harmonic for the flat
+fiber metric.  The equation $\int_{X_t}\alpha_t\wedge dz=1$ shows
+that its class is the holomorphic dual frame, even though its
+representative depends on $\operatorname{Im}t$.
+Explicitly, $|d\bar z|^2=2v$ and the fiber area is one, so
+\[
+ \|\alpha_t\|^2=(4v^2)^{-1}(2v)\int_{X_t}\omega_t=(2v)^{-1}.
+\]
+Finally $\partial_t v=-i/2$, $\bar\partial_t v=i/2$, and
+$\partial_t\bar\partial_t\log v=-1/(4v^2)$.  Consequently
+\[
+ i\Theta_H=i\ddbar\log(2v)
+              =-\frac{i\,dt\wedge d\bar t}{4v^2}<0.
+\]
+Proposition~\ref{prop:smooth-test} proves the claimed failure.
+\end{proof}
+
+
+\section{Scalar-factor metrics and minimal extension}\label{sec:extension}
+
+The singular product metric and the metric in the top-adjoint
+rigidity theorem have the common form
+\begin{equation}\label{eq:scalar-factor-metric}
+ E_0=G\otimes_{\mathbb C}V,\qquad
+ H=h_G\otimes H_V,\qquad
+ \mathcal F=(G\otimes\mathcal I(h_G))\otimes_{\mathbb C}V,
+\end{equation}
+where $(V,H_V)$ is a fixed finite-dimensional Hermitian space and
+$h_G$ has psh weights.  Pointwise values of $H$ are defined using
+the psh representatives of these weights.
+
+For a torsion-free sheaf with a singular metric, Griffiths
+semipositivity means that $\log|\ell|_{H^*}^2$ has a psh
+representative for every local holomorphic section
+$\ell\in\mathcal F^*=\mathcal Hom(\mathcal F,\mathcal O_Y)$.
+The \emph{minimal extension property} means that there is a proper
+analytic $S\subset Y$ such that $\mathcal F$ is locally free off $S$
+and, for every open immersion $\iota:B\hookrightarrow Y$ of the
+unit ball with $\iota(0)\notin S$ and every $v\in\mathcal F\otimes\mathbb C(\iota(0))$
+with $|v|_H=1$, there is $\sigma\in H^0(B,\iota^*\mathcal F)$ with
+\[
+ \sigma(0)=v,\qquad
+ \frac1{\operatorname{Vol}(B)}\int_B|\sigma|_{\iota^*H}^2\,d\lambda\le1.
+\]
+The measure here is Euclidean; see \cite[Definition 1.2]{Tak24}.
+
+\begin{proposition}\label{prop:scalar-mep}
+The metric \eqref{eq:scalar-factor-metric} is Griffiths semipositive
+and has the minimal extension property.  Moreover,
+$\mathcal F=\mathscr E(H)$, and every holomorphic section on the
+complement of a nowhere-dense analytic set with finite $H$-norm on every relatively
+compact ambient neighborhood extends uniquely into $\mathcal F$.
+\end{proposition}
+\begin{proof}
+\emph{Integrable sections and removal across analytic sets.}
+
+Fix an $H_V$-orthonormal basis $v_1,\ldots,v_d$ and write
+$s=\sum_\nu f_\nu e_G\otimes v_\nu$ in a local frame with
+$|e_G|_{h_G}^2=e^{-\varphi}$.  Then
+\[
+ |s|_H^2=e^{-\varphi}\sum_{\nu=1}^d|f_\nu|^2,
+ \qquad
+ |s|_H^2\in L^1_{\rm loc}
+ \ \Longleftrightarrow\ f_\nu\in\mathcal I(\varphi)
+       \quad(1\le\nu\le d).
+\]
+This proves $\mathscr E(H)=\mathcal F$ coefficientwise.
+If $s$ is given off a nowhere-dense analytic subset $A$ and has finite weighted
+norm across $A$, the local upper bound $\varphi\le C$ gives
+\[
+ \int_{K\setminus A}\sum_\nu|f_\nu|^2
+ \le e^C\int_{K\setminus A}|s|_H^2<\infty
+\]
+for compact coordinate neighborhoods $K$.  Extend the coefficients
+measurably over $A$, a set of measure zero.  Lemma~\ref{lem:l2-removal}
+with $g=0$ gives $\bar\partial f_\nu=0$ distributionally on the
+whole neighborhood, hence $f_\nu$ has a holomorphic representative.
+For the resulting extension $\widetilde s$,
+\[
+ \int_K|\widetilde s|_H^2
+     =\int_{K\setminus A}|s|_H^2<\infty,
+ \qquad \widetilde s\in\mathscr E(H)=\mathcal F.
+\]
+Holomorphic uniqueness on the dense complement makes these local
+extensions glue.
+
+\emph{The dual metric on the actual sheaf.}
+To compute the sheaf dual correctly, write locally $h_G=e^{-\varphi}$
+and remove the divisorial part of $\mathcal I(\varphi)$:
+\[
+ \mathcal I(\varphi)=g_D\mathcal J,\qquad
+ \psi|_{U\setminus D}=\varphi-\log|g_D|^2,\qquad
+ \operatorname{codim}\operatorname{Supp}(\mathcal O/\mathcal J)\ge2.
+\]
+Here $\psi$ denotes the psh extension across $D$.
+These are the divisorial-removal identities in the proof of
+Theorem~\ref{thm:singular-top-rigidity}, applied to the local psh
+weight on the base.  Put $A=\operatorname{Supp}(\mathcal O/\mathcal J)$.
+A morphism $\mathcal J\to\mathcal O$ restricts on $U\setminus A$
+to multiplication by a holomorphic function.  Hartogs extension
+across $\operatorname{codim}A\ge2$ extends that function to $U$;
+equality on $U\setminus A$ then determines the morphism everywhere.
+Therefore
+\[
+ \mathcal Hom(\mathcal J,\mathcal O)=\mathcal O,\qquad
+ \mathcal F^{**}=G(-D)\otimes V,\qquad
+ \mathcal F^*=G^{-1}(D)\otimes V^*.
+\]
+In the local frame $g_De_G$ of $G(-D)$, the metric is
+$e^{-\psi}H_V$, since $|g_D|^2e^{-\varphi}=e^{-\psi}$.
+Consequently, for a dual section $\ell=(\ell_\nu)$,
+\[
+ \log|\ell|_{H^*}^2
+ =\psi+\log\sum_\nu|\ell_\nu|^2,
+\]
+which is psh.  More explicitly, on the set where
+$F=\sum|\ell_\nu|^2>0$, for a tangent vector $\xi$ one has
+\[
+ (\partial\bar\partial\log F)(\xi,\bar\xi)
+ =\frac{F\sum_\nu|\partial_\xi\ell_\nu|^2
+          -|\sum_\nu\bar\ell_\nu\partial_\xi\ell_\nu|^2}{F^2}
+ \ge0.
+\]
+The holomorphic logarithmic norm has its psh extension over $F=0$,
+and adding the psh weight $\psi$ proves Griffiths semipositivity
+on $\mathcal F$.
+
+\emph{Extension with the sharp constant.}
+Take $S=\operatorname{Supp}(\mathcal O_Y/\mathcal I(h_G))$.
+This is a proper analytic set, and $\mathcal F=E_0$ on $Y\setminus S$.
+On an embedded ball $B$, the line bundle $\iota^*G$ is trivial:
+the exponential sequence, Cartan's theorem B and contractibility give
+\[
+ H^1(B,\mathcal O_B^*)\simeq H^2(B,\mathbb Z)=0.
+\]
+Choose a frame with psh weight $\varphi$.  Write a unit vector at
+the center as $v=\sum c_\nu e_G(0)\otimes v_\nu$.  Then
+\[
+ \varphi(0)>-\infty,\qquad
+ e^{-\varphi(0)}\sum_\nu|c_\nu|^2=1.
+\]
+Sharp scalar extension \cite{GZ15} gives a holomorphic $F$ on $B$
+such that
+\[
+ F(0)=1,\qquad
+ \int_B|F|^2e^{-\varphi}\,d\lambda
+ \le\operatorname{Vol}(B)e^{-\varphi(0)}.
+\]
+Define the holomorphic section
+$\sigma=\sum c_\nu F e_G\otimes v_\nu$.  It satisfies
+\[
+ \sigma(0)=v,\qquad
+ \int_B|\sigma|_H^2
+ =\left(\sum_\nu|c_\nu|^2\right)\int_B|F|^2e^{-\varphi}
+ \le\operatorname{Vol}(B).
+\]
+The same integral bound gives
+\[
+ c_\nu F\in\mathcal I(\varphi)\quad(1\le\nu\le d),
+ \qquad \sigma\in H^0(B,\iota^*\mathcal F).
+\]
+\end{proof}
+
+\begin{example}[A degreewise estimate does not imply minimal extension]
+\label{ex:trace-not-mep}
+Take $Y=\mathbb C^2$ with its Euclidean metric,
+$Z=\mathbb P^1$, and a trivial fiber coefficient.  On the trivial
+base line put
+\[
+ h_G=e^{-\varphi},\qquad
+ \varphi(y)=-|y_1|^2+2|y_2|^2.
+\]
+For $(m,n,a,b,p,q)=(2,1,2,2,1,1)$ the upstairs curvature
+eigenvalues are $-1,2,0$, so $C_{L;3,3}=1$.
+The direct image is
+$G\otimes H^1(\mathbb P^1,K_{\mathbb P^1})\simeq G$,
+with metric $h_G$ up to a constant; it satisfies the optimal
+$(2,2)$ estimate, but has a negative curvature direction.
+
+Minimal extension fails at every center, which is necessary to
+exclude an exceptional analytic set.  Given $y^0$, pull back to
+the unit ball by
+$\iota(w)=(y^0_1+\varepsilon w_1,y^0_2+\delta w_2)$,
+where $\varepsilon^2>2\delta^2>0$.
+The pulled-back weight is
+\[
+ \varphi\circ\iota=\varphi(y^0)+2\operatorname{Re}\ell(w)
+        -\varepsilon^2|w_1|^2+2\delta^2|w_2|^2,
+ \qquad
+ \ell(w)=-\overline{y^0_1}\varepsilon w_1
+                      +2\overline{y^0_2}\delta w_2.
+\]
+In the holomorphic frame
+$e'=e^{\varphi(y^0)/2+\ell(w)}e_G$, the squared norm is
+\[
+ W(w)=\exp(\varepsilon^2|w_1|^2-2\delta^2|w_2|^2),\qquad W(0)=1.
+\]
+Any extension of the unit vector $e'(0)$ is $F e'$ with
+$F\in\mathcal O(B)$ and $F(0)=1$.  Write
+$F=\sum_{\alpha\in\mathbb N^2}c_\alpha w^\alpha$, so $c_0=1$.
+For $B_r=\{|w|<r\}$, $0<r<1$, and $\alpha\ne\beta$,
+independent coordinate rotations give
+\[
+ \int_{B_r}w^\alpha\bar w^\beta W\,d\lambda
+   =e^{i(\alpha-\beta)\cdot\theta}
+           \int_{B_r}w^\alpha\bar w^\beta W\,d\lambda=0
+\]
+by choosing $\theta$ with $e^{i(\alpha-\beta)\cdot\theta}\ne1$.
+Uniform convergence of the Taylor series on $\overline{B_r}$ gives
+\[
+ \int_{B_r}|F|^2W\,d\lambda
+   =\sum_\alpha|c_\alpha|^2\int_{B_r}|w^\alpha|^2W\,d\lambda
+   \ge\int_{B_r}W\,d\lambda.
+\]
+Letting $r\uparrow1$ preserves the inequality by monotone convergence.
+Rotational symmetry and polar integration on the unit ball give
+$\operatorname{Vol}(B)^{-1}\int_B|w_j|^2\,d\lambda=1/3$.
+Jensen's inequality now yields
+\[
+ \frac1{\operatorname{Vol}(B)}\int_B|F|^2W
+ \ge\frac1{\operatorname{Vol}(B)}\int_BW
+ \ge\exp\!\left(\frac{\varepsilon^2-2\delta^2}{3}\right)>1.
+\]
+This contradicts the minimal bound at the arbitrary center $y^0$.
+Hence the set of failure is all of $Y$ and cannot be contained in
+the exceptional analytic set allowed in the definition.
+\end{example}
+
+\begin{thebibliography}{99}
+\bibitem[BP08]{BP08}
+B.~Berndtsson and M.~P\u aun,
+\emph{Bergman kernels and the pseudoeffectivity of relative canonical bundles},
+Duke Math. J. \textbf{145} (2008), no.~2, 341--378.
+\url{https://doi.org/10.1215/00127094-2008-054}.
+
+\bibitem[BPW22]{BPW22}
+Bo Berndtsson, Mihai P\u{a}un, and Xu Wang, \emph{Algebraic fiber spaces and curvature of higher direct images}, J. Inst. Math. Jussieu \textbf{21} (2022), no.~3, 973--1028. \href{https://doi.org/10.1017/S147474802000050X}{doi:10.1017/S147474802000050X}.
+
+\bibitem[Ber09]{Ber09}
+B.~Berndtsson,
+\emph{Curvature of vector bundles associated to holomorphic fibrations},
+Ann. of Math. (2) \textbf{169} (2009), no.~2, 531--560.
+\href{https://doi.org/10.4007/annals.2009.169.531}
+{doi:10.4007/annals.2009.169.531}.
+
+\bibitem[CP17]{CP17}
+J.~Cao and M.~P\u aun,
+\emph{Kodaira dimension of algebraic fiber spaces over abelian varieties},
+Invent. Math. \textbf{207} (2017), no.~1, 345--387.
+\url{https://doi.org/10.1007/s00222-016-0672-6}.
+
+\bibitem[CS24]{CS24}
+Y.-J. Choi and G. Schumacher, \emph{Curvature of higher direct images of sheaves of twisted holomorphic forms}, preprint (2024), \href{https://arxiv.org/abs/2407.04298}{arXiv:2407.04298}.
+
+\bibitem[DEL00]{DEL00}
+J.-P.~Demailly, L.~Ein, and R.~Lazarsfeld,
+\emph{A subadditivity property of multiplier ideals},
+Michigan Math. J. \textbf{48} (2000), 137--156.
+\href{https://arxiv.org/abs/math/0002035}{arXiv:math/0002035v2};
+see Theorem 2.6(i) for the analytic product formula.
+
+\bibitem[DNWZ23]{DNWZ23}
+Fusheng Deng, Jiafu Ning, Zhiwei Wang, and Xiangyu Zhou, \emph{Positivity of holomorphic vector bundles in terms of $L^p$-estimates for $\bar\partial$}, Math. Ann. \textbf{385} (2023), nos.~1--2, 575--607. \href{https://doi.org/10.1007/s00208-021-02348-7}{doi:10.1007/s00208-021-02348-7}.
+
+\bibitem[DPS01]{DPS01}
+J.-P.~Demailly, T.~Peternell, and M.~Schneider,
+\emph{Pseudo-effective line bundles on compact K\"ahler manifolds},
+Internat. J. Math. \textbf{12} (2001), no.~6, 689--741.
+\url{https://doi.org/10.1142/S0129167X01000861}.
+
+\bibitem[Dem12]{Dem12}
+J.-P.~Demailly,
+\emph{Analytic Methods in Algebraic Geometry},
+Surveys of Modern Mathematics, vol.~1,
+International Press and Higher Education Press, 2012.
+
+\bibitem[Dem82]{Dem82}
+J.-P.~Demailly,
+\emph{Estimations \(L^2\) pour l'op\'erateur \(\bar\partial\) d'un
+fibr\'e vectoriel holomorphe semi-positif au-dessus d'une vari\'et\'e
+k\"ahl\'erienne compl\`ete},
+Ann. Sci. \'Ecole Norm. Sup. (4) \textbf{15} (1982), no.~3, 457--511.
+\href{https://www.numdam.org/article/ASENS_1982_4_15_3_457_0.pdf}
+{Full text}; see \S5, Theorem 5.1.
+
+\bibitem[Fuj78]{Fuj78}
+T. Fujita, \emph{On K\"ahler fiber spaces over curves}, J. Math. Soc. Japan \textbf{30} (1978), no.~4, 779--794. \href{https://doi.org/10.2969/jmsj/03040779}{doi:10.2969/jmsj/03040779}.
+
+\bibitem[GZ15]{GZ15}
+Q.~Guan and X.~Zhou,
+\emph{A solution of an \(L^2\) extension problem with an optimal
+estimate and applications},
+Ann. of Math. (2) \textbf{181} (2015), no.~3, 1139--1208.
+\href{https://doi.org/10.4007/annals.2015.181.3.6}
+{doi:10.4007/annals.2015.181.3.6}.
+
+\bibitem[Gra60]{Gra60}
+Hans Grauert, \emph{Ein Theorem der analytischen Garbentheorie und die Modulr\"aume komplexer Strukturen}, Inst. Hautes \'{E}tudes Sci. Publ. Math. \textbf{5} (1960), 5--64. \href{https://doi.org/10.1007/BF02684746}{doi:10.1007/BF02684746}.
+
+\bibitem[HPS18]{HPS18}
+C.~Hacon, M.~Popa, and C.~Schnell,
+\emph{Algebraic fiber spaces over abelian varieties: around a recent
+theorem by Cao and P\u aun},
+in \emph{Local and Global Methods in Algebraic Geometry},
+Contemp. Math. \textbf{712}, Amer. Math. Soc., Providence, RI, 2018,
+143--195.
+\url{https://doi.org/10.1090/conm/712/14346}.
+
+\bibitem[IMW24]{IMW24}
+T.~Inayama, S.-i.~Matsumura, and Y.~Watanabe,
+\emph{Singular Nakano positivity of direct image sheaves of adjoint bundles},
+Anal. PDE, to appear;
+\url{https://arxiv.org/abs/2407.11412}, version~2 (2024).
+
+\bibitem[Ina26]{Ina26}
+T.~Inayama,
+\emph{Partial positivity is not preserved by marginalization},
+preprint (2026),
+\url{https://arxiv.org/abs/2609.15075}.
+
+\bibitem[Kaw81]{Kaw81}
+Y. Kawamata, \emph{Characterization of abelian varieties}, Compositio Math. \textbf{43} (1981), no.~2, 253--276.
+
+\bibitem[Kol86a]{Kol86a}
+J. Koll\'ar, \emph{Higher direct images of dualizing sheaves. I}, Ann. of Math. (2) \textbf{123} (1986), no.~1, 11--42. \href{https://doi.org/10.2307/1971351}{doi:10.2307/1971351}.
+
+\bibitem[Kol86b]{Kol86b}
+J. Koll\'ar, \emph{Higher direct images of dualizing sheaves. II}, Ann. of Math. (2) \textbf{124} (1986), no.~1, 171--202.
+
+\bibitem[LY14]{LY14}
+Kefeng Liu and Xiaokui Yang, \emph{Curvatures of direct image sheaves of vector bundles and applications}, J. Differential Geom. \textbf{98} (2014), no.~1, 117--145. \href{https://arxiv.org/abs/1303.2701}{arXiv:1303.2701}.
+
+\bibitem[MT07]{MT07}
+C.~Mourougane and S.~Takayama,
+\emph{Hodge metrics and positivity of direct images},
+J. Reine Angew. Math. \textbf{606} (2007), 167--178.
+\url{https://doi.org/10.1515/CRELLE.2007.039}.
+
+\bibitem[MT08]{MT08}
+Ch.~Mourougane and S.~Takayama,
+\emph{Hodge metrics and the curvature of higher direct images},
+Ann. Sci. \'Ecole Norm. Sup. (4) \textbf{41} (2008), no.~6, 905--924.
+\href{https://arxiv.org/abs/0707.3551}{arXiv:0707.3551v2};
+\href{https://doi.org/10.24033/asens.2084}{doi:10.24033/asens.2084}.
+
+\bibitem[MT09]{MT09}
+C.~Mourougane and S.~Takayama,
+\emph{Extension of twisted Hodge metrics for K\"ahler morphisms},
+J. Differential Geom. \textbf{83} (2009), no.~1, 131--161.
+\url{https://arxiv.org/abs/0809.3221}.
+
+\bibitem[Mat22]{Mat22}
+S.-i.~Matsumura,
+\emph{Injectivity theorems with multiplier ideal sheaves for higher
+direct images under K\"ahler morphisms},
+Algebr. Geom. \textbf{9} (2022), no.~2, 122--158.
+\url{https://doi.org/10.14231/AG-2022-005}.
+
+\bibitem[Nau21]{Nau21}
+Philipp Naumann, \emph{Curvature of higher direct images}, Ann. Fac. Sci. Toulouse Math. (6) \textbf{30} (2021), no.~1, 171--201. \href{https://doi.org/10.5802/afst.1670}{doi:10.5802/afst.1670}.
+
+\bibitem[PT18]{PT18}
+M.~P\u aun and S.~Takayama,
+\emph{Positivity of twisted relative pluricanonical bundles and their
+direct images},
+J. Algebraic Geom. \textbf{27} (2018), no.~2, 211--272.
+\url{https://doi.org/10.1090/jag/702}.
+
+\bibitem[RRV71]{RRV71}
+J.-P.~Ramis, G.~Ruget, and J.-L.~Verdier,
+\emph{Dualit\'e relative en g\'eom\'etrie analytique complexe},
+Invent. Math. \textbf{13} (1971), 261--283.
+\url{https://doi.org/10.1007/BF01406078}.
+
+\bibitem[Siu74]{Siu74}
+Y.-T.~Siu,
+\emph{Analyticity of sets associated to Lelong numbers and the extension
+of closed positive currents},
+Invent. Math. \textbf{27} (1974), 53--156.
+\url{https://doi.org/10.1007/BF01389965}.
+
+\bibitem[Tak24]{Tak24}
+S. Takayama, \emph{Singular Griffiths semi-positivity of higher direct images}, Math. Ann. \textbf{388} (2024), 4343--4353. \href{https://doi.org/10.1007/s00208-023-02632-8}{doi:10.1007/s00208-023-02632-8}.
+
+\bibitem[Take95]{Take95}
+K.~Takegoshi,
+\emph{Higher direct images of canonical sheaves tensorized with
+semi-positive vector bundles by proper K\"ahler morphisms},
+Math. Ann. \textbf{303} (1995), 389--416.
+
+\bibitem[Vie83]{Vie83}
+E. Viehweg, \emph{Weak positivity and the additivity of the Kodaira dimension for certain fibre spaces}, in \emph{Algebraic varieties and analytic varieties (Tokyo, 1981)}, Adv. Stud. Pure Math., vol.~1, North-Holland, Amsterdam, 1983, pp.~329--353. \href{https://doi.org/10.2969/aspm/00110329}{doi:10.2969/aspm/00110329}.
+
+\bibitem[Wat25a]{Wat25}
+Y. Watanabe, \emph{Dual Nakano positivity and singular Nakano positivity of direct image sheaves}, Nagoya Math. J. \textbf{257} (2025), 55--78. \href{https://doi.org/10.1017/nmj.2024.20}{doi:10.1017/nmj.2024.20}.
+
+\bibitem[Wat25b]{WatCurv}
+Yuta Watanabe, \emph{Curvature operator of holomorphic vector bundles and $L^2$-estimate condition for $(n,q)$ or $(p,n)$-forms}, Tohoku Math. J. (2) \textbf{77} (2025), no.~4, 445--471. \href{https://doi.org/10.2748/tmj.20231128}{doi:10.2748/tmj.20231128}. Theorem numbers cited here refer to \href{https://arxiv.org/abs/2109.12554v2}{arXiv:2109.12554v2}.
+
+\bibitem[Wat25c]{WatNadel}
+Y.~Watanabe,
+\emph{Nakano--Nadel type, Bogomolov--Sommese type vanishing and
+singular dual Nakano semi-positivity},
+Ann. Fac. Sci. Toulouse Math. (6) \textbf{34} (2025), no.~2, 339--394.
+\url{https://doi.org/10.5802/afst.1815};
+\href{https://arxiv.org/abs/2209.00823v2}{arXiv:2209.00823v2}.
+The weighted Dolbeault resolution is Theorem 5.3(a) in the cited
+arXiv version.
+
+\bibitem[Wu21]{Wu21}
+X.~Wu,
+\emph{On the hard Lefschetz theorem for pseudoeffective line bundles},
+Internat. J. Math. \textbf{32} (2021), no.~6, Paper No.~2150035, 25~pp.
+\url{https://doi.org/10.1142/S0129167X2150035X}.
+\end{thebibliography}
+\end{document}

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "source": "papers/src/main.tex",
-  "source_sha256": "a3182599e9bbd17ed8fa69c49f649bfd8fb654e2c3fef393d2baf59bb238f087",
-  "pdf": "papers/paper_v1.pdf",
-  "pdf_sha256": "f25b304cbf4c32b77e17696540c89f137ca4d5c1d1bff09c8ea4903b003b2550",
-  "built_at_utc": "2026-10-24T04:12:37.3021221Z",
-  "engine": "pdflatex",
+  "source": "papers/src/direct_image_descent.tex",
+  "source_sha256": "da3ac40d1a9376c8f235cbd4b4160f5ca9d9bc86d98a6899bf48ef1e10ee935b",
+  "pdf": "papers/paper_v2.pdf",
+  "pdf_sha256": "d6138277a10fe6bee790b993fca9d80d3e487c74ab80dd75c2e18db1a1230462",
+  "built_at_utc": "2026-10-30T05:14:48.2924200Z",
+  "engine": "xelatex",
   "passes": 3,
   "unresolved_references": false,
   "mathematical_verification": "Not performed; compilation is not a mathematical proof check."
